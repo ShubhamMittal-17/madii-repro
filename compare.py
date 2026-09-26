@@ -16,6 +16,7 @@ from scipy.stats import wilcoxon
 
 import env as E, policies as P
 import dijkstra_rl as D
+from lp_flow import LPFlowRouting, LPFlowAdaptive
 
 BETAS = (0.01, 0.10, 0.25, 0.50)
 PAPER = {  # Table VI (SR at beta = 1/10/25/50 %, EE at FND)
@@ -35,7 +36,9 @@ def main():
 
     arms = {"battery Dijkstra (classical)": D.fast_battery_weighted,
             "min-energy Dijkstra": P.min_energy,
-            "FCM clustering (paper baseline)": P.fcm_routing}
+            "FCM clustering (paper baseline)": P.fcm_routing,
+            "LP-flow static (classical)": LPFlowRouting,            # classes: fresh per episode
+            "LP-flow adaptive (classical)": LPFlowAdaptive}
     for c in args.rl if args.rl is not None else sorted(glob.glob("checkpoints/dijkstra_rl*.npz")):
         arms[f"RL-Dijkstra warm-start [{Path(c).stem}]"] = D.load(c)
     madii = args.madii if args.madii is not None else sorted(glob.glob("checkpoints/*.pt"))
@@ -52,7 +55,8 @@ def main():
 
     res = {}
     for name, pol in arms.items():
-        runs = [E.run_episode(E.WSN(seed=s), pol, BETAS) for s in seeds]
+        runs = [E.run_episode(w, pol(w) if isinstance(pol, type) else pol, BETAS)
+                for w in (E.WSN(seed=s) for s in seeds)]
         res[name] = {"SR": {b: np.array([r[b]["SR"] for r in runs]) for b in BETAS},
                      "EE": np.array([r[0.01]["EE"] for r in runs]),
                      "DDV": np.array([r[0.50]["DDV"] for r in runs])}
