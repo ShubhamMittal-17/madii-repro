@@ -4,6 +4,7 @@ with MADII's own printed numbers alongside. Run after training.
   .venv/bin/python evaluate.py --ckpt checkpoints/madti.pt --seeds 30
 """
 import argparse, json
+from pathlib import Path
 import numpy as np
 import torch
 
@@ -42,7 +43,7 @@ def main():
             "battery Dijkstra a=1": P.battery_weighted}
     for c in args.ckpt:
         net, a = load(c)
-        name = f"{a['tag']} ({a['arch']}, {'IL' if a['il_episodes'] else 'no IL'})"
+        name = f"{Path(c).stem} ({a['arch']}, {'IL' if a['il_episodes'] else 'no IL'})"
         arms[name] = (lambda nn_: (lambda w: greedy_action(nn_, w)))(net)
 
     res = {}

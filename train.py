@@ -33,6 +33,7 @@ import torch.nn as nn
 import env as E
 import policies as P
 import experts as X
+import dijkstra_rl as D
 from qnet import QNet, N_FEAT
 
 DEV = torch.device("cpu")
@@ -139,8 +140,9 @@ def main():
     ap.add_argument("--tag", default="madti")
     ap.add_argument("--episodes", type=int, default=800)
     ap.add_argument("--il-episodes", type=int, default=150)
-    ap.add_argument("--experts", default="fcm", choices=["fcm", "mixed"],
-                    help="mixed = FCM/HBA/POA in rotation, as the paper's stage 1 does")
+    ap.add_argument("--experts", default="fcm", choices=["fcm", "mixed", "battery"],
+                    help="mixed = FCM/HBA/POA in rotation, as the paper's stage 1 does; "
+                         "battery = battery-weighted Dijkstra (Dijkstra-warm-started DQN, ours)")
     ap.add_argument("--d-model", type=int, default=128)
     ap.add_argument("--d-ff", type=int, default=256)
     ap.add_argument("--layers", type=int, default=2)
@@ -186,7 +188,9 @@ def main():
             s = features(w)
             alive = w.alive.copy()
             if imitating:
-                if args.experts == "mixed":
+                if args.experts == "battery":
+                    a = D.fast_battery_weighted(w).astype(np.int64)
+                elif args.experts == "mixed":
                     which = ep % 3
                     a = (P.fcm_routing(w, k=k_fcm, rng=rng) if which == 0 else
                          X.hba_routing(w, rng=rng) if which == 1 else
