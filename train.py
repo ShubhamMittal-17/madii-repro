@@ -11,9 +11,14 @@ every C1 = 10 steps. Table II: lr 1e-4, batch 64.
 
 Choices the paper does not specify (documented, ours):
   C1 One transition per ROUND: the joint action of all sensors, one shared reward.
-  C2 Joint value = mean over alive sensors of Q(i, a_i); target uses the mean of the
-     per-sensor max. (Value factorisation; the paper never says how the per-sensor Q
-     table becomes one training target.)
+  C2 Credit assignment: every alive sensor's CHOSEN Q value is regressed on the same
+     shared round return (independent Q-learners with a common reward). An earlier
+     version averaged the per-sensor Q values BEFORE the loss; that let the network
+     meet the target with any mix of per-sensor values and it collapsed to "every
+     sensor transmits direct to the sink" (measured: sink share 1.00). The paper does
+     not say how its per-sensor Q table (Fig. 3) becomes one training target.
+  C2b Double DQN: the online network picks the next action, the target network scores
+     it. Plain DQN over 101 candidates per sensor overestimates badly.
   C3 Invalid next hops (self, dead, cycles) are masked at action time; anything that
      still forms a cycle falls back to a direct send, which is their own reissuing rule.
   C4 Replay capacity 10000 transitions; episode = one deployment run to first node death.
@@ -108,16 +113,20 @@ class Buffer:
         return t(self.s), t(self.a), t(self.r), t(self.s2), t(self.d), t(self.al), t(self.m2)
 
 
-def joint_q(net, s, a, alive):
+def td_loss(net, s, a, alive, y, lossf):
+    """C2: each alive sensor's chosen Q is regressed on the shared round return."""
     q = net(s)                                     # (B, n, n+1)
     chosen = q.gather(2, a.unsqueeze(-1)).squeeze(-1)
     w = alive.float()
-    return (chosen * w).sum(1) / w.sum(1).clamp(min=1)          # C2
+    per = lossf(chosen, y.unsqueeze(1).expand_as(chosen))
+    return (per * w).sum() / w.sum().clamp(min=1)
 
 
 @torch.no_grad()
-def target_value(tgt, s2, mask2, alive2):
-    q = tgt(s2).masked_fill(~mask2, -1e9).max(-1).values
+def target_value(net, tgt, s2, mask2, alive2):
+    """C2b: Double DQN -- online net argmax, target net value, averaged over sensors."""
+    a2 = net(s2).masked_fill(~mask2, -1e9).argmax(-1)
+    q = tgt(s2).gather(2, a2.unsqueeze(-1)).squeeze(-1)
     w = alive2.float()
     return (q * w).sum(1) / w.sum(1).clamp(min=1)
 
@@ -171,7 +180,7 @@ def main():
     tgt.load_state_dict(net.state_dict())
     opt = torch.optim.Adam(net.parameters(), lr=args.lr)
     buf = Buffer(args.buffer, args.nodes)
-    lossf = nn.SmoothL1Loss()
+    lossf = nn.SmoothL1Loss(reduction="none")
 
     steps, t0, recent, best_sr = 0, time.time(), [], -1.0
     for ep in range(args.episodes):
@@ -202,8 +211,9 @@ def main():
             buf.add(s, a, r, features(w), done, alive, action_mask(w))
             if len(buf) >= max(args.batch, 500):
                 bs, ba, br, bs2, bd, bal, bm2 = buf.sample(args.batch, rng)
-                y = br + args.gamma * (1 - bd) * target_value(tgt, bs2, bm2, bs2[:, :-1, 4] > 0.5)
-                loss = lossf(joint_q(net, bs, ba, bal), y)
+                y = br + args.gamma * (1 - bd) * target_value(net, tgt, bs2, bm2,
+                                                              bs2[:, :-1, 4] > 0.5)
+                loss = td_loss(net, bs, ba, bal, y, lossf)
                 opt.zero_grad(); loss.backward()
                 nn.utils.clip_grad_norm_(net.parameters(), 10.0)
                 opt.step()
