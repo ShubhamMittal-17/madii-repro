@@ -14,7 +14,9 @@ from scipy.optimize import linprog
 from env import WSN, erx
 
 
-def max_lifetime_T(env, alive=None, energy=None):
+def max_lifetime_T(env, alive=None, energy=None, return_flow=False):
+    """T* in rounds. return_flow=True also gives {i: [(next hop, share), ...]} over the
+    alive nodes (shares sum to 1), the optimal split used by lp_flow.py."""
     n = env.n
     alive = np.flatnonzero(env.alive if alive is None else alive)
     E = (env.E if energy is None else energy)[alive]
@@ -37,7 +39,17 @@ def max_lifetime_T(env, alive=None, energy=None):
                 bounds=[(0, None)] * nv, method="highs")
     if r.status != 0:
         raise RuntimeError(r.message)
-    return float(r.x[-1])
+    if not return_flow:
+        return float(r.x[-1])
+    flow = {}
+    for k, (i, j) in enumerate(pairs):
+        if r.x[k] > 1e-9:
+            flow.setdefault(int(i), []).append((int(j), r.x[k]))
+    for i in alive:
+        edges = flow.get(int(i), [(n, 1.0)])
+        tot = sum(g for _, g in edges)
+        flow[int(i)] = [(j, g / tot) for j, g in edges]
+    return float(r.x[-1]), flow
 
 
 if __name__ == "__main__":
