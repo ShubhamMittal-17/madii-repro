@@ -30,9 +30,33 @@ per sensor per round, first-order radio model Eq. (1)-(2), Table I parameters.
 
 Mean ceiling over the 30 deployments: **169.7 rounds**.
 
-## 3. Reproduced learner
+## 3. Reproduced learner (final, 30 deployments)
 
-(filled in from the training runs -- see section 5 for the fidelity checks)
+| Model | rounds to first death | % of ceiling | rounds to half dead | EE at first death |
+|---|---|---|---|---|
+| **our Informer reproduction (MADII proper)** | **19.5** | 11.1% | 82.7 | 931 |
+| **our transformer reproduction (their MADTI)** | **22.1** | 12.6% | 64.0 | 905 |
+| *MADII, printed Table VI* | *19* | *10.6%* | *89* | *817* |
+| *MADTI, printed Table VI* | *12* | *6.5%* | *67* | *352* |
+| no-imitation ablation (ours) | 8.0 | 4.2% | 27.8 | 284 |
+| **battery-weighted Dijkstra (no learning)** | **151.4** | **88.4%** | 162.9 | 1618 |
+
+**Our Informer rebuild reproduces MADII's published lifetime almost exactly: 19.5
+rounds against their 19, half-dead at 82.7 against their 89, energy efficiency within
+14%.** The reproduction is therefore faithful enough to compare against, and it is not
+crippled -- it slightly exceeds their printed numbers on two of three metrics.
+
+Two honest mismatches:
+- Our transformer variant beats our Informer variant on first-node-death (22.1 vs 19.5),
+  whereas the paper reports the Informer ahead of the transformer ablation. Their
+  ordering does not reproduce on that metric, though it does on half-dead and EE.
+- Worst-case performance across deployments is poor for both learners (3-4% of the
+  ceiling on the hardest deployment), against 80.8% worst case for battery Dijkstra.
+  The learned routers are far less reliable across deployments than the classical rule.
+
+**The headline stands and is now much stronger:** a faithful, trained reproduction of
+MADII reaches about 11% of the provable maximum lifetime; a one-line battery-weighted
+Dijkstra reaches 88.4%.
 
 ## 4. Honest caveats
 
@@ -83,3 +107,24 @@ no-imitation variant is the weakest.
    were killed and relaunched; read `checkpoints/` and fresh logs instead.
 3. Checkpoints saved before the best-model patch keep only the LATEST eval, not the
    best; snapshots in `checkpoints/snapshots/` cover that gap.
+
+## 6. 2026-09-26: a training defect found and fixed
+
+The first three training runs all evaluated at 5-8 rounds to first node death, which is
+exactly the direct-to-sink level. A diagnostic showed why: **the learned policy sent
+100% of sensors straight to the sink** (sink share 1.00, mean hop count 1.00, against
+0.10 for the clustering experts it was imitating).
+
+The cause was in our training code, not in the paper's method. The per-sensor Q values
+were averaged BEFORE the loss, so the network could satisfy the shared target with any
+distribution of per-sensor values, and no individual routing decision received credit.
+Fixed by regressing each alive sensor's chosen Q on the shared round return, and by
+using a Double DQN target (the online network selects the next action, the target
+network scores it) since a plain max over 101 candidates per sensor overestimates.
+
+This matters for the argument: **a reproduction that quietly collapses to a trivial
+policy would have made MADII look bad for the wrong reason.** Both corrected runs
+(`madti_v3` transformer, `madii_v3` Informer) are retraining from scratch.
+
+Status of the corrected runs at episode 100 of a 300-episode imitation stage: sink
+share 0.00, i.e. the collapse is gone and the policy now relays. Numbers pending.

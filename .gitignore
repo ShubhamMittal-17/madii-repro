@@ -8,3 +8,4 @@ logs/
 checkpoints/snapshots/
 
 # Keep the trained models themselves: checkpoints/*.pt are tracked
+checkpoints/smoke*.pt
