@@ -2,7 +2,7 @@
 
 Reproduction of **MADII** (Yang et al., "An Energy-Efficient and Transmission-Efficient
 Adaptive Routing Algorithm Using Deep Reinforcement Learning for WSNs", IEEE Internet of
-Things Journal 12(23), Dec 2025) and a head-to-head against classical routing and
+Things Journal 12(23), Dec 2025) and a head-to-head against classical routing And
 against the maximum-lifetime optimum.
 
 The paper releases no code, so this is a best-effort rebuild from the text. Every
