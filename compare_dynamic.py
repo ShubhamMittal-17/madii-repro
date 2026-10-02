@@ -72,22 +72,46 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--seeds", type=int, default=30)
     ap.add_argument("--workers", type=int, default=4)
+    ap.add_argument("--summarize-only", action="store_true", help="rebuild results_dynamic.md from the JSON")
     a = ap.parse_args()
+    if a.summarize_only:
+        raw = json.load(open("results_dynamic.json"))
+        summarize({sc: {int(s): v for s, v in raw[sc].items()} for sc in raw}, a.seeds)
+        return
     jobs = [(sc, s) for sc in SCEN for s in range(a.seeds)]
     res = {sc: {} for sc in SCEN}
     with Pool(a.workers) as p:
         for sc, s, out in p.imap_unordered(job, jobs):
             res[sc][s] = out
             print(sc, s, {k: round(v, 1) for k, v in out.items()}, flush=True)
-    L = {m: {sc: np.array([res[sc][s][m] for s in range(a.seeds)]) for sc in SCEN} for m in METHODS}
-    ours, ref = "Forecast LP, Holt-Winters (ours)", "Battery Dijkstra (reactive)"
-    lines = [f"{a.seeds} held-out deployments per scenario; L = lifetime to first node death, % of the oracle LP.", "",
+    json.dump({sc: {str(s): res[sc][s] for s in res[sc]} for sc in res}, open("results_dynamic.json", "w"), indent=1)
+    summarize(res, a.seeds)
+
+
+def break_even(G, CN, CB):
+    """p* from G (gain when the forecast is right) and the losses C(N), C(B) elsewhere."""
+    Cb = (CN + CB) / 2
+    if G <= 0:
+        return "no gain when the forecast is right, so prediction does not pay off as a forecast"
+    if CN <= 0 and CB <= 0:
+        return "p* = 0: it wins in every scenario, so it pays at any forecast accuracy"
+    if Cb <= 0:
+        return "p* = 0 on equal weights: it loses in one scenario, but its gains elsewhere outweigh that loss"
+    return f"p* = {Cb / (G + Cb):.2f}: it pays when the forecast is right more than {100 * Cb / (G + Cb):.0f}% of the time"
+
+
+def summarize(res, seeds):
+    methods = [m for m in METHODS if all(m in res[sc][0] for sc in SCEN)] + \
+              [m for m in res["R"][0] if m not in METHODS and m != "oracle"]
+    L = {m: {sc: np.array([res[sc][s][m] for s in range(seeds)]) for sc in SCEN} for m in methods}
+    ref = "Battery Dijkstra (reactive)"
+    lines = [f"{seeds} held-out deployments per scenario; L = lifetime to first node death, % of the oracle LP.", "",
              "| Method | " + " | ".join(SCEN.values()) + " | Mean S (equal weights) | Worst % |", "|---|" + "---|" * (len(SCEN) + 2)]
-    for m in METHODS:
+    for m in methods:
         v = [L[m][sc].mean() for sc in SCEN]
         lines.append(f"| {m} | " + " | ".join(f"{x:.1f}" for x in v) + f" | {np.mean(v):.1f} | {min(L[m][sc].min() for sc in SCEN):.1f} |")
     lines += ["", f"Paired vs {ref} (wins/ties/losses, Wilcoxon p):", ""]
-    for m in METHODS:
+    for m in methods:
         if m == ref:
             continue
         cells = []
@@ -96,17 +120,16 @@ def main():
             p = wilcoxon(L[m][sc], L[ref][sc]).pvalue if np.any(d != 0) else 1.0
             cells.append(f"{sc}: {(d > 0).sum()}/{(d == 0).sum()}/{(d < 0).sum()}, p={p:.2g}")
         lines.append(f"- {m}: " + "; ".join(cells))
-    for base in (ref, "Reactive LP coordinator"):
-        G = L[ours]["R"].mean() - L[base]["R"].mean()
-        CN = L[base]["N"].mean() - L[ours]["N"].mean()
-        CB = L[base]["B"].mean() - L[ours]["B"].mean()
-        Cb = (CN + CB) / 2
-        ps = "0 (prediction never loses here)" if Cb <= 0 else f"{Cb / (G + Cb):.2f}"
-        lines += ["", f"Break-even vs {base}: G = {G:+.1f}, C(N) = {CN:+.1f}, C(B) = {CB:+.1f} points -> p* = {ps}"]
+    lines += ["", "Break-even forecast accuracy (G = gain when the forecast is right; C = loss when not needed / burst):", ""]
+    for m in [m for m in methods if m.startswith("Forecast LP") or m.startswith("Predictive")]:
+        for base in (ref, "Reactive LP coordinator"):
+            G = L[m]["R"].mean() - L[base]["R"].mean()
+            CN = L[base]["N"].mean() - L[m]["N"].mean()
+            CB = L[base]["B"].mean() - L[m]["B"].mean()
+            lines.append(f"- {m} vs {base}: G = {G:+.1f}, C(N) = {CN:+.1f}, C(B) = {CB:+.1f} -> {break_even(G, CN, CB)}")
     md = "\n".join(lines)
     print("\n" + md)
     open("results_dynamic.md", "w").write(md + "\n")
-    json.dump({sc: {str(s): res[sc][s] for s in res[sc]} for sc in res}, open("results_dynamic.json", "w"), indent=1)
 
 
 if __name__ == "__main__":
