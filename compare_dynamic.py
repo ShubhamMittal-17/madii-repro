@@ -5,8 +5,10 @@ bursts. 30 held-out deployments (seeds 0-29) per scenario; traffic seed = deploy
 Score L(m, s) = (rounds to first node death - 1) / oracle T for that deployment and traffic.
 
 Fixed a priori, not tuned on the evaluation seeds: forecast horizon H = 24 rounds (one day),
-LP re-solved every 4 rounds; predictive Dijkstra uses lam = 0.5, H = 12, the best non-zero
-setting on validation deployments 500-505.
+LP re-solved every 4 rounds. Tuned on validation deployments 500-505 only: predictive Dijkstra
+lam = 0.5, H = 12 (best non-zero setting) and Holt-Winters alpha = 0.05, beta = 0, gamma = 0.1
+(grid alpha in {0.02, 0.05, 0.1, 0.2} x gamma in {0.1, 0.3, 0.6}). The a-priori Holt-Winters
+setting (alpha 0.2, beta 0.01, gamma 0.3) is kept as a row for transparency.
 
   .venv/bin/python compare_dynamic.py --workers 4     # writes results_dynamic.{json,md}
 """
@@ -25,7 +27,8 @@ from predictive import ForecastLP, PredictiveDijkstra, ReactiveLP, StaticLP
 SCEN = {"R": "Forecast right (daily surge)", "N": "Not needed (constant)", "B": "Sudden burst"}
 METHODS = ["Static LP (solved once)", "Reactive LP coordinator", "Battery Dijkstra (reactive)", "MADII (not retrained)",
            "Predictive Dijkstra, Holt-Winters", "Forecast LP, persistence", "Forecast LP, seasonal-naive",
-           "Forecast LP, Holt-Winters (ours)", "Forecast LP, perfect forecast (diagnostic)"]
+           "Forecast LP, Holt-Winters (a priori)", "Forecast LP, Holt-Winters tuned (ours)", "Forecast LP, perfect forecast (diagnostic)"]
+HW_TUNED = dict(alpha=0.05, beta=0.0, gamma=0.1)   # fitted on validation deployments 500-505, R and B
 _net = None
 
 
@@ -48,17 +51,18 @@ def build(name, w, h, tr):
             "Predictive Dijkstra, Holt-Winters": lambda: PredictiveDijkstra(w, h, lam=0.5, H=12),
             "Forecast LP, persistence": lambda: ForecastLP(w, h, forecaster="persistence"),
             "Forecast LP, seasonal-naive": lambda: ForecastLP(w, h, forecaster="seasonal-naive"),
-            "Forecast LP, Holt-Winters (ours)": lambda: ForecastLP(w, h),
+            "Forecast LP, Holt-Winters (a priori)": lambda: ForecastLP(w, h),
+            "Forecast LP, Holt-Winters tuned (ours)": lambda: ForecastLP(w, h, **HW_TUNED),
             "Forecast LP, perfect forecast (diagnostic)": lambda: ForecastLP(w, h, forecaster="perfect", future=tr)}[name]()
 
 
 def job(args):
-    scen, s = args
+    scen, s, only = args
     w0 = E.WSN(seed=s)
     h, tr = TR.generate(scen, w0.pos[:w0.n], s + 1000)
     To = oracle_T(E.WSN(seed=s), tr)
     out = {"oracle": To}
-    for m in METHODS:
+    for m in (only or METHODS):
         w = E.WSN(seed=s, traffic=tr)
         pol = build(m, w, h, tr)
         while w.round < len(tr):
@@ -72,17 +76,22 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--seeds", type=int, default=30)
     ap.add_argument("--workers", type=int, default=4)
+    ap.add_argument("--only", default="", help="|-separated methods to (re)run and merge into results_dynamic.json")
     ap.add_argument("--summarize-only", action="store_true", help="rebuild results_dynamic.md from the JSON")
     a = ap.parse_args()
     if a.summarize_only:
         raw = json.load(open("results_dynamic.json"))
         summarize({sc: {int(s): v for s, v in raw[sc].items()} for sc in raw}, a.seeds)
         return
-    jobs = [(sc, s) for sc in SCEN for s in range(a.seeds)]
+    only = a.only.split("|") if a.only else None
+    jobs = [(sc, s, only) for sc in SCEN for s in range(a.seeds)]
     res = {sc: {} for sc in SCEN}
+    if only:                                                  # merge new methods into the saved results
+        raw = json.load(open("results_dynamic.json"))
+        res = {sc: {int(k): v for k, v in raw[sc].items()} for sc in raw}
     with Pool(a.workers) as p:
         for sc, s, out in p.imap_unordered(job, jobs):
-            res[sc][s] = out
+            res[sc][s] = {**res[sc].get(s, {}), **out}
             print(sc, s, {k: round(v, 1) for k, v in out.items()}, flush=True)
     json.dump({sc: {str(s): res[sc][s] for s in res[sc]} for sc in res}, open("results_dynamic.json", "w"), indent=1)
     summarize(res, a.seeds)

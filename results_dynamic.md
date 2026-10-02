@@ -9,7 +9,8 @@
 | Predictive Dijkstra, Holt-Winters | 81.4 | 88.6 | 82.3 | 84.1 | 63.4 |
 | Forecast LP, persistence | 13.4 | 97.4 | 12.7 | 41.2 | 0.8 |
 | Forecast LP, seasonal-naive | 89.8 | 97.4 | 86.5 | 91.2 | 66.7 |
-| Forecast LP, Holt-Winters (ours) | 82.3 | 97.4 | 81.0 | 86.9 | 62.8 |
+| Forecast LP, Holt-Winters (a priori) | 82.3 | 97.4 | 81.0 | 86.9 | 62.8 |
+| Forecast LP, Holt-Winters tuned (ours) | 89.8 | 97.4 | 88.3 | 91.8 | 74.6 |
 | Forecast LP, perfect forecast (diagnostic) | 89.0 | 97.4 | 89.2 | 91.8 | 76.3 |
 
 Paired vs Battery Dijkstra (reactive) (wins/ties/losses, Wilcoxon p):
@@ -20,7 +21,8 @@ Paired vs Battery Dijkstra (reactive) (wins/ties/losses, Wilcoxon p):
 - Predictive Dijkstra, Holt-Winters: R: 8/5/17, p=0.046; N: 0/30/0, p=1; B: 7/10/13, p=0.12
 - Forecast LP, persistence: R: 0/0/30, p=1.9e-09; N: 30/0/0, p=1.9e-09; B: 0/0/30, p=1.9e-09
 - Forecast LP, seasonal-naive: R: 28/1/1, p=3.2e-06; N: 30/0/0, p=1.9e-09; B: 22/0/8, p=0.0024
-- Forecast LP, Holt-Winters (ours): R: 16/1/13, p=0.87; N: 30/0/0, p=1.9e-09; B: 13/4/13, p=0.38
+- Forecast LP, Holt-Winters (a priori): R: 16/1/13, p=0.87; N: 30/0/0, p=1.9e-09; B: 13/4/13, p=0.38
+- Forecast LP, Holt-Winters tuned (ours): R: 28/1/1, p=4.8e-06; N: 30/0/0, p=1.9e-09; B: 24/1/5, p=0.00011
 - Forecast LP, perfect forecast (diagnostic): R: 26/2/2, p=1.4e-05; N: 30/0/0, p=1.9e-09; B: 24/3/3, p=2.9e-05
 
 Break-even forecast accuracy (G = gain when the forecast is right; C = loss when not needed / burst):
@@ -31,7 +33,9 @@ Break-even forecast accuracy (G = gain when the forecast is right; C = loss when
 - Forecast LP, persistence vs Reactive LP coordinator: G = -39.2, C(N) = +0.0, C(B) = +37.7 -> no gain when the forecast is right, so prediction does not pay off as a forecast
 - Forecast LP, seasonal-naive vs Battery Dijkstra (reactive): G = +6.5, C(N) = -8.8, C(B) = -3.4 -> p* = 0: it wins in every scenario, so it pays at any forecast accuracy
 - Forecast LP, seasonal-naive vs Reactive LP coordinator: G = +37.2, C(N) = +0.0, C(B) = -36.1 -> p* = 0: it wins in every scenario, so it pays at any forecast accuracy
-- Forecast LP, Holt-Winters (ours) vs Battery Dijkstra (reactive): G = -1.0, C(N) = -8.8, C(B) = +2.2 -> no gain when the forecast is right, so prediction does not pay off as a forecast
-- Forecast LP, Holt-Winters (ours) vs Reactive LP coordinator: G = +29.7, C(N) = +0.0, C(B) = -30.6 -> p* = 0: it wins in every scenario, so it pays at any forecast accuracy
+- Forecast LP, Holt-Winters (a priori) vs Battery Dijkstra (reactive): G = -1.0, C(N) = -8.8, C(B) = +2.2 -> no gain when the forecast is right, so prediction does not pay off as a forecast
+- Forecast LP, Holt-Winters (a priori) vs Reactive LP coordinator: G = +29.7, C(N) = +0.0, C(B) = -30.6 -> p* = 0: it wins in every scenario, so it pays at any forecast accuracy
+- Forecast LP, Holt-Winters tuned (ours) vs Battery Dijkstra (reactive): G = +6.5, C(N) = -8.8, C(B) = -5.2 -> p* = 0: it wins in every scenario, so it pays at any forecast accuracy
+- Forecast LP, Holt-Winters tuned (ours) vs Reactive LP coordinator: G = +37.2, C(N) = +0.0, C(B) = -38.0 -> p* = 0: it wins in every scenario, so it pays at any forecast accuracy
 - Forecast LP, perfect forecast (diagnostic) vs Battery Dijkstra (reactive): G = +5.7, C(N) = -8.8, C(B) = -6.1 -> p* = 0: it wins in every scenario, so it pays at any forecast accuracy
 - Forecast LP, perfect forecast (diagnostic) vs Reactive LP coordinator: G = +36.5, C(N) = +0.0, C(B) = -38.8 -> p* = 0: it wins in every scenario, so it pays at any forecast accuracy
