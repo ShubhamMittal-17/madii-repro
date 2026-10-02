@@ -14,9 +14,10 @@ from scipy.optimize import linprog
 from env import WSN, erx
 
 
-def max_lifetime_T(env, alive=None, energy=None, return_flow=False):
+def max_lifetime_T(env, alive=None, energy=None, return_flow=False, gen=None):
     """T* in rounds. return_flow=True also gives {i: [(next hop, share), ...]} over the
-    alive nodes (shares sum to 1), the optimal split used by lp_flow.py."""
+    alive nodes (shares sum to 1), the optimal split used by lp_flow.py.
+    gen = bits each node generates per round (default: env.L for every node)."""
     n = env.n
     alive = np.flatnonzero(env.alive if alive is None else alive)
     E = (env.E if energy is None else energy)[alive]
@@ -34,7 +35,7 @@ def max_lifetime_T(env, alive=None, energy=None, return_flow=False):
         if j != n:
             Aeq[idx[j], k] -= 1.0
     A[:, -1] += float(erx(env.LC))
-    Aeq[:, -1] = -float(env.L)
+    Aeq[:, -1] = -(np.full(env.n, float(env.L)) if gen is None else np.asarray(gen, float))[alive]
     r = linprog(c, A_ub=A, b_ub=b, A_eq=Aeq, b_eq=beq,
                 bounds=[(0, None)] * nv, method="highs")
     if r.status != 0:

@@ -36,8 +36,11 @@ class WSN:
     """One `step(parent)` is one data-collection round. parent[i] in [0..n]; n = sink."""
 
     def __init__(self, n=100, side=500.0, e0=0.5, packet_bits=4000,
-                 control_bits=100, seed=0, aggregate=False):
+                 control_bits=100, seed=0, aggregate=False, traffic=None):
         self.n, self.side, self.e0 = n, side, e0
+        # traffic[t, i] = packets node i generates in round t (dynamic-traffic bench);
+        # None = one packet per node per round, the paper's setting.
+        self.traffic = None if traffic is None else np.asarray(traffic, int)
         self.aggregate = aggregate      # True = relays fuse to one packet (calibration only)
         self.L, self.LC = packet_bits, control_bits
         rng = np.random.default_rng(seed)
@@ -82,7 +85,7 @@ class WSN:
     def _loads(self, p):
         """bits each node transmits, given the forest p (alive nodes only)."""
         n = self.n
-        load = np.where(self.alive, float(self.L), 0.0)
+        load = self.own_bits()
         if self.aggregate:
             return load                                         # fusion: forward one packet
         order = np.argsort(-self._depth(p))                     # deepest first
@@ -102,9 +105,17 @@ class WSN:
             depth[i] = k
         return depth
 
+    def own_bits(self):
+        """Bits each alive node generates this round."""
+        if self.traffic is None:
+            return np.where(self.alive, float(self.L), 0.0)
+        k = self.traffic[min(self.round, len(self.traffic) - 1)]
+        return np.where(self.alive, k * float(self.L), 0.0)
+
     # -- one round ----------------------------------------------------------
     def step(self, parent):
         n, L = self.n, self.L
+        own = self.own_bits()
         p = self._sanitize(parent)
         start_alive = self.alive.copy()
         n_start = int(start_alive.sum())
@@ -114,9 +125,9 @@ class WSN:
             rx = np.zeros(n)
             for i in np.flatnonzero(start_alive):
                 if p[i] != n:
-                    rx[p[i]] += L
+                    rx[p[i]] += own[i]
         else:
-            rx = np.where(start_alive, load - L, 0.0).clip(min=0)
+            rx = np.where(start_alive, load - own, 0.0).clip(min=0)
         spend = np.zeros(n)
         idx = np.flatnonzero(start_alive)
         spend[idx] = (load[idx] * self.etx_bit[idx, p[idx]] + erx(rx[idx])
@@ -137,12 +148,12 @@ class WSN:
         self.E[broke] = 0.0
 
         b_succ = np.zeros(n); b_retry = np.zeros(n); b_fail = np.zeros(n)
-        kb = L / 1000.0
         for i in idx:
+            kb = own[i] / 1000.0
             if not blocked[i]:
                 b_succ[i] = kb
             else:                                                # R2: retry direct
-                cost = float(etx(L, self.d2s[i]))
+                cost = float(etx(own[i], self.d2s[i]))
                 if not broke[i] and self.E[i] >= cost:
                     self.E[i] -= cost
                     b_succ[i] = kb; b_retry[i] = kb
@@ -155,7 +166,7 @@ class WSN:
         self.round += 1
 
         consumed = float(self.e0 * n_start - self.E[start_alive].sum())
-        e_stand = float(etx(L, self.d2s[start_alive]).sum())
+        e_stand = float(etx(own[start_alive], self.d2s[start_alive]).sum())
         return {"round": self.round, "b_succ": b_succ, "b_retry": b_retry,
                 "b_fail": b_fail, "energy_consumed": consumed, "e_stand": e_stand,
                 "n_alive_start": n_start, "n_alive_end": int(self.alive.sum()),

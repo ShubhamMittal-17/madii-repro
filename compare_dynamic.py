@@ -1,0 +1,113 @@
+"""Part 3 evaluation: every router on time-varying traffic, scored against the oracle LP.
+
+Scenarios (traffic.py): R = daily hotspot surge, N = constant traffic, B = surge + random
+bursts. 30 held-out deployments (seeds 0-29) per scenario; traffic seed = deployment + 1000.
+Score L(m, s) = (rounds to first node death - 1) / oracle T for that deployment and traffic.
+
+Fixed a priori, not tuned on the evaluation seeds: forecast horizon H = 24 rounds (one day),
+LP re-solved every 4 rounds; predictive Dijkstra uses lam = 0.5, H = 12, the best non-zero
+setting on validation deployments 500-505.
+
+  .venv/bin/python compare_dynamic.py --workers 4     # writes results_dynamic.{json,md}
+"""
+import argparse, json
+from multiprocessing import Pool
+
+import numpy as np
+from scipy.stats import wilcoxon
+
+import env as E
+import dijkstra_rl as D
+import traffic as TR
+from lp_oracle import oracle_T
+from predictive import ForecastLP, PredictiveDijkstra, ReactiveLP, StaticLP
+
+SCEN = {"R": "Forecast right (daily surge)", "N": "Not needed (constant)", "B": "Sudden burst"}
+METHODS = ["Static LP (solved once)", "Reactive LP coordinator", "Battery Dijkstra (reactive)", "MADII (not retrained)",
+           "Predictive Dijkstra, Holt-Winters", "Forecast LP, persistence", "Forecast LP, seasonal-naive",
+           "Forecast LP, Holt-Winters (ours)", "Forecast LP, perfect forecast (diagnostic)"]
+_net = None
+
+
+def _madii():
+    global _net
+    if _net is None:
+        import torch
+        torch.set_num_threads(1); torch.manual_seed(0)
+        from evaluate import load
+        _net = load("checkpoints/madii_v3_best.pt")[0]
+    from train import greedy_action
+    return lambda w: greedy_action(_net, w)
+
+
+def build(name, w, h, tr):
+    return {"Static LP (solved once)": lambda: StaticLP(w, h),
+            "Reactive LP coordinator": lambda: ReactiveLP(w, h),
+            "Battery Dijkstra (reactive)": lambda: D.fast_battery_weighted,
+            "MADII (not retrained)": _madii,
+            "Predictive Dijkstra, Holt-Winters": lambda: PredictiveDijkstra(w, h, lam=0.5, H=12),
+            "Forecast LP, persistence": lambda: ForecastLP(w, h, forecaster="persistence"),
+            "Forecast LP, seasonal-naive": lambda: ForecastLP(w, h, forecaster="seasonal-naive"),
+            "Forecast LP, Holt-Winters (ours)": lambda: ForecastLP(w, h),
+            "Forecast LP, perfect forecast (diagnostic)": lambda: ForecastLP(w, h, forecaster="perfect", future=tr)}[name]()
+
+
+def job(args):
+    scen, s = args
+    w0 = E.WSN(seed=s)
+    h, tr = TR.generate(scen, w0.pos[:w0.n], s + 1000)
+    To = oracle_T(E.WSN(seed=s), tr)
+    out = {"oracle": To}
+    for m in METHODS:
+        w = E.WSN(seed=s, traffic=tr)
+        pol = build(m, w, h, tr)
+        while w.round < len(tr):
+            if w.step(pol(w))["n_dead"] >= 1:
+                break
+        out[m] = (w.round - 1) / To * 100
+    return scen, s, out
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--seeds", type=int, default=30)
+    ap.add_argument("--workers", type=int, default=4)
+    a = ap.parse_args()
+    jobs = [(sc, s) for sc in SCEN for s in range(a.seeds)]
+    res = {sc: {} for sc in SCEN}
+    with Pool(a.workers) as p:
+        for sc, s, out in p.imap_unordered(job, jobs):
+            res[sc][s] = out
+            print(sc, s, {k: round(v, 1) for k, v in out.items()}, flush=True)
+    L = {m: {sc: np.array([res[sc][s][m] for s in range(a.seeds)]) for sc in SCEN} for m in METHODS}
+    ours, ref = "Forecast LP, Holt-Winters (ours)", "Battery Dijkstra (reactive)"
+    lines = [f"{a.seeds} held-out deployments per scenario; L = lifetime to first node death, % of the oracle LP.", "",
+             "| Method | " + " | ".join(SCEN.values()) + " | Mean S (equal weights) | Worst % |", "|---|" + "---|" * (len(SCEN) + 2)]
+    for m in METHODS:
+        v = [L[m][sc].mean() for sc in SCEN]
+        lines.append(f"| {m} | " + " | ".join(f"{x:.1f}" for x in v) + f" | {np.mean(v):.1f} | {min(L[m][sc].min() for sc in SCEN):.1f} |")
+    lines += ["", f"Paired vs {ref} (wins/ties/losses, Wilcoxon p):", ""]
+    for m in METHODS:
+        if m == ref:
+            continue
+        cells = []
+        for sc in SCEN:
+            d = L[m][sc] - L[ref][sc]
+            p = wilcoxon(L[m][sc], L[ref][sc]).pvalue if np.any(d != 0) else 1.0
+            cells.append(f"{sc}: {(d > 0).sum()}/{(d == 0).sum()}/{(d < 0).sum()}, p={p:.2g}")
+        lines.append(f"- {m}: " + "; ".join(cells))
+    for base in (ref, "Reactive LP coordinator"):
+        G = L[ours]["R"].mean() - L[base]["R"].mean()
+        CN = L[base]["N"].mean() - L[ours]["N"].mean()
+        CB = L[base]["B"].mean() - L[ours]["B"].mean()
+        Cb = (CN + CB) / 2
+        ps = "0 (prediction never loses here)" if Cb <= 0 else f"{Cb / (G + Cb):.2f}"
+        lines += ["", f"Break-even vs {base}: G = {G:+.1f}, C(N) = {CN:+.1f}, C(B) = {CB:+.1f} points -> p* = {ps}"]
+    md = "\n".join(lines)
+    print("\n" + md)
+    open("results_dynamic.md", "w").write(md + "\n")
+    json.dump({sc: {str(s): res[sc][s] for s in res[sc]} for sc in res}, open("results_dynamic.json", "w"), indent=1)
+
+
+if __name__ == "__main__":
+    main()
