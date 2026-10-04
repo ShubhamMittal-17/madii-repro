@@ -126,6 +126,24 @@ def test_forecasters_see_no_future():
         assert np.allclose(o1.f.forecast(24)[0], o2.f.forecast(24)[0])
 
 
+def test_load_aware_dijkstra():
+    """kappa = 0 is battery Dijkstra; with kappa > 0 every round's output is already a valid tree."""
+    import traffic as TR
+    from predictive import LoadAwareDijkstra
+    w0 = E.WSN(seed=10); h, tr = TR.generate("B", w0.pos[:w0.n], 10)
+    w1, w2 = E.WSN(seed=10, traffic=tr), E.WSN(seed=10, traffic=tr)
+    p0 = LoadAwareDijkstra(w1, h, kappa=0)
+    for _ in range(20):
+        a, b = p0(w1), D.fast_battery_weighted(w2)
+        assert (a == b).all()
+        w1.step(a); w2.step(b)
+    w = E.WSN(seed=10, traffic=tr); pol = LoadAwareDijkstra(w, h, kappa=1.0, order="near")
+    for _ in range(40):
+        a = pol(w)
+        assert (w._sanitize(a) == a).all()
+        w.step(a)
+
+
 if __name__ == "__main__":
     tests = [v for k, v in sorted(globals().items()) if k.startswith("test_")]
     passed = 0

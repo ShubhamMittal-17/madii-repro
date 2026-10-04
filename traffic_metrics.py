@@ -19,7 +19,7 @@ import numpy as np
 import env as E
 import dijkstra_rl as D
 import policies as P
-from predictive import ForecastLP
+from predictive import ForecastLP, LoadAwareDijkstra
 
 BETAS = (0.01, 0.10, 0.50)
 _net = None
@@ -38,6 +38,7 @@ def routers(w, ones):
     hist = ones[:72]
     return {"Battery Dijkstra": D.fast_battery_weighted,
             "Min-energy Dijkstra": lambda e: P.min_energy(e) if hasattr(P, "min_energy") else D.dijkstra_tree(e, np.ones(e.n)),
+            "Load-aware Dijkstra (ours, no LP)": LoadAwareDijkstra(w, hist, kappa=1.0, order="near"),
             "Planner v1 (LP every 4 rounds)": ForecastLP(w, hist, forecaster="history-mean"),
             "Planner v2 (LP every round, ours)": ForecastLP(w, hist, forecaster="history-mean", resolve_every=1, mu=1e-3),
             "MADII (v3 rebuild)": _madii()}
@@ -46,7 +47,7 @@ def routers(w, ones):
 def job(s):
     ones = np.ones((472, 100), int)
     out = {}
-    for name in ("Battery Dijkstra", "Min-energy Dijkstra", "Planner v1 (LP every 4 rounds)",
+    for name in ("Battery Dijkstra", "Min-energy Dijkstra", "Load-aware Dijkstra (ours, no LP)", "Planner v1 (LP every 4 rounds)",
                  "Planner v2 (LP every round, ours)", "MADII (v3 rebuild)"):
         w = E.WSN(seed=s, traffic=ones[72:])
         pol = routers(w, ones)[name]

@@ -20,7 +20,7 @@ import intel as I
 import dijkstra_rl as D
 from lp_oracle import oracle_T
 from forecast import FORECASTERS
-from predictive import ForecastLP, PredictiveDijkstra, ReactiveLP, StaticLP
+from predictive import ForecastLP, LoadAwareDijkstra, PredictiveDijkstra, ReactiveLP, StaticLP
 
 E0 = 1.5
 DT, DL = 0.5, 100.0
@@ -51,6 +51,7 @@ def methods(hw):
     return {
         "Battery Dijkstra": lambda w, h, tr: D.fast_battery_weighted,
         "Predictive Dijkstra, Holt-Winters": lambda w, h, tr: PredictiveDijkstra(w, h, lam=0.5, H=12, **hw),
+        "Load-aware Dijkstra (ours, no LP)": lambda w, h, tr: LoadAwareDijkstra(w, h, kappa=1.0, order="near"),
         "Static LP (solved once)": lambda w, h, tr: StaticLP(w, h),
         "Reactive LP coordinator": lambda w, h, tr: ReactiveLP(w, h),
         "Forecast LP v1, Holt-Winters": lambda w, h, tr: ForecastLP(w, h, **hw),

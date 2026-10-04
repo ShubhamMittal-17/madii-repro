@@ -18,7 +18,8 @@
    "Forecast LP v2, history mean (no forecast)": 92.7007299270073,
    "Forecast LP v2, perfect forecast (diagnostic)": 97.08029197080292,
    "Battery Dijkstra, receiver-weighted": 83.94160583941606,
-   "Price-guided Dijkstra (daily LP prices)": 83.94160583941606
+   "Price-guided Dijkstra (daily LP prices)": 83.94160583941606,
+   "Load-aware Dijkstra (ours, no LP)": 91.97080291970804
   },
   "1": {
    "oracle": 149,
@@ -38,7 +39,8 @@
    "Forecast LP v2, history mean (no forecast)": 95.30201342281879,
    "Forecast LP v2, perfect forecast (diagnostic)": 93.95973154362416,
    "Battery Dijkstra, receiver-weighted": 77.18120805369128,
-   "Price-guided Dijkstra (daily LP prices)": 90.60402684563759
+   "Price-guided Dijkstra (daily LP prices)": 90.60402684563759,
+   "Load-aware Dijkstra (ours, no LP)": 91.94630872483222
   },
   "3": {
    "oracle": 169,
@@ -58,7 +60,8 @@
    "Forecast LP v2, history mean (no forecast)": 95.85798816568047,
    "Forecast LP v2, perfect forecast (diagnostic)": 97.0414201183432,
    "Battery Dijkstra, receiver-weighted": 82.24852071005917,
-   "Price-guided Dijkstra (daily LP prices)": 82.84023668639054
+   "Price-guided Dijkstra (daily LP prices)": 82.84023668639054,
+   "Load-aware Dijkstra (ours, no LP)": 93.49112426035504
   },
   "2": {
    "oracle": 166,
@@ -78,7 +81,8 @@
    "Forecast LP v2, history mean (no forecast)": 96.98795180722891,
    "Forecast LP v2, perfect forecast (diagnostic)": 98.19277108433735,
    "Battery Dijkstra, receiver-weighted": 85.54216867469879,
-   "Price-guided Dijkstra (daily LP prices)": 84.33734939759037
+   "Price-guided Dijkstra (daily LP prices)": 84.33734939759037,
+   "Load-aware Dijkstra (ours, no LP)": 84.33734939759037
   },
   "6": {
    "oracle": 131,
@@ -98,7 +102,8 @@
    "Forecast LP v2, history mean (no forecast)": 93.89312977099237,
    "Forecast LP v2, perfect forecast (diagnostic)": 96.18320610687023,
    "Battery Dijkstra, receiver-weighted": 87.02290076335878,
-   "Price-guided Dijkstra (daily LP prices)": 82.44274809160305
+   "Price-guided Dijkstra (daily LP prices)": 82.44274809160305,
+   "Load-aware Dijkstra (ours, no LP)": 92.36641221374046
   },
   "7": {
    "oracle": 139,
@@ -118,7 +123,8 @@
    "Forecast LP v2, history mean (no forecast)": 92.08633093525181,
    "Forecast LP v2, perfect forecast (diagnostic)": 97.12230215827337,
    "Battery Dijkstra, receiver-weighted": 82.01438848920863,
-   "Price-guided Dijkstra (daily LP prices)": 82.01438848920863
+   "Price-guided Dijkstra (daily LP prices)": 82.01438848920863,
+   "Load-aware Dijkstra (ours, no LP)": 83.45323741007195
   },
   "4": {
    "oracle": 154,
@@ -138,7 +144,8 @@
    "Forecast LP v2, history mean (no forecast)": 96.75324675324676,
    "Forecast LP v2, perfect forecast (diagnostic)": 94.8051948051948,
    "Battery Dijkstra, receiver-weighted": 83.76623376623377,
-   "Price-guided Dijkstra (daily LP prices)": 82.46753246753246
+   "Price-guided Dijkstra (daily LP prices)": 82.46753246753246,
+   "Load-aware Dijkstra (ours, no LP)": 89.6103896103896
   },
   "5": {
    "oracle": 174,
@@ -158,7 +165,8 @@
    "Forecast LP v2, history mean (no forecast)": 96.55172413793103,
    "Forecast LP v2, perfect forecast (diagnostic)": 94.82758620689656,
    "Battery Dijkstra, receiver-weighted": 87.35632183908046,
-   "Price-guided Dijkstra (daily LP prices)": 79.88505747126436
+   "Price-guided Dijkstra (daily LP prices)": 79.88505747126436,
+   "Load-aware Dijkstra (ours, no LP)": 92.52873563218391
   },
   "11": {
    "oracle": 145,
@@ -178,7 +186,8 @@
    "Forecast LP v2, history mean (no forecast)": 93.10344827586206,
    "Forecast LP v2, perfect forecast (diagnostic)": 96.55172413793103,
    "Battery Dijkstra, receiver-weighted": 77.93103448275862,
-   "Price-guided Dijkstra (daily LP prices)": 91.0344827586207
+   "Price-guided Dijkstra (daily LP prices)": 91.0344827586207,
+   "Load-aware Dijkstra (ours, no LP)": 92.41379310344827
   },
   "9": {
    "oracle": 185,
@@ -198,7 +207,8 @@
    "Forecast LP v2, history mean (no forecast)": 95.13513513513514,
    "Forecast LP v2, perfect forecast (diagnostic)": 96.75675675675676,
    "Battery Dijkstra, receiver-weighted": 87.02702702702703,
-   "Price-guided Dijkstra (daily LP prices)": 87.02702702702703
+   "Price-guided Dijkstra (daily LP prices)": 87.02702702702703,
+   "Load-aware Dijkstra (ours, no LP)": 76.75675675675676
   },
   "8": {
    "oracle": 167,
@@ -218,7 +228,8 @@
    "Forecast LP v2, history mean (no forecast)": 97.60479041916167,
    "Forecast LP v2, perfect forecast (diagnostic)": 98.20359281437125,
    "Battery Dijkstra, receiver-weighted": 83.8323353293413,
-   "Price-guided Dijkstra (daily LP prices)": 85.02994011976048
+   "Price-guided Dijkstra (daily LP prices)": 85.02994011976048,
+   "Load-aware Dijkstra (ours, no LP)": 92.21556886227546
   },
   "10": {
    "oracle": 161,
@@ -238,7 +249,8 @@
    "Forecast LP v2, history mean (no forecast)": 95.03105590062113,
    "Forecast LP v2, perfect forecast (diagnostic)": 95.03105590062113,
    "Battery Dijkstra, receiver-weighted": 85.09316770186336,
-   "Price-guided Dijkstra (daily LP prices)": 86.33540372670807
+   "Price-guided Dijkstra (daily LP prices)": 86.33540372670807,
+   "Load-aware Dijkstra (ours, no LP)": 87.5776397515528
   },
   "12": {
    "oracle": 117,
@@ -258,7 +270,8 @@
    "Forecast LP v2, history mean (no forecast)": 94.87179487179486,
    "Forecast LP v2, perfect forecast (diagnostic)": 95.72649572649573,
    "Battery Dijkstra, receiver-weighted": 76.92307692307693,
-   "Price-guided Dijkstra (daily LP prices)": 76.92307692307693
+   "Price-guided Dijkstra (daily LP prices)": 76.92307692307693,
+   "Load-aware Dijkstra (ours, no LP)": 80.34188034188034
   },
   "14": {
    "oracle": 157,
@@ -278,7 +291,8 @@
    "Forecast LP v2, history mean (no forecast)": 95.54140127388536,
    "Forecast LP v2, perfect forecast (diagnostic)": 95.54140127388536,
    "Battery Dijkstra, receiver-weighted": 88.53503184713377,
-   "Price-guided Dijkstra (daily LP prices)": 88.53503184713377
+   "Price-guided Dijkstra (daily LP prices)": 88.53503184713377,
+   "Load-aware Dijkstra (ours, no LP)": 91.71974522292994
   },
   "13": {
    "oracle": 182,
@@ -298,7 +312,8 @@
    "Forecast LP v2, history mean (no forecast)": 97.25274725274726,
    "Forecast LP v2, perfect forecast (diagnostic)": 97.25274725274726,
    "Battery Dijkstra, receiver-weighted": 88.46153846153845,
-   "Price-guided Dijkstra (daily LP prices)": 87.36263736263736
+   "Price-guided Dijkstra (daily LP prices)": 87.36263736263736,
+   "Load-aware Dijkstra (ours, no LP)": 91.20879120879121
   },
   "15": {
    "oracle": 176,
@@ -318,7 +333,8 @@
    "Forecast LP v2, history mean (no forecast)": 94.88636363636364,
    "Forecast LP v2, perfect forecast (diagnostic)": 93.18181818181817,
    "Battery Dijkstra, receiver-weighted": 86.93181818181817,
-   "Price-guided Dijkstra (daily LP prices)": 88.06818181818183
+   "Price-guided Dijkstra (daily LP prices)": 88.06818181818183,
+   "Load-aware Dijkstra (ours, no LP)": 92.04545454545455
   },
   "16": {
    "oracle": 166,
@@ -338,7 +354,8 @@
    "Forecast LP v2, history mean (no forecast)": 97.59036144578313,
    "Forecast LP v2, perfect forecast (diagnostic)": 98.19277108433735,
    "Battery Dijkstra, receiver-weighted": 84.33734939759037,
-   "Price-guided Dijkstra (daily LP prices)": 84.33734939759037
+   "Price-guided Dijkstra (daily LP prices)": 84.33734939759037,
+   "Load-aware Dijkstra (ours, no LP)": 85.54216867469879
   },
   "18": {
    "oracle": 167,
@@ -358,7 +375,8 @@
    "Forecast LP v2, history mean (no forecast)": 97.0059880239521,
    "Forecast LP v2, perfect forecast (diagnostic)": 97.60479041916167,
    "Battery Dijkstra, receiver-weighted": 86.22754491017965,
-   "Price-guided Dijkstra (daily LP prices)": 86.82634730538922
+   "Price-guided Dijkstra (daily LP prices)": 86.82634730538922,
+   "Load-aware Dijkstra (ours, no LP)": 91.01796407185628
   },
   "17": {
    "oracle": 200,
@@ -378,7 +396,8 @@
    "Forecast LP v2, history mean (no forecast)": 94.5,
    "Forecast LP v2, perfect forecast (diagnostic)": 96.5,
    "Battery Dijkstra, receiver-weighted": 86.5,
-   "Price-guided Dijkstra (daily LP prices)": 91.0
+   "Price-guided Dijkstra (daily LP prices)": 91.0,
+   "Load-aware Dijkstra (ours, no LP)": 88.5
   },
   "19": {
    "oracle": 139,
@@ -398,7 +417,8 @@
    "Forecast LP v2, history mean (no forecast)": 94.96402877697841,
    "Forecast LP v2, perfect forecast (diagnostic)": 94.96402877697841,
    "Battery Dijkstra, receiver-weighted": 82.01438848920863,
-   "Price-guided Dijkstra (daily LP prices)": 82.01438848920863
+   "Price-guided Dijkstra (daily LP prices)": 82.01438848920863,
+   "Load-aware Dijkstra (ours, no LP)": 82.73381294964028
   },
   "20": {
    "oracle": 167,
@@ -418,7 +438,8 @@
    "Forecast LP v2, history mean (no forecast)": 98.20359281437125,
    "Forecast LP v2, perfect forecast (diagnostic)": 97.0059880239521,
    "Battery Dijkstra, receiver-weighted": 88.02395209580838,
-   "Price-guided Dijkstra (daily LP prices)": 86.22754491017965
+   "Price-guided Dijkstra (daily LP prices)": 86.22754491017965,
+   "Load-aware Dijkstra (ours, no LP)": 95.20958083832335
   },
   "22": {
    "oracle": 141,
@@ -438,7 +459,8 @@
    "Forecast LP v2, history mean (no forecast)": 97.87234042553192,
    "Forecast LP v2, perfect forecast (diagnostic)": 96.45390070921985,
    "Battery Dijkstra, receiver-weighted": 80.1418439716312,
-   "Price-guided Dijkstra (daily LP prices)": 80.1418439716312
+   "Price-guided Dijkstra (daily LP prices)": 80.1418439716312,
+   "Load-aware Dijkstra (ours, no LP)": 93.61702127659575
   },
   "21": {
    "oracle": 152,
@@ -458,7 +480,8 @@
    "Forecast LP v2, history mean (no forecast)": 92.76315789473685,
    "Forecast LP v2, perfect forecast (diagnostic)": 91.44736842105263,
    "Battery Dijkstra, receiver-weighted": 76.97368421052632,
-   "Price-guided Dijkstra (daily LP prices)": 82.23684210526315
+   "Price-guided Dijkstra (daily LP prices)": 82.23684210526315,
+   "Load-aware Dijkstra (ours, no LP)": 90.13157894736842
   },
   "23": {
    "oracle": 165,
@@ -478,7 +501,8 @@
    "Forecast LP v2, history mean (no forecast)": 98.18181818181819,
    "Forecast LP v2, perfect forecast (diagnostic)": 96.96969696969697,
    "Battery Dijkstra, receiver-weighted": 85.45454545454545,
-   "Price-guided Dijkstra (daily LP prices)": 85.45454545454545
+   "Price-guided Dijkstra (daily LP prices)": 85.45454545454545,
+   "Load-aware Dijkstra (ours, no LP)": 95.15151515151516
   },
   "27": {
    "oracle": 145,
@@ -498,7 +522,8 @@
    "Forecast LP v2, history mean (no forecast)": 95.86206896551724,
    "Forecast LP v2, perfect forecast (diagnostic)": 95.86206896551724,
    "Battery Dijkstra, receiver-weighted": 77.93103448275862,
-   "Price-guided Dijkstra (daily LP prices)": 79.3103448275862
+   "Price-guided Dijkstra (daily LP prices)": 79.3103448275862,
+   "Load-aware Dijkstra (ours, no LP)": 93.79310344827586
   },
   "25": {
    "oracle": 164,
@@ -518,7 +543,8 @@
    "Forecast LP v2, history mean (no forecast)": 95.1219512195122,
    "Forecast LP v2, perfect forecast (diagnostic)": 96.95121951219512,
    "Battery Dijkstra, receiver-weighted": 84.7560975609756,
-   "Price-guided Dijkstra (daily LP prices)": 84.7560975609756
+   "Price-guided Dijkstra (daily LP prices)": 84.7560975609756,
+   "Load-aware Dijkstra (ours, no LP)": 92.6829268292683
   },
   "26": {
    "oracle": 147,
@@ -538,7 +564,8 @@
    "Forecast LP v2, history mean (no forecast)": 95.23809523809523,
    "Forecast LP v2, perfect forecast (diagnostic)": 95.91836734693877,
    "Battery Dijkstra, receiver-weighted": 79.59183673469387,
-   "Price-guided Dijkstra (daily LP prices)": 78.91156462585033
+   "Price-guided Dijkstra (daily LP prices)": 78.91156462585033,
+   "Load-aware Dijkstra (ours, no LP)": 92.51700680272108
   },
   "24": {
    "oracle": 207,
@@ -558,7 +585,8 @@
    "Forecast LP v2, history mean (no forecast)": 96.1352657004831,
    "Forecast LP v2, perfect forecast (diagnostic)": 95.65217391304348,
    "Battery Dijkstra, receiver-weighted": 89.85507246376811,
-   "Price-guided Dijkstra (daily LP prices)": 90.33816425120773
+   "Price-guided Dijkstra (daily LP prices)": 90.33816425120773,
+   "Load-aware Dijkstra (ours, no LP)": 94.20289855072464
   },
   "28": {
    "oracle": 120,
@@ -578,7 +606,8 @@
    "Forecast LP v2, history mean (no forecast)": 95.83333333333334,
    "Forecast LP v2, perfect forecast (diagnostic)": 95.0,
    "Battery Dijkstra, receiver-weighted": 76.66666666666667,
-   "Price-guided Dijkstra (daily LP prices)": 76.66666666666667
+   "Price-guided Dijkstra (daily LP prices)": 76.66666666666667,
+   "Load-aware Dijkstra (ours, no LP)": 94.16666666666667
   },
   "29": {
    "oracle": 193,
@@ -598,7 +627,8 @@
    "Forecast LP v2, history mean (no forecast)": 97.92746113989638,
    "Forecast LP v2, perfect forecast (diagnostic)": 97.40932642487047,
    "Battery Dijkstra, receiver-weighted": 88.08290155440415,
-   "Price-guided Dijkstra (daily LP prices)": 90.67357512953367
+   "Price-guided Dijkstra (daily LP prices)": 90.67357512953367,
+   "Load-aware Dijkstra (ours, no LP)": 93.78238341968913
   }
  },
  "N": {
@@ -620,7 +650,8 @@
    "Forecast LP v2, history mean (no forecast)": 98.6013986013986,
    "Forecast LP v2, perfect forecast (diagnostic)": 98.6013986013986,
    "Battery Dijkstra, receiver-weighted": 81.81818181818183,
-   "Price-guided Dijkstra (daily LP prices)": 88.11188811188812
+   "Price-guided Dijkstra (daily LP prices)": 88.11188811188812,
+   "Load-aware Dijkstra (ours, no LP)": 93.7062937062937
   },
   "1": {
    "oracle": 157,
@@ -640,7 +671,8 @@
    "Forecast LP v2, history mean (no forecast)": 98.08917197452229,
    "Forecast LP v2, perfect forecast (diagnostic)": 98.08917197452229,
    "Battery Dijkstra, receiver-weighted": 89.171974522293,
-   "Price-guided Dijkstra (daily LP prices)": 91.0828025477707
+   "Price-guided Dijkstra (daily LP prices)": 91.0828025477707,
+   "Load-aware Dijkstra (ours, no LP)": 92.99363057324841
   },
   "2": {
    "oracle": 176,
@@ -660,7 +692,8 @@
    "Forecast LP v2, history mean (no forecast)": 97.1590909090909,
    "Forecast LP v2, perfect forecast (diagnostic)": 97.1590909090909,
    "Battery Dijkstra, receiver-weighted": 86.93181818181817,
-   "Price-guided Dijkstra (daily LP prices)": 86.36363636363636
+   "Price-guided Dijkstra (daily LP prices)": 86.36363636363636,
+   "Load-aware Dijkstra (ours, no LP)": 90.9090909090909
   },
   "4": {
    "oracle": 163,
@@ -680,7 +713,8 @@
    "Forecast LP v2, history mean (no forecast)": 98.77300613496932,
    "Forecast LP v2, perfect forecast (diagnostic)": 98.77300613496932,
    "Battery Dijkstra, receiver-weighted": 83.43558282208589,
-   "Price-guided Dijkstra (daily LP prices)": 86.50306748466258
+   "Price-guided Dijkstra (daily LP prices)": 86.50306748466258,
+   "Load-aware Dijkstra (ours, no LP)": 92.02453987730061
   },
   "3": {
    "oracle": 181,
@@ -700,7 +734,8 @@
    "Forecast LP v2, history mean (no forecast)": 97.79005524861878,
    "Forecast LP v2, perfect forecast (diagnostic)": 97.79005524861878,
    "Battery Dijkstra, receiver-weighted": 93.37016574585635,
-   "Price-guided Dijkstra (daily LP prices)": 93.92265193370166
+   "Price-guided Dijkstra (daily LP prices)": 93.92265193370166,
+   "Load-aware Dijkstra (ours, no LP)": 94.47513812154696
   },
   "5": {
    "oracle": 187,
@@ -720,7 +755,8 @@
    "Forecast LP v2, history mean (no forecast)": 98.93048128342245,
    "Forecast LP v2, perfect forecast (diagnostic)": 98.93048128342245,
    "Battery Dijkstra, receiver-weighted": 90.9090909090909,
-   "Price-guided Dijkstra (daily LP prices)": 89.3048128342246
+   "Price-guided Dijkstra (daily LP prices)": 89.3048128342246,
+   "Load-aware Dijkstra (ours, no LP)": 94.6524064171123
   },
   "6": {
    "oracle": 139,
@@ -740,7 +776,8 @@
    "Forecast LP v2, history mean (no forecast)": 98.56115107913669,
    "Forecast LP v2, perfect forecast (diagnostic)": 98.56115107913669,
    "Battery Dijkstra, receiver-weighted": 87.05035971223022,
-   "Price-guided Dijkstra (daily LP prices)": 86.33093525179856
+   "Price-guided Dijkstra (daily LP prices)": 86.33093525179856,
+   "Load-aware Dijkstra (ours, no LP)": 92.08633093525181
   },
   "7": {
    "oracle": 148,
@@ -760,7 +797,8 @@
    "Forecast LP v2, history mean (no forecast)": 97.97297297297297,
    "Forecast LP v2, perfect forecast (diagnostic)": 97.97297297297297,
    "Battery Dijkstra, receiver-weighted": 88.51351351351352,
-   "Price-guided Dijkstra (daily LP prices)": 88.51351351351352
+   "Price-guided Dijkstra (daily LP prices)": 88.51351351351352,
+   "Load-aware Dijkstra (ours, no LP)": 94.5945945945946
   },
   "8": {
    "oracle": 178,
@@ -780,7 +818,8 @@
    "Forecast LP v2, history mean (no forecast)": 98.87640449438202,
    "Forecast LP v2, perfect forecast (diagnostic)": 98.87640449438202,
    "Battery Dijkstra, receiver-weighted": 89.32584269662921,
-   "Price-guided Dijkstra (daily LP prices)": 91.01123595505618
+   "Price-guided Dijkstra (daily LP prices)": 91.01123595505618,
+   "Load-aware Dijkstra (ours, no LP)": 92.69662921348315
   },
   "10": {
    "oracle": 167,
@@ -800,7 +839,8 @@
    "Forecast LP v2, history mean (no forecast)": 98.80239520958084,
    "Forecast LP v2, perfect forecast (diagnostic)": 98.80239520958084,
    "Battery Dijkstra, receiver-weighted": 85.62874251497006,
-   "Price-guided Dijkstra (daily LP prices)": 86.22754491017965
+   "Price-guided Dijkstra (daily LP prices)": 86.22754491017965,
+   "Load-aware Dijkstra (ours, no LP)": 92.21556886227546
   },
   "9": {
    "oracle": 196,
@@ -820,7 +860,8 @@
    "Forecast LP v2, history mean (no forecast)": 98.46938775510205,
    "Forecast LP v2, perfect forecast (diagnostic)": 98.46938775510205,
    "Battery Dijkstra, receiver-weighted": 89.79591836734694,
-   "Price-guided Dijkstra (daily LP prices)": 92.85714285714286
+   "Price-guided Dijkstra (daily LP prices)": 92.85714285714286,
+   "Load-aware Dijkstra (ours, no LP)": 92.3469387755102
   },
   "11": {
    "oracle": 153,
@@ -840,7 +881,8 @@
    "Forecast LP v2, history mean (no forecast)": 98.0392156862745,
    "Forecast LP v2, perfect forecast (diagnostic)": 98.0392156862745,
    "Battery Dijkstra, receiver-weighted": 89.54248366013073,
-   "Price-guided Dijkstra (daily LP prices)": 87.58169934640523
+   "Price-guided Dijkstra (daily LP prices)": 87.58169934640523,
+   "Load-aware Dijkstra (ours, no LP)": 91.50326797385621
   },
   "12": {
    "oracle": 127,
@@ -860,7 +902,8 @@
    "Forecast LP v2, history mean (no forecast)": 98.4251968503937,
    "Forecast LP v2, perfect forecast (diagnostic)": 98.4251968503937,
    "Battery Dijkstra, receiver-weighted": 83.46456692913385,
-   "Price-guided Dijkstra (daily LP prices)": 80.31496062992126
+   "Price-guided Dijkstra (daily LP prices)": 80.31496062992126,
+   "Load-aware Dijkstra (ours, no LP)": 89.76377952755905
   },
   "14": {
    "oracle": 163,
@@ -880,7 +923,8 @@
    "Forecast LP v2, history mean (no forecast)": 98.77300613496932,
    "Forecast LP v2, perfect forecast (diagnostic)": 98.77300613496932,
    "Battery Dijkstra, receiver-weighted": 88.34355828220859,
-   "Price-guided Dijkstra (daily LP prices)": 90.1840490797546
+   "Price-guided Dijkstra (daily LP prices)": 90.1840490797546,
+   "Load-aware Dijkstra (ours, no LP)": 95.0920245398773
   },
   "13": {
    "oracle": 192,
@@ -900,7 +944,8 @@
    "Forecast LP v2, history mean (no forecast)": 98.4375,
    "Forecast LP v2, perfect forecast (diagnostic)": 98.4375,
    "Battery Dijkstra, receiver-weighted": 90.10416666666666,
-   "Price-guided Dijkstra (daily LP prices)": 92.1875
+   "Price-guided Dijkstra (daily LP prices)": 92.1875,
+   "Load-aware Dijkstra (ours, no LP)": 95.3125
   },
   "16": {
    "oracle": 179,
@@ -920,7 +965,8 @@
    "Forecast LP v2, history mean (no forecast)": 98.32402234636871,
    "Forecast LP v2, perfect forecast (diagnostic)": 98.32402234636871,
    "Battery Dijkstra, receiver-weighted": 86.59217877094973,
-   "Price-guided Dijkstra (daily LP prices)": 89.94413407821229
+   "Price-guided Dijkstra (daily LP prices)": 89.94413407821229,
+   "Load-aware Dijkstra (ours, no LP)": 93.85474860335195
   },
   "15": {
    "oracle": 186,
@@ -940,7 +986,8 @@
    "Forecast LP v2, history mean (no forecast)": 98.9247311827957,
    "Forecast LP v2, perfect forecast (diagnostic)": 98.9247311827957,
    "Battery Dijkstra, receiver-weighted": 89.24731182795699,
-   "Price-guided Dijkstra (daily LP prices)": 90.32258064516128
+   "Price-guided Dijkstra (daily LP prices)": 90.32258064516128,
+   "Load-aware Dijkstra (ours, no LP)": 91.39784946236558
   },
   "17": {
    "oracle": 211,
@@ -960,7 +1007,8 @@
    "Forecast LP v2, history mean (no forecast)": 99.52606635071089,
    "Forecast LP v2, perfect forecast (diagnostic)": 99.52606635071089,
    "Battery Dijkstra, receiver-weighted": 88.62559241706161,
-   "Price-guided Dijkstra (daily LP prices)": 91.4691943127962
+   "Price-guided Dijkstra (daily LP prices)": 91.4691943127962,
+   "Load-aware Dijkstra (ours, no LP)": 91.4691943127962
   },
   "19": {
    "oracle": 146,
@@ -980,7 +1028,8 @@
    "Forecast LP v2, history mean (no forecast)": 98.63013698630137,
    "Forecast LP v2, perfect forecast (diagnostic)": 98.63013698630137,
    "Battery Dijkstra, receiver-weighted": 86.3013698630137,
-   "Price-guided Dijkstra (daily LP prices)": 86.98630136986301
+   "Price-guided Dijkstra (daily LP prices)": 86.98630136986301,
+   "Load-aware Dijkstra (ours, no LP)": 91.78082191780823
   },
   "20": {
    "oracle": 176,
@@ -1000,7 +1049,8 @@
    "Forecast LP v2, history mean (no forecast)": 98.86363636363636,
    "Forecast LP v2, perfect forecast (diagnostic)": 98.86363636363636,
    "Battery Dijkstra, receiver-weighted": 89.77272727272727,
-   "Price-guided Dijkstra (daily LP prices)": 92.04545454545455
+   "Price-guided Dijkstra (daily LP prices)": 92.04545454545455,
+   "Load-aware Dijkstra (ours, no LP)": 93.75
   },
   "18": {
    "oracle": 177,
@@ -1020,7 +1070,8 @@
    "Forecast LP v2, history mean (no forecast)": 98.30508474576271,
    "Forecast LP v2, perfect forecast (diagnostic)": 98.30508474576271,
    "Battery Dijkstra, receiver-weighted": 87.57062146892656,
-   "Price-guided Dijkstra (daily LP prices)": 88.70056497175142
+   "Price-guided Dijkstra (daily LP prices)": 88.70056497175142,
+   "Load-aware Dijkstra (ours, no LP)": 91.52542372881356
   },
   "22": {
    "oracle": 155,
@@ -1040,7 +1091,8 @@
    "Forecast LP v2, history mean (no forecast)": 98.06451612903226,
    "Forecast LP v2, perfect forecast (diagnostic)": 98.06451612903226,
    "Battery Dijkstra, receiver-weighted": 89.03225806451613,
-   "Price-guided Dijkstra (daily LP prices)": 87.74193548387098
+   "Price-guided Dijkstra (daily LP prices)": 87.74193548387098,
+   "Load-aware Dijkstra (ours, no LP)": 93.54838709677419
   },
   "21": {
    "oracle": 165,
@@ -1060,7 +1112,8 @@
    "Forecast LP v2, history mean (no forecast)": 97.57575757575758,
    "Forecast LP v2, perfect forecast (diagnostic)": 97.57575757575758,
    "Battery Dijkstra, receiver-weighted": 86.06060606060606,
-   "Price-guided Dijkstra (daily LP prices)": 84.84848484848484
+   "Price-guided Dijkstra (daily LP prices)": 84.84848484848484,
+   "Load-aware Dijkstra (ours, no LP)": 92.12121212121212
   },
   "23": {
    "oracle": 175,
@@ -1080,7 +1133,8 @@
    "Forecast LP v2, history mean (no forecast)": 98.28571428571429,
    "Forecast LP v2, perfect forecast (diagnostic)": 98.28571428571429,
    "Battery Dijkstra, receiver-weighted": 92.0,
-   "Price-guided Dijkstra (daily LP prices)": 91.42857142857143
+   "Price-guided Dijkstra (daily LP prices)": 91.42857142857143,
+   "Load-aware Dijkstra (ours, no LP)": 96.0
   },
   "24": {
    "oracle": 219,
@@ -1100,7 +1154,8 @@
    "Forecast LP v2, history mean (no forecast)": 99.08675799086758,
    "Forecast LP v2, perfect forecast (diagnostic)": 99.08675799086758,
    "Battery Dijkstra, receiver-weighted": 90.8675799086758,
-   "Price-guided Dijkstra (daily LP prices)": 93.60730593607306
+   "Price-guided Dijkstra (daily LP prices)": 93.60730593607306,
+   "Load-aware Dijkstra (ours, no LP)": 94.97716894977168
   },
   "26": {
    "oracle": 157,
@@ -1120,7 +1175,8 @@
    "Forecast LP v2, history mean (no forecast)": 99.36305732484077,
    "Forecast LP v2, perfect forecast (diagnostic)": 99.36305732484077,
    "Battery Dijkstra, receiver-weighted": 89.171974522293,
-   "Price-guided Dijkstra (daily LP prices)": 90.44585987261146
+   "Price-guided Dijkstra (daily LP prices)": 90.44585987261146,
+   "Load-aware Dijkstra (ours, no LP)": 93.63057324840764
   },
   "25": {
    "oracle": 173,
@@ -1140,7 +1196,8 @@
    "Forecast LP v2, history mean (no forecast)": 98.26589595375722,
    "Forecast LP v2, perfect forecast (diagnostic)": 98.26589595375722,
    "Battery Dijkstra, receiver-weighted": 90.7514450867052,
-   "Price-guided Dijkstra (daily LP prices)": 90.17341040462428
+   "Price-guided Dijkstra (daily LP prices)": 90.17341040462428,
+   "Load-aware Dijkstra (ours, no LP)": 93.64161849710982
   },
   "27": {
    "oracle": 157,
@@ -1160,7 +1217,8 @@
    "Forecast LP v2, history mean (no forecast)": 98.72611464968153,
    "Forecast LP v2, perfect forecast (diagnostic)": 98.72611464968153,
    "Battery Dijkstra, receiver-weighted": 89.80891719745223,
-   "Price-guided Dijkstra (daily LP prices)": 90.44585987261146
+   "Price-guided Dijkstra (daily LP prices)": 90.44585987261146,
+   "Load-aware Dijkstra (ours, no LP)": 92.35668789808918
   },
   "28": {
    "oracle": 127,
@@ -1180,7 +1238,8 @@
    "Forecast LP v2, history mean (no forecast)": 96.8503937007874,
    "Forecast LP v2, perfect forecast (diagnostic)": 96.8503937007874,
    "Battery Dijkstra, receiver-weighted": 85.03937007874016,
-   "Price-guided Dijkstra (daily LP prices)": 85.8267716535433
+   "Price-guided Dijkstra (daily LP prices)": 85.8267716535433,
+   "Load-aware Dijkstra (ours, no LP)": 92.1259842519685
   },
   "29": {
    "oracle": 204,
@@ -1200,7 +1259,8 @@
    "Forecast LP v2, history mean (no forecast)": 99.50980392156863,
    "Forecast LP v2, perfect forecast (diagnostic)": 99.50980392156863,
    "Battery Dijkstra, receiver-weighted": 91.66666666666666,
-   "Price-guided Dijkstra (daily LP prices)": 91.66666666666666
+   "Price-guided Dijkstra (daily LP prices)": 91.66666666666666,
+   "Load-aware Dijkstra (ours, no LP)": 93.62745098039215
   }
  },
  "B": {
@@ -1222,7 +1282,8 @@
    "Forecast LP v2, history mean (no forecast)": 94.8905109489051,
    "Forecast LP v2, perfect forecast (diagnostic)": 97.08029197080292,
    "Battery Dijkstra, receiver-weighted": 82.48175182481752,
-   "Price-guided Dijkstra (daily LP prices)": 83.21167883211679
+   "Price-guided Dijkstra (daily LP prices)": 83.21167883211679,
+   "Load-aware Dijkstra (ours, no LP)": 90.51094890510949
   },
   "1": {
    "oracle": 147,
@@ -1242,7 +1303,8 @@
    "Forecast LP v2, history mean (no forecast)": 93.19727891156462,
    "Forecast LP v2, perfect forecast (diagnostic)": 93.87755102040816,
    "Battery Dijkstra, receiver-weighted": 78.2312925170068,
-   "Price-guided Dijkstra (daily LP prices)": 91.15646258503402
+   "Price-guided Dijkstra (daily LP prices)": 91.15646258503402,
+   "Load-aware Dijkstra (ours, no LP)": 91.15646258503402
   },
   "2": {
    "oracle": 166,
@@ -1262,7 +1324,8 @@
    "Forecast LP v2, history mean (no forecast)": 96.98795180722891,
    "Forecast LP v2, perfect forecast (diagnostic)": 96.98795180722891,
    "Battery Dijkstra, receiver-weighted": 84.33734939759037,
-   "Price-guided Dijkstra (daily LP prices)": 83.73493975903614
+   "Price-guided Dijkstra (daily LP prices)": 83.73493975903614,
+   "Load-aware Dijkstra (ours, no LP)": 85.54216867469879
   },
   "3": {
    "oracle": 166,
@@ -1282,7 +1345,8 @@
    "Forecast LP v2, history mean (no forecast)": 96.3855421686747,
    "Forecast LP v2, perfect forecast (diagnostic)": 96.3855421686747,
    "Battery Dijkstra, receiver-weighted": 83.73493975903614,
-   "Price-guided Dijkstra (daily LP prices)": 83.73493975903614
+   "Price-guided Dijkstra (daily LP prices)": 83.73493975903614,
+   "Load-aware Dijkstra (ours, no LP)": 85.54216867469879
   },
   "4": {
    "oracle": 153,
@@ -1302,7 +1366,8 @@
    "Forecast LP v2, history mean (no forecast)": 93.4640522875817,
    "Forecast LP v2, perfect forecast (diagnostic)": 94.77124183006535,
    "Battery Dijkstra, receiver-weighted": 79.73856209150327,
-   "Price-guided Dijkstra (daily LP prices)": 87.58169934640523
+   "Price-guided Dijkstra (daily LP prices)": 87.58169934640523,
+   "Load-aware Dijkstra (ours, no LP)": 90.19607843137256
   },
   "5": {
    "oracle": 172,
@@ -1322,7 +1387,8 @@
    "Forecast LP v2, history mean (no forecast)": 94.76744186046511,
    "Forecast LP v2, perfect forecast (diagnostic)": 94.18604651162791,
    "Battery Dijkstra, receiver-weighted": 81.97674418604652,
-   "Price-guided Dijkstra (daily LP prices)": 80.81395348837209
+   "Price-guided Dijkstra (daily LP prices)": 80.81395348837209,
+   "Load-aware Dijkstra (ours, no LP)": 93.6046511627907
   },
   "6": {
    "oracle": 129,
@@ -1342,7 +1408,8 @@
    "Forecast LP v2, history mean (no forecast)": 89.14728682170544,
    "Forecast LP v2, perfect forecast (diagnostic)": 96.89922480620154,
    "Battery Dijkstra, receiver-weighted": 85.27131782945736,
-   "Price-guided Dijkstra (daily LP prices)": 87.59689922480621
+   "Price-guided Dijkstra (daily LP prices)": 87.59689922480621,
+   "Load-aware Dijkstra (ours, no LP)": 89.92248062015504
   },
   "7": {
    "oracle": 138,
@@ -1362,7 +1429,8 @@
    "Forecast LP v2, history mean (no forecast)": 84.78260869565217,
    "Forecast LP v2, perfect forecast (diagnostic)": 93.47826086956522,
    "Battery Dijkstra, receiver-weighted": 81.88405797101449,
-   "Price-guided Dijkstra (daily LP prices)": 82.6086956521739
+   "Price-guided Dijkstra (daily LP prices)": 82.6086956521739,
+   "Load-aware Dijkstra (ours, no LP)": 84.78260869565217
   },
   "8": {
    "oracle": 166,
@@ -1382,7 +1450,8 @@
    "Forecast LP v2, history mean (no forecast)": 98.19277108433735,
    "Forecast LP v2, perfect forecast (diagnostic)": 98.19277108433735,
    "Battery Dijkstra, receiver-weighted": 83.73493975903614,
-   "Price-guided Dijkstra (daily LP prices)": 85.54216867469879
+   "Price-guided Dijkstra (daily LP prices)": 85.54216867469879,
+   "Load-aware Dijkstra (ours, no LP)": 90.36144578313254
   },
   "9": {
    "oracle": 183,
@@ -1402,7 +1471,8 @@
    "Forecast LP v2, history mean (no forecast)": 92.89617486338798,
    "Forecast LP v2, perfect forecast (diagnostic)": 92.89617486338798,
    "Battery Dijkstra, receiver-weighted": 77.04918032786885,
-   "Price-guided Dijkstra (daily LP prices)": 88.52459016393442
+   "Price-guided Dijkstra (daily LP prices)": 88.52459016393442,
+   "Load-aware Dijkstra (ours, no LP)": 80.32786885245902
   },
   "11": {
    "oracle": 145,
@@ -1422,7 +1492,8 @@
    "Forecast LP v2, history mean (no forecast)": 94.48275862068965,
    "Forecast LP v2, perfect forecast (diagnostic)": 94.48275862068965,
    "Battery Dijkstra, receiver-weighted": 81.37931034482759,
-   "Price-guided Dijkstra (daily LP prices)": 80.0
+   "Price-guided Dijkstra (daily LP prices)": 80.0,
+   "Load-aware Dijkstra (ours, no LP)": 93.10344827586206
   },
   "10": {
    "oracle": 160,
@@ -1442,7 +1513,8 @@
    "Forecast LP v2, history mean (no forecast)": 94.375,
    "Forecast LP v2, perfect forecast (diagnostic)": 93.75,
    "Battery Dijkstra, receiver-weighted": 83.75,
-   "Price-guided Dijkstra (daily LP prices)": 86.875
+   "Price-guided Dijkstra (daily LP prices)": 86.875,
+   "Load-aware Dijkstra (ours, no LP)": 88.125
   },
   "12": {
    "oracle": 117,
@@ -1462,7 +1534,8 @@
    "Forecast LP v2, history mean (no forecast)": 96.58119658119658,
    "Forecast LP v2, perfect forecast (diagnostic)": 97.43589743589743,
    "Battery Dijkstra, receiver-weighted": 76.06837606837607,
-   "Price-guided Dijkstra (daily LP prices)": 77.77777777777779
+   "Price-guided Dijkstra (daily LP prices)": 77.77777777777779,
+   "Load-aware Dijkstra (ours, no LP)": 82.05128205128204
   },
   "14": {
    "oracle": 157,
@@ -1482,7 +1555,8 @@
    "Forecast LP v2, history mean (no forecast)": 94.90445859872611,
    "Forecast LP v2, perfect forecast (diagnostic)": 98.08917197452229,
    "Battery Dijkstra, receiver-weighted": 87.89808917197452,
-   "Price-guided Dijkstra (daily LP prices)": 86.62420382165605
+   "Price-guided Dijkstra (daily LP prices)": 86.62420382165605,
+   "Load-aware Dijkstra (ours, no LP)": 91.71974522292994
   },
   "13": {
    "oracle": 179,
@@ -1502,7 +1576,8 @@
    "Forecast LP v2, history mean (no forecast)": 97.20670391061452,
    "Forecast LP v2, perfect forecast (diagnostic)": 94.41340782122904,
    "Battery Dijkstra, receiver-weighted": 88.26815642458101,
-   "Price-guided Dijkstra (daily LP prices)": 87.70949720670392
+   "Price-guided Dijkstra (daily LP prices)": 87.70949720670392,
+   "Load-aware Dijkstra (ours, no LP)": 90.5027932960894
   },
   "15": {
    "oracle": 173,
@@ -1522,7 +1597,8 @@
    "Forecast LP v2, history mean (no forecast)": 97.6878612716763,
    "Forecast LP v2, perfect forecast (diagnostic)": 97.6878612716763,
    "Battery Dijkstra, receiver-weighted": 86.70520231213872,
-   "Price-guided Dijkstra (daily LP prices)": 88.4393063583815
+   "Price-guided Dijkstra (daily LP prices)": 88.4393063583815,
+   "Load-aware Dijkstra (ours, no LP)": 82.08092485549133
   },
   "16": {
    "oracle": 165,
@@ -1542,7 +1618,8 @@
    "Forecast LP v2, history mean (no forecast)": 98.18181818181819,
    "Forecast LP v2, perfect forecast (diagnostic)": 98.18181818181819,
    "Battery Dijkstra, receiver-weighted": 84.84848484848484,
-   "Price-guided Dijkstra (daily LP prices)": 84.84848484848484
+   "Price-guided Dijkstra (daily LP prices)": 84.84848484848484,
+   "Load-aware Dijkstra (ours, no LP)": 89.6969696969697
   },
   "18": {
    "oracle": 167,
@@ -1562,7 +1639,8 @@
    "Forecast LP v2, history mean (no forecast)": 97.60479041916167,
    "Forecast LP v2, perfect forecast (diagnostic)": 97.60479041916167,
    "Battery Dijkstra, receiver-weighted": 87.42514970059881,
-   "Price-guided Dijkstra (daily LP prices)": 90.41916167664671
+   "Price-guided Dijkstra (daily LP prices)": 90.41916167664671,
+   "Load-aware Dijkstra (ours, no LP)": 86.82634730538922
   },
   "17": {
    "oracle": 198,
@@ -1582,7 +1660,8 @@
    "Forecast LP v2, history mean (no forecast)": 96.96969696969697,
    "Forecast LP v2, perfect forecast (diagnostic)": 97.97979797979798,
    "Battery Dijkstra, receiver-weighted": 83.33333333333334,
-   "Price-guided Dijkstra (daily LP prices)": 83.33333333333334
+   "Price-guided Dijkstra (daily LP prices)": 83.33333333333334,
+   "Load-aware Dijkstra (ours, no LP)": 91.91919191919192
   },
   "19": {
    "oracle": 139,
@@ -1602,7 +1681,8 @@
    "Forecast LP v2, history mean (no forecast)": 95.68345323741008,
    "Forecast LP v2, perfect forecast (diagnostic)": 98.56115107913669,
    "Battery Dijkstra, receiver-weighted": 81.29496402877699,
-   "Price-guided Dijkstra (daily LP prices)": 81.29496402877699
+   "Price-guided Dijkstra (daily LP prices)": 81.29496402877699,
+   "Load-aware Dijkstra (ours, no LP)": 84.89208633093526
   },
   "20": {
    "oracle": 165,
@@ -1622,7 +1702,8 @@
    "Forecast LP v2, history mean (no forecast)": 97.57575757575758,
    "Forecast LP v2, perfect forecast (diagnostic)": 97.57575757575758,
    "Battery Dijkstra, receiver-weighted": 84.24242424242424,
-   "Price-guided Dijkstra (daily LP prices)": 86.06060606060606
+   "Price-guided Dijkstra (daily LP prices)": 86.06060606060606,
+   "Load-aware Dijkstra (ours, no LP)": 93.33333333333333
   },
   "21": {
    "oracle": 152,
@@ -1642,7 +1723,8 @@
    "Forecast LP v2, history mean (no forecast)": 93.42105263157895,
    "Forecast LP v2, perfect forecast (diagnostic)": 92.10526315789474,
    "Battery Dijkstra, receiver-weighted": 77.63157894736842,
-   "Price-guided Dijkstra (daily LP prices)": 76.97368421052632
+   "Price-guided Dijkstra (daily LP prices)": 76.97368421052632,
+   "Load-aware Dijkstra (ours, no LP)": 90.13157894736842
   },
   "22": {
    "oracle": 141,
@@ -1662,7 +1744,8 @@
    "Forecast LP v2, history mean (no forecast)": 97.16312056737588,
    "Forecast LP v2, perfect forecast (diagnostic)": 97.87234042553192,
    "Battery Dijkstra, receiver-weighted": 80.1418439716312,
-   "Price-guided Dijkstra (daily LP prices)": 80.1418439716312
+   "Price-guided Dijkstra (daily LP prices)": 80.1418439716312,
+   "Load-aware Dijkstra (ours, no LP)": 83.68794326241135
   },
   "23": {
    "oracle": 165,
@@ -1682,7 +1765,8 @@
    "Forecast LP v2, history mean (no forecast)": 97.57575757575758,
    "Forecast LP v2, perfect forecast (diagnostic)": 98.18181818181819,
    "Battery Dijkstra, receiver-weighted": 84.24242424242424,
-   "Price-guided Dijkstra (daily LP prices)": 84.24242424242424
+   "Price-guided Dijkstra (daily LP prices)": 84.24242424242424,
+   "Load-aware Dijkstra (ours, no LP)": 93.33333333333333
   },
   "24": {
    "oracle": 205,
@@ -1702,7 +1786,8 @@
    "Forecast LP v2, history mean (no forecast)": 93.17073170731707,
    "Forecast LP v2, perfect forecast (diagnostic)": 94.6341463414634,
    "Battery Dijkstra, receiver-weighted": 90.2439024390244,
-   "Price-guided Dijkstra (daily LP prices)": 90.73170731707317
+   "Price-guided Dijkstra (daily LP prices)": 90.73170731707317,
+   "Load-aware Dijkstra (ours, no LP)": 92.6829268292683
   },
   "26": {
    "oracle": 147,
@@ -1722,7 +1807,8 @@
    "Forecast LP v2, history mean (no forecast)": 95.91836734693877,
    "Forecast LP v2, perfect forecast (diagnostic)": 96.5986394557823,
    "Battery Dijkstra, receiver-weighted": 80.27210884353741,
-   "Price-guided Dijkstra (daily LP prices)": 79.59183673469387
+   "Price-guided Dijkstra (daily LP prices)": 79.59183673469387,
+   "Load-aware Dijkstra (ours, no LP)": 91.83673469387756
   },
   "25": {
    "oracle": 163,
@@ -1742,7 +1828,8 @@
    "Forecast LP v2, history mean (no forecast)": 96.93251533742331,
    "Forecast LP v2, perfect forecast (diagnostic)": 96.93251533742331,
    "Battery Dijkstra, receiver-weighted": 84.04907975460122,
-   "Price-guided Dijkstra (daily LP prices)": 85.2760736196319
+   "Price-guided Dijkstra (daily LP prices)": 85.2760736196319,
+   "Load-aware Dijkstra (ours, no LP)": 92.02453987730061
   },
   "27": {
    "oracle": 143,
@@ -1762,7 +1849,8 @@
    "Forecast LP v2, history mean (no forecast)": 91.6083916083916,
    "Forecast LP v2, perfect forecast (diagnostic)": 97.2027972027972,
    "Battery Dijkstra, receiver-weighted": 81.11888111888112,
-   "Price-guided Dijkstra (daily LP prices)": 79.02097902097903
+   "Price-guided Dijkstra (daily LP prices)": 79.02097902097903,
+   "Load-aware Dijkstra (ours, no LP)": 91.6083916083916
   },
   "28": {
    "oracle": 118,
@@ -1782,7 +1870,8 @@
    "Forecast LP v2, history mean (no forecast)": 96.61016949152543,
    "Forecast LP v2, perfect forecast (diagnostic)": 96.61016949152543,
    "Battery Dijkstra, receiver-weighted": 77.96610169491525,
-   "Price-guided Dijkstra (daily LP prices)": 76.27118644067797
+   "Price-guided Dijkstra (daily LP prices)": 76.27118644067797,
+   "Load-aware Dijkstra (ours, no LP)": 92.37288135593221
   },
   "29": {
    "oracle": 190,
@@ -1802,7 +1891,8 @@
    "Forecast LP v2, history mean (no forecast)": 97.89473684210527,
    "Forecast LP v2, perfect forecast (diagnostic)": 94.21052631578948,
    "Battery Dijkstra, receiver-weighted": 91.05263157894737,
-   "Price-guided Dijkstra (daily LP prices)": 87.36842105263159
+   "Price-guided Dijkstra (daily LP prices)": 87.36842105263159,
+   "Load-aware Dijkstra (ours, no LP)": 93.15789473684211
   }
  },
  "D": {
@@ -1824,7 +1914,8 @@
    "Forecast LP v2, history mean (no forecast)": 83.94160583941606,
    "Forecast LP v2, perfect forecast (diagnostic)": 95.62043795620438,
    "Battery Dijkstra, receiver-weighted": 82.48175182481752,
-   "Price-guided Dijkstra (daily LP prices)": 82.48175182481752
+   "Price-guided Dijkstra (daily LP prices)": 82.48175182481752,
+   "Load-aware Dijkstra (ours, no LP)": 87.59124087591242
   },
   "1": {
    "oracle": 147,
@@ -1844,7 +1935,8 @@
    "Forecast LP v2, history mean (no forecast)": 93.19727891156462,
    "Forecast LP v2, perfect forecast (diagnostic)": 95.23809523809523,
    "Battery Dijkstra, receiver-weighted": 79.59183673469387,
-   "Price-guided Dijkstra (daily LP prices)": 77.55102040816327
+   "Price-guided Dijkstra (daily LP prices)": 77.55102040816327,
+   "Load-aware Dijkstra (ours, no LP)": 93.19727891156462
   },
   "2": {
    "oracle": 170,
@@ -1864,7 +1956,8 @@
    "Forecast LP v2, history mean (no forecast)": 95.88235294117648,
    "Forecast LP v2, perfect forecast (diagnostic)": 96.47058823529412,
    "Battery Dijkstra, receiver-weighted": 85.88235294117646,
-   "Price-guided Dijkstra (daily LP prices)": 87.05882352941177
+   "Price-guided Dijkstra (daily LP prices)": 87.05882352941177,
+   "Load-aware Dijkstra (ours, no LP)": 89.41176470588236
   },
   "3": {
    "oracle": 169,
@@ -1884,7 +1977,8 @@
    "Forecast LP v2, history mean (no forecast)": 96.44970414201184,
    "Forecast LP v2, perfect forecast (diagnostic)": 97.63313609467455,
    "Battery Dijkstra, receiver-weighted": 89.94082840236686,
-   "Price-guided Dijkstra (daily LP prices)": 92.89940828402366
+   "Price-guided Dijkstra (daily LP prices)": 92.89940828402366,
+   "Load-aware Dijkstra (ours, no LP)": 92.89940828402366
   },
   "4": {
    "oracle": 154,
@@ -1904,7 +1998,8 @@
    "Forecast LP v2, history mean (no forecast)": 91.55844155844156,
    "Forecast LP v2, perfect forecast (diagnostic)": 92.20779220779221,
    "Battery Dijkstra, receiver-weighted": 87.66233766233766,
-   "Price-guided Dijkstra (daily LP prices)": 75.32467532467533
+   "Price-guided Dijkstra (daily LP prices)": 75.32467532467533,
+   "Load-aware Dijkstra (ours, no LP)": 88.96103896103897
   },
   "6": {
    "oracle": 130,
@@ -1924,7 +2019,8 @@
    "Forecast LP v2, history mean (no forecast)": 89.23076923076924,
    "Forecast LP v2, perfect forecast (diagnostic)": 94.61538461538461,
    "Battery Dijkstra, receiver-weighted": 86.92307692307692,
-   "Price-guided Dijkstra (daily LP prices)": 71.53846153846153
+   "Price-guided Dijkstra (daily LP prices)": 71.53846153846153,
+   "Load-aware Dijkstra (ours, no LP)": 87.6923076923077
   },
   "7": {
    "oracle": 140,
@@ -1944,7 +2040,8 @@
    "Forecast LP v2, history mean (no forecast)": 97.85714285714285,
    "Forecast LP v2, perfect forecast (diagnostic)": 97.14285714285714,
    "Battery Dijkstra, receiver-weighted": 82.85714285714286,
-   "Price-guided Dijkstra (daily LP prices)": 81.42857142857143
+   "Price-guided Dijkstra (daily LP prices)": 81.42857142857143,
+   "Load-aware Dijkstra (ours, no LP)": 92.14285714285714
   },
   "5": {
    "oracle": 178,
@@ -1964,7 +2061,8 @@
    "Forecast LP v2, history mean (no forecast)": 95.50561797752809,
    "Forecast LP v2, perfect forecast (diagnostic)": 95.50561797752809,
    "Battery Dijkstra, receiver-weighted": 85.95505617977528,
-   "Price-guided Dijkstra (daily LP prices)": 91.01123595505618
+   "Price-guided Dijkstra (daily LP prices)": 91.01123595505618,
+   "Load-aware Dijkstra (ours, no LP)": 92.13483146067416
   },
   "11": {
    "oracle": 144,
@@ -1984,7 +2082,8 @@
    "Forecast LP v2, history mean (no forecast)": 97.22222222222221,
    "Forecast LP v2, perfect forecast (diagnostic)": 97.22222222222221,
    "Battery Dijkstra, receiver-weighted": 81.25,
-   "Price-guided Dijkstra (daily LP prices)": 81.94444444444444
+   "Price-guided Dijkstra (daily LP prices)": 81.94444444444444,
+   "Load-aware Dijkstra (ours, no LP)": 94.44444444444444
   },
   "8": {
    "oracle": 167,
@@ -2004,7 +2103,8 @@
    "Forecast LP v2, history mean (no forecast)": 97.60479041916167,
    "Forecast LP v2, perfect forecast (diagnostic)": 97.60479041916167,
    "Battery Dijkstra, receiver-weighted": 84.4311377245509,
-   "Price-guided Dijkstra (daily LP prices)": 85.02994011976048
+   "Price-guided Dijkstra (daily LP prices)": 85.02994011976048,
+   "Load-aware Dijkstra (ours, no LP)": 93.41317365269461
   },
   "9": {
    "oracle": 188,
@@ -2024,7 +2124,8 @@
    "Forecast LP v2, history mean (no forecast)": 95.74468085106383,
    "Forecast LP v2, perfect forecast (diagnostic)": 98.40425531914893,
    "Battery Dijkstra, receiver-weighted": 88.29787234042553,
-   "Price-guided Dijkstra (daily LP prices)": 88.29787234042553
+   "Price-guided Dijkstra (daily LP prices)": 88.29787234042553,
+   "Load-aware Dijkstra (ours, no LP)": 91.48936170212765
   },
   "10": {
    "oracle": 161,
@@ -2044,7 +2145,8 @@
    "Forecast LP v2, history mean (no forecast)": 97.51552795031056,
    "Forecast LP v2, perfect forecast (diagnostic)": 95.03105590062113,
    "Battery Dijkstra, receiver-weighted": 84.472049689441,
-   "Price-guided Dijkstra (daily LP prices)": 86.33540372670807
+   "Price-guided Dijkstra (daily LP prices)": 86.33540372670807,
+   "Load-aware Dijkstra (ours, no LP)": 88.81987577639751
   },
   "12": {
    "oracle": 117,
@@ -2064,7 +2166,8 @@
    "Forecast LP v2, history mean (no forecast)": 95.72649572649573,
    "Forecast LP v2, perfect forecast (diagnostic)": 94.01709401709401,
    "Battery Dijkstra, receiver-weighted": 76.92307692307693,
-   "Price-guided Dijkstra (daily LP prices)": 76.92307692307693
+   "Price-guided Dijkstra (daily LP prices)": 76.92307692307693,
+   "Load-aware Dijkstra (ours, no LP)": 86.32478632478633
   },
   "14": {
    "oracle": 157,
@@ -2084,7 +2187,8 @@
    "Forecast LP v2, history mean (no forecast)": 95.54140127388536,
    "Forecast LP v2, perfect forecast (diagnostic)": 95.54140127388536,
    "Battery Dijkstra, receiver-weighted": 87.26114649681529,
-   "Price-guided Dijkstra (daily LP prices)": 88.53503184713377
+   "Price-guided Dijkstra (daily LP prices)": 88.53503184713377,
+   "Load-aware Dijkstra (ours, no LP)": 89.80891719745223
   },
   "13": {
    "oracle": 182,
@@ -2104,7 +2208,8 @@
    "Forecast LP v2, history mean (no forecast)": 93.4065934065934,
    "Forecast LP v2, perfect forecast (diagnostic)": 91.20879120879121,
    "Battery Dijkstra, receiver-weighted": 88.46153846153845,
-   "Price-guided Dijkstra (daily LP prices)": 88.46153846153845
+   "Price-guided Dijkstra (daily LP prices)": 88.46153846153845,
+   "Load-aware Dijkstra (ours, no LP)": 91.20879120879121
   },
   "15": {
    "oracle": 176,
@@ -2124,7 +2229,8 @@
    "Forecast LP v2, history mean (no forecast)": 96.02272727272727,
    "Forecast LP v2, perfect forecast (diagnostic)": 96.5909090909091,
    "Battery Dijkstra, receiver-weighted": 88.06818181818183,
-   "Price-guided Dijkstra (daily LP prices)": 88.63636363636364
+   "Price-guided Dijkstra (daily LP prices)": 88.63636363636364,
+   "Load-aware Dijkstra (ours, no LP)": 88.63636363636364
   },
   "16": {
    "oracle": 166,
@@ -2144,7 +2250,8 @@
    "Forecast LP v2, history mean (no forecast)": 97.59036144578313,
    "Forecast LP v2, perfect forecast (diagnostic)": 97.59036144578313,
    "Battery Dijkstra, receiver-weighted": 82.53012048192771,
-   "Price-guided Dijkstra (daily LP prices)": 84.33734939759037
+   "Price-guided Dijkstra (daily LP prices)": 84.33734939759037,
+   "Load-aware Dijkstra (ours, no LP)": 92.16867469879519
   },
   "18": {
    "oracle": 165,
@@ -2164,7 +2271,8 @@
    "Forecast LP v2, history mean (no forecast)": 97.57575757575758,
    "Forecast LP v2, perfect forecast (diagnostic)": 96.36363636363636,
    "Battery Dijkstra, receiver-weighted": 84.24242424242424,
-   "Price-guided Dijkstra (daily LP prices)": 83.63636363636363
+   "Price-guided Dijkstra (daily LP prices)": 83.63636363636363,
+   "Load-aware Dijkstra (ours, no LP)": 93.93939393939394
   },
   "19": {
    "oracle": 139,
@@ -2184,7 +2292,8 @@
    "Forecast LP v2, history mean (no forecast)": 94.24460431654677,
    "Forecast LP v2, perfect forecast (diagnostic)": 94.24460431654677,
    "Battery Dijkstra, receiver-weighted": 82.01438848920863,
-   "Price-guided Dijkstra (daily LP prices)": 81.29496402877699
+   "Price-guided Dijkstra (daily LP prices)": 81.29496402877699,
+   "Load-aware Dijkstra (ours, no LP)": 83.45323741007195
   },
   "17": {
    "oracle": 193,
@@ -2204,7 +2313,8 @@
    "Forecast LP v2, history mean (no forecast)": 96.89119170984456,
    "Forecast LP v2, perfect forecast (diagnostic)": 97.40932642487047,
    "Battery Dijkstra, receiver-weighted": 85.49222797927462,
-   "Price-guided Dijkstra (daily LP prices)": 90.15544041450777
+   "Price-guided Dijkstra (daily LP prices)": 90.15544041450777,
+   "Load-aware Dijkstra (ours, no LP)": 83.93782383419689
   },
   "20": {
    "oracle": 166,
@@ -2224,7 +2334,8 @@
    "Forecast LP v2, history mean (no forecast)": 95.78313253012048,
    "Forecast LP v2, perfect forecast (diagnostic)": 97.59036144578313,
    "Battery Dijkstra, receiver-weighted": 89.1566265060241,
-   "Price-guided Dijkstra (daily LP prices)": 84.33734939759037
+   "Price-guided Dijkstra (daily LP prices)": 84.33734939759037,
+   "Load-aware Dijkstra (ours, no LP)": 94.57831325301204
   },
   "21": {
    "oracle": 156,
@@ -2244,7 +2355,8 @@
    "Forecast LP v2, history mean (no forecast)": 91.02564102564102,
    "Forecast LP v2, perfect forecast (diagnostic)": 96.15384615384616,
    "Battery Dijkstra, receiver-weighted": 85.25641025641025,
-   "Price-guided Dijkstra (daily LP prices)": 84.61538461538461
+   "Price-guided Dijkstra (daily LP prices)": 84.61538461538461,
+   "Load-aware Dijkstra (ours, no LP)": 90.38461538461539
   },
   "23": {
    "oracle": 166,
@@ -2264,7 +2376,8 @@
    "Forecast LP v2, history mean (no forecast)": 98.19277108433735,
    "Forecast LP v2, perfect forecast (diagnostic)": 97.59036144578313,
    "Battery Dijkstra, receiver-weighted": 87.95180722891565,
-   "Price-guided Dijkstra (daily LP prices)": 84.93975903614458
+   "Price-guided Dijkstra (daily LP prices)": 84.93975903614458,
+   "Load-aware Dijkstra (ours, no LP)": 96.3855421686747
   },
   "22": {
    "oracle": 144,
@@ -2284,7 +2397,8 @@
    "Forecast LP v2, history mean (no forecast)": 96.52777777777779,
    "Forecast LP v2, perfect forecast (diagnostic)": 97.22222222222221,
    "Battery Dijkstra, receiver-weighted": 81.94444444444444,
-   "Price-guided Dijkstra (daily LP prices)": 85.41666666666666
+   "Price-guided Dijkstra (daily LP prices)": 85.41666666666666,
+   "Load-aware Dijkstra (ours, no LP)": 90.27777777777779
   },
   "24": {
    "oracle": 207,
@@ -2304,7 +2418,8 @@
    "Forecast LP v2, history mean (no forecast)": 95.65217391304348,
    "Forecast LP v2, perfect forecast (diagnostic)": 96.61835748792271,
    "Battery Dijkstra, receiver-weighted": 89.85507246376811,
-   "Price-guided Dijkstra (daily LP prices)": 89.85507246376811
+   "Price-guided Dijkstra (daily LP prices)": 89.85507246376811,
+   "Load-aware Dijkstra (ours, no LP)": 89.85507246376811
   },
   "25": {
    "oracle": 163,
@@ -2324,7 +2439,8 @@
    "Forecast LP v2, history mean (no forecast)": 97.54601226993866,
    "Forecast LP v2, perfect forecast (diagnostic)": 96.93251533742331,
    "Battery Dijkstra, receiver-weighted": 85.2760736196319,
-   "Price-guided Dijkstra (daily LP prices)": 84.66257668711657
+   "Price-guided Dijkstra (daily LP prices)": 84.66257668711657,
+   "Load-aware Dijkstra (ours, no LP)": 92.02453987730061
   },
   "27": {
    "oracle": 146,
@@ -2344,7 +2460,8 @@
    "Forecast LP v2, history mean (no forecast)": 94.52054794520548,
    "Forecast LP v2, perfect forecast (diagnostic)": 95.8904109589041,
    "Battery Dijkstra, receiver-weighted": 79.45205479452055,
-   "Price-guided Dijkstra (daily LP prices)": 80.13698630136986
+   "Price-guided Dijkstra (daily LP prices)": 80.13698630136986,
+   "Load-aware Dijkstra (ours, no LP)": 91.0958904109589
   },
   "26": {
    "oracle": 148,
@@ -2364,7 +2481,8 @@
    "Forecast LP v2, history mean (no forecast)": 93.24324324324324,
    "Forecast LP v2, perfect forecast (diagnostic)": 95.27027027027027,
    "Battery Dijkstra, receiver-weighted": 79.72972972972973,
-   "Price-guided Dijkstra (daily LP prices)": 79.05405405405406
+   "Price-guided Dijkstra (daily LP prices)": 79.05405405405406,
+   "Load-aware Dijkstra (ours, no LP)": 92.56756756756756
   },
   "28": {
    "oracle": 120,
@@ -2384,7 +2502,8 @@
    "Forecast LP v2, history mean (no forecast)": 94.16666666666667,
    "Forecast LP v2, perfect forecast (diagnostic)": 95.0,
    "Battery Dijkstra, receiver-weighted": 75.0,
-   "Price-guided Dijkstra (daily LP prices)": 78.33333333333333
+   "Price-guided Dijkstra (daily LP prices)": 78.33333333333333,
+   "Load-aware Dijkstra (ours, no LP)": 94.16666666666667
   },
   "29": {
    "oracle": 191,
@@ -2404,7 +2523,8 @@
    "Forecast LP v2, history mean (no forecast)": 97.38219895287958,
    "Forecast LP v2, perfect forecast (diagnostic)": 97.90575916230367,
    "Battery Dijkstra, receiver-weighted": 85.34031413612566,
-   "Price-guided Dijkstra (daily LP prices)": 85.86387434554975
+   "Price-guided Dijkstra (daily LP prices)": 85.86387434554975,
+   "Load-aware Dijkstra (ours, no LP)": 92.67015706806284
   }
  }
 }

@@ -13,6 +13,7 @@ lam = 0 is exactly reactive battery-weighted Dijkstra (tested).
 Policies are stateful: build one per episode with the deployment's traffic history.
 """
 import numpy as np
+from scipy.sparse.csgraph import dijkstra
 
 import env as E
 import dijkstra_rl as D
@@ -293,3 +294,63 @@ class PriceDijkstra:
         else:
             m = D.battery_mult(w) * (1.0 + self.c * self.price)
         return D.dijkstra_tree(w, m) if self.rx == "sender" else D.dijkstra_tree_rx(w, m, m)
+
+
+class LoadAwareDijkstra:
+    """Load-aware battery Dijkstra: the round's tree is built node by node, farthest from the
+    sink first, so each node routes around the load earlier nodes have already put on a relay.
+
+    Node j's weight while the tree is built: (E0 / E_j) * (1 + kappa * A_j / mean rate), where
+    A_j is the traffic (packets per round) already routed through j this round. A node whose
+    next hop is already fixed (it lies on an earlier node's path) keeps it, so the result is a
+    tree. Rates are each node's mean observed traffic over the last `window` rounds, so no
+    forecast is involved. kappa = 0 is battery Dijkstra.
+    """
+    def __init__(self, w, history, kappa=0.3, window=24, order="far"):
+        self.kappa, self.window, self.order = kappa, window, order
+        self.recent = [np.asarray(x, float) for x in history[-window:]]
+
+    def _rate(self, w):
+        if w.round > 0:
+            self.recent = (self.recent + [np.asarray(w.traffic[w.round - 1], float)])[-self.window:]
+        return np.mean(self.recent, axis=0)
+
+    def __call__(self, w):
+        rate = self._rate(w)
+        base = D.battery_mult(w)
+        if self.kappa == 0:
+            return D.dijkstra_tree(w, base)
+        n = w.n
+        ref = max(rate[w.alive].mean(), 1e-9)
+        A = np.zeros(n)
+        parent = np.full(n, -1)
+        parent[~w.alive] = n
+        C = w.etx_bit[:n].copy(); C[:, :n] += 50e-9
+        keys = -w.d2s if self.order == "far" else w.d2s
+        for i in np.argsort(keys):
+            if parent[i] >= 0:
+                continue
+            m = base * (1.0 + self.kappa * A / ref)
+            G = np.zeros((n + 1, n + 1))
+            G[:n] = C * m[:, None]
+            fixed = np.flatnonzero(parent >= 0)
+            for f in fixed:                          # a fixed node keeps its one next hop
+                if parent[f] < n or w.alive[f]:
+                    keep = G[f, parent[f]] if parent[f] <= n else 0.0
+                    G[f, :] = 0.0
+                    if w.alive[f]:
+                        G[f, parent[f]] = max(keep, 1e-30)
+            np.fill_diagonal(G, 0.0)
+            dead = np.flatnonzero(~w.alive)
+            G[dead, :] = 0.0; G[:, dead] = 0.0
+            _, pred = dijkstra(G.T, directed=True, indices=n, return_predecessors=True)
+            u = i
+            while u != n:                            # fix i's path and book its load on it
+                if parent[u] < 0:
+                    parent[u] = pred[u] if pred[u] >= 0 else n
+                A[u] += rate[i]
+                u = parent[u]
+                if u < 0:
+                    break
+        parent[parent < 0] = n
+        return parent
