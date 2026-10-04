@@ -26,3 +26,5 @@ Ablations:
 Forecast error, next-24-hour mean rate per mote (packets/hour, mean absolute error over test starts): holt-winters 0.52, history-mean 1.03, seasonal-naive 0.54, persistence 1.76
 
 Deployments still alive at the end of the data (censored, scored at the data end): Battery Dijkstra 13, Predictive Dijkstra, Holt-Winters 13, Load-aware Dijkstra (ours, no LP) 14, Load-aware Dijkstra, LEST load table (4 tiers) 13, Static LP (solved once) 5, Reactive LP coordinator 14, Forecast LP v1, Holt-Winters 15, Forecast LP v2, Holt-Winters (ours) 15, Forecast LP v2, history mean (no forecast) 15, Forecast LP v2, seasonal-naive 14, Forecast LP v2, perfect forecast (diagnostic) 15
+
+Added afterwards (same test deployments and oracle): EBR-DA (Mahdi et al. 2018, isolated nodes bridged) mean 18.8, worst 11.8, vs battery Dijkstra 0/0/27, p=1.5e-08.
