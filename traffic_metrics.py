@@ -19,7 +19,7 @@ import numpy as np
 import env as E
 import dijkstra_rl as D
 import policies as P
-from predictive import ForecastLP, LoadAwareDijkstra
+from predictive import ForecastLP, LESTDijkstra, LoadAwareDijkstra
 
 BETAS = (0.01, 0.10, 0.50)
 _net = None
@@ -35,22 +35,25 @@ def _madii():
 
 
 def routers(w, ones):
+    """Builders, not routers: only the one asked for is built (LEST charges its overhead to w)."""
     hist = ones[:72]
-    return {"Battery Dijkstra": D.fast_battery_weighted,
-            "Min-energy Dijkstra": lambda e: P.min_energy(e) if hasattr(P, "min_energy") else D.dijkstra_tree(e, np.ones(e.n)),
-            "Load-aware Dijkstra (ours, no LP)": LoadAwareDijkstra(w, hist, kappa=1.0, order="near"),
-            "Planner v1 (LP every 4 rounds)": ForecastLP(w, hist, forecaster="history-mean"),
-            "Planner v2 (LP every round, ours)": ForecastLP(w, hist, forecaster="history-mean", resolve_every=1, mu=1e-3),
-            "MADII (v3 rebuild)": _madii()}
+    return {"Battery Dijkstra": lambda: D.fast_battery_weighted,
+            "Min-energy Dijkstra": lambda: P.min_energy,
+            "Load-aware Dijkstra (ours, no LP)": lambda: LoadAwareDijkstra(w, hist, kappa=1.0, order="near"),
+            "Load-aware Dijkstra, LEST load table (4 tiers)": lambda: LESTDijkstra(w, hist, levels="lest", rule="original", band=0.05, exact_energy=True),
+            "Planner v1 (LP every 4 rounds)": lambda: ForecastLP(w, hist, forecaster="history-mean"),
+            "Planner v2 (LP every round, ours)": lambda: ForecastLP(w, hist, forecaster="history-mean", resolve_every=1, mu=1e-3),
+            "MADII (v3 rebuild)": _madii}
 
 
 def job(s):
     ones = np.ones((472, 100), int)
     out = {}
-    for name in ("Battery Dijkstra", "Min-energy Dijkstra", "Load-aware Dijkstra (ours, no LP)", "Planner v1 (LP every 4 rounds)",
+    for name in ("Battery Dijkstra", "Min-energy Dijkstra", "Load-aware Dijkstra (ours, no LP)",
+                 "Load-aware Dijkstra, LEST load table (4 tiers)", "Planner v1 (LP every 4 rounds)",
                  "Planner v2 (LP every round, ours)", "MADII (v3 rebuild)"):
         w = E.WSN(seed=s, traffic=ones[72:])
-        pol = routers(w, ones)[name]
+        pol = routers(w, ones)[name]()
         n0 = w.n * w.e0
         ddv = gen = retry = 0.0; hops = []; rec = {}
         while w.round < 400:
