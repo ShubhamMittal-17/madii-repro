@@ -453,3 +453,55 @@ class EBRDA:
         W = self.a * (1.0 - w.E / w.e0) + (1.0 - self.a) * self.load / max(self.load.max(), 1e-9)
         self.prev = w._sanitize(D.dijkstra_tree(w, 1.0 + self.c * W))
         return self.prev
+
+
+class EBRDAPaper:
+    """EBR-DA as specified in Mahdi et al., IJEECS 12(3):1312-1319, 2018 (Sec. 3-4):
+        NW_Eres(i) = (1 - Eres(i) / Einit(i))^2                       Eq. (1)
+        NW_Bava(i) = (1 - Bava(i) / Btotal(i))^2                      Eq. (2)
+        NW(i)      = 0.6 * NW_Eres(i) + 0.4 * NW_Bava(i)              Eq. (3), W1 = 0.6, W2 = 0.4
+    Hop tree from the sink over the 80 m communication radius (Table 2); each node forwards to
+    the lightest-weight neighbour one hop nearer the sink (Sec. 4.1 step 5, Sec. 4.3), re-chosen
+    every round. bridge=True (default) lets a node with no nearer neighbour in range forward to
+    its nearest node nearer the sink rather than straight to the sink, which in our radio model
+    otherwise kills it within a few rounds (bridge=False is the protocol as written). Our energy
+    model has no packet buffers, so buffer occupancy 1 - Bava/Btotal is
+    taken as the node's traffic last round over the busiest node's. A node with no neighbour
+    nearer the sink sends directly. No in-network aggregation (none in our model).
+    """
+    def __init__(self, w, history=None, radius=80.0, w1=0.6, w2=0.4, bridge=True):
+        self.w1, self.w2, self.prev = w1, w2, None
+        n = w.n
+        adj = (w.d[:n + 1, :n + 1] <= radius) & ~np.eye(n + 1, dtype=bool)
+        hop = np.full(n + 1, np.inf); hop[n] = 0; frontier = [n]
+        while frontier:                                       # BFS hop counts from the sink
+            nxt = []
+            for u in frontier:
+                for v in np.flatnonzero(adj[u]):
+                    if hop[v] == np.inf:
+                        hop[v] = hop[u] + 1; nxt.append(v)
+            frontier = nxt
+        self.cand = [np.flatnonzero(adj[i] & (hop == hop[i] - 1)) for i in range(n)]
+        if bridge:      # a node with nobody nearer the sink in range forwards to the nearest node that is
+            for i in range(n):          # nearer the sink (any distance) instead of sending all the way direct
+                if self.cand[i].size == 0:
+                    closer = np.flatnonzero(w.d2s < w.d2s[i])
+                    if closer.size:
+                        self.cand[i] = np.array([closer[np.argmin(w.d[i, closer])]])
+        self.load = np.zeros(n)
+
+    def __call__(self, w):
+        n = w.n
+        if self.prev is not None and w.round > 0:
+            own = np.where(w.alive, w.traffic[w.round - 1], 0).astype(float) if w.traffic is not None else w.alive.astype(float)
+            self.load = subtree_sum(w, self.prev, own)
+        nw = self.w1 * (1 - w.E / w.e0) ** 2 + self.w2 * (self.load / max(self.load.max(), 1e-9)) ** 2
+        parent = np.full(n, n)
+        for i in np.flatnonzero(w.alive):
+            c = [j for j in self.cand[i] if j == n or w.alive[j]]
+            if c:
+                c = np.array(c)
+                wt = np.where(c == n, -1.0, nw[np.minimum(c, n - 1)])    # the sink weighs nothing
+                parent[i] = c[np.lexsort((w.d[i, c], wt))[0]]           # lightest, then nearest
+        self.prev = w._sanitize(parent)
+        return self.prev

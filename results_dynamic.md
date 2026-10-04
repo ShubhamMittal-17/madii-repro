@@ -24,6 +24,8 @@ S = equal-weight mean over the three scored scenarios; Pattern shift (robustness
 | Load table only (ablation, no battery) | 46.1 | 42.5 | 46.5 | 45.1 | 28.7 | 46.3 |
 | Load-aware Dijkstra, LEST load table (4 tiers) | 89.5 | 92.6 | 89.3 | 90.5 | 76.8 | 90.0 |
 | EBR-DA-style (energy + load cost, reconstructed) | 50.6 | 49.7 | 50.6 | 50.3 | 37.1 | 50.4 |
+| EBR-DA (Mahdi et al. 2018, as specified) | 14.0 | 13.5 | 14.1 | 13.9 | 0.5 | 14.0 |
+| EBR-DA (Mahdi et al. 2018, isolated nodes bridged) | 15.2 | 14.9 | 15.3 | 15.1 | 0.5 | 15.2 |
 
 Paired vs Battery Dijkstra (reactive) (wins/ties/losses, Wilcoxon p):
 
@@ -47,6 +49,8 @@ Paired vs Battery Dijkstra (reactive) (wins/ties/losses, Wilcoxon p):
 - Load table only (ablation, no battery): R: 0/0/30, p=1.9e-09; N: 0/0/30, p=1.9e-09; B: 0/0/30, p=1.9e-09; D: 0/0/30, p=1.9e-09
 - Load-aware Dijkstra, LEST load table (4 tiers): R: 29/1/0, p=2.6e-06; N: 30/0/0, p=1.9e-09; B: 30/0/0, p=1.7e-06; D: 29/0/1, p=5.6e-09
 - EBR-DA-style (energy + load cost, reconstructed): R: 0/0/30, p=1.7e-06; N: 0/0/30, p=1.9e-09; B: 0/0/30, p=1.7e-06; D: 0/0/30, p=1.9e-09
+- EBR-DA (Mahdi et al. 2018, as specified): R: 0/0/30, p=1.7e-06; N: 0/0/30, p=1.9e-09; B: 0/0/30, p=1.9e-09; D: 0/0/30, p=1.9e-09
+- EBR-DA (Mahdi et al. 2018, isolated nodes bridged): R: 0/0/30, p=1.7e-06; N: 0/0/30, p=1.9e-09; B: 0/0/30, p=1.9e-09; D: 0/0/30, p=1.9e-09
 
 Ablations (first vs second, wins/ties/losses, Wilcoxon p):
 

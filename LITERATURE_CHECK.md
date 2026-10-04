@@ -58,3 +58,38 @@ reading each paper before the report cites them).
   the full paper: if its cost differs, rerun.
 - Search IEEE Xplore and Scopus directly (not reachable from this environment) for
   "load-balanced tree" + "maximum lifetime" + "sequential" or "greedy".
+
+
+## Update: EBR-DA implemented from the full paper
+
+docs/papers/Mahdi2018_EBR-DA.pdf, Sec. 3-4. The paper specifies:
+- node weight NW = 0.6 (1 - Eres/Einit)^2 + 0.4 (1 - Bava/Btotal)^2;
+- a hop tree over an 80 m communication radius in a 500 m x 500 m field;
+- each node forwards to the lightest-weight neighbour one hop nearer the sink.
+
+The paper evaluates EBR-DA in MATLAB against DRINA and InFRA only (energy consumption, no
+optimum bound), and its design assumes in-network data aggregation, which our energy model
+(like MADII's) does not have.
+
+Two approximations in our implementation (`predictive.EBRDAPaper`):
+- **Buffer occupancy:** our model has no buffers, so occupancy is taken as the node's
+  last-round traffic over the busiest node's.
+- **Bridging:** a node with no neighbour in range forwards to its nearest node nearer the sink.
+
+Held-out results (30 deployments x 4 scenarios, % of the oracle):
+
+| Method | Mean | Worst |
+|---|---|---|
+| EBR-DA as specified | 13.9 | 0.5 |
+| EBR-DA, isolated nodes bridged | 15.1 | 0.5 |
+| EBR-DA-style reconstruction (tuned Dijkstra cost) | 50.3 | 37.1 |
+| Battery Dijkstra | 85.0 | 74.3 |
+| LEST load-table Dijkstra | 90.5 | 76.8 |
+
+Why EBR-DA scores so low here:
+- **Hop-minimal routing** sends all traffic through the ring of about 12 nodes within 80 m of
+  the sink.
+- **Its squared weights start near 0**, so early choices are effectively shortest-hop.
+
+Without aggregation, that ring drains quickly. State this caveat when citing: EBR-DA is shown
+outside the aggregation setting it was designed for.
