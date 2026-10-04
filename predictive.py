@@ -78,17 +78,25 @@ class ReactiveLP(LPFlowRouting):
         recent = self.hist + [w.traffic[t] for t in range(max(0, w.round - self.window), w.round)]
         return np.mean(recent[-self.window:], axis=0)
 
+    mu = 0.0                                              # min-energy tie-break (lp_bound)
+
     def _build(self, w):
         gen = np.maximum(self._rates(w), 0.05) * w.L
-        _, flow = max_lifetime_T(w, return_flow=True, gen=gen)
+        self.T_plan, flow = max_lifetime_T(w, return_flow=True, gen=gen, mu=self.mu)
+        old_t, old_c = getattr(self, "tgt", None), getattr(self, "credit", None)
+        carry = getattr(self, "carry", False) and old_t
+        if carry:                                         # book last round with the OLD split
+            self._book_last_round(w, old_t, old_c)
         self.tgt = {i: np.array([j for j, _ in e]) for i, e in flow.items()}
         self.w = {i: np.array([g for _, g in e]) for i, e in flow.items()}
         self.credit = {i: np.zeros(len(e)) for i, e in flow.items()}
-
-    def __call__(self, w):
-        if self.k % self.resolve_every == 0 and self.k > 0:
-            self._build(w)
-        return super().__call__(w)
+        if carry:                                         # keep each hop's rounding residual
+            for i in self.tgt:
+                if i in old_t:
+                    m = dict(zip(old_t[i].tolist(), old_c[i].tolist()))
+                    self.credit[i] = np.array([m.get(j, 0.0) for j in self.tgt[i].tolist()])
+        self.prev_k = {}
+        self.n_solves = getattr(self, "n_solves", 0) + 1
 
 
 class StaticLP(ReactiveLP):
@@ -106,16 +114,92 @@ class ForecastLP(ReactiveLP):
     """Forecast-driven LP routing (ours): re-solve the max-lifetime LP every k rounds from
     current batteries, with each node's generation set to its FORECAST mean rate over the
     next H rounds. A reactive LP plans from noisy recent counts and a static LP from the
-    long-run mean; the forecast gives the LP a stable, forward-looking rate."""
-    def __init__(self, w, history, H=24, forecaster="holt-winters", resolve_every=4, **fkw):
-        self.H = H
+    long-run mean; the forecast gives the LP a stable, forward-looking rate.
+
+    Planner options (defaults = the published Part 3 configuration):
+      split  "rounds": smooth weighted round-robin over rounds (each round a node sends
+             everything to one next hop, hops rotate in proportion to the LP split);
+             "bits": deficit round-robin over the bits actually sent, so a surge round
+             with 4x traffic counts 4x towards its hop's share (causal: it books last
+             round's bits, which the node knows once it has sent them).
+      mu     min-energy tie-break among max-lifetime flows (lp_bound.max_lifetime_T).
+      H      forecast horizon in rounds, or "life": the remaining lifetime the last
+             LP solve predicted (at least one day), i.e. plan for the rate until death.
+      event  re-solve early when a node's traffic last round exceeds its one-step
+             forecast by more than `event` running mean absolute errors (a burst the
+             forecast did not see); None = never.
+      carry  keep each next hop's round-robin credit across re-solves instead of resetting
+             it, so the rounding residual of one block is paid back in the next (with a
+             reset every 4 rounds a 0.6/0.4 split is realised as 0.5/0.5 in every block).
+    """
+    def __init__(self, w, history, H=24, forecaster="holt-winters", resolve_every=4,
+                 split="rounds", mu=0.0, event=None, carry=False, **fkw):
+        self.H, self.split, self.mu, self.event, self.carry = H, split, mu, event, carry
         self.obs = _Observer(w.n, history, forecaster, **fkw)
         self.window, self.resolve_every, self.k, self.hist = 4, resolve_every, 0, []
+        self.T_plan, self.prev, self.thresh = None, None, None
         self._build(w)
+
+    def _horizon(self):
+        if self.H == "life":
+            return int(np.clip(round(self.T_plan or 24), 24, 400))
+        return self.H
 
     def _rates(self, w):
         self.obs.catch_up(w)
-        return self.obs.f.forecast(self.H)[0].mean(0)
+        return self.obs.f.forecast(self._horizon())[0].mean(0)
+
+    def _surprised(self, w):
+        """True if last round's traffic broke the band forecast before it happened."""
+        hit = self.thresh is not None and w.round > 0 and \
+            bool(np.any(w.alive & (w.traffic[w.round - 1] > self.thresh)))
+        self.obs.catch_up(w)                              # now forecast the coming round
+        f = self.obs.f
+        self.thresh = f.forecast(1)[0][0] + self.event * f.mae
+        return hit
+
+    def _book_last_round(self, w, tgt, credit):
+        """Bits split only: book last round's bits into the credits before they are carried."""
+        if self.split != "bits" or self.prev is None or not self.prev_k or w.round == 0:
+            return
+        own = np.where(w.alive, w.traffic[w.round - 1], 0).astype(float)
+        sent = subtree_sum(w, self.prev, own)
+        for i, kk in self.prev_k.items():
+            credit[i] += self.w[i] * sent[i]
+            credit[i][kk] -= sent[i]
+        self.prev_k = {}
+
+    def __call__(self, w):
+        if self.split == "rounds" and self.event is None:
+            return super().__call__(w)
+        due = self.resolve_every and self.k % self.resolve_every == 0 and self.k > 0
+        if (self.event is not None and self._surprised(w)) or due:
+            self._build(w)
+            self.k = 0
+        self.k += 1
+        return self._route(w) if self.split == "rounds" else self._route_bits(w)
+
+    def _route_bits(self, w):
+        n = w.n
+        if self.prev is not None and self.prev_k and w.round > 0:
+            own = np.where(w.alive, w.traffic[w.round - 1], 0).astype(float)
+            sent = subtree_sum(w, self.prev, own)        # packets each node sent last round
+            for i, kk in self.prev_k.items():
+                c = self.credit[i]
+                c += self.w[i] * sent[i]
+                c[kk] -= sent[i]
+        parent = np.full(n, n, int); self.prev_k = {}
+        for i in np.flatnonzero(w.alive):
+            if i not in self.tgt:
+                continue
+            t, c = self.tgt[i], self.credit[i]
+            ok = (t == n) | w.alive[np.minimum(t, n - 1)]
+            if not ok.any():
+                continue
+            k = int(np.argmax(np.where(ok, c + 1e-6 * self.w[i], -np.inf)))
+            parent[i] = t[k]; self.prev_k[i] = k
+        self.prev = parent
+        return parent
 
 
 class LifetimeDijkstra:

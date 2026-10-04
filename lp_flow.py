@@ -34,6 +34,9 @@ class LPFlowRouting:
         if self.resolve_every and self.k % self.resolve_every == 0 and self.k > 0:
             self._build(env)
         self.k += 1
+        return self._route(env)
+
+    def _route(self, env):
         n = env.n
         parent = np.full(n, n, int)
         for i in np.flatnonzero(env.alive):

@@ -14,10 +14,13 @@ from scipy.optimize import linprog
 from env import WSN, erx
 
 
-def max_lifetime_T(env, alive=None, energy=None, return_flow=False, gen=None):
+def max_lifetime_T(env, alive=None, energy=None, return_flow=False, gen=None, mu=0.0):
     """T* in rounds. return_flow=True also gives {i: [(next hop, share), ...]} over the
     alive nodes (shares sum to 1), the optimal split used by lp_flow.py.
-    gen = bits each node generates per round (default: env.L for every node)."""
+    gen = bits each node generates per round (default: env.L for every node).
+    mu > 0 adds a small total-energy cost (in units of E0) to the objective, so among flows
+    with (almost) the same T it picks the one that spends least: max T alone leaves the
+    flows of non-bottleneck nodes arbitrary."""
     n = env.n
     alive = np.flatnonzero(env.alive if alive is None else alive)
     E = (env.E if energy is None else energy)[alive]
@@ -28,6 +31,8 @@ def max_lifetime_T(env, alive=None, energy=None, return_flow=False, gen=None):
     A = np.zeros((alive.size, nv)); b = E.astype(float).copy()
     Aeq = np.zeros((alive.size, nv)); beq = np.zeros(alive.size)
     for k, (i, j) in enumerate(pairs):
+        if mu:
+            c[k] = mu * (env.etx_bit[i, j] + (50e-9 if j != n else 0.0)) / env.e0
         A[idx[i], k] += env.etx_bit[i, j]
         if j != n:
             A[idx[j], k] += 50e-9
