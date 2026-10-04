@@ -181,13 +181,14 @@ class ForecastLP(ReactiveLP):
 
     def _route_bits(self, w):
         n = w.n
-        if self.prev is not None and self.prev_k and w.round > 0:
+        if self.prev is not None and w.round > 0:
             own = np.where(w.alive, w.traffic[w.round - 1], 0).astype(float)
-            sent = subtree_sum(w, self.prev, own)        # packets each node sent last round
+            self.sent = subtree_sum(w, self.prev, own)   # packets each node sent last round
             for i, kk in self.prev_k.items():
                 c = self.credit[i]
-                c += self.w[i] * sent[i]
-                c[kk] -= sent[i]
+                c += self.w[i] * self.sent[i]
+                c[kk] -= self.sent[i]
+        guess = getattr(self, "sent", None)
         parent = np.full(n, n, int); self.prev_k = {}
         for i in np.flatnonzero(w.alive):
             if i not in self.tgt:
@@ -196,7 +197,11 @@ class ForecastLP(ReactiveLP):
             ok = (t == n) | w.alive[np.minimum(t, n - 1)]
             if not ok.any():
                 continue
-            k = int(np.argmax(np.where(ok, c + 1e-6 * self.w[i], -np.inf)))
+            # smooth deficit round-robin: credit as if this round's bits (guessed from last
+            # round) had already arrived, so the largest share goes first; picking on the
+            # bare deficit sends a 9% hop 1 round in 4 when credits reset every 4 rounds
+            g = max(guess[i], 1.0) if guess is not None else 1.0
+            k = int(np.argmax(np.where(ok, c + self.w[i] * g, -np.inf)))
             parent[i] = t[k]; self.prev_k[i] = k
         self.prev = parent
         return parent

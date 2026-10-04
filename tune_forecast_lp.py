@@ -39,6 +39,10 @@ CONFIGS = {
     "a05g02":      dict(alpha=0.05, gamma=0.02),
     "a10g05":      dict(alpha=0.10, gamma=0.05),
     "perfect":     dict(forecaster="perfect"),
+    "carry":       dict(carry=True),
+    "bitscarry":   dict(split="bits", carry=True),
+    "histmean":    dict(forecaster="history-mean"),
+    "histmean_re1": dict(forecaster="history-mean", resolve_every=1),
 }
 OUT = "logs/tune_forecast_lp.json"
 ORACLE = "logs/oracle_validation.json"
@@ -55,9 +59,10 @@ def run(args):
     w0 = E.WSN(seed=s)
     h, tr = TR.generate(scen, w0.pos[:w0.n], s + 1000)
     kw = {**HW, **cfg}
-    if kw.get("forecaster") == "perfect":
-        kw = {k: v for k, v in kw.items() if k not in HW}
-        kw["future"] = tr
+    if kw.get("forecaster") in ("perfect", "history-mean", "seasonal-naive", "persistence"):
+        kw = {k: v for k, v in kw.items() if k not in HW or k in cfg}
+        if kw["forecaster"] == "perfect":
+            kw["future"] = tr
     w = E.WSN(seed=s, traffic=tr)
     t0 = time.time()
     pol = ForecastLP(w, h, **kw)
@@ -71,7 +76,11 @@ def main():
     ap.add_argument("--configs", default=",".join(CONFIGS))
     ap.add_argument("--workers", type=int, default=4)
     ap.add_argument("--extra", default="", help='JSON {name: config} to try beyond CONFIGS')
+    ap.add_argument("--scen", default="RNB", help="scenarios to run, e.g. RNB or D (pattern shift)")
+    ap.add_argument("--out", default=OUT)
     a = ap.parse_args()
+    global SCEN
+    SCEN = tuple(a.scen)
     cfgs = {**CONFIGS, **(json.loads(a.extra) if a.extra else {})}
     names = [c for c in a.configs.split(",") if c]
     orc = json.load(open(ORACLE)) if os.path.exists(ORACLE) else {}
@@ -81,23 +90,24 @@ def main():
             for (sc, s), T in zip(need, p.starmap(oracle, need)):
                 orc[f"{sc}{s}"] = T
         json.dump(orc, open(ORACLE, "w"), indent=1)
-    res = json.load(open(OUT)) if os.path.exists(OUT) else {}
+    res = json.load(open(a.out)) if os.path.exists(a.out) else {}
     jobs = [(n, cfgs[n], sc, s, orc[f"{sc}{s}"]) for n in names for sc in SCEN for s in VAL]
     with Pool(a.workers) as p:
         for n, sc, s, L, sol, sec in p.imap_unordered(run, jobs):
             res.setdefault(n, {"config": cfgs[n]}).setdefault(sc, {})[str(s)] = [L, sol, sec]
-    json.dump(res, open(OUT, "w"), indent=1)
+    json.dump(res, open(a.out, "w"), indent=1)
     base = res.get("base")
-    print(f"{'config':10s} {'R':>6s} {'N':>6s} {'B':>6s} {'mean':>6s} {'worst':>6s} {'d mean':>7s} {'solves/rd':>9s} {'s/run':>6s}")
+    print(f"{'config':16s} " + " ".join(f"{sc:>6s}" for sc in SCEN) + f" {'mean':>6s} {'worst':>6s} {'d mean':>7s} {'solves/rd':>9s} {'s/run':>6s}")
     for n in res:
         if not all(sc in res[n] and len(res[n][sc]) == len(VAL) for sc in SCEN):
             continue
         v = {sc: np.array([res[n][sc][str(s)][0] for s in VAL]) for sc in SCEN}
         m = np.mean([v[sc].mean() for sc in SCEN])
-        d = m - np.mean([np.mean([base[sc][str(s)][0] for s in VAL]) for sc in SCEN]) if base else float("nan")
+        ok = base and all(sc in base and len(base[sc]) == len(VAL) for sc in SCEN)
+        d = m - np.mean([np.mean([base[sc][str(s)][0] for s in VAL]) for sc in SCEN]) if ok else float("nan")
         sol = np.mean([res[n][sc][str(s)][1] for sc in SCEN for s in VAL])
         sec = np.mean([res[n][sc][str(s)][2] for sc in SCEN for s in VAL])
-        print(f"{n:10s} {v['R'].mean():6.1f} {v['N'].mean():6.1f} {v['B'].mean():6.1f} {m:6.2f} "
+        print(f"{n:16s} " + " ".join(f"{v[sc].mean():6.1f}" for sc in SCEN) + f" {m:6.2f} "
               f"{min(x.min() for x in v.values()):6.1f} {d:+7.2f} {sol:9.3f} {sec:6.1f}")
 
 

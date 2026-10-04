@@ -10,6 +10,10 @@ One "day" is P = 24 rounds.
   B  "sudden burst":   the R pattern plus unforecastable bursts: with probability p_burst per
                        round a random node (any node, relays included) sends M x its rate for
                        D rounds.
+  D  "pattern shift":  the R pattern, but `shift_day` days into the deployment the hotspot
+                       moves to a new random spot (a different 20% of nodes) for good. The
+                       history only ever shows the old hotspot, so a fixed historical rate is
+                       wrong from then on; a forecaster has to notice and adapt.
 
 Every generator is deterministic given its seed.
 """
@@ -36,7 +40,7 @@ def _pattern_rates(n, T, hot, peak=4.0, off=0.5, window=6, phase=17):
     return rate
 
 
-def generate(scenario, pos, seed, T=400, p_burst=0.05, burst_x=5.0, burst_len=4):
+def generate(scenario, pos, seed, T=400, p_burst=0.05, burst_x=5.0, burst_len=4, shift_day=2):
     rng = np.random.default_rng(seed)
     n = len(pos)
     H = HIST_DAYS * P
@@ -45,6 +49,9 @@ def generate(scenario, pos, seed, T=400, p_burst=0.05, burst_x=5.0, burst_len=4)
         return ones[:H], ones[H:]
     hot = _hotspot(pos, rng)
     rate = _pattern_rates(n, H + T, hot)
+    if scenario == "D":
+        t0 = H + shift_day * P
+        rate[t0:] = _pattern_rates(n, H + T, _hotspot(pos, np.random.default_rng(seed + 7919)))[t0:]
     if scenario == "B":
         t = 0
         while t < H + T:
@@ -52,7 +59,7 @@ def generate(scenario, pos, seed, T=400, p_burst=0.05, burst_x=5.0, burst_len=4)
                 i = rng.integers(n)
                 rate[t:t + burst_len, i] *= burst_x
             t += 1
-    elif scenario != "R":
+    elif scenario not in ("R", "D"):
         raise ValueError(scenario)
     k = rng.poisson(rate)
     return k[:H], k[H:]

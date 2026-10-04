@@ -118,7 +118,7 @@ def test_forecasters_see_no_future():
     from predictive import _Observer
     w0 = E.WSN(seed=9); h, tr = TR.generate("R", w0.pos[:w0.n], 9)
     tr2 = tr.copy(); tr2[30:] = 0
-    for name in ("holt-winters", "seasonal-naive", "persistence"):
+    for name in ("holt-winters", "seasonal-naive", "persistence", "history-mean"):
         o1, o2 = _Observer(100, h, name), _Observer(100, h, name)
         w1, w2 = E.WSN(seed=9, traffic=tr), E.WSN(seed=9, traffic=tr2)
         w1.round = w2.round = 30

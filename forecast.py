@@ -97,6 +97,22 @@ class HoltWinters(_Base):
         return self._band(mean)
 
 
+class HistoryMean(_Base):
+    """No prediction: every future round = the node's mean rate over the deployment history,
+    never updated. The baseline that tells whether a forecaster adds anything to a planner."""
+    def __init__(self, n, **kw):
+        super().__init__(n, **kw); self.m = np.ones(n)
+
+    def fit_history(self, hist):
+        self.m = np.asarray(hist, float).mean(0)
+
+    def update(self, y):
+        self._track_error(y)
+
+    def forecast(self, H):
+        return self._band(np.repeat(self.m[None, :], H, axis=0))
+
+
 class Perfect(_Base):
     """Knows the true future traffic. A diagnostic ceiling for what any forecaster could add."""
     def __init__(self, n, future=None, **kw):
@@ -115,4 +131,5 @@ class Perfect(_Base):
         return m, m
 
 
-FORECASTERS = {"perfect": Perfect, "holt-winters": HoltWinters, "seasonal-naive": SeasonalNaive, "persistence": Persistence}
+FORECASTERS = {"perfect": Perfect, "holt-winters": HoltWinters, "seasonal-naive": SeasonalNaive, "persistence": Persistence,
+               "history-mean": HistoryMean}
