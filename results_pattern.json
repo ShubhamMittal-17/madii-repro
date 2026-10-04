@@ -1,0 +1,2346 @@
+{
+ "R": {
+  "0": {
+   "sense": [
+    1.0,
+    0.0
+   ],
+   "Battery Dijkstra": {
+    "relay_pre": 0.47445871145675045,
+    "relay_surge": 0.4913527016839716,
+    "relay_other": 0.5049663479172437,
+    "energy_pre": 0.33383320726104904,
+    "energy_surge": 0.4638764058989492,
+    "energy_other": 0.3727935291103592,
+    "churn": 0.244,
+    "first_dead_hot": 0.0,
+    "fnd": 116
+   },
+   "Predictive Dijkstra (HW)": {
+    "relay_pre": 0.4781095173602866,
+    "relay_surge": 0.5358043842385528,
+    "relay_other": 0.4837797365173534,
+    "energy_pre": 0.34841498382078834,
+    "energy_surge": 0.49211527168397795,
+    "energy_other": 0.3512377281638257,
+    "churn": 0.24403508771929827,
+    "first_dead_hot": 1.0,
+    "fnd": 115
+   },
+   "Forecast LP (HW, ours)": {
+    "relay_pre": 0.5142606634002393,
+    "relay_surge": 0.523828075890045,
+    "relay_other": 0.4940458418680442,
+    "energy_pre": 0.20308837177495384,
+    "energy_surge": 0.32792387029067893,
+    "energy_other": 0.1780582599940873,
+    "churn": 0.3247619047619047,
+    "first_dead_hot": 0.0,
+    "fnd": 127
+   }
+  },
+  "1": {
+   "sense": [
+    1.0,
+    0.0
+   ],
+   "Battery Dijkstra": {
+    "relay_pre": 0.18164899136217869,
+    "relay_surge": 0.4075126540872758,
+    "relay_other": 0.12227322776745708,
+    "energy_pre": 0.16092682847490394,
+    "energy_surge": 0.43618156250198736,
+    "energy_other": 0.1235244673640615,
+    "churn": 0.19852173913043478,
+    "first_dead_hot": 1.0,
+    "fnd": 116
+   },
+   "Predictive Dijkstra (HW)": {
+    "relay_pre": 0.1415709277639657,
+    "relay_surge": 0.44622300092190464,
+    "relay_other": 0.1190782635812909,
+    "energy_pre": 0.1428185282827804,
+    "energy_surge": 0.45345851694689554,
+    "energy_other": 0.12539579859631075,
+    "churn": 0.21069565217391303,
+    "first_dead_hot": 1.0,
+    "fnd": 116
+   },
+   "Forecast LP (HW, ours)": {
+    "relay_pre": 0.11748215606691845,
+    "relay_surge": 0.38187690755792497,
+    "relay_other": 0.09591960166363685,
+    "energy_pre": 0.11098871578128842,
+    "energy_surge": 0.4246831753314871,
+    "energy_other": 0.09740603649770303,
+    "churn": 0.33654135338345864,
+    "first_dead_hot": 0.0,
+    "fnd": 134
+   }
+  },
+  "2": {
+   "sense": [
+    1.0,
+    0.625
+   ],
+   "Battery Dijkstra": {
+    "relay_pre": 0.4089194950783348,
+    "relay_surge": 0.4525084993941383,
+    "relay_other": 0.39937089288692884,
+    "energy_pre": 0.31508832966636,
+    "energy_surge": 0.4595265760612346,
+    "energy_other": 0.30687373406771523,
+    "churn": 0.16942857142857143,
+    "first_dead_hot": 0.0,
+    "fnd": 141
+   },
+   "Predictive Dijkstra (HW)": {
+    "relay_pre": 0.3959160396542157,
+    "relay_surge": 0.49932456421340643,
+    "relay_other": 0.38822763509581126,
+    "energy_pre": 0.30404902410301754,
+    "energy_surge": 0.4993648847529343,
+    "energy_other": 0.29406586910490334,
+    "churn": 0.17007246376811594,
+    "first_dead_hot": 0.0,
+    "fnd": 139
+   },
+   "Forecast LP (HW, ours)": {
+    "relay_pre": 0.30080266903030395,
+    "relay_surge": 0.34750677749728975,
+    "relay_other": 0.29211817249216887,
+    "energy_pre": 0.17980580946483135,
+    "energy_surge": 0.3436129035003069,
+    "energy_other": 0.15315925713382805,
+    "churn": 0.3431506849315068,
+    "first_dead_hot": 0.0,
+    "fnd": 147
+   }
+  },
+  "3": {
+   "sense": [
+    1.0,
+    0.0
+   ],
+   "Battery Dijkstra": {
+    "relay_pre": 0.23139569197720725,
+    "relay_surge": 0.4390186673129804,
+    "relay_other": 0.2073161154266314,
+    "energy_pre": 0.1754812750976335,
+    "energy_surge": 0.4482095499684962,
+    "energy_other": 0.16180206779361522,
+    "churn": 0.19142857142857148,
+    "first_dead_hot": 0.0,
+    "fnd": 141
+   },
+   "Predictive Dijkstra (HW)": {
+    "relay_pre": 0.19467607027859277,
+    "relay_surge": 0.5097653112624407,
+    "relay_other": 0.19524311706094713,
+    "energy_pre": 0.16902153371122017,
+    "energy_surge": 0.46953145204460206,
+    "energy_other": 0.15579871119836655,
+    "churn": 0.19130434782608693,
+    "first_dead_hot": 1.0,
+    "fnd": 139
+   },
+   "Forecast LP (HW, ours)": {
+    "relay_pre": 0.17897893880774357,
+    "relay_surge": 0.4885428673975244,
+    "relay_other": 0.14931815624274206,
+    "energy_pre": 0.12187289043253348,
+    "energy_surge": 0.41797244166947534,
+    "energy_other": 0.09364314751206583,
+    "churn": 0.33842767295597487,
+    "first_dead_hot": 0.0,
+    "fnd": 160
+   }
+  },
+  "6": {
+   "sense": [
+    1.0,
+    0.125
+   ],
+   "Battery Dijkstra": {
+    "relay_pre": 0.4932893745420128,
+    "relay_surge": 0.592017463530244,
+    "relay_other": 0.4947883660356107,
+    "energy_pre": 0.2988819191612345,
+    "energy_surge": 0.48916976304361365,
+    "energy_other": 0.29949259833443914,
+    "churn": 0.2827433628318584,
+    "first_dead_hot": 0.0,
+    "fnd": 114
+   },
+   "Predictive Dijkstra (HW)": {
+    "relay_pre": 0.4896337144764432,
+    "relay_surge": 0.6314855545065408,
+    "relay_other": 0.4838854418905637,
+    "energy_pre": 0.34316853470594,
+    "energy_surge": 0.5097525164950157,
+    "energy_other": 0.2974685130411047,
+    "churn": 0.27226415094339623,
+    "first_dead_hot": 0.0,
+    "fnd": 107
+   },
+   "Forecast LP (HW, ours)": {
+    "relay_pre": 0.5132152859457597,
+    "relay_surge": 0.61798826193704,
+    "relay_other": 0.47381278328265564,
+    "energy_pre": 0.18528307464464025,
+    "energy_surge": 0.3658118548175497,
+    "energy_other": 0.15753001163673913,
+    "churn": 0.3368067226890756,
+    "first_dead_hot": 0.0,
+    "fnd": 120
+   }
+  },
+  "7": {
+   "sense": [
+    1.0,
+    0.0
+   ],
+   "Battery Dijkstra": {
+    "relay_pre": 0.12493186205929792,
+    "relay_surge": 0.3044258240466691,
+    "relay_other": 0.10416016240343175,
+    "energy_pre": 0.1271207476416582,
+    "energy_surge": 0.38600563166852075,
+    "energy_other": 0.11301141058041203,
+    "churn": 0.2168421052631579,
+    "first_dead_hot": 1.0,
+    "fnd": 115
+   },
+   "Predictive Dijkstra (HW)": {
+    "relay_pre": 0.08606797186422621,
+    "relay_surge": 0.34150665099263067,
+    "relay_other": 0.0922798470621525,
+    "energy_pre": 0.100780488229846,
+    "energy_surge": 0.40637651269113184,
+    "energy_other": 0.10756294733355097,
+    "churn": 0.223859649122807,
+    "first_dead_hot": 1.0,
+    "fnd": 115
+   },
+   "Forecast LP (HW, ours)": {
+    "relay_pre": 0.07322639361561349,
+    "relay_surge": 0.2766319922634604,
+    "relay_other": 0.0717538854435123,
+    "energy_pre": 0.08626162057312431,
+    "energy_surge": 0.38509735319396915,
+    "energy_other": 0.08343759756849434,
+    "churn": 0.3579831932773109,
+    "first_dead_hot": 0.0,
+    "fnd": 120
+   }
+  },
+  "4": {
+   "sense": [
+    1.0,
+    0.0
+   ],
+   "Battery Dijkstra": {
+    "relay_pre": 0.1580676811236005,
+    "relay_surge": 0.3896750009863581,
+    "relay_other": 0.1088388437987192,
+    "energy_pre": 0.1740827467523571,
+    "energy_surge": 0.4444858521717894,
+    "energy_other": 0.12271562633144747,
+    "churn": 0.21023437499999997,
+    "first_dead_hot": 0.0,
+    "fnd": 129
+   },
+   "Predictive Dijkstra (HW)": {
+    "relay_pre": 0.1283327239618037,
+    "relay_surge": 0.4263513176621094,
+    "relay_other": 0.10687643116960377,
+    "energy_pre": 0.15752410316381366,
+    "energy_surge": 0.4889540625235885,
+    "energy_other": 0.11992736820539876,
+    "churn": 0.19241379310344825,
+    "first_dead_hot": 0.0,
+    "fnd": 117
+   },
+   "Forecast LP (HW, ours)": {
+    "relay_pre": 0.08705169410478786,
+    "relay_surge": 0.33814899152895705,
+    "relay_other": 0.07123231201690244,
+    "energy_pre": 0.11206257180025286,
+    "energy_surge": 0.4271509079392512,
+    "energy_other": 0.0803896036138802,
+    "churn": 0.3575352112676057,
+    "first_dead_hot": 1.0,
+    "fnd": 143
+   }
+  },
+  "5": {
+   "sense": [
+    1.0,
+    0.0
+   ],
+   "Battery Dijkstra": {
+    "relay_pre": 0.11016791438610102,
+    "relay_surge": 0.3194453711514131,
+    "relay_other": 0.09601529109519696,
+    "energy_pre": 0.13014886412942092,
+    "energy_surge": 0.3867805301507003,
+    "energy_other": 0.10783483947815993,
+    "churn": 0.21719999999999998,
+    "first_dead_hot": 0.0,
+    "fnd": 151
+   },
+   "Predictive Dijkstra (HW)": {
+    "relay_pre": 0.0916897678281495,
+    "relay_surge": 0.3623891733470823,
+    "relay_other": 0.0953552947158144,
+    "energy_pre": 0.11627530342266398,
+    "energy_surge": 0.4255709121307506,
+    "energy_other": 0.1036771327972338,
+    "churn": 0.19467153284671534,
+    "first_dead_hot": 1.0,
+    "fnd": 138
+   },
+   "Forecast LP (HW, ours)": {
+    "relay_pre": 0.06474514278569528,
+    "relay_surge": 0.2939310942061107,
+    "relay_other": 0.06568876106733647,
+    "energy_pre": 0.09815815645668495,
+    "energy_surge": 0.3922289816765724,
+    "energy_other": 0.09119009900551797,
+    "churn": 0.29824675324675326,
+    "first_dead_hot": 0.0,
+    "fnd": 155
+   }
+  },
+  "8": {
+   "sense": [
+    1.0,
+    0.0
+   ],
+   "Battery Dijkstra": {
+    "relay_pre": 0.23269766237302825,
+    "relay_surge": 0.45267622055061313,
+    "relay_other": 0.2120929130172777,
+    "energy_pre": 0.16862642792039562,
+    "energy_surge": 0.4244799632436411,
+    "energy_other": 0.15669275454023998,
+    "churn": 0.2041549295774648,
+    "first_dead_hot": 1.0,
+    "fnd": 143
+   },
+   "Predictive Dijkstra (HW)": {
+    "relay_pre": 0.23236961013897503,
+    "relay_surge": 0.4865630555060658,
+    "relay_other": 0.20736214715004303,
+    "energy_pre": 0.16122156046215905,
+    "energy_surge": 0.4489940994005329,
+    "energy_other": 0.15333894643952323,
+    "churn": 0.19869565217391305,
+    "first_dead_hot": 1.0,
+    "fnd": 139
+   },
+   "Forecast LP (HW, ours)": {
+    "relay_pre": 0.18783482001145363,
+    "relay_surge": 0.46058304637473796,
+    "relay_other": 0.16808023300898003,
+    "energy_pre": 0.12552203532589715,
+    "energy_surge": 0.41367661434347414,
+    "energy_other": 0.1058929501459096,
+    "churn": 0.3268211920529801,
+    "first_dead_hot": 0.0,
+    "fnd": 152
+   }
+  },
+  "9": {
+   "sense": [
+    1.0,
+    0.0
+   ],
+   "Battery Dijkstra": {
+    "relay_pre": 0.1014825000094104,
+    "relay_surge": 0.3666347030122199,
+    "relay_other": 0.102860830171005,
+    "energy_pre": 0.12635967059857764,
+    "energy_surge": 0.44235742709784226,
+    "energy_other": 0.12835055742697177,
+    "churn": 0.18557142857142855,
+    "first_dead_hot": 1.0,
+    "fnd": 141
+   },
+   "Predictive Dijkstra (HW)": {
+    "relay_pre": 0.09239337827790021,
+    "relay_surge": 0.3975654777863787,
+    "relay_other": 0.10161900995666463,
+    "energy_pre": 0.10854100986264376,
+    "energy_surge": 0.4730480319786976,
+    "energy_other": 0.12629345345331963,
+    "churn": 0.1791304347826087,
+    "first_dead_hot": 1.0,
+    "fnd": 139
+   },
+   "Forecast LP (HW, ours)": {
+    "relay_pre": 0.05173216153772625,
+    "relay_surge": 0.2591559062493191,
+    "relay_other": 0.05292578157287755,
+    "energy_pre": 0.07622529747375732,
+    "energy_surge": 0.40814993607510536,
+    "energy_other": 0.09062336509569757,
+    "churn": 0.31920245398773006,
+    "first_dead_hot": 0.0,
+    "fnd": 164
+   }
+  },
+  "10": {
+   "sense": [
+    1.0,
+    0.0625
+   ],
+   "Battery Dijkstra": {
+    "relay_pre": 0.24658980582792456,
+    "relay_surge": 0.37050597070338753,
+    "relay_other": 0.2609052030132577,
+    "energy_pre": 0.20637726688052166,
+    "energy_surge": 0.4359189356543488,
+    "energy_other": 0.21984122393347963,
+    "churn": 0.21419117647058825,
+    "first_dead_hot": 0.0,
+    "fnd": 137
+   },
+   "Predictive Dijkstra (HW)": {
+    "relay_pre": 0.2489219628857483,
+    "relay_surge": 0.3951565021214959,
+    "relay_other": 0.24349630978268244,
+    "energy_pre": 0.21266834046763572,
+    "energy_surge": 0.44323908501229853,
+    "energy_other": 0.21115529399133448,
+    "churn": 0.22817518248175184,
+    "first_dead_hot": 0.0,
+    "fnd": 138
+   },
+   "Forecast LP (HW, ours)": {
+    "relay_pre": 0.21372080111765981,
+    "relay_surge": 0.32637326049322074,
+    "relay_other": 0.20044957416599724,
+    "energy_pre": 0.15074207937903536,
+    "energy_surge": 0.3685544263528722,
+    "energy_other": 0.1329162486398968,
+    "churn": 0.35171232876712333,
+    "first_dead_hot": 0.0,
+    "fnd": 147
+   }
+  },
+  "11": {
+   "sense": [
+    1.0,
+    0.0
+   ],
+   "Battery Dijkstra": {
+    "relay_pre": 0.4103846144867249,
+    "relay_surge": 0.46007895799642334,
+    "relay_other": 0.3716379131685359,
+    "energy_pre": 0.29510736694291306,
+    "energy_surge": 0.45328790338159514,
+    "energy_other": 0.27680562165077377,
+    "churn": 0.24937007874015746,
+    "first_dead_hot": 0.0,
+    "fnd": 128
+   },
+   "Predictive Dijkstra (HW)": {
+    "relay_pre": 0.40289133474949546,
+    "relay_surge": 0.5426045051857308,
+    "relay_other": 0.4036548870956578,
+    "energy_pre": 0.29073203944334236,
+    "energy_surge": 0.48751107611206684,
+    "energy_other": 0.3071144190334209,
+    "churn": 0.21175438596491228,
+    "first_dead_hot": 1.0,
+    "fnd": 115
+   },
+   "Forecast LP (HW, ours)": {
+    "relay_pre": 0.43795568396176826,
+    "relay_surge": 0.4943964835701293,
+    "relay_other": 0.413177906254667,
+    "energy_pre": 0.18036198298860878,
+    "energy_surge": 0.3571354671864827,
+    "energy_other": 0.15806757358894125,
+    "churn": 0.34455223880597013,
+    "first_dead_hot": 0.0,
+    "fnd": 135
+   }
+  },
+  "12": {
+   "sense": [
+    1.0,
+    0.0
+   ],
+   "Battery Dijkstra": {
+    "relay_pre": 0.3316322640848249,
+    "relay_surge": 0.430662353486112,
+    "relay_other": 0.3433756154805914,
+    "energy_pre": 0.32091478134775303,
+    "energy_surge": 0.4500493618940336,
+    "energy_other": 0.2900986963334394,
+    "churn": 0.21133333333333332,
+    "first_dead_hot": 0.0,
+    "fnd": 91
+   },
+   "Predictive Dijkstra (HW)": {
+    "relay_pre": 0.31921656730565373,
+    "relay_surge": 0.47989750722015295,
+    "relay_other": 0.329671289042532,
+    "energy_pre": 0.2706840549780455,
+    "energy_surge": 0.4780549498825123,
+    "energy_other": 0.29461025957999426,
+    "churn": 0.2144943820224719,
+    "first_dead_hot": 1.0,
+    "fnd": 90
+   },
+   "Forecast LP (HW, ours)": {
+    "relay_pre": 0.2722867052685893,
+    "relay_surge": 0.43047859844173925,
+    "relay_other": 0.2622735350824945,
+    "energy_pre": 0.13844718059913239,
+    "energy_surge": 0.3947593723301708,
+    "energy_other": 0.1346464084969403,
+    "churn": 0.33367924528301884,
+    "first_dead_hot": 0.0,
+    "fnd": 107
+   }
+  },
+  "14": {
+   "sense": [
+    1.0,
+    0.0
+   ],
+   "Battery Dijkstra": {
+    "relay_pre": 0.6005370110997328,
+    "relay_surge": 0.6288650096986537,
+    "relay_other": 0.5706143735786838,
+    "energy_pre": 0.38587231713856995,
+    "energy_surge": 0.48043867018778985,
+    "energy_other": 0.3445343405261648,
+    "churn": 0.18091603053435112,
+    "first_dead_hot": 1.0,
+    "fnd": 132
+   },
+   "Predictive Dijkstra (HW)": {
+    "relay_pre": 0.5337659292435417,
+    "relay_surge": 0.620178687935891,
+    "relay_other": 0.5574384313387324,
+    "energy_pre": 0.32405641906328697,
+    "energy_surge": 0.4721931030211296,
+    "energy_other": 0.33838113959262334,
+    "churn": 0.20277372262773727,
+    "first_dead_hot": 0.0,
+    "fnd": 138
+   },
+   "Forecast LP (HW, ours)": {
+    "relay_pre": 0.6329466751916846,
+    "relay_surge": 0.6541106690790758,
+    "relay_other": 0.6183030651230356,
+    "energy_pre": 0.22040731162392022,
+    "energy_surge": 0.3057825532884655,
+    "energy_other": 0.1945231643539906,
+    "churn": 0.3337777777777778,
+    "first_dead_hot": 0.0,
+    "fnd": 136
+   }
+  },
+  "13": {
+   "sense": [
+    1.0,
+    0.0
+   ],
+   "Battery Dijkstra": {
+    "relay_pre": 0.13876001927128104,
+    "relay_surge": 0.29586377375224326,
+    "relay_other": 0.14387023497846532,
+    "energy_pre": 0.14181950308851934,
+    "energy_surge": 0.3871958552436831,
+    "energy_other": 0.14398161977915688,
+    "churn": 0.2077160493827161,
+    "first_dead_hot": 0.0,
+    "fnd": 163
+   },
+   "Predictive Dijkstra (HW)": {
+    "relay_pre": 0.12321191659006407,
+    "relay_surge": 0.3163805830626437,
+    "relay_other": 0.13735883159228499,
+    "energy_pre": 0.13325068692265926,
+    "energy_surge": 0.3990998059216281,
+    "energy_other": 0.13753768183688375,
+    "churn": 0.2013291139240506,
+    "first_dead_hot": 0.0,
+    "fnd": 159
+   },
+   "Forecast LP (HW, ours)": {
+    "relay_pre": 0.11532490995258725,
+    "relay_surge": 0.27785938019745476,
+    "relay_other": 0.11169470355286466,
+    "energy_pre": 0.1046683314769065,
+    "energy_surge": 0.41927569992536173,
+    "energy_other": 0.1030077786864861,
+    "churn": 0.30890322580645163,
+    "first_dead_hot": 0.0,
+    "fnd": 156
+   }
+  },
+  "15": {
+   "sense": [
+    1.0,
+    0.0
+   ],
+   "Battery Dijkstra": {
+    "relay_pre": 0.4145289573994859,
+    "relay_surge": 0.42637825262732415,
+    "relay_other": 0.40005844806903623,
+    "energy_pre": 0.273429276484567,
+    "energy_surge": 0.3955088634635845,
+    "energy_other": 0.2503752868984577,
+    "churn": 0.20660130718954248,
+    "first_dead_hot": 1.0,
+    "fnd": 154
+   },
+   "Predictive Dijkstra (HW)": {
+    "relay_pre": 0.40671220112318274,
+    "relay_surge": 0.445852203033494,
+    "relay_other": 0.405565311562264,
+    "energy_pre": 0.26665284173243703,
+    "energy_surge": 0.4070303293500711,
+    "energy_other": 0.2700371790897106,
+    "churn": 0.19307692307692306,
+    "first_dead_hot": 1.0,
+    "fnd": 144
+   },
+   "Forecast LP (HW, ours)": {
+    "relay_pre": 0.4035165645490297,
+    "relay_surge": 0.42463410331373297,
+    "relay_other": 0.37789413236494623,
+    "energy_pre": 0.16950644496233222,
+    "energy_surge": 0.3144575460181465,
+    "energy_other": 0.1599870543081757,
+    "churn": 0.36463855421686747,
+    "first_dead_hot": 0.0,
+    "fnd": 167
+   }
+  },
+  "16": {
+   "sense": [
+    1.0,
+    0.375
+   ],
+   "Battery Dijkstra": {
+    "relay_pre": 0.3102394395341984,
+    "relay_surge": 0.3850068934616508,
+    "relay_other": 0.2742852928006518,
+    "energy_pre": 0.2806366662723549,
+    "energy_surge": 0.4516729974527321,
+    "energy_other": 0.24450818179309838,
+    "churn": 0.20221428571428574,
+    "first_dead_hot": 0.0,
+    "fnd": 141
+   },
+   "Predictive Dijkstra (HW)": {
+    "relay_pre": 0.28622497941382946,
+    "relay_surge": 0.4334682233876255,
+    "relay_other": 0.26105317071246864,
+    "energy_pre": 0.2736671078071406,
+    "energy_surge": 0.48486950147388486,
+    "energy_other": 0.23247321038634106,
+    "churn": 0.21100719424460432,
+    "first_dead_hot": 1.0,
+    "fnd": 140
+   },
+   "Forecast LP (HW, ours)": {
+    "relay_pre": 0.2563596579088161,
+    "relay_surge": 0.35875611128049145,
+    "relay_other": 0.2418049361009802,
+    "energy_pre": 0.1631709327242474,
+    "energy_surge": 0.37971854774053404,
+    "energy_other": 0.1337587248685664,
+    "churn": 0.32197278911564625,
+    "first_dead_hot": 0.0,
+    "fnd": 148
+   }
+  },
+  "18": {
+   "sense": [
+    1.0,
+    0.5
+   ],
+   "Battery Dijkstra": {
+    "relay_pre": 0.4591941741323479,
+    "relay_surge": 0.4783630072496245,
+    "relay_other": 0.469268000076246,
+    "energy_pre": 0.30489076471738535,
+    "energy_surge": 0.4164384207589543,
+    "energy_other": 0.306862513273143,
+    "churn": 0.20865248226950356,
+    "first_dead_hot": 1.0,
+    "fnd": 142
+   },
+   "Predictive Dijkstra (HW)": {
+    "relay_pre": 0.449789448924129,
+    "relay_surge": 0.49463886318502287,
+    "relay_other": 0.44511168047118777,
+    "energy_pre": 0.2967930493720184,
+    "energy_surge": 0.42196275606260053,
+    "energy_other": 0.2907339568145097,
+    "churn": 0.2229655172413793,
+    "first_dead_hot": 0.0,
+    "fnd": 146
+   },
+   "Forecast LP (HW, ours)": {
+    "relay_pre": 0.4540957758830063,
+    "relay_surge": 0.4913312273673711,
+    "relay_other": 0.46866483265445413,
+    "energy_pre": 0.19466574746894166,
+    "energy_surge": 0.3291084681875068,
+    "energy_other": 0.17951401990992025,
+    "churn": 0.3044666666666666,
+    "first_dead_hot": 0.0,
+    "fnd": 151
+   }
+  },
+  "17": {
+   "sense": [
+    1.0,
+    0.0
+   ],
+   "Battery Dijkstra": {
+    "relay_pre": 0.18593653548468583,
+    "relay_surge": 0.3697997052859894,
+    "relay_other": 0.18147532681843043,
+    "energy_pre": 0.14553401838909535,
+    "energy_surge": 0.39432543413695115,
+    "energy_other": 0.1427627064237729,
+    "churn": 0.188,
+    "first_dead_hot": 0.0,
+    "fnd": 176
+   },
+   "Predictive Dijkstra (HW)": {
+    "relay_pre": 0.1753397099119304,
+    "relay_surge": 0.38899455758742085,
+    "relay_other": 0.17341926995940446,
+    "energy_pre": 0.14003142006140004,
+    "energy_surge": 0.4070739253324306,
+    "energy_other": 0.13458848343857194,
+    "churn": 0.1894857142857143,
+    "first_dead_hot": 1.0,
+    "fnd": 176
+   },
+   "Forecast LP (HW, ours)": {
+    "relay_pre": 0.16697162581683825,
+    "relay_surge": 0.3726731427196409,
+    "relay_other": 0.15373369374439222,
+    "energy_pre": 0.12211000195298083,
+    "energy_surge": 0.3983362218539825,
+    "energy_other": 0.11245449108087797,
+    "churn": 0.3717837837837838,
+    "first_dead_hot": 1.0,
+    "fnd": 186
+   }
+  },
+  "19": {
+   "sense": [
+    1.0,
+    0.0
+   ],
+   "Battery Dijkstra": {
+    "relay_pre": 0.4525136606634775,
+    "relay_surge": 0.5534057044116047,
+    "relay_other": 0.4156614180437531,
+    "energy_pre": 0.27371471813486314,
+    "energy_surge": 0.4378173764994915,
+    "energy_other": 0.2750235456896364,
+    "churn": 0.20805309734513272,
+    "first_dead_hot": 1.0,
+    "fnd": 114
+   },
+   "Predictive Dijkstra (HW)": {
+    "relay_pre": 0.43755318026041917,
+    "relay_surge": 0.548599927931996,
+    "relay_other": 0.406083858030163,
+    "energy_pre": 0.2607884782235319,
+    "energy_surge": 0.41264811951422803,
+    "energy_other": 0.2701726377240874,
+    "churn": 0.2264102564102564,
+    "first_dead_hot": 0.0,
+    "fnd": 118
+   },
+   "Forecast LP (HW, ours)": {
+    "relay_pre": 0.4947380465792914,
+    "relay_surge": 0.6108239974653256,
+    "relay_other": 0.4665077217292147,
+    "energy_pre": 0.17784174079837137,
+    "energy_surge": 0.3441631977290053,
+    "energy_other": 0.15480274299679522,
+    "churn": 0.356260162601626,
+    "first_dead_hot": 0.0,
+    "fnd": 124
+   }
+  },
+  "20": {
+   "sense": [
+    1.0,
+    0.0
+   ],
+   "Battery Dijkstra": {
+    "relay_pre": 0.4390796176309209,
+    "relay_surge": 0.5204457508392568,
+    "relay_other": 0.4129603980651949,
+    "energy_pre": 0.2700403434740953,
+    "energy_surge": 0.446149850317379,
+    "energy_other": 0.25958541775824895,
+    "churn": 0.2273943661971831,
+    "first_dead_hot": 1.0,
+    "fnd": 143
+   },
+   "Predictive Dijkstra (HW)": {
+    "relay_pre": 0.40527565307891605,
+    "relay_surge": 0.5569742740916738,
+    "relay_other": 0.3784101893525098,
+    "energy_pre": 0.25878566850728146,
+    "energy_surge": 0.4635655558852889,
+    "energy_other": 0.24075485567801092,
+    "churn": 0.24121621621621622,
+    "first_dead_hot": 0.0,
+    "fnd": 149
+   },
+   "Forecast LP (HW, ours)": {
+    "relay_pre": 0.45775240631380953,
+    "relay_surge": 0.6121700232127807,
+    "relay_other": 0.43161694652703314,
+    "energy_pre": 0.16922438069726872,
+    "energy_surge": 0.38062965025319845,
+    "energy_other": 0.14586345572914802,
+    "churn": 0.3342384105960265,
+    "first_dead_hot": 0.0,
+    "fnd": 152
+   }
+  },
+  "21": {
+   "sense": [
+    1.0,
+    0.6875
+   ],
+   "Battery Dijkstra": {
+    "relay_pre": 0.27888710008992906,
+    "relay_surge": 0.4660505827624075,
+    "relay_other": 0.252970243328578,
+    "energy_pre": 0.23912369265020372,
+    "energy_surge": 0.5016821089456711,
+    "energy_other": 0.2187311105840375,
+    "churn": 0.17079646017699116,
+    "first_dead_hot": 1.0,
+    "fnd": 114
+   },
+   "Predictive Dijkstra (HW)": {
+    "relay_pre": 0.23921468978492202,
+    "relay_surge": 0.48442093988114526,
+    "relay_other": 0.22976386022183137,
+    "energy_pre": 0.2203588981312382,
+    "energy_surge": 0.5055836765303555,
+    "energy_other": 0.20517669308995473,
+    "churn": 0.17456896551724138,
+    "first_dead_hot": 1.0,
+    "fnd": 117
+   },
+   "Forecast LP (HW, ours)": {
+    "relay_pre": 0.2045011107875287,
+    "relay_surge": 0.41929558037024683,
+    "relay_other": 0.19204576673782991,
+    "energy_pre": 0.13263433385493534,
+    "energy_surge": 0.3873423368400777,
+    "energy_other": 0.12742753590067865,
+    "churn": 0.30394160583941604,
+    "first_dead_hot": 0.0,
+    "fnd": 138
+   }
+  },
+  "22": {
+   "sense": [
+    1.0,
+    0.0
+   ],
+   "Battery Dijkstra": {
+    "relay_pre": 0.08692999583062035,
+    "relay_surge": 0.2270587628253892,
+    "relay_other": 0.07979686258225427,
+    "energy_pre": 0.14366610570422228,
+    "energy_surge": 0.3451961236017699,
+    "energy_other": 0.11008050592171148,
+    "churn": 0.1941228070175439,
+    "first_dead_hot": 0.0,
+    "fnd": 115
+   },
+   "Predictive Dijkstra (HW)": {
+    "relay_pre": 0.0742075406599474,
+    "relay_surge": 0.2597738691745612,
+    "relay_other": 0.07062409013863784,
+    "energy_pre": 0.12615630512125955,
+    "energy_surge": 0.37848029627042923,
+    "energy_other": 0.0936792681303188,
+    "churn": 0.20447368421052634,
+    "first_dead_hot": 1.0,
+    "fnd": 115
+   },
+   "Forecast LP (HW, ours)": {
+    "relay_pre": 0.05349291019411543,
+    "relay_surge": 0.1264176588222494,
+    "relay_other": 0.03460894033977009,
+    "energy_pre": 0.11752462910142361,
+    "energy_surge": 0.3519886801465932,
+    "energy_other": 0.09466797197916443,
+    "churn": 0.34455223880597013,
+    "first_dead_hot": 0.0,
+    "fnd": 135
+   }
+  },
+  "23": {
+   "sense": [
+    1.0,
+    0.0
+   ],
+   "Battery Dijkstra": {
+    "relay_pre": 0.36412108156282985,
+    "relay_surge": 0.4577743181827406,
+    "relay_other": 0.3305712000144118,
+    "energy_pre": 0.24871275075280225,
+    "energy_surge": 0.44546736492134864,
+    "energy_other": 0.23187670877428443,
+    "churn": 0.22474820143884894,
+    "first_dead_hot": 0.0,
+    "fnd": 140
+   },
+   "Predictive Dijkstra (HW)": {
+    "relay_pre": 0.33293950898202224,
+    "relay_surge": 0.5371871242009055,
+    "relay_other": 0.3027679677376018,
+    "energy_pre": 0.2400508491143737,
+    "energy_surge": 0.47992002645890647,
+    "energy_other": 0.21881660318213456,
+    "churn": 0.23905109489051096,
+    "first_dead_hot": 1.0,
+    "fnd": 138
+   },
+   "Forecast LP (HW, ours)": {
+    "relay_pre": 0.3479665266775283,
+    "relay_surge": 0.515516038884681,
+    "relay_other": 0.34625298889665945,
+    "energy_pre": 0.15547587827545112,
+    "energy_surge": 0.390515177099796,
+    "energy_other": 0.14074727860656025,
+    "churn": 0.3258992805755396,
+    "first_dead_hot": 0.0,
+    "fnd": 140
+   }
+  },
+  "26": {
+   "sense": [
+    1.0,
+    0.875
+   ],
+   "Battery Dijkstra": {
+    "relay_pre": 0.31697550066741675,
+    "relay_surge": 0.4806194522703323,
+    "relay_other": 0.30630499157329494,
+    "energy_pre": 0.23984886285194107,
+    "energy_surge": 0.4469801612039921,
+    "energy_other": 0.23947383897676894,
+    "churn": 0.20128000000000001,
+    "first_dead_hot": 0.0,
+    "fnd": 126
+   },
+   "Predictive Dijkstra (HW)": {
+    "relay_pre": 0.2955049540710551,
+    "relay_surge": 0.4983733079849067,
+    "relay_other": 0.3239499681852562,
+    "energy_pre": 0.2282408480148201,
+    "energy_surge": 0.4656652344533994,
+    "energy_other": 0.2519930053491125,
+    "churn": 0.18606837606837606,
+    "first_dead_hot": 0.0,
+    "fnd": 118
+   },
+   "Forecast LP (HW, ours)": {
+    "relay_pre": 0.2789828675620242,
+    "relay_surge": 0.4780845175537707,
+    "relay_other": 0.2667009956851609,
+    "energy_pre": 0.15238364561517032,
+    "energy_surge": 0.3706973716037521,
+    "energy_other": 0.13216137495304883,
+    "churn": 0.34833333333333333,
+    "first_dead_hot": 0.0,
+    "fnd": 127
+   }
+  },
+  "24": {
+   "sense": [
+    1.0,
+    0.875
+   ],
+   "Battery Dijkstra": {
+    "relay_pre": 0.3841224464796662,
+    "relay_surge": 0.5146932446611034,
+    "relay_other": 0.3626785722300234,
+    "energy_pre": 0.22150916108736157,
+    "energy_surge": 0.44447522323805494,
+    "energy_other": 0.22326723303443127,
+    "churn": 0.20962162162162162,
+    "first_dead_hot": 1.0,
+    "fnd": 186
+   },
+   "Predictive Dijkstra (HW)": {
+    "relay_pre": 0.37401430569806504,
+    "relay_surge": 0.5199147555345486,
+    "relay_other": 0.35875999185110935,
+    "energy_pre": 0.2159530567565558,
+    "energy_surge": 0.44637727178511927,
+    "energy_other": 0.2202118070045388,
+    "churn": 0.2157297297297297,
+    "first_dead_hot": 1.0,
+    "fnd": 186
+   },
+   "Forecast LP (HW, ours)": {
+    "relay_pre": 0.37484078399319853,
+    "relay_surge": 0.524885223231765,
+    "relay_other": 0.34618692042252086,
+    "energy_pre": 0.1677739804009062,
+    "energy_surge": 0.36994172270358616,
+    "energy_other": 0.14405294560324675,
+    "churn": 0.3013131313131313,
+    "first_dead_hot": 0.0,
+    "fnd": 199
+   }
+  },
+  "27": {
+   "sense": [
+    1.0,
+    0.0
+   ],
+   "Battery Dijkstra": {
+    "relay_pre": 0.07668035896992714,
+    "relay_surge": 0.2677200562278333,
+    "relay_other": 0.0728287992736808,
+    "energy_pre": 0.1269395525837111,
+    "energy_surge": 0.431325770769539,
+    "energy_other": 0.12584147072752644,
+    "churn": 0.17672566371681422,
+    "first_dead_hot": 1.0,
+    "fnd": 114
+   },
+   "Predictive Dijkstra (HW)": {
+    "relay_pre": 0.07497241886233251,
+    "relay_surge": 0.3064557939918445,
+    "relay_other": 0.07918745915810953,
+    "energy_pre": 0.11330123655358051,
+    "energy_surge": 0.4691575054137944,
+    "energy_other": 0.12406199890736687,
+    "churn": 0.14586956521739128,
+    "first_dead_hot": 1.0,
+    "fnd": 93
+   },
+   "Forecast LP (HW, ours)": {
+    "relay_pre": 0.03562691847858668,
+    "relay_surge": 0.19640515664704886,
+    "relay_other": 0.033715337800622955,
+    "energy_pre": 0.0895211151024931,
+    "energy_surge": 0.4255872833119767,
+    "energy_other": 0.08788702971621476,
+    "churn": 0.288976377952756,
+    "first_dead_hot": 0.0,
+    "fnd": 128
+   }
+  },
+  "25": {
+   "sense": [
+    1.0,
+    0.0625
+   ],
+   "Battery Dijkstra": {
+    "relay_pre": 0.3094650773834253,
+    "relay_surge": 0.5008609654958979,
+    "relay_other": 0.295024850420989,
+    "energy_pre": 0.21865043991646582,
+    "energy_surge": 0.4711115969259765,
+    "energy_other": 0.21084562737730725,
+    "churn": 0.2167153284671533,
+    "first_dead_hot": 1.0,
+    "fnd": 138
+   },
+   "Predictive Dijkstra (HW)": {
+    "relay_pre": 0.2985397006309266,
+    "relay_surge": 0.487389619256311,
+    "relay_other": 0.29436998716484947,
+    "energy_pre": 0.21255584796641633,
+    "energy_surge": 0.4553730626337385,
+    "energy_other": 0.2105601062940234,
+    "churn": 0.22640287769784173,
+    "first_dead_hot": 1.0,
+    "fnd": 140
+   },
+   "Forecast LP (HW, ours)": {
+    "relay_pre": 0.26922830712696105,
+    "relay_surge": 0.3971399598451524,
+    "relay_other": 0.24425655161566828,
+    "energy_pre": 0.16356210646634556,
+    "energy_surge": 0.38518207490634826,
+    "energy_other": 0.133820669052311,
+    "churn": 0.3223333333333333,
+    "first_dead_hot": 0.0,
+    "fnd": 151
+   }
+  },
+  "28": {
+   "sense": [
+    1.0,
+    0.0
+   ],
+   "Battery Dijkstra": {
+    "relay_pre": 0.4465805120263691,
+    "relay_surge": 0.6237947787414488,
+    "relay_other": 0.446160091635395,
+    "energy_pre": 0.25178823498823955,
+    "energy_surge": 0.4747101934669484,
+    "energy_other": 0.2630817313034499,
+    "churn": 0.24879120879120875,
+    "first_dead_hot": 1.0,
+    "fnd": 92
+   },
+   "Predictive Dijkstra (HW)": {
+    "relay_pre": 0.3861498970130393,
+    "relay_surge": 0.6424430470680128,
+    "relay_other": 0.4402007856534999,
+    "energy_pre": 0.22699557253920033,
+    "energy_surge": 0.4916255007513915,
+    "energy_other": 0.258930821633187,
+    "churn": 0.2640217391304348,
+    "first_dead_hot": 1.0,
+    "fnd": 93
+   },
+   "Forecast LP (HW, ours)": {
+    "relay_pre": 0.40991061339665225,
+    "relay_surge": 0.6247099660399166,
+    "relay_other": 0.4153807872506509,
+    "energy_pre": 0.14363613145051748,
+    "energy_surge": 0.39572521373480685,
+    "energy_other": 0.1369707586814554,
+    "churn": 0.3405050505050504,
+    "first_dead_hot": 0.0,
+    "fnd": 100
+   }
+  },
+  "29": {
+   "sense": [
+    1.0,
+    0.0
+   ],
+   "Battery Dijkstra": {
+    "relay_pre": 0.278750984938943,
+    "relay_surge": 0.4049836285877343,
+    "relay_other": 0.23538988464515948,
+    "energy_pre": 0.2070873711808871,
+    "energy_surge": 0.4226001667140973,
+    "energy_other": 0.17946031879725435,
+    "churn": 0.20380116959064332,
+    "first_dead_hot": 0.0,
+    "fnd": 172
+   },
+   "Predictive Dijkstra (HW)": {
+    "relay_pre": 0.2568400679515738,
+    "relay_surge": 0.4529968978916663,
+    "relay_other": 0.24083223149433858,
+    "energy_pre": 0.19635119538592896,
+    "energy_surge": 0.44540820948484755,
+    "energy_other": 0.18469607754093934,
+    "churn": 0.19130434782608696,
+    "first_dead_hot": 1.0,
+    "fnd": 162
+   },
+   "Forecast LP (HW, ours)": {
+    "relay_pre": 0.24864650338787525,
+    "relay_surge": 0.3941807448604964,
+    "relay_other": 0.22754697621020054,
+    "energy_pre": 0.15868709099753434,
+    "energy_surge": 0.3809737193193956,
+    "energy_other": 0.12983559245291382,
+    "churn": 0.3070555555555555,
+    "first_dead_hot": 0.0,
+    "fnd": 181
+   }
+  }
+ },
+ "B": {
+  "0": {
+   "sense": [
+    1.0,
+    0.0
+   ],
+   "Battery Dijkstra": {
+    "relay_pre": 0.48603755948395566,
+    "relay_surge": 0.46514188726841693,
+    "relay_other": 0.5079911845393325,
+    "energy_pre": 0.3464518543186996,
+    "energy_surge": 0.44386730389066054,
+    "energy_other": 0.3719201032893258,
+    "churn": 0.24396551724137933,
+    "first_dead_hot": 1.0,
+    "fnd": 117
+   },
+   "Predictive Dijkstra (HW)": {
+    "relay_pre": 0.47465407289321754,
+    "relay_surge": 0.5680695987790753,
+    "relay_other": 0.48330347071574375,
+    "energy_pre": 0.34401273602083343,
+    "energy_surge": 0.5304735348357342,
+    "energy_other": 0.3520163961486722,
+    "churn": 0.23405405405405408,
+    "first_dead_hot": 0.0,
+    "fnd": 112
+   },
+   "Forecast LP (HW, ours)": {
+    "relay_pre": 0.5202637152232358,
+    "relay_surge": 0.5247025497762028,
+    "relay_other": 0.4988943598864873,
+    "energy_pre": 0.2118659160767918,
+    "energy_surge": 0.3225261760116604,
+    "energy_other": 0.17452887337114312,
+    "churn": 0.3098373983739837,
+    "first_dead_hot": 0.0,
+    "fnd": 124
+   }
+  },
+  "1": {
+   "sense": [
+    1.0,
+    1.0
+   ],
+   "Battery Dijkstra": {
+    "relay_pre": 0.17442747399749742,
+    "relay_surge": 0.4107307223529756,
+    "relay_other": 0.12603505569561593,
+    "energy_pre": 0.15493613265504155,
+    "energy_surge": 0.44642773349627496,
+    "energy_other": 0.12657481359932707,
+    "churn": 0.21376068376068375,
+    "first_dead_hot": 1.0,
+    "fnd": 118
+   },
+   "Predictive Dijkstra (HW)": {
+    "relay_pre": 0.15204314153698473,
+    "relay_surge": 0.45517985198071487,
+    "relay_other": 0.11284055081630878,
+    "energy_pre": 0.13935098466127066,
+    "energy_surge": 0.46995426736826074,
+    "energy_other": 0.1152802988449247,
+    "churn": 0.22234782608695655,
+    "first_dead_hot": 1.0,
+    "fnd": 116
+   },
+   "Forecast LP (HW, ours)": {
+    "relay_pre": 0.12172545498594678,
+    "relay_surge": 0.35693153390848825,
+    "relay_other": 0.10490379543879019,
+    "energy_pre": 0.10565042850102922,
+    "energy_surge": 0.4328743110335467,
+    "energy_other": 0.09557158601075792,
+    "churn": 0.3330597014925373,
+    "first_dead_hot": 0.0,
+    "fnd": 135
+   }
+  },
+  "2": {
+   "sense": [
+    1.0,
+    0.75
+   ],
+   "Battery Dijkstra": {
+    "relay_pre": 0.3874201846191001,
+    "relay_surge": 0.4279099184114235,
+    "relay_other": 0.4037466943886778,
+    "energy_pre": 0.29433518360328087,
+    "energy_surge": 0.4342880164522095,
+    "energy_other": 0.30892187848302954,
+    "churn": 0.18304964539007093,
+    "first_dead_hot": 1.0,
+    "fnd": 142
+   },
+   "Predictive Dijkstra (HW)": {
+    "relay_pre": 0.3662780108572967,
+    "relay_surge": 0.45332772701667845,
+    "relay_other": 0.3976426949165551,
+    "energy_pre": 0.27640030868413895,
+    "energy_surge": 0.45195955243256813,
+    "energy_other": 0.30576852561040596,
+    "churn": 0.18707142857142858,
+    "first_dead_hot": 1.0,
+    "fnd": 141
+   },
+   "Forecast LP (HW, ours)": {
+    "relay_pre": 0.3217135026395965,
+    "relay_surge": 0.34099131039826225,
+    "relay_other": 0.29881876740443214,
+    "energy_pre": 0.17977343812638685,
+    "energy_surge": 0.33816518846238497,
+    "energy_other": 0.1593647889650672,
+    "churn": 0.34061224489795916,
+    "first_dead_hot": 0.0,
+    "fnd": 148
+   }
+  },
+  "4": {
+   "sense": [
+    0.996875,
+    0.0625
+   ],
+   "Battery Dijkstra": {
+    "relay_pre": 0.17076206317259285,
+    "relay_surge": 0.3759742815677095,
+    "relay_other": 0.12455457437011963,
+    "energy_pre": 0.16493301464258253,
+    "energy_surge": 0.43811769533438566,
+    "energy_other": 0.14049974919305877,
+    "churn": 0.20286885245901642,
+    "first_dead_hot": 0.0,
+    "fnd": 123
+   },
+   "Predictive Dijkstra (HW)": {
+    "relay_pre": 0.1403606065666612,
+    "relay_surge": 0.4166645153465439,
+    "relay_other": 0.10987984955220223,
+    "energy_pre": 0.1454465498570509,
+    "energy_surge": 0.4648740583752219,
+    "energy_other": 0.12939991896950248,
+    "churn": 0.20774193548387102,
+    "first_dead_hot": 0.0,
+    "fnd": 125
+   },
+   "Forecast LP (HW, ours)": {
+    "relay_pre": 0.0931675216771161,
+    "relay_surge": 0.34466266210423063,
+    "relay_other": 0.07989302131633974,
+    "energy_pre": 0.10845907164173678,
+    "energy_surge": 0.4195927421523389,
+    "energy_other": 0.0914334811667589,
+    "churn": 0.3408695652173913,
+    "first_dead_hot": 1.0,
+    "fnd": 139
+   }
+  },
+  "3": {
+   "sense": [
+    1.0,
+    0.0
+   ],
+   "Battery Dijkstra": {
+    "relay_pre": 0.2501797315870455,
+    "relay_surge": 0.4196480723968769,
+    "relay_other": 0.22350658132864965,
+    "energy_pre": 0.18433413659619963,
+    "energy_surge": 0.4392721695448587,
+    "energy_other": 0.17613019033040916,
+    "churn": 0.19330935251798564,
+    "first_dead_hot": 0.0,
+    "fnd": 140
+   },
+   "Predictive Dijkstra (HW)": {
+    "relay_pre": 0.21124095997743633,
+    "relay_surge": 0.4640403512984284,
+    "relay_other": 0.21136770425865245,
+    "energy_pre": 0.17523375799670768,
+    "energy_surge": 0.4479946157860047,
+    "energy_other": 0.17325413682582294,
+    "churn": 0.19870503597122305,
+    "first_dead_hot": 1.0,
+    "fnd": 140
+   },
+   "Forecast LP (HW, ours)": {
+    "relay_pre": 0.1656332729915582,
+    "relay_surge": 0.4555823461761913,
+    "relay_other": 0.16016415808018716,
+    "energy_pre": 0.10918064305719909,
+    "energy_surge": 0.4223799523161953,
+    "energy_other": 0.10169840251063679,
+    "churn": 0.3331756756756757,
+    "first_dead_hot": 0.0,
+    "fnd": 149
+   }
+  },
+  "5": {
+   "sense": [
+    0.996875,
+    0.125
+   ],
+   "Battery Dijkstra": {
+    "relay_pre": 0.11349924623867838,
+    "relay_surge": 0.3376879594060031,
+    "relay_other": 0.10265063873874916,
+    "energy_pre": 0.12376965500559144,
+    "energy_surge": 0.4162385341870835,
+    "energy_other": 0.11181852408564487,
+    "churn": 0.19985714285714287,
+    "first_dead_hot": 0.0,
+    "fnd": 141
+   },
+   "Predictive Dijkstra (HW)": {
+    "relay_pre": 0.09462449134478175,
+    "relay_surge": 0.3731457121130501,
+    "relay_other": 0.09396080218591438,
+    "energy_pre": 0.11042105247048377,
+    "energy_surge": 0.43296043221125136,
+    "energy_other": 0.10276994199674887,
+    "churn": 0.19051094890510953,
+    "first_dead_hot": 1.0,
+    "fnd": 138
+   },
+   "Forecast LP (HW, ours)": {
+    "relay_pre": 0.071903098351153,
+    "relay_surge": 0.29455595906942594,
+    "relay_other": 0.06747994592823733,
+    "energy_pre": 0.10489391510786204,
+    "energy_surge": 0.39584566038166114,
+    "energy_other": 0.07999057060644596,
+    "churn": 0.2993710691823899,
+    "first_dead_hot": 0.0,
+    "fnd": 160
+   }
+  },
+  "6": {
+   "sense": [
+    1.0,
+    0.0
+   ],
+   "Battery Dijkstra": {
+    "relay_pre": 0.48175069596683145,
+    "relay_surge": 0.6029868437336493,
+    "relay_other": 0.4847970490814373,
+    "energy_pre": 0.31247453161251193,
+    "energy_surge": 0.5004041678172542,
+    "energy_other": 0.2956555331404571,
+    "churn": 0.27654545454545454,
+    "first_dead_hot": 1.0,
+    "fnd": 111
+   },
+   "Predictive Dijkstra (HW)": {
+    "relay_pre": 0.4786157214542002,
+    "relay_surge": 0.6330842166478295,
+    "relay_other": 0.4630419669497978,
+    "energy_pre": 0.3209500088318889,
+    "energy_surge": 0.5187457977286307,
+    "energy_other": 0.28600953951284147,
+    "churn": 0.2678703703703704,
+    "first_dead_hot": 0.0,
+    "fnd": 109
+   },
+   "Forecast LP (HW, ours)": {
+    "relay_pre": 0.48929395624482164,
+    "relay_surge": 0.5961613569633711,
+    "relay_other": 0.46933777438745916,
+    "energy_pre": 0.18840386613957613,
+    "energy_surge": 0.3616640821624749,
+    "energy_other": 0.15078224445934743,
+    "churn": 0.3533913043478261,
+    "first_dead_hot": 0.0,
+    "fnd": 116
+   }
+  },
+  "7": {
+   "sense": [
+    1.0,
+    0.0
+   ],
+   "Battery Dijkstra": {
+    "relay_pre": 0.1280736893370176,
+    "relay_surge": 0.3116679582392804,
+    "relay_other": 0.10264812912956467,
+    "energy_pre": 0.11672976168290956,
+    "energy_surge": 0.3876557433498362,
+    "energy_other": 0.11255135032882263,
+    "churn": 0.2143362831858407,
+    "first_dead_hot": 1.0,
+    "fnd": 114
+   },
+   "Predictive Dijkstra (HW)": {
+    "relay_pre": 0.11281747247468638,
+    "relay_surge": 0.33725404140813864,
+    "relay_other": 0.09130154408366636,
+    "energy_pre": 0.11741814697245648,
+    "energy_surge": 0.4014351730931306,
+    "energy_other": 0.09962868021544484,
+    "churn": 0.22912280701754387,
+    "first_dead_hot": 0.0,
+    "fnd": 115
+   },
+   "Forecast LP (HW, ours)": {
+    "relay_pre": 0.0830844543798531,
+    "relay_surge": 0.26498512417644493,
+    "relay_other": 0.07031693522315519,
+    "energy_pre": 0.10502588229789106,
+    "energy_surge": 0.3887533110255846,
+    "energy_other": 0.07568311132864829,
+    "churn": 0.3575409836065574,
+    "first_dead_hot": 0.0,
+    "fnd": 123
+   }
+  },
+  "8": {
+   "sense": [
+    1.0,
+    0.0
+   ],
+   "Battery Dijkstra": {
+    "relay_pre": 0.23402098718752617,
+    "relay_surge": 0.48534518426142126,
+    "relay_other": 0.21075482943982515,
+    "energy_pre": 0.17568669756094607,
+    "energy_surge": 0.43616795810688674,
+    "energy_other": 0.15373396840465128,
+    "churn": 0.19262773722627738,
+    "first_dead_hot": 1.0,
+    "fnd": 138
+   },
+   "Predictive Dijkstra (HW)": {
+    "relay_pre": 0.22249603523027278,
+    "relay_surge": 0.49230759139490493,
+    "relay_other": 0.2018086147944227,
+    "energy_pre": 0.16988688062079052,
+    "energy_surge": 0.4420350157941477,
+    "energy_other": 0.1488906736640116,
+    "churn": 0.19942028985507249,
+    "first_dead_hot": 1.0,
+    "fnd": 139
+   },
+   "Forecast LP (HW, ours)": {
+    "relay_pre": 0.19769816671043242,
+    "relay_surge": 0.4388057877619691,
+    "relay_other": 0.16864221781103503,
+    "energy_pre": 0.1298021652945253,
+    "energy_surge": 0.40938041131605185,
+    "energy_other": 0.10214766525513393,
+    "churn": 0.3327741935483871,
+    "first_dead_hot": 0.0,
+    "fnd": 156
+   }
+  },
+  "10": {
+   "sense": [
+    1.0,
+    0.0
+   ],
+   "Battery Dijkstra": {
+    "relay_pre": 0.2724352259489581,
+    "relay_surge": 0.37147931375167853,
+    "relay_other": 0.255550101888525,
+    "energy_pre": 0.21732553993125667,
+    "energy_surge": 0.42264965062267434,
+    "energy_other": 0.22044271589602543,
+    "churn": 0.20536764705882354,
+    "first_dead_hot": 0.0,
+    "fnd": 137
+   },
+   "Predictive Dijkstra (HW)": {
+    "relay_pre": 0.25881524573345344,
+    "relay_surge": 0.40029748165791473,
+    "relay_other": 0.23469202153374807,
+    "energy_pre": 0.2258300374038216,
+    "energy_surge": 0.4367605414540727,
+    "energy_other": 0.2031820479742248,
+    "churn": 0.23094202898550728,
+    "first_dead_hot": 1.0,
+    "fnd": 139
+   },
+   "Forecast LP (HW, ours)": {
+    "relay_pre": 0.22233994508163898,
+    "relay_surge": 0.3154121772695571,
+    "relay_other": 0.20710539281688506,
+    "energy_pre": 0.1566237013030664,
+    "energy_surge": 0.3581825732995136,
+    "energy_other": 0.13911624169881454,
+    "churn": 0.36363636363636365,
+    "first_dead_hot": 0.0,
+    "fnd": 144
+   }
+  },
+  "9": {
+   "sense": [
+    1.0,
+    0.0
+   ],
+   "Battery Dijkstra": {
+    "relay_pre": 0.11767924158070796,
+    "relay_surge": 0.34295138086955457,
+    "relay_other": 0.10874323779857314,
+    "energy_pre": 0.14362229257131978,
+    "energy_surge": 0.43317456255529563,
+    "energy_other": 0.1315298916465047,
+    "churn": 0.18661971830985918,
+    "first_dead_hot": 0.0,
+    "fnd": 143
+   },
+   "Predictive Dijkstra (HW)": {
+    "relay_pre": 0.11305241194131187,
+    "relay_surge": 0.35970068260576354,
+    "relay_other": 0.10363544462526014,
+    "energy_pre": 0.14081430589151422,
+    "energy_surge": 0.4463859521304185,
+    "energy_other": 0.12688782774419988,
+    "churn": 0.1847517730496454,
+    "first_dead_hot": 1.0,
+    "fnd": 142
+   },
+   "Forecast LP (HW, ours)": {
+    "relay_pre": 0.062429884534520814,
+    "relay_surge": 0.26089679929989856,
+    "relay_other": 0.0500274955111899,
+    "energy_pre": 0.10166536408987809,
+    "energy_surge": 0.4059160115801569,
+    "energy_other": 0.08954293715587557,
+    "churn": 0.31511764705882356,
+    "first_dead_hot": 0.0,
+    "fnd": 171
+   }
+  },
+  "12": {
+   "sense": [
+    1.0,
+    0.125
+   ],
+   "Battery Dijkstra": {
+    "relay_pre": 0.3170318620775099,
+    "relay_surge": 0.4501256061281851,
+    "relay_other": 0.3465903425709961,
+    "energy_pre": 0.29236844011385404,
+    "energy_surge": 0.45270248230848226,
+    "energy_other": 0.3030266475444972,
+    "churn": 0.20382022471910116,
+    "first_dead_hot": 1.0,
+    "fnd": 90
+   },
+   "Predictive Dijkstra (HW)": {
+    "relay_pre": 0.30965298273933356,
+    "relay_surge": 0.4788717865271162,
+    "relay_other": 0.32704203640281393,
+    "energy_pre": 0.29304301559756396,
+    "energy_surge": 0.47534200927265746,
+    "energy_other": 0.2934861834354697,
+    "churn": 0.22168539325842693,
+    "first_dead_hot": 1.0,
+    "fnd": 90
+   },
+   "Forecast LP (HW, ours)": {
+    "relay_pre": 0.2563408023248394,
+    "relay_surge": 0.4116086770333835,
+    "relay_other": 0.24885695690560747,
+    "energy_pre": 0.14067896648744901,
+    "energy_surge": 0.3657982881995897,
+    "energy_other": 0.1266688121858499,
+    "churn": 0.32544444444444454,
+    "first_dead_hot": 0.0,
+    "fnd": 91
+   }
+  },
+  "11": {
+   "sense": [
+    0.990625,
+    0.875
+   ],
+   "Battery Dijkstra": {
+    "relay_pre": 0.4114728267970338,
+    "relay_surge": 0.46927857492061054,
+    "relay_other": 0.3624426095902104,
+    "energy_pre": 0.30136431824154986,
+    "energy_surge": 0.45946740770769456,
+    "energy_other": 0.2705943986003247,
+    "churn": 0.24653543307086612,
+    "first_dead_hot": 0.0,
+    "fnd": 128
+   },
+   "Predictive Dijkstra (HW)": {
+    "relay_pre": 0.37476250149110063,
+    "relay_surge": 0.5560179016289122,
+    "relay_other": 0.3993081061913125,
+    "energy_pre": 0.2813986897120625,
+    "energy_surge": 0.5017186089908156,
+    "energy_other": 0.30491363703429086,
+    "churn": 0.20663716814159297,
+    "first_dead_hot": 1.0,
+    "fnd": 114
+   },
+   "Forecast LP (HW, ours)": {
+    "relay_pre": 0.4184076701813595,
+    "relay_surge": 0.5168184477551784,
+    "relay_other": 0.40746743999586116,
+    "energy_pre": 0.18187505897619421,
+    "energy_surge": 0.35931349081896496,
+    "energy_other": 0.1532289504406865,
+    "churn": 0.32464566929133853,
+    "first_dead_hot": 0.0,
+    "fnd": 128
+   }
+  },
+  "14": {
+   "sense": [
+    1.0,
+    0.25
+   ],
+   "Battery Dijkstra": {
+    "relay_pre": 0.5378222666062239,
+    "relay_surge": 0.6011477257328917,
+    "relay_other": 0.5689493712330331,
+    "energy_pre": 0.32727519526946575,
+    "energy_surge": 0.45220333406481694,
+    "energy_other": 0.35058668110502067,
+    "churn": 0.1991304347826087,
+    "first_dead_hot": 1.0,
+    "fnd": 139
+   },
+   "Predictive Dijkstra (HW)": {
+    "relay_pre": 0.5951287862162016,
+    "relay_surge": 0.6400112112358725,
+    "relay_other": 0.5588128310830679,
+    "energy_pre": 0.3782736683579969,
+    "energy_surge": 0.48905844619266803,
+    "energy_other": 0.3427933814266228,
+    "churn": 0.18259541984732827,
+    "first_dead_hot": 0.0,
+    "fnd": 132
+   },
+   "Forecast LP (HW, ours)": {
+    "relay_pre": 0.6184721628886496,
+    "relay_surge": 0.6617595260711108,
+    "relay_other": 0.6202886853016979,
+    "energy_pre": 0.2081640913167269,
+    "energy_surge": 0.31669049026354895,
+    "energy_other": 0.19634803665500444,
+    "churn": 0.33422222222222225,
+    "first_dead_hot": 0.0,
+    "fnd": 136
+   }
+  },
+  "13": {
+   "sense": [
+    1.0,
+    0.0
+   ],
+   "Battery Dijkstra": {
+    "relay_pre": 0.1355661764804132,
+    "relay_surge": 0.29750033203481396,
+    "relay_other": 0.13583155058362587,
+    "energy_pre": 0.14658422890090844,
+    "energy_surge": 0.3839735769100735,
+    "energy_other": 0.14292155742732882,
+    "churn": 0.1988679245283019,
+    "first_dead_hot": 0.0,
+    "fnd": 160
+   },
+   "Predictive Dijkstra (HW)": {
+    "relay_pre": 0.1263140913185234,
+    "relay_surge": 0.3156581721693794,
+    "relay_other": 0.1265416309500193,
+    "energy_pre": 0.1392895555411969,
+    "energy_surge": 0.3985243941721757,
+    "energy_other": 0.1333956628794359,
+    "churn": 0.2101242236024845,
+    "first_dead_hot": 1.0,
+    "fnd": 162
+   },
+   "Forecast LP (HW, ours)": {
+    "relay_pre": 0.11542533927312133,
+    "relay_surge": 0.2649891124935973,
+    "relay_other": 0.10663528526124966,
+    "energy_pre": 0.1273080600745451,
+    "energy_surge": 0.4120952854300643,
+    "energy_other": 0.10379614780252029,
+    "churn": 0.3117791411042945,
+    "first_dead_hot": 1.0,
+    "fnd": 164
+   }
+  },
+  "16": {
+   "sense": [
+    1.0,
+    0.0625
+   ],
+   "Battery Dijkstra": {
+    "relay_pre": 0.28650863924305414,
+    "relay_surge": 0.39688441762547294,
+    "relay_other": 0.27663362296202465,
+    "energy_pre": 0.24992055553712705,
+    "energy_surge": 0.46364251070813917,
+    "energy_other": 0.24793702877543014,
+    "churn": 0.21007194244604319,
+    "first_dead_hot": 0.0,
+    "fnd": 140
+   },
+   "Predictive Dijkstra (HW)": {
+    "relay_pre": 0.2565594395652261,
+    "relay_surge": 0.44362721514481557,
+    "relay_other": 0.2636164329421952,
+    "energy_pre": 0.2388091156807891,
+    "energy_surge": 0.48616501196714834,
+    "energy_other": 0.2368161367442208,
+    "churn": 0.21561151079136687,
+    "first_dead_hot": 0.0,
+    "fnd": 140
+   },
+   "Forecast LP (HW, ours)": {
+    "relay_pre": 0.2554254337916651,
+    "relay_surge": 0.36753737925736685,
+    "relay_other": 0.24440649975896742,
+    "energy_pre": 0.14712280822478593,
+    "energy_surge": 0.3937612503373906,
+    "energy_other": 0.13554276692148265,
+    "churn": 0.32748251748251744,
+    "first_dead_hot": 0.0,
+    "fnd": 144
+   }
+  },
+  "15": {
+   "sense": [
+    1.0,
+    0.0
+   ],
+   "Battery Dijkstra": {
+    "relay_pre": 0.406765435597489,
+    "relay_surge": 0.4089570323786372,
+    "relay_other": 0.4200788798574344,
+    "energy_pre": 0.2770017882933834,
+    "energy_surge": 0.38757372730306877,
+    "energy_other": 0.2780609704968312,
+    "churn": 0.1871830985915493,
+    "first_dead_hot": 1.0,
+    "fnd": 143
+   },
+   "Predictive Dijkstra (HW)": {
+    "relay_pre": 0.3757353693268092,
+    "relay_surge": 0.4428853773149131,
+    "relay_other": 0.416875273267437,
+    "energy_pre": 0.25997161050131645,
+    "energy_surge": 0.4093352836625713,
+    "energy_other": 0.27550537067796693,
+    "churn": 0.19212765957446806,
+    "first_dead_hot": 1.0,
+    "fnd": 142
+   },
+   "Forecast LP (HW, ours)": {
+    "relay_pre": 0.3914122826818559,
+    "relay_surge": 0.4100482365822427,
+    "relay_other": 0.374853807606024,
+    "energy_pre": 0.17794449256477557,
+    "energy_surge": 0.3149627576759514,
+    "energy_other": 0.15427488453407007,
+    "churn": 0.37,
+    "first_dead_hot": 0.0,
+    "fnd": 144
+   }
+  },
+  "19": {
+   "sense": [
+    1.0,
+    0.0
+   ],
+   "Battery Dijkstra": {
+    "relay_pre": 0.4662276675023129,
+    "relay_surge": 0.5417237907749658,
+    "relay_other": 0.4032854629078357,
+    "energy_pre": 0.28792986105088203,
+    "energy_surge": 0.4234479400893743,
+    "energy_other": 0.27609149493339513,
+    "churn": 0.20157894736842105,
+    "first_dead_hot": 0.0,
+    "fnd": 115
+   },
+   "Predictive Dijkstra (HW)": {
+    "relay_pre": 0.45477570596676237,
+    "relay_surge": 0.5545538910243525,
+    "relay_other": 0.40760834462153506,
+    "energy_pre": 0.2803882548903848,
+    "energy_surge": 0.454852338574273,
+    "energy_other": 0.26598423327752585,
+    "churn": 0.2101754385964912,
+    "first_dead_hot": 0.0,
+    "fnd": 115
+   },
+   "Forecast LP (HW, ours)": {
+    "relay_pre": 0.5123768320433707,
+    "relay_surge": 0.5909238465679807,
+    "relay_other": 0.47408970131460904,
+    "energy_pre": 0.19013231147698523,
+    "energy_surge": 0.3375891336994003,
+    "energy_other": 0.15707654700507945,
+    "churn": 0.36299065420560744,
+    "first_dead_hot": 0.0,
+    "fnd": 108
+   }
+  },
+  "18": {
+   "sense": [
+    1.0,
+    0.0
+   ],
+   "Battery Dijkstra": {
+    "relay_pre": 0.4623408742104604,
+    "relay_surge": 0.468265132356546,
+    "relay_other": 0.46471264562185044,
+    "energy_pre": 0.3071993945344247,
+    "energy_surge": 0.4058851915840865,
+    "energy_other": 0.30722964218151183,
+    "churn": 0.2163380281690141,
+    "first_dead_hot": 1.0,
+    "fnd": 143
+   },
+   "Predictive Dijkstra (HW)": {
+    "relay_pre": 0.4532994263110961,
+    "relay_surge": 0.5064761613818956,
+    "relay_other": 0.4523258359747327,
+    "energy_pre": 0.2963815897610444,
+    "energy_surge": 0.4299670100987128,
+    "energy_other": 0.3002881674657091,
+    "churn": 0.20765957446808514,
+    "first_dead_hot": 1.0,
+    "fnd": 142
+   },
+   "Forecast LP (HW, ours)": {
+    "relay_pre": 0.47157666947120913,
+    "relay_surge": 0.512051670762773,
+    "relay_other": 0.4670404787810982,
+    "energy_pre": 0.20085683242795535,
+    "energy_surge": 0.3253899756433778,
+    "energy_other": 0.17744896695736415,
+    "churn": 0.2952,
+    "first_dead_hot": 0.0,
+    "fnd": 151
+   }
+  },
+  "17": {
+   "sense": [
+    1.0,
+    0.0
+   ],
+   "Battery Dijkstra": {
+    "relay_pre": 0.18452351938510364,
+    "relay_surge": 0.3754891030448302,
+    "relay_other": 0.18052196505935453,
+    "energy_pre": 0.150434079820071,
+    "energy_surge": 0.39857668435843374,
+    "energy_other": 0.13713358617482066,
+    "churn": 0.18875706214689264,
+    "first_dead_hot": 1.0,
+    "fnd": 178
+   },
+   "Predictive Dijkstra (HW)": {
+    "relay_pre": 0.1694992899220303,
+    "relay_surge": 0.3971595703443086,
+    "relay_other": 0.17030120870284032,
+    "energy_pre": 0.14086773150771725,
+    "energy_surge": 0.41170891227257184,
+    "energy_other": 0.13126486769732823,
+    "churn": 0.18762711864406775,
+    "first_dead_hot": 0.0,
+    "fnd": 178
+   },
+   "Forecast LP (HW, ours)": {
+    "relay_pre": 0.17194583016764042,
+    "relay_surge": 0.36776087851577643,
+    "relay_other": 0.14657648594315228,
+    "energy_pre": 0.12824145948246443,
+    "energy_surge": 0.40039309945492657,
+    "energy_other": 0.10679789890822283,
+    "churn": 0.3773652694610779,
+    "first_dead_hot": 0.0,
+    "fnd": 168
+   }
+  },
+  "20": {
+   "sense": [
+    1.0,
+    0.0
+   ],
+   "Battery Dijkstra": {
+    "relay_pre": 0.4082713379446283,
+    "relay_surge": 0.5594928226503266,
+    "relay_other": 0.4186995698650565,
+    "energy_pre": 0.2521758175865011,
+    "energy_surge": 0.4750785186508726,
+    "energy_other": 0.26720383322591845,
+    "churn": 0.21489208633093523,
+    "first_dead_hot": 1.0,
+    "fnd": 140
+   },
+   "Predictive Dijkstra (HW)": {
+    "relay_pre": 0.3740420770380389,
+    "relay_surge": 0.5673108036294261,
+    "relay_other": 0.4090960159765149,
+    "energy_pre": 0.24333659534093852,
+    "energy_surge": 0.46456132293960334,
+    "energy_other": 0.2622562468260308,
+    "churn": 0.21492857142857144,
+    "first_dead_hot": 1.0,
+    "fnd": 141
+   },
+   "Forecast LP (HW, ours)": {
+    "relay_pre": 0.42490421517333715,
+    "relay_surge": 0.6102151719558921,
+    "relay_other": 0.43071004622352604,
+    "energy_pre": 0.15675185429701508,
+    "energy_surge": 0.3815562858191554,
+    "energy_other": 0.15689367163881093,
+    "churn": 0.32356643356643355,
+    "first_dead_hot": 1.0,
+    "fnd": 144
+   }
+  },
+  "21": {
+   "sense": [
+    1.0,
+    0.125
+   ],
+   "Battery Dijkstra": {
+    "relay_pre": 0.2815147829750722,
+    "relay_surge": 0.3890066630517199,
+    "relay_other": 0.26758657539958514,
+    "energy_pre": 0.23890476827445947,
+    "energy_surge": 0.4417579557345011,
+    "energy_other": 0.22775374650373076,
+    "churn": 0.18305084745762712,
+    "first_dead_hot": 0.0,
+    "fnd": 119
+   },
+   "Predictive Dijkstra (HW)": {
+    "relay_pre": 0.23498960235324023,
+    "relay_surge": 0.4912554898236679,
+    "relay_other": 0.2534951588755323,
+    "energy_pre": 0.2099953105850599,
+    "energy_surge": 0.5178963133129195,
+    "energy_other": 0.21720149413876869,
+    "churn": 0.1709649122807017,
+    "first_dead_hot": 1.0,
+    "fnd": 115
+   },
+   "Forecast LP (HW, ours)": {
+    "relay_pre": 0.20496828706152959,
+    "relay_surge": 0.39882036160347567,
+    "relay_other": 0.21213621713624686,
+    "energy_pre": 0.12953157218528044,
+    "energy_surge": 0.3686056463865576,
+    "energy_other": 0.13759181005512167,
+    "churn": 0.2941726618705036,
+    "first_dead_hot": 1.0,
+    "fnd": 140
+   }
+  },
+  "22": {
+   "sense": [
+    1.0,
+    0.75
+   ],
+   "Battery Dijkstra": {
+    "relay_pre": 0.08385743299306841,
+    "relay_surge": 0.23375703796037303,
+    "relay_other": 0.07516525948473537,
+    "energy_pre": 0.13773580580313982,
+    "energy_surge": 0.34614508117057186,
+    "energy_other": 0.10472780313527329,
+    "churn": 0.2044736842105263,
+    "first_dead_hot": 1.0,
+    "fnd": 115
+   },
+   "Predictive Dijkstra (HW)": {
+    "relay_pre": 0.07878783735538933,
+    "relay_surge": 0.2550576941640598,
+    "relay_other": 0.07184484444752068,
+    "energy_pre": 0.12975025009179583,
+    "energy_surge": 0.3652480312218349,
+    "energy_other": 0.09602970668053457,
+    "churn": 0.20903508771929827,
+    "first_dead_hot": 0.0,
+    "fnd": 115
+   },
+   "Forecast LP (HW, ours)": {
+    "relay_pre": 0.04625202693156779,
+    "relay_surge": 0.137741447595196,
+    "relay_other": 0.03732686111617518,
+    "energy_pre": 0.10375692280245952,
+    "energy_surge": 0.35867207891000247,
+    "energy_other": 0.08768563646924686,
+    "churn": 0.3453225806451613,
+    "first_dead_hot": 0.0,
+    "fnd": 125
+   }
+  },
+  "23": {
+   "sense": [
+    0.990625,
+    0.0
+   ],
+   "Battery Dijkstra": {
+    "relay_pre": 0.39411376889846983,
+    "relay_surge": 0.48682960028041583,
+    "relay_other": 0.31957180335828356,
+    "energy_pre": 0.264423210909166,
+    "energy_surge": 0.44636041953199385,
+    "energy_other": 0.23254634157878823,
+    "churn": 0.22343065693430655,
+    "first_dead_hot": 1.0,
+    "fnd": 138
+   },
+   "Predictive Dijkstra (HW)": {
+    "relay_pre": 0.34663995372409795,
+    "relay_surge": 0.516459924137017,
+    "relay_other": 0.3052457120757159,
+    "energy_pre": 0.24355650820224628,
+    "energy_surge": 0.4476898684323443,
+    "energy_other": 0.22824067407834397,
+    "churn": 0.23834532374100717,
+    "first_dead_hot": 1.0,
+    "fnd": 140
+   },
+   "Forecast LP (HW, ours)": {
+    "relay_pre": 0.3826165769364147,
+    "relay_surge": 0.5051991448015752,
+    "relay_other": 0.33728436890531527,
+    "energy_pre": 0.1694988700743808,
+    "energy_surge": 0.37813541037959497,
+    "energy_other": 0.13952200493498124,
+    "churn": 0.3280132450331126,
+    "first_dead_hot": 0.0,
+    "fnd": 152
+   }
+  },
+  "24": {
+   "sense": [
+    1.0,
+    0.0
+   ],
+   "Battery Dijkstra": {
+    "relay_pre": 0.38568728784203793,
+    "relay_surge": 0.48756068345464654,
+    "relay_other": 0.36399890316286504,
+    "energy_pre": 0.22345801324206835,
+    "energy_surge": 0.42175711274924,
+    "energy_other": 0.22379688349651444,
+    "churn": 0.22129032258064515,
+    "first_dead_hot": 0.0,
+    "fnd": 187
+   },
+   "Predictive Dijkstra (HW)": {
+    "relay_pre": 0.3543287192677315,
+    "relay_surge": 0.5019626661049368,
+    "relay_other": 0.35818235438197954,
+    "energy_pre": 0.2126287349838206,
+    "energy_surge": 0.43328929556216994,
+    "energy_other": 0.21961630113808073,
+    "churn": 0.2201081081081081,
+    "first_dead_hot": 1.0,
+    "fnd": 186
+   },
+   "Forecast LP (HW, ours)": {
+    "relay_pre": 0.37258736188309133,
+    "relay_surge": 0.5282020988152083,
+    "relay_other": 0.34685060689151015,
+    "energy_pre": 0.1673281475392263,
+    "energy_surge": 0.36140728467275945,
+    "energy_other": 0.15142514226833168,
+    "churn": 0.2938251366120218,
+    "first_dead_hot": 0.0,
+    "fnd": 184
+   }
+  },
+  "25": {
+   "sense": [
+    1.0,
+    0.0
+   ],
+   "Battery Dijkstra": {
+    "relay_pre": 0.3130254972988025,
+    "relay_surge": 0.4853450043028826,
+    "relay_other": 0.29113062904443204,
+    "energy_pre": 0.21302155582273077,
+    "energy_surge": 0.45649638099457274,
+    "energy_other": 0.2141556697218205,
+    "churn": 0.22751824817518246,
+    "first_dead_hot": 1.0,
+    "fnd": 138
+   },
+   "Predictive Dijkstra (HW)": {
+    "relay_pre": 0.2714539868226512,
+    "relay_surge": 0.49013106767470255,
+    "relay_other": 0.29434161966883177,
+    "energy_pre": 0.20191987125273592,
+    "energy_surge": 0.4590361540469712,
+    "energy_other": 0.2131895385743783,
+    "churn": 0.2314598540145985,
+    "first_dead_hot": 1.0,
+    "fnd": 138
+   },
+   "Forecast LP (HW, ours)": {
+    "relay_pre": 0.26160126491402136,
+    "relay_surge": 0.39109650389428624,
+    "relay_other": 0.2484944791122532,
+    "energy_pre": 0.15944872435691756,
+    "energy_surge": 0.36903213271361857,
+    "energy_other": 0.1360021021134363,
+    "churn": 0.31554794520547946,
+    "first_dead_hot": 0.0,
+    "fnd": 147
+   }
+  },
+  "26": {
+   "sense": [
+    1.0,
+    0.0
+   ],
+   "Battery Dijkstra": {
+    "relay_pre": 0.32908228836039977,
+    "relay_surge": 0.47244819127939963,
+    "relay_other": 0.33681730739022425,
+    "energy_pre": 0.25701210969987237,
+    "energy_surge": 0.4350007702064861,
+    "energy_other": 0.25700952758223633,
+    "churn": 0.18347457627118646,
+    "first_dead_hot": 0.0,
+    "fnd": 119
+   },
+   "Predictive Dijkstra (HW)": {
+    "relay_pre": 0.3057793670464257,
+    "relay_surge": 0.5231129758394,
+    "relay_other": 0.3262160688484715,
+    "energy_pre": 0.23227352189064032,
+    "energy_surge": 0.4832398528302568,
+    "energy_other": 0.24584996060062309,
+    "churn": 0.1800877192982456,
+    "first_dead_hot": 1.0,
+    "fnd": 115
+   },
+   "Forecast LP (HW, ours)": {
+    "relay_pre": 0.2928551095200762,
+    "relay_surge": 0.46776212172918447,
+    "relay_other": 0.27868755823740204,
+    "energy_pre": 0.15912328649672475,
+    "energy_surge": 0.3560971293657259,
+    "energy_other": 0.1421801187941717,
+    "churn": 0.34748148148148145,
+    "first_dead_hot": 0.0,
+    "fnd": 136
+   }
+  },
+  "27": {
+   "sense": [
+    1.0,
+    0.125
+   ],
+   "Battery Dijkstra": {
+    "relay_pre": 0.08631280165812026,
+    "relay_surge": 0.2579936607450135,
+    "relay_other": 0.0754986697503511,
+    "energy_pre": 0.1311328747105882,
+    "energy_surge": 0.4216084112563917,
+    "energy_other": 0.1250496875757128,
+    "churn": 0.18982758620689655,
+    "first_dead_hot": 0.0,
+    "fnd": 117
+   },
+   "Predictive Dijkstra (HW)": {
+    "relay_pre": 0.07360511665269417,
+    "relay_surge": 0.2755793469997924,
+    "relay_other": 0.07268578240446076,
+    "energy_pre": 0.12080058072935676,
+    "energy_surge": 0.4302137339462216,
+    "energy_other": 0.12377528127126182,
+    "churn": 0.19784482758620692,
+    "first_dead_hot": 1.0,
+    "fnd": 117
+   },
+   "Forecast LP (HW, ours)": {
+    "relay_pre": 0.04290220759221035,
+    "relay_surge": 0.20020817089576612,
+    "relay_other": 0.03951088370676676,
+    "energy_pre": 0.09955368912944759,
+    "energy_surge": 0.41531931082831014,
+    "energy_other": 0.08962021926725967,
+    "churn": 0.297037037037037,
+    "first_dead_hot": 0.0,
+    "fnd": 136
+   }
+  },
+  "28": {
+   "sense": [
+    1.0,
+    0.0
+   ],
+   "Battery Dijkstra": {
+    "relay_pre": 0.45194784851834935,
+    "relay_surge": 0.6405297636907091,
+    "relay_other": 0.44307091558234896,
+    "energy_pre": 0.25901039560100914,
+    "energy_surge": 0.5039380882838697,
+    "energy_other": 0.2560041612441672,
+    "churn": 0.25533333333333336,
+    "first_dead_hot": 1.0,
+    "fnd": 91
+   },
+   "Predictive Dijkstra (HW)": {
+    "relay_pre": 0.3989971474145528,
+    "relay_surge": 0.6605618236409961,
+    "relay_other": 0.4253720229032389,
+    "energy_pre": 0.23931012277541724,
+    "energy_surge": 0.5092128054926262,
+    "energy_other": 0.24783033409762334,
+    "churn": 0.26277777777777783,
+    "first_dead_hot": 1.0,
+    "fnd": 91
+   },
+   "Forecast LP (HW, ours)": {
+    "relay_pre": 0.44382655225730394,
+    "relay_surge": 0.6287884411771549,
+    "relay_other": 0.4076751610651489,
+    "energy_pre": 0.15506800930080128,
+    "energy_surge": 0.41668405157946065,
+    "energy_other": 0.13148535961805616,
+    "churn": 0.35647727272727275,
+    "first_dead_hot": 0.0,
+    "fnd": 89
+   }
+  },
+  "29": {
+   "sense": [
+    1.0,
+    0.5
+   ],
+   "Battery Dijkstra": {
+    "relay_pre": 0.26621364648975554,
+    "relay_surge": 0.4255153098342986,
+    "relay_other": 0.2390220171280261,
+    "energy_pre": 0.19713468798904427,
+    "energy_surge": 0.44052423121064477,
+    "energy_other": 0.18322540393651765,
+    "churn": 0.19404907975460126,
+    "first_dead_hot": 1.0,
+    "fnd": 164
+   },
+   "Predictive Dijkstra (HW)": {
+    "relay_pre": 0.24574709277033807,
+    "relay_surge": 0.4462310049941905,
+    "relay_other": 0.2352978969221759,
+    "energy_pre": 0.1821044513126974,
+    "energy_surge": 0.4531345434372638,
+    "energy_other": 0.18216985254639362,
+    "churn": 0.19625766871165645,
+    "first_dead_hot": 1.0,
+    "fnd": 164
+   },
+   "Forecast LP (HW, ours)": {
+    "relay_pre": 0.24541312747236857,
+    "relay_surge": 0.4036551959063239,
+    "relay_other": 0.22121658034955133,
+    "energy_pre": 0.1458026564090477,
+    "energy_surge": 0.395333450750162,
+    "energy_other": 0.12475628066890755,
+    "churn": 0.30540983606557376,
+    "first_dead_hot": 0.0,
+    "fnd": 184
+   }
+  }
+ }
+}
