@@ -7,6 +7,8 @@
 | Battery Dijkstra (reactive) | 83.2 | 88.6 | 83.1 | 85.0 | 74.3 |
 | MADII (not retrained) | 13.0 | 15.5 | 15.6 | 14.7 | 2.9 |
 | Predictive Dijkstra, Holt-Winters | 81.4 | 88.6 | 82.3 | 84.1 | 63.4 |
+| Lifetime Dijkstra, Holt-Winters (load) | 82.3 | 88.6 | 81.2 | 84.0 | 68.6 |
+| Lifetime Dijkstra, Holt-Winters (tau) | 83.0 | 86.8 | 83.4 | 84.4 | 75.8 |
 | Forecast LP, persistence | 13.4 | 97.4 | 12.7 | 41.2 | 0.8 |
 | Forecast LP, seasonal-naive | 89.8 | 97.4 | 86.5 | 91.2 | 66.7 |
 | Forecast LP, Holt-Winters (a priori) | 82.3 | 97.4 | 81.0 | 86.9 | 62.8 |
@@ -19,6 +21,8 @@ Paired vs Battery Dijkstra (reactive) (wins/ties/losses, Wilcoxon p):
 - Reactive LP coordinator: R: 0/0/30, p=1.9e-09; N: 30/0/0, p=1.9e-09; B: 1/1/28, p=3.5e-06
 - MADII (not retrained): R: 0/0/30, p=1.9e-09; N: 0/0/30, p=1.9e-09; B: 0/0/30, p=1.9e-09
 - Predictive Dijkstra, Holt-Winters: R: 8/5/17, p=0.046; N: 0/30/0, p=1; B: 7/10/13, p=0.12
+- Lifetime Dijkstra, Holt-Winters (load): R: 9/5/16, p=0.09; N: 0/30/0, p=1; B: 9/6/15, p=0.054
+- Lifetime Dijkstra, Holt-Winters (tau): R: 7/11/12, p=0.52; N: 6/4/20, p=0.00015; B: 14/7/9, p=0.78
 - Forecast LP, persistence: R: 0/0/30, p=1.9e-09; N: 30/0/0, p=1.9e-09; B: 0/0/30, p=1.9e-09
 - Forecast LP, seasonal-naive: R: 28/1/1, p=3.2e-06; N: 30/0/0, p=1.9e-09; B: 22/0/8, p=0.0024
 - Forecast LP, Holt-Winters (a priori): R: 16/1/13, p=0.87; N: 30/0/0, p=1.9e-09; B: 13/4/13, p=0.38
@@ -29,6 +33,10 @@ Break-even forecast accuracy (G = gain when the forecast is right; C = loss when
 
 - Predictive Dijkstra, Holt-Winters vs Battery Dijkstra (reactive): G = -1.8, C(N) = +0.0, C(B) = +0.8 -> no gain when the forecast is right, so prediction does not pay off as a forecast
 - Predictive Dijkstra, Holt-Winters vs Reactive LP coordinator: G = +28.9, C(N) = +8.8, C(B) = -31.9 -> p* = 0 on equal weights: it loses in one scenario, but its gains elsewhere outweigh that loss
+- Lifetime Dijkstra, Holt-Winters (load) vs Battery Dijkstra (reactive): G = -0.9, C(N) = +0.0, C(B) = +1.9 -> no gain when the forecast is right, so prediction does not pay off as a forecast
+- Lifetime Dijkstra, Holt-Winters (load) vs Reactive LP coordinator: G = +29.8, C(N) = +8.8, C(B) = -30.9 -> p* = 0 on equal weights: it loses in one scenario, but its gains elsewhere outweigh that loss
+- Lifetime Dijkstra, Holt-Winters (tau) vs Battery Dijkstra (reactive): G = -0.2, C(N) = +1.8, C(B) = -0.3 -> no gain when the forecast is right, so prediction does not pay off as a forecast
+- Lifetime Dijkstra, Holt-Winters (tau) vs Reactive LP coordinator: G = +30.5, C(N) = +10.6, C(B) = -33.0 -> p* = 0 on equal weights: it loses in one scenario, but its gains elsewhere outweigh that loss
 - Forecast LP, persistence vs Battery Dijkstra (reactive): G = -69.9, C(N) = -8.8, C(B) = +70.4 -> no gain when the forecast is right, so prediction does not pay off as a forecast
 - Forecast LP, persistence vs Reactive LP coordinator: G = -39.2, C(N) = +0.0, C(B) = +37.7 -> no gain when the forecast is right, so prediction does not pay off as a forecast
 - Forecast LP, seasonal-naive vs Battery Dijkstra (reactive): G = +6.5, C(N) = -8.8, C(B) = -3.4 -> p* = 0: it wins in every scenario, so it pays at any forecast accuracy

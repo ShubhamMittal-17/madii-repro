@@ -6,7 +6,8 @@ Score L(m, s) = (rounds to first node death - 1) / oracle T for that deployment 
 
 Fixed a priori, not tuned on the evaluation seeds: forecast horizon H = 24 rounds (one day),
 LP re-solved every 4 rounds. Tuned on validation deployments 500-505 only: predictive Dijkstra
-lam = 0.5, H = 12 (best non-zero setting) and Holt-Winters alpha = 0.05, beta = 0, gamma = 0.1
+lam = 0.5, H = 12 (best non-zero setting), lifetime Dijkstra load k = 0.5 and tau rho = 0.1,
+k = 0.25 (best non-zero settings; every larger k was worse, and k = 0 is battery Dijkstra), and Holt-Winters alpha = 0.05, beta = 0, gamma = 0.1
 (grid alpha in {0.02, 0.05, 0.1, 0.2} x gamma in {0.1, 0.3, 0.6}). The a-priori Holt-Winters
 setting (alpha 0.2, beta 0.01, gamma 0.3) is kept as a row for transparency.
 
@@ -22,11 +23,12 @@ import env as E
 import dijkstra_rl as D
 import traffic as TR
 from lp_oracle import oracle_T
-from predictive import ForecastLP, PredictiveDijkstra, ReactiveLP, StaticLP
+from predictive import ForecastLP, LifetimeDijkstra, PredictiveDijkstra, ReactiveLP, StaticLP
 
 SCEN = {"R": "Forecast right (daily surge)", "N": "Not needed (constant)", "B": "Sudden burst"}
 METHODS = ["Static LP (solved once)", "Reactive LP coordinator", "Battery Dijkstra (reactive)", "MADII (not retrained)",
-           "Predictive Dijkstra, Holt-Winters", "Forecast LP, persistence", "Forecast LP, seasonal-naive",
+           "Predictive Dijkstra, Holt-Winters", "Lifetime Dijkstra, Holt-Winters (load)", "Lifetime Dijkstra, Holt-Winters (tau)",
+           "Forecast LP, persistence", "Forecast LP, seasonal-naive",
            "Forecast LP, Holt-Winters (a priori)", "Forecast LP, Holt-Winters tuned (ours)", "Forecast LP, perfect forecast (diagnostic)"]
 HW_TUNED = dict(alpha=0.05, beta=0.0, gamma=0.1)   # fitted on validation deployments 500-505, R and B
 _net = None
@@ -49,6 +51,8 @@ def build(name, w, h, tr):
             "Battery Dijkstra (reactive)": lambda: D.fast_battery_weighted,
             "MADII (not retrained)": _madii,
             "Predictive Dijkstra, Holt-Winters": lambda: PredictiveDijkstra(w, h, lam=0.5, H=12),
+            "Lifetime Dijkstra, Holt-Winters (load)": lambda: LifetimeDijkstra(w, h, mode="load", k=0.5, **HW_TUNED),
+            "Lifetime Dijkstra, Holt-Winters (tau)": lambda: LifetimeDijkstra(w, h, mode="tau", rho=0.1, k=0.25, **HW_TUNED),
             "Forecast LP, persistence": lambda: ForecastLP(w, h, forecaster="persistence"),
             "Forecast LP, seasonal-naive": lambda: ForecastLP(w, h, forecaster="seasonal-naive"),
             "Forecast LP, Holt-Winters (a priori)": lambda: ForecastLP(w, h),
@@ -130,7 +134,7 @@ def summarize(res, seeds):
             cells.append(f"{sc}: {(d > 0).sum()}/{(d == 0).sum()}/{(d < 0).sum()}, p={p:.2g}")
         lines.append(f"- {m}: " + "; ".join(cells))
     lines += ["", "Break-even forecast accuracy (G = gain when the forecast is right; C = loss when not needed / burst):", ""]
-    for m in [m for m in methods if m.startswith("Forecast LP") or m.startswith("Predictive")]:
+    for m in [m for m in methods if m.startswith("Forecast LP") or m.startswith(("Predictive", "Lifetime"))]:
         for base in (ref, "Reactive LP coordinator"):
             G = L[m]["R"].mean() - L[base]["R"].mean()
             CN = L[base]["N"].mean() - L[m]["N"].mean()

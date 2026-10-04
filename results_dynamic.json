@@ -11,7 +11,9 @@
    "Forecast LP, seasonal-naive": 86.13138686131386,
    "Forecast LP, perfect forecast (diagnostic)": 89.78102189781022,
    "Forecast LP, Holt-Winters (a priori)": 84.67153284671532,
-   "Forecast LP, Holt-Winters tuned (ours)": 91.97080291970804
+   "Forecast LP, Holt-Winters tuned (ours)": 91.97080291970804,
+   "Lifetime Dijkstra, Holt-Winters (load)": 82.48175182481752,
+   "Lifetime Dijkstra, Holt-Winters (tau)": 83.94160583941606
   },
   "1": {
    "oracle": 149,
@@ -24,7 +26,9 @@
    "Forecast LP, seasonal-naive": 93.28859060402685,
    "Forecast LP, perfect forecast (diagnostic)": 77.18120805369128,
    "Forecast LP, Holt-Winters (a priori)": 76.51006711409396,
-   "Forecast LP, Holt-Winters tuned (ours)": 89.26174496644296
+   "Forecast LP, Holt-Winters tuned (ours)": 89.26174496644296,
+   "Lifetime Dijkstra, Holt-Winters (load)": 77.85234899328859,
+   "Lifetime Dijkstra, Holt-Winters (tau)": 77.18120805369128
   },
   "3": {
    "oracle": 169,
@@ -37,7 +41,9 @@
    "Forecast LP, seasonal-naive": 93.49112426035504,
    "Forecast LP, perfect forecast (diagnostic)": 89.3491124260355,
    "Forecast LP, Holt-Winters (a priori)": 68.04733727810651,
-   "Forecast LP, Holt-Winters tuned (ours)": 94.0828402366864
+   "Forecast LP, Holt-Winters tuned (ours)": 94.0828402366864,
+   "Lifetime Dijkstra, Holt-Winters (load)": 82.84023668639054,
+   "Lifetime Dijkstra, Holt-Winters (tau)": 82.24852071005917
   },
   "2": {
    "oracle": 166,
@@ -50,7 +56,9 @@
    "Forecast LP, seasonal-naive": 88.55421686746988,
    "Forecast LP, perfect forecast (diagnostic)": 88.55421686746988,
    "Forecast LP, Holt-Winters (a priori)": 92.16867469879519,
-   "Forecast LP, Holt-Winters tuned (ours)": 87.95180722891565
+   "Forecast LP, Holt-Winters tuned (ours)": 87.95180722891565,
+   "Lifetime Dijkstra, Holt-Winters (load)": 84.33734939759037,
+   "Lifetime Dijkstra, Holt-Winters (tau)": 84.33734939759037
   },
   "6": {
    "oracle": 131,
@@ -63,7 +71,9 @@
    "Forecast LP, seasonal-naive": 86.25954198473282,
    "Forecast LP, perfect forecast (diagnostic)": 81.67938931297711,
    "Forecast LP, Holt-Winters (a priori)": 80.91603053435115,
-   "Forecast LP, Holt-Winters tuned (ours)": 90.83969465648855
+   "Forecast LP, Holt-Winters tuned (ours)": 90.83969465648855,
+   "Lifetime Dijkstra, Holt-Winters (load)": 80.1526717557252,
+   "Lifetime Dijkstra, Holt-Winters (tau)": 86.25954198473282
   },
   "7": {
    "oracle": 139,
@@ -76,7 +86,9 @@
    "Forecast LP, seasonal-naive": 84.89208633093526,
    "Forecast LP, perfect forecast (diagnostic)": 82.73381294964028,
    "Forecast LP, Holt-Winters (a priori)": 72.66187050359713,
-   "Forecast LP, Holt-Winters tuned (ours)": 85.61151079136691
+   "Forecast LP, Holt-Winters tuned (ours)": 85.61151079136691,
+   "Lifetime Dijkstra, Holt-Winters (load)": 82.01438848920863,
+   "Lifetime Dijkstra, Holt-Winters (tau)": 82.01438848920863
   },
   "4": {
    "oracle": 154,
@@ -89,7 +101,9 @@
    "Forecast LP, seasonal-naive": 92.20779220779221,
    "Forecast LP, perfect forecast (diagnostic)": 87.66233766233766,
    "Forecast LP, Holt-Winters (a priori)": 84.4155844155844,
-   "Forecast LP, Holt-Winters tuned (ours)": 92.20779220779221
+   "Forecast LP, Holt-Winters tuned (ours)": 92.20779220779221,
+   "Lifetime Dijkstra, Holt-Winters (load)": 80.51948051948052,
+   "Lifetime Dijkstra, Holt-Winters (tau)": 83.76623376623377
   },
   "5": {
    "oracle": 174,
@@ -102,7 +116,9 @@
    "Forecast LP, seasonal-naive": 91.95402298850574,
    "Forecast LP, perfect forecast (diagnostic)": 91.37931034482759,
    "Forecast LP, Holt-Winters (a priori)": 88.50574712643679,
-   "Forecast LP, Holt-Winters tuned (ours)": 88.50574712643679
+   "Forecast LP, Holt-Winters tuned (ours)": 88.50574712643679,
+   "Lifetime Dijkstra, Holt-Winters (load)": 79.3103448275862,
+   "Lifetime Dijkstra, Holt-Winters (tau)": 79.88505747126436
   },
   "11": {
    "oracle": 145,
@@ -115,7 +131,9 @@
    "Forecast LP, seasonal-naive": 95.86206896551724,
    "Forecast LP, perfect forecast (diagnostic)": 87.58620689655172,
    "Forecast LP, Holt-Winters (a priori)": 87.58620689655172,
-   "Forecast LP, Holt-Winters tuned (ours)": 92.41379310344827
+   "Forecast LP, Holt-Winters tuned (ours)": 92.41379310344827,
+   "Lifetime Dijkstra, Holt-Winters (load)": 86.89655172413792,
+   "Lifetime Dijkstra, Holt-Winters (tau)": 84.13793103448276
   },
   "9": {
    "oracle": 185,
@@ -128,7 +146,9 @@
    "Forecast LP, seasonal-naive": 88.10810810810811,
    "Forecast LP, perfect forecast (diagnostic)": 90.27027027027027,
    "Forecast LP, Holt-Winters (a priori)": 81.08108108108108,
-   "Forecast LP, Holt-Winters tuned (ours)": 88.10810810810811
+   "Forecast LP, Holt-Winters tuned (ours)": 88.10810810810811,
+   "Lifetime Dijkstra, Holt-Winters (load)": 74.5945945945946,
+   "Lifetime Dijkstra, Holt-Winters (tau)": 76.75675675675676
   },
   "8": {
    "oracle": 167,
@@ -141,7 +161,9 @@
    "Forecast LP, seasonal-naive": 89.82035928143712,
    "Forecast LP, perfect forecast (diagnostic)": 85.62874251497006,
    "Forecast LP, Holt-Winters (a priori)": 94.61077844311377,
-   "Forecast LP, Holt-Winters tuned (ours)": 90.41916167664671
+   "Forecast LP, Holt-Winters tuned (ours)": 90.41916167664671,
+   "Lifetime Dijkstra, Holt-Winters (load)": 84.4311377245509,
+   "Lifetime Dijkstra, Holt-Winters (tau)": 83.23353293413174
   },
   "10": {
    "oracle": 161,
@@ -154,7 +176,9 @@
    "Forecast LP, seasonal-naive": 93.7888198757764,
    "Forecast LP, perfect forecast (diagnostic)": 90.6832298136646,
    "Forecast LP, Holt-Winters (a priori)": 87.5776397515528,
-   "Forecast LP, Holt-Winters tuned (ours)": 90.6832298136646
+   "Forecast LP, Holt-Winters tuned (ours)": 90.6832298136646,
+   "Lifetime Dijkstra, Holt-Winters (load)": 80.12422360248446,
+   "Lifetime Dijkstra, Holt-Winters (tau)": 84.472049689441
   },
   "12": {
    "oracle": 117,
@@ -167,7 +191,9 @@
    "Forecast LP, seasonal-naive": 91.45299145299145,
    "Forecast LP, perfect forecast (diagnostic)": 91.45299145299145,
    "Forecast LP, Holt-Winters (a priori)": 74.35897435897436,
-   "Forecast LP, Holt-Winters tuned (ours)": 90.5982905982906
+   "Forecast LP, Holt-Winters tuned (ours)": 90.5982905982906,
+   "Lifetime Dijkstra, Holt-Winters (load)": 76.06837606837607,
+   "Lifetime Dijkstra, Holt-Winters (tau)": 76.06837606837607
   },
   "14": {
    "oracle": 157,
@@ -180,7 +206,9 @@
    "Forecast LP, seasonal-naive": 85.98726114649682,
    "Forecast LP, perfect forecast (diagnostic)": 90.44585987261146,
    "Forecast LP, Holt-Winters (a priori)": 84.71337579617835,
-   "Forecast LP, Holt-Winters tuned (ours)": 85.98726114649682
+   "Forecast LP, Holt-Winters tuned (ours)": 85.98726114649682,
+   "Lifetime Dijkstra, Holt-Winters (load)": 87.89808917197452,
+   "Lifetime Dijkstra, Holt-Winters (tau)": 82.80254777070064
   },
   "13": {
    "oracle": 182,
@@ -193,7 +221,9 @@
    "Forecast LP, seasonal-naive": 89.56043956043956,
    "Forecast LP, perfect forecast (diagnostic)": 85.16483516483517,
    "Forecast LP, Holt-Winters (a priori)": 70.32967032967034,
-   "Forecast LP, Holt-Winters tuned (ours)": 85.16483516483517
+   "Forecast LP, Holt-Winters tuned (ours)": 85.16483516483517,
+   "Lifetime Dijkstra, Holt-Winters (load)": 88.46153846153845,
+   "Lifetime Dijkstra, Holt-Winters (tau)": 88.46153846153845
   },
   "15": {
    "oracle": 176,
@@ -206,7 +236,9 @@
    "Forecast LP, seasonal-naive": 94.88636363636364,
    "Forecast LP, perfect forecast (diagnostic)": 94.31818181818183,
    "Forecast LP, Holt-Winters (a priori)": 87.5,
-   "Forecast LP, Holt-Winters tuned (ours)": 94.31818181818183
+   "Forecast LP, Holt-Winters tuned (ours)": 94.31818181818183,
+   "Lifetime Dijkstra, Holt-Winters (load)": 82.38636363636364,
+   "Lifetime Dijkstra, Holt-Winters (tau)": 88.63636363636364
   },
   "16": {
    "oracle": 166,
@@ -219,7 +251,9 @@
    "Forecast LP, seasonal-naive": 92.7710843373494,
    "Forecast LP, perfect forecast (diagnostic)": 90.36144578313254,
    "Forecast LP, Holt-Winters (a priori)": 90.96385542168674,
-   "Forecast LP, Holt-Winters tuned (ours)": 88.55421686746988
+   "Forecast LP, Holt-Winters tuned (ours)": 88.55421686746988,
+   "Lifetime Dijkstra, Holt-Winters (load)": 83.13253012048193,
+   "Lifetime Dijkstra, Holt-Winters (tau)": 82.53012048192771
   },
   "18": {
    "oracle": 167,
@@ -232,7 +266,9 @@
    "Forecast LP, seasonal-naive": 95.20958083832335,
    "Forecast LP, perfect forecast (diagnostic)": 94.61077844311377,
    "Forecast LP, Holt-Winters (a priori)": 87.42514970059881,
-   "Forecast LP, Holt-Winters tuned (ours)": 89.82035928143712
+   "Forecast LP, Holt-Winters tuned (ours)": 89.82035928143712,
+   "Lifetime Dijkstra, Holt-Winters (load)": 84.4311377245509,
+   "Lifetime Dijkstra, Holt-Winters (tau)": 85.62874251497006
   },
   "17": {
    "oracle": 200,
@@ -245,7 +281,9 @@
    "Forecast LP, seasonal-naive": 89.5,
    "Forecast LP, perfect forecast (diagnostic)": 94.5,
    "Forecast LP, Holt-Winters (a priori)": 89.0,
-   "Forecast LP, Holt-Winters tuned (ours)": 92.5
+   "Forecast LP, Holt-Winters tuned (ours)": 92.5,
+   "Lifetime Dijkstra, Holt-Winters (load)": 85.0,
+   "Lifetime Dijkstra, Holt-Winters (tau)": 90.0
   },
   "19": {
    "oracle": 139,
@@ -258,7 +296,9 @@
    "Forecast LP, seasonal-naive": 88.48920863309353,
    "Forecast LP, perfect forecast (diagnostic)": 91.36690647482014,
    "Forecast LP, Holt-Winters (a priori)": 78.41726618705036,
-   "Forecast LP, Holt-Winters tuned (ours)": 88.48920863309353
+   "Forecast LP, Holt-Winters tuned (ours)": 88.48920863309353,
+   "Lifetime Dijkstra, Holt-Winters (load)": 82.01438848920863,
+   "Lifetime Dijkstra, Holt-Winters (tau)": 81.29496402877699
   },
   "20": {
    "oracle": 167,
@@ -271,7 +311,9 @@
    "Forecast LP, seasonal-naive": 92.81437125748504,
    "Forecast LP, perfect forecast (diagnostic)": 90.41916167664671,
    "Forecast LP, Holt-Winters (a priori)": 82.63473053892216,
-   "Forecast LP, Holt-Winters tuned (ours)": 90.41916167664671
+   "Forecast LP, Holt-Winters tuned (ours)": 90.41916167664671,
+   "Lifetime Dijkstra, Holt-Winters (load)": 85.02994011976048,
+   "Lifetime Dijkstra, Holt-Winters (tau)": 83.8323353293413
   },
   "22": {
    "oracle": 141,
@@ -284,7 +326,9 @@
    "Forecast LP, seasonal-naive": 81.56028368794325,
    "Forecast LP, perfect forecast (diagnostic)": 81.56028368794325,
    "Forecast LP, Holt-Winters (a priori)": 81.56028368794325,
-   "Forecast LP, Holt-Winters tuned (ours)": 95.0354609929078
+   "Forecast LP, Holt-Winters tuned (ours)": 95.0354609929078,
+   "Lifetime Dijkstra, Holt-Winters (load)": 80.1418439716312,
+   "Lifetime Dijkstra, Holt-Winters (tau)": 80.85106382978722
   },
   "21": {
    "oracle": 152,
@@ -297,7 +341,9 @@
    "Forecast LP, seasonal-naive": 90.13157894736842,
    "Forecast LP, perfect forecast (diagnostic)": 90.78947368421053,
    "Forecast LP, Holt-Winters (a priori)": 84.86842105263158,
-   "Forecast LP, Holt-Winters tuned (ours)": 90.13157894736842
+   "Forecast LP, Holt-Winters tuned (ours)": 90.13157894736842,
+   "Lifetime Dijkstra, Holt-Winters (load)": 75.6578947368421,
+   "Lifetime Dijkstra, Holt-Winters (tau)": 80.26315789473685
   },
   "23": {
    "oracle": 165,
@@ -310,7 +356,9 @@
    "Forecast LP, seasonal-naive": 83.63636363636363,
    "Forecast LP, perfect forecast (diagnostic)": 91.51515151515152,
    "Forecast LP, Holt-Winters (a priori)": 87.27272727272727,
-   "Forecast LP, Holt-Winters tuned (ours)": 84.24242424242424
+   "Forecast LP, Holt-Winters tuned (ours)": 84.24242424242424,
+   "Lifetime Dijkstra, Holt-Winters (load)": 83.63636363636363,
+   "Lifetime Dijkstra, Holt-Winters (tau)": 83.63636363636363
   },
   "27": {
    "oracle": 145,
@@ -323,7 +371,9 @@
    "Forecast LP, seasonal-naive": 81.37931034482759,
    "Forecast LP, perfect forecast (diagnostic)": 87.58620689655172,
    "Forecast LP, Holt-Winters (a priori)": 62.758620689655174,
-   "Forecast LP, Holt-Winters tuned (ours)": 87.58620689655172
+   "Forecast LP, Holt-Winters tuned (ours)": 87.58620689655172,
+   "Lifetime Dijkstra, Holt-Winters (load)": 78.62068965517241,
+   "Lifetime Dijkstra, Holt-Winters (tau)": 78.62068965517241
   },
   "25": {
    "oracle": 164,
@@ -336,7 +386,9 @@
    "Forecast LP, seasonal-naive": 92.07317073170732,
    "Forecast LP, perfect forecast (diagnostic)": 89.02439024390245,
    "Forecast LP, Holt-Winters (a priori)": 82.3170731707317,
-   "Forecast LP, Holt-Winters tuned (ours)": 91.46341463414635
+   "Forecast LP, Holt-Winters tuned (ours)": 91.46341463414635,
+   "Lifetime Dijkstra, Holt-Winters (load)": 84.7560975609756,
+   "Lifetime Dijkstra, Holt-Winters (tau)": 83.53658536585365
   },
   "26": {
    "oracle": 147,
@@ -349,7 +401,9 @@
    "Forecast LP, seasonal-naive": 91.15646258503402,
    "Forecast LP, perfect forecast (diagnostic)": 91.83673469387756,
    "Forecast LP, Holt-Winters (a priori)": 85.71428571428571,
-   "Forecast LP, Holt-Winters tuned (ours)": 85.71428571428571
+   "Forecast LP, Holt-Winters tuned (ours)": 85.71428571428571,
+   "Lifetime Dijkstra, Holt-Winters (load)": 78.91156462585033,
+   "Lifetime Dijkstra, Holt-Winters (tau)": 85.03401360544217
   },
   "24": {
    "oracle": 207,
@@ -362,7 +416,9 @@
    "Forecast LP, seasonal-naive": 95.16908212560386,
    "Forecast LP, perfect forecast (diagnostic)": 93.71980676328504,
    "Forecast LP, Holt-Winters (a priori)": 86.47342995169082,
-   "Forecast LP, Holt-Winters tuned (ours)": 95.65217391304348
+   "Forecast LP, Holt-Winters tuned (ours)": 95.65217391304348,
+   "Lifetime Dijkstra, Holt-Winters (load)": 89.85507246376811,
+   "Lifetime Dijkstra, Holt-Winters (tau)": 88.88888888888889
   },
   "28": {
    "oracle": 120,
@@ -375,7 +431,9 @@
    "Forecast LP, seasonal-naive": 78.33333333333333,
    "Forecast LP, perfect forecast (diagnostic)": 81.66666666666667,
    "Forecast LP, Holt-Winters (a priori)": 69.16666666666667,
-   "Forecast LP, Holt-Winters tuned (ours)": 82.5
+   "Forecast LP, Holt-Winters tuned (ours)": 82.5,
+   "Lifetime Dijkstra, Holt-Winters (load)": 76.66666666666667,
+   "Lifetime Dijkstra, Holt-Winters (tau)": 75.83333333333333
   },
   "29": {
    "oracle": 193,
@@ -388,7 +446,9 @@
    "Forecast LP, seasonal-naive": 94.30051813471503,
    "Forecast LP, perfect forecast (diagnostic)": 96.89119170984456,
    "Forecast LP, Holt-Winters (a priori)": 83.93782383419689,
-   "Forecast LP, Holt-Winters tuned (ours)": 93.26424870466322
+   "Forecast LP, Holt-Winters tuned (ours)": 93.26424870466322,
+   "Lifetime Dijkstra, Holt-Winters (load)": 91.19170984455958,
+   "Lifetime Dijkstra, Holt-Winters (tau)": 87.04663212435233
   }
  },
  "N": {
@@ -403,7 +463,9 @@
    "Forecast LP, seasonal-naive": 97.2027972027972,
    "Forecast LP, perfect forecast (diagnostic)": 97.2027972027972,
    "Forecast LP, Holt-Winters (a priori)": 97.2027972027972,
-   "Forecast LP, Holt-Winters tuned (ours)": 97.2027972027972
+   "Forecast LP, Holt-Winters tuned (ours)": 97.2027972027972,
+   "Lifetime Dijkstra, Holt-Winters (load)": 88.11188811188812,
+   "Lifetime Dijkstra, Holt-Winters (tau)": 83.21678321678321
   },
   "1": {
    "oracle": 157,
@@ -416,7 +478,9 @@
    "Forecast LP, seasonal-naive": 97.45222929936305,
    "Forecast LP, perfect forecast (diagnostic)": 97.45222929936305,
    "Forecast LP, Holt-Winters (a priori)": 97.45222929936305,
-   "Forecast LP, Holt-Winters tuned (ours)": 97.45222929936305
+   "Forecast LP, Holt-Winters tuned (ours)": 97.45222929936305,
+   "Lifetime Dijkstra, Holt-Winters (load)": 89.171974522293,
+   "Lifetime Dijkstra, Holt-Winters (tau)": 87.26114649681529
   },
   "2": {
    "oracle": 176,
@@ -429,7 +493,9 @@
    "Forecast LP, seasonal-naive": 96.02272727272727,
    "Forecast LP, perfect forecast (diagnostic)": 96.02272727272727,
    "Forecast LP, Holt-Winters (a priori)": 96.02272727272727,
-   "Forecast LP, Holt-Winters tuned (ours)": 96.02272727272727
+   "Forecast LP, Holt-Winters tuned (ours)": 96.02272727272727,
+   "Lifetime Dijkstra, Holt-Winters (load)": 87.5,
+   "Lifetime Dijkstra, Holt-Winters (tau)": 88.63636363636364
   },
   "4": {
    "oracle": 163,
@@ -442,7 +508,9 @@
    "Forecast LP, seasonal-naive": 96.31901840490798,
    "Forecast LP, perfect forecast (diagnostic)": 96.31901840490798,
    "Forecast LP, Holt-Winters (a priori)": 96.31901840490798,
-   "Forecast LP, Holt-Winters tuned (ours)": 96.31901840490798
+   "Forecast LP, Holt-Winters tuned (ours)": 96.31901840490798,
+   "Lifetime Dijkstra, Holt-Winters (load)": 87.11656441717791,
+   "Lifetime Dijkstra, Holt-Winters (tau)": 87.11656441717791
   },
   "3": {
    "oracle": 181,
@@ -455,7 +523,9 @@
    "Forecast LP, seasonal-naive": 98.89502762430939,
    "Forecast LP, perfect forecast (diagnostic)": 98.89502762430939,
    "Forecast LP, Holt-Winters (a priori)": 98.89502762430939,
-   "Forecast LP, Holt-Winters tuned (ours)": 98.89502762430939
+   "Forecast LP, Holt-Winters tuned (ours)": 98.89502762430939,
+   "Lifetime Dijkstra, Holt-Winters (load)": 91.16022099447514,
+   "Lifetime Dijkstra, Holt-Winters (tau)": 91.16022099447514
   },
   "5": {
    "oracle": 187,
@@ -468,7 +538,9 @@
    "Forecast LP, seasonal-naive": 97.32620320855615,
    "Forecast LP, perfect forecast (diagnostic)": 97.32620320855615,
    "Forecast LP, Holt-Winters (a priori)": 97.32620320855615,
-   "Forecast LP, Holt-Winters tuned (ours)": 97.32620320855615
+   "Forecast LP, Holt-Winters tuned (ours)": 97.32620320855615,
+   "Lifetime Dijkstra, Holt-Winters (load)": 90.9090909090909,
+   "Lifetime Dijkstra, Holt-Winters (tau)": 88.77005347593582
   },
   "6": {
    "oracle": 139,
@@ -481,7 +553,9 @@
    "Forecast LP, seasonal-naive": 97.12230215827337,
    "Forecast LP, perfect forecast (diagnostic)": 97.12230215827337,
    "Forecast LP, Holt-Winters (a priori)": 97.12230215827337,
-   "Forecast LP, Holt-Winters tuned (ours)": 97.12230215827337
+   "Forecast LP, Holt-Winters tuned (ours)": 97.12230215827337,
+   "Lifetime Dijkstra, Holt-Winters (load)": 87.05035971223022,
+   "Lifetime Dijkstra, Holt-Winters (tau)": 84.89208633093526
   },
   "7": {
    "oracle": 148,
@@ -494,7 +568,9 @@
    "Forecast LP, seasonal-naive": 98.64864864864865,
    "Forecast LP, perfect forecast (diagnostic)": 98.64864864864865,
    "Forecast LP, Holt-Winters (a priori)": 98.64864864864865,
-   "Forecast LP, Holt-Winters tuned (ours)": 98.64864864864865
+   "Forecast LP, Holt-Winters tuned (ours)": 98.64864864864865,
+   "Lifetime Dijkstra, Holt-Winters (load)": 89.1891891891892,
+   "Lifetime Dijkstra, Holt-Winters (tau)": 87.83783783783784
   },
   "8": {
    "oracle": 178,
@@ -507,7 +583,9 @@
    "Forecast LP, seasonal-naive": 97.75280898876404,
    "Forecast LP, perfect forecast (diagnostic)": 97.75280898876404,
    "Forecast LP, Holt-Winters (a priori)": 97.75280898876404,
-   "Forecast LP, Holt-Winters tuned (ours)": 97.75280898876404
+   "Forecast LP, Holt-Winters tuned (ours)": 97.75280898876404,
+   "Lifetime Dijkstra, Holt-Winters (load)": 89.8876404494382,
+   "Lifetime Dijkstra, Holt-Winters (tau)": 88.76404494382022
   },
   "10": {
    "oracle": 167,
@@ -520,7 +598,9 @@
    "Forecast LP, seasonal-naive": 97.0059880239521,
    "Forecast LP, perfect forecast (diagnostic)": 97.0059880239521,
    "Forecast LP, Holt-Winters (a priori)": 97.0059880239521,
-   "Forecast LP, Holt-Winters tuned (ours)": 97.0059880239521
+   "Forecast LP, Holt-Winters tuned (ours)": 97.0059880239521,
+   "Lifetime Dijkstra, Holt-Winters (load)": 86.22754491017965,
+   "Lifetime Dijkstra, Holt-Winters (tau)": 85.02994011976048
   },
   "9": {
    "oracle": 196,
@@ -533,7 +613,9 @@
    "Forecast LP, seasonal-naive": 97.44897959183673,
    "Forecast LP, perfect forecast (diagnostic)": 97.44897959183673,
    "Forecast LP, Holt-Winters (a priori)": 97.44897959183673,
-   "Forecast LP, Holt-Winters tuned (ours)": 97.44897959183673
+   "Forecast LP, Holt-Winters tuned (ours)": 97.44897959183673,
+   "Lifetime Dijkstra, Holt-Winters (load)": 91.3265306122449,
+   "Lifetime Dijkstra, Holt-Winters (tau)": 91.3265306122449
   },
   "11": {
    "oracle": 153,
@@ -546,7 +628,9 @@
    "Forecast LP, seasonal-naive": 95.42483660130719,
    "Forecast LP, perfect forecast (diagnostic)": 95.42483660130719,
    "Forecast LP, Holt-Winters (a priori)": 95.42483660130719,
-   "Forecast LP, Holt-Winters tuned (ours)": 95.42483660130719
+   "Forecast LP, Holt-Winters tuned (ours)": 95.42483660130719,
+   "Lifetime Dijkstra, Holt-Winters (load)": 88.88888888888889,
+   "Lifetime Dijkstra, Holt-Winters (tau)": 81.69934640522875
   },
   "12": {
    "oracle": 127,
@@ -559,7 +643,9 @@
    "Forecast LP, seasonal-naive": 96.06299212598425,
    "Forecast LP, perfect forecast (diagnostic)": 96.06299212598425,
    "Forecast LP, Holt-Winters (a priori)": 96.06299212598425,
-   "Forecast LP, Holt-Winters tuned (ours)": 96.06299212598425
+   "Forecast LP, Holt-Winters tuned (ours)": 96.06299212598425,
+   "Lifetime Dijkstra, Holt-Winters (load)": 81.10236220472441,
+   "Lifetime Dijkstra, Holt-Winters (tau)": 76.37795275590551
   },
   "14": {
    "oracle": 163,
@@ -572,7 +658,9 @@
    "Forecast LP, seasonal-naive": 95.0920245398773,
    "Forecast LP, perfect forecast (diagnostic)": 95.0920245398773,
    "Forecast LP, Holt-Winters (a priori)": 95.0920245398773,
-   "Forecast LP, Holt-Winters tuned (ours)": 95.0920245398773
+   "Forecast LP, Holt-Winters tuned (ours)": 95.0920245398773,
+   "Lifetime Dijkstra, Holt-Winters (load)": 88.95705521472392,
+   "Lifetime Dijkstra, Holt-Winters (tau)": 84.66257668711657
   },
   "13": {
    "oracle": 192,
@@ -585,7 +673,9 @@
    "Forecast LP, seasonal-naive": 97.39583333333334,
    "Forecast LP, perfect forecast (diagnostic)": 97.39583333333334,
    "Forecast LP, Holt-Winters (a priori)": 97.39583333333334,
-   "Forecast LP, Holt-Winters tuned (ours)": 97.39583333333334
+   "Forecast LP, Holt-Winters tuned (ours)": 97.39583333333334,
+   "Lifetime Dijkstra, Holt-Winters (load)": 92.1875,
+   "Lifetime Dijkstra, Holt-Winters (tau)": 88.54166666666666
   },
   "16": {
    "oracle": 179,
@@ -598,7 +688,9 @@
    "Forecast LP, seasonal-naive": 98.88268156424581,
    "Forecast LP, perfect forecast (diagnostic)": 98.88268156424581,
    "Forecast LP, Holt-Winters (a priori)": 98.88268156424581,
-   "Forecast LP, Holt-Winters tuned (ours)": 98.88268156424581
+   "Forecast LP, Holt-Winters tuned (ours)": 98.88268156424581,
+   "Lifetime Dijkstra, Holt-Winters (load)": 87.15083798882681,
+   "Lifetime Dijkstra, Holt-Winters (tau)": 84.91620111731844
   },
   "15": {
    "oracle": 186,
@@ -611,7 +703,9 @@
    "Forecast LP, seasonal-naive": 98.38709677419355,
    "Forecast LP, perfect forecast (diagnostic)": 98.38709677419355,
    "Forecast LP, Holt-Winters (a priori)": 98.38709677419355,
-   "Forecast LP, Holt-Winters tuned (ours)": 98.38709677419355
+   "Forecast LP, Holt-Winters tuned (ours)": 98.38709677419355,
+   "Lifetime Dijkstra, Holt-Winters (load)": 90.86021505376344,
+   "Lifetime Dijkstra, Holt-Winters (tau)": 87.63440860215054
   },
   "17": {
    "oracle": 211,
@@ -624,7 +718,9 @@
    "Forecast LP, seasonal-naive": 98.10426540284361,
    "Forecast LP, perfect forecast (diagnostic)": 98.10426540284361,
    "Forecast LP, Holt-Winters (a priori)": 98.10426540284361,
-   "Forecast LP, Holt-Winters tuned (ours)": 98.10426540284361
+   "Forecast LP, Holt-Winters tuned (ours)": 98.10426540284361,
+   "Lifetime Dijkstra, Holt-Winters (load)": 90.99526066350711,
+   "Lifetime Dijkstra, Holt-Winters (tau)": 91.4691943127962
   },
   "19": {
    "oracle": 146,
@@ -637,7 +733,9 @@
    "Forecast LP, seasonal-naive": 97.94520547945206,
    "Forecast LP, perfect forecast (diagnostic)": 97.94520547945206,
    "Forecast LP, Holt-Winters (a priori)": 97.94520547945206,
-   "Forecast LP, Holt-Winters tuned (ours)": 97.94520547945206
+   "Forecast LP, Holt-Winters tuned (ours)": 97.94520547945206,
+   "Lifetime Dijkstra, Holt-Winters (load)": 84.93150684931507,
+   "Lifetime Dijkstra, Holt-Winters (tau)": 85.61643835616438
   },
   "20": {
    "oracle": 176,
@@ -650,7 +748,9 @@
    "Forecast LP, seasonal-naive": 96.5909090909091,
    "Forecast LP, perfect forecast (diagnostic)": 96.5909090909091,
    "Forecast LP, Holt-Winters (a priori)": 96.5909090909091,
-   "Forecast LP, Holt-Winters tuned (ours)": 96.5909090909091
+   "Forecast LP, Holt-Winters tuned (ours)": 96.5909090909091,
+   "Lifetime Dijkstra, Holt-Winters (load)": 90.3409090909091,
+   "Lifetime Dijkstra, Holt-Winters (tau)": 90.9090909090909
   },
   "18": {
    "oracle": 177,
@@ -663,7 +763,9 @@
    "Forecast LP, seasonal-naive": 98.30508474576271,
    "Forecast LP, perfect forecast (diagnostic)": 98.30508474576271,
    "Forecast LP, Holt-Winters (a priori)": 98.30508474576271,
-   "Forecast LP, Holt-Winters tuned (ours)": 98.30508474576271
+   "Forecast LP, Holt-Winters tuned (ours)": 98.30508474576271,
+   "Lifetime Dijkstra, Holt-Winters (load)": 88.70056497175142,
+   "Lifetime Dijkstra, Holt-Winters (tau)": 87.00564971751412
   },
   "22": {
    "oracle": 155,
@@ -676,7 +778,9 @@
    "Forecast LP, seasonal-naive": 94.83870967741936,
    "Forecast LP, perfect forecast (diagnostic)": 94.83870967741936,
    "Forecast LP, Holt-Winters (a priori)": 94.83870967741936,
-   "Forecast LP, Holt-Winters tuned (ours)": 94.83870967741936
+   "Forecast LP, Holt-Winters tuned (ours)": 94.83870967741936,
+   "Lifetime Dijkstra, Holt-Winters (load)": 89.6774193548387,
+   "Lifetime Dijkstra, Holt-Winters (tau)": 83.22580645161291
   },
   "21": {
    "oracle": 165,
@@ -689,7 +793,9 @@
    "Forecast LP, seasonal-naive": 97.57575757575758,
    "Forecast LP, perfect forecast (diagnostic)": 97.57575757575758,
    "Forecast LP, Holt-Winters (a priori)": 97.57575757575758,
-   "Forecast LP, Holt-Winters tuned (ours)": 97.57575757575758
+   "Forecast LP, Holt-Winters tuned (ours)": 97.57575757575758,
+   "Lifetime Dijkstra, Holt-Winters (load)": 84.24242424242424,
+   "Lifetime Dijkstra, Holt-Winters (tau)": 84.84848484848484
   },
   "23": {
    "oracle": 175,
@@ -702,7 +808,9 @@
    "Forecast LP, seasonal-naive": 99.42857142857143,
    "Forecast LP, perfect forecast (diagnostic)": 99.42857142857143,
    "Forecast LP, Holt-Winters (a priori)": 99.42857142857143,
-   "Forecast LP, Holt-Winters tuned (ours)": 99.42857142857143
+   "Forecast LP, Holt-Winters tuned (ours)": 99.42857142857143,
+   "Lifetime Dijkstra, Holt-Winters (load)": 90.85714285714286,
+   "Lifetime Dijkstra, Holt-Winters (tau)": 89.71428571428571
   },
   "24": {
    "oracle": 219,
@@ -715,7 +823,9 @@
    "Forecast LP, seasonal-naive": 97.71689497716895,
    "Forecast LP, perfect forecast (diagnostic)": 97.71689497716895,
    "Forecast LP, Holt-Winters (a priori)": 97.71689497716895,
-   "Forecast LP, Holt-Winters tuned (ours)": 97.71689497716895
+   "Forecast LP, Holt-Winters tuned (ours)": 97.71689497716895,
+   "Lifetime Dijkstra, Holt-Winters (load)": 92.69406392694064,
+   "Lifetime Dijkstra, Holt-Winters (tau)": 91.78082191780823
   },
   "26": {
    "oracle": 157,
@@ -728,7 +838,9 @@
    "Forecast LP, seasonal-naive": 98.08917197452229,
    "Forecast LP, perfect forecast (diagnostic)": 98.08917197452229,
    "Forecast LP, Holt-Winters (a priori)": 98.08917197452229,
-   "Forecast LP, Holt-Winters tuned (ours)": 98.08917197452229
+   "Forecast LP, Holt-Winters tuned (ours)": 98.08917197452229,
+   "Lifetime Dijkstra, Holt-Winters (load)": 89.171974522293,
+   "Lifetime Dijkstra, Holt-Winters (tau)": 85.35031847133759
   },
   "25": {
    "oracle": 173,
@@ -741,7 +853,9 @@
    "Forecast LP, seasonal-naive": 97.6878612716763,
    "Forecast LP, perfect forecast (diagnostic)": 97.6878612716763,
    "Forecast LP, Holt-Winters (a priori)": 97.6878612716763,
-   "Forecast LP, Holt-Winters tuned (ours)": 97.6878612716763
+   "Forecast LP, Holt-Winters tuned (ours)": 97.6878612716763,
+   "Lifetime Dijkstra, Holt-Winters (load)": 89.01734104046243,
+   "Lifetime Dijkstra, Holt-Winters (tau)": 90.17341040462428
   },
   "27": {
    "oracle": 157,
@@ -754,7 +868,9 @@
    "Forecast LP, seasonal-naive": 98.08917197452229,
    "Forecast LP, perfect forecast (diagnostic)": 98.08917197452229,
    "Forecast LP, Holt-Winters (a priori)": 98.08917197452229,
-   "Forecast LP, Holt-Winters tuned (ours)": 98.08917197452229
+   "Forecast LP, Holt-Winters tuned (ours)": 98.08917197452229,
+   "Lifetime Dijkstra, Holt-Winters (load)": 87.89808917197452,
+   "Lifetime Dijkstra, Holt-Winters (tau)": 85.35031847133759
   },
   "28": {
    "oracle": 127,
@@ -767,7 +883,9 @@
    "Forecast LP, seasonal-naive": 96.06299212598425,
    "Forecast LP, perfect forecast (diagnostic)": 96.06299212598425,
    "Forecast LP, Holt-Winters (a priori)": 96.06299212598425,
-   "Forecast LP, Holt-Winters tuned (ours)": 96.06299212598425
+   "Forecast LP, Holt-Winters tuned (ours)": 96.06299212598425,
+   "Lifetime Dijkstra, Holt-Winters (load)": 81.88976377952756,
+   "Lifetime Dijkstra, Holt-Winters (tau)": 81.88976377952756
   },
   "29": {
    "oracle": 204,
@@ -780,7 +898,9 @@
    "Forecast LP, seasonal-naive": 98.52941176470588,
    "Forecast LP, perfect forecast (diagnostic)": 98.52941176470588,
    "Forecast LP, Holt-Winters (a priori)": 98.52941176470588,
-   "Forecast LP, Holt-Winters tuned (ours)": 98.52941176470588
+   "Forecast LP, Holt-Winters tuned (ours)": 98.52941176470588,
+   "Lifetime Dijkstra, Holt-Winters (load)": 90.68627450980392,
+   "Lifetime Dijkstra, Holt-Winters (tau)": 88.72549019607843
   }
  },
  "B": {
@@ -795,7 +915,9 @@
    "Forecast LP, seasonal-naive": 81.02189781021897,
    "Forecast LP, perfect forecast (diagnostic)": 92.7007299270073,
    "Forecast LP, Holt-Winters (a priori)": 88.32116788321169,
-   "Forecast LP, Holt-Winters tuned (ours)": 89.78102189781022
+   "Forecast LP, Holt-Winters tuned (ours)": 89.78102189781022,
+   "Lifetime Dijkstra, Holt-Winters (load)": 82.48175182481752,
+   "Lifetime Dijkstra, Holt-Winters (tau)": 85.40145985401459
   },
   "1": {
    "oracle": 147,
@@ -808,7 +930,9 @@
    "Forecast LP, seasonal-naive": 91.83673469387756,
    "Forecast LP, perfect forecast (diagnostic)": 91.15646258503402,
    "Forecast LP, Holt-Winters (a priori)": 85.71428571428571,
-   "Forecast LP, Holt-Winters tuned (ours)": 91.15646258503402
+   "Forecast LP, Holt-Winters tuned (ours)": 91.15646258503402,
+   "Lifetime Dijkstra, Holt-Winters (load)": 78.91156462585033,
+   "Lifetime Dijkstra, Holt-Winters (tau)": 89.79591836734694
   },
   "2": {
    "oracle": 166,
@@ -821,7 +945,9 @@
    "Forecast LP, seasonal-naive": 85.54216867469879,
    "Forecast LP, perfect forecast (diagnostic)": 94.57831325301204,
    "Forecast LP, Holt-Winters (a priori)": 66.86746987951807,
-   "Forecast LP, Holt-Winters tuned (ours)": 88.55421686746988
+   "Forecast LP, Holt-Winters tuned (ours)": 88.55421686746988,
+   "Lifetime Dijkstra, Holt-Winters (load)": 84.93975903614458,
+   "Lifetime Dijkstra, Holt-Winters (tau)": 85.54216867469879
   },
   "3": {
    "oracle": 166,
@@ -834,7 +960,9 @@
    "Forecast LP, seasonal-naive": 92.7710843373494,
    "Forecast LP, perfect forecast (diagnostic)": 83.73493975903614,
    "Forecast LP, Holt-Winters (a priori)": 85.54216867469879,
-   "Forecast LP, Holt-Winters tuned (ours)": 89.1566265060241
+   "Forecast LP, Holt-Winters tuned (ours)": 89.1566265060241,
+   "Lifetime Dijkstra, Holt-Winters (load)": 85.54216867469879,
+   "Lifetime Dijkstra, Holt-Winters (tau)": 83.73493975903614
   },
   "4": {
    "oracle": 153,
@@ -847,7 +975,9 @@
    "Forecast LP, seasonal-naive": 90.19607843137256,
    "Forecast LP, perfect forecast (diagnostic)": 90.19607843137256,
    "Forecast LP, Holt-Winters (a priori)": 79.73856209150327,
-   "Forecast LP, Holt-Winters tuned (ours)": 90.19607843137256
+   "Forecast LP, Holt-Winters tuned (ours)": 90.19607843137256,
+   "Lifetime Dijkstra, Holt-Winters (load)": 76.47058823529412,
+   "Lifetime Dijkstra, Holt-Winters (tau)": 82.35294117647058
   },
   "5": {
    "oracle": 172,
@@ -860,7 +990,9 @@
    "Forecast LP, seasonal-naive": 87.20930232558139,
    "Forecast LP, perfect forecast (diagnostic)": 91.86046511627907,
    "Forecast LP, Holt-Winters (a priori)": 72.67441860465115,
-   "Forecast LP, Holt-Winters tuned (ours)": 92.44186046511628
+   "Forecast LP, Holt-Winters tuned (ours)": 92.44186046511628,
+   "Lifetime Dijkstra, Holt-Winters (load)": 68.6046511627907,
+   "Lifetime Dijkstra, Holt-Winters (tau)": 81.97674418604652
   },
   "6": {
    "oracle": 129,
@@ -873,7 +1005,9 @@
    "Forecast LP, seasonal-naive": 91.47286821705426,
    "Forecast LP, perfect forecast (diagnostic)": 92.24806201550388,
    "Forecast LP, Holt-Winters (a priori)": 64.34108527131784,
-   "Forecast LP, Holt-Winters tuned (ours)": 89.14728682170544
+   "Forecast LP, Holt-Winters tuned (ours)": 89.14728682170544,
+   "Lifetime Dijkstra, Holt-Winters (load)": 72.86821705426357,
+   "Lifetime Dijkstra, Holt-Winters (tau)": 82.17054263565892
   },
   "7": {
    "oracle": 138,
@@ -886,7 +1020,9 @@
    "Forecast LP, seasonal-naive": 80.43478260869566,
    "Forecast LP, perfect forecast (diagnostic)": 80.43478260869566,
    "Forecast LP, Holt-Winters (a priori)": 79.71014492753623,
-   "Forecast LP, Holt-Winters tuned (ours)": 88.40579710144928
+   "Forecast LP, Holt-Winters tuned (ours)": 88.40579710144928,
+   "Lifetime Dijkstra, Holt-Winters (load)": 81.88405797101449,
+   "Lifetime Dijkstra, Holt-Winters (tau)": 81.88405797101449
   },
   "8": {
    "oracle": 166,
@@ -899,7 +1035,9 @@
    "Forecast LP, seasonal-naive": 87.95180722891565,
    "Forecast LP, perfect forecast (diagnostic)": 83.73493975903614,
    "Forecast LP, Holt-Winters (a priori)": 83.73493975903614,
-   "Forecast LP, Holt-Winters tuned (ours)": 93.37349397590361
+   "Forecast LP, Holt-Winters tuned (ours)": 93.37349397590361,
+   "Lifetime Dijkstra, Holt-Winters (load)": 83.73493975903614,
+   "Lifetime Dijkstra, Holt-Winters (tau)": 83.73493975903614
   },
   "9": {
    "oracle": 183,
@@ -912,7 +1050,9 @@
    "Forecast LP, seasonal-naive": 75.95628415300546,
    "Forecast LP, perfect forecast (diagnostic)": 89.07103825136612,
    "Forecast LP, Holt-Winters (a priori)": 86.88524590163934,
-   "Forecast LP, Holt-Winters tuned (ours)": 92.89617486338798
+   "Forecast LP, Holt-Winters tuned (ours)": 92.89617486338798,
+   "Lifetime Dijkstra, Holt-Winters (load)": 77.59562841530054,
+   "Lifetime Dijkstra, Holt-Winters (tau)": 87.97814207650273
   },
   "11": {
    "oracle": 145,
@@ -925,7 +1065,9 @@
    "Forecast LP, seasonal-naive": 86.89655172413792,
    "Forecast LP, perfect forecast (diagnostic)": 95.17241379310344,
    "Forecast LP, Holt-Winters (a priori)": 76.55172413793103,
-   "Forecast LP, Holt-Winters tuned (ours)": 87.58620689655172
+   "Forecast LP, Holt-Winters tuned (ours)": 87.58620689655172,
+   "Lifetime Dijkstra, Holt-Winters (load)": 78.62068965517241,
+   "Lifetime Dijkstra, Holt-Winters (tau)": 79.3103448275862
   },
   "10": {
    "oracle": 160,
@@ -938,7 +1080,9 @@
    "Forecast LP, seasonal-naive": 86.25,
    "Forecast LP, perfect forecast (diagnostic)": 91.875,
    "Forecast LP, Holt-Winters (a priori)": 86.875,
-   "Forecast LP, Holt-Winters tuned (ours)": 89.375
+   "Forecast LP, Holt-Winters tuned (ours)": 89.375,
+   "Lifetime Dijkstra, Holt-Winters (load)": 85.625,
+   "Lifetime Dijkstra, Holt-Winters (tau)": 82.5
   },
   "12": {
    "oracle": 117,
@@ -951,7 +1095,9 @@
    "Forecast LP, seasonal-naive": 80.34188034188034,
    "Forecast LP, perfect forecast (diagnostic)": 94.01709401709401,
    "Forecast LP, Holt-Winters (a priori)": 70.94017094017094,
-   "Forecast LP, Holt-Winters tuned (ours)": 76.92307692307693
+   "Forecast LP, Holt-Winters tuned (ours)": 76.92307692307693,
+   "Lifetime Dijkstra, Holt-Winters (load)": 76.06837606837607,
+   "Lifetime Dijkstra, Holt-Winters (tau)": 76.92307692307693
   },
   "14": {
    "oracle": 157,
@@ -964,7 +1110,9 @@
    "Forecast LP, seasonal-naive": 83.43949044585987,
    "Forecast LP, perfect forecast (diagnostic)": 83.43949044585987,
    "Forecast LP, Holt-Winters (a priori)": 77.70700636942675,
-   "Forecast LP, Holt-Winters tuned (ours)": 85.98726114649682
+   "Forecast LP, Holt-Winters tuned (ours)": 85.98726114649682,
+   "Lifetime Dijkstra, Holt-Winters (load)": 83.43949044585987,
+   "Lifetime Dijkstra, Holt-Winters (tau)": 82.80254777070064
   },
   "13": {
    "oracle": 179,
@@ -977,7 +1125,9 @@
    "Forecast LP, seasonal-naive": 91.06145251396647,
    "Forecast LP, perfect forecast (diagnostic)": 94.41340782122904,
    "Forecast LP, Holt-Winters (a priori)": 92.73743016759776,
-   "Forecast LP, Holt-Winters tuned (ours)": 91.06145251396647
+   "Forecast LP, Holt-Winters tuned (ours)": 91.06145251396647,
+   "Lifetime Dijkstra, Holt-Winters (load)": 78.77094972067039,
+   "Lifetime Dijkstra, Holt-Winters (tau)": 85.47486033519553
   },
   "15": {
    "oracle": 173,
@@ -990,7 +1140,9 @@
    "Forecast LP, seasonal-naive": 86.70520231213872,
    "Forecast LP, perfect forecast (diagnostic)": 89.59537572254335,
    "Forecast LP, Holt-Winters (a priori)": 91.32947976878613,
-   "Forecast LP, Holt-Winters tuned (ours)": 82.65895953757226
+   "Forecast LP, Holt-Winters tuned (ours)": 82.65895953757226,
+   "Lifetime Dijkstra, Holt-Winters (load)": 84.97109826589595,
+   "Lifetime Dijkstra, Holt-Winters (tau)": 84.39306358381504
   },
   "16": {
    "oracle": 165,
@@ -1003,7 +1155,9 @@
    "Forecast LP, seasonal-naive": 91.51515151515152,
    "Forecast LP, perfect forecast (diagnostic)": 91.51515151515152,
    "Forecast LP, Holt-Winters (a priori)": 64.84848484848484,
-   "Forecast LP, Holt-Winters tuned (ours)": 86.66666666666667
+   "Forecast LP, Holt-Winters tuned (ours)": 86.66666666666667,
+   "Lifetime Dijkstra, Holt-Winters (load)": 84.24242424242424,
+   "Lifetime Dijkstra, Holt-Winters (tau)": 84.84848484848484
   },
   "18": {
    "oracle": 167,
@@ -1016,7 +1170,9 @@
    "Forecast LP, seasonal-naive": 90.41916167664671,
    "Forecast LP, perfect forecast (diagnostic)": 82.63473053892216,
    "Forecast LP, Holt-Winters (a priori)": 85.02994011976048,
-   "Forecast LP, Holt-Winters tuned (ours)": 89.82035928143712
+   "Forecast LP, Holt-Winters tuned (ours)": 89.82035928143712,
+   "Lifetime Dijkstra, Holt-Winters (load)": 86.22754491017965,
+   "Lifetime Dijkstra, Holt-Winters (tau)": 88.02395209580838
   },
   "17": {
    "oracle": 198,
@@ -1029,7 +1185,9 @@
    "Forecast LP, seasonal-naive": 84.34343434343434,
    "Forecast LP, perfect forecast (diagnostic)": 89.8989898989899,
    "Forecast LP, Holt-Winters (a priori)": 88.88888888888889,
-   "Forecast LP, Holt-Winters tuned (ours)": 84.34343434343434
+   "Forecast LP, Holt-Winters tuned (ours)": 84.34343434343434,
+   "Lifetime Dijkstra, Holt-Winters (load)": 87.87878787878788,
+   "Lifetime Dijkstra, Holt-Winters (tau)": 90.9090909090909
   },
   "19": {
    "oracle": 139,
@@ -1042,7 +1200,9 @@
    "Forecast LP, seasonal-naive": 88.48920863309353,
    "Forecast LP, perfect forecast (diagnostic)": 88.48920863309353,
    "Forecast LP, Holt-Winters (a priori)": 76.97841726618705,
-   "Forecast LP, Holt-Winters tuned (ours)": 76.97841726618705
+   "Forecast LP, Holt-Winters tuned (ours)": 76.97841726618705,
+   "Lifetime Dijkstra, Holt-Winters (load)": 74.10071942446042,
+   "Lifetime Dijkstra, Holt-Winters (tau)": 81.29496402877699
   },
   "20": {
    "oracle": 165,
@@ -1055,7 +1215,9 @@
    "Forecast LP, seasonal-naive": 86.66666666666667,
    "Forecast LP, perfect forecast (diagnostic)": 89.0909090909091,
    "Forecast LP, Holt-Winters (a priori)": 88.48484848484848,
-   "Forecast LP, Holt-Winters tuned (ours)": 86.66666666666667
+   "Forecast LP, Holt-Winters tuned (ours)": 86.66666666666667,
+   "Lifetime Dijkstra, Holt-Winters (load)": 83.03030303030303,
+   "Lifetime Dijkstra, Holt-Winters (tau)": 83.03030303030303
   },
   "21": {
    "oracle": 152,
@@ -1068,7 +1230,9 @@
    "Forecast LP, seasonal-naive": 88.81578947368422,
    "Forecast LP, perfect forecast (diagnostic)": 93.42105263157895,
    "Forecast LP, Holt-Winters (a priori)": 80.26315789473685,
-   "Forecast LP, Holt-Winters tuned (ours)": 91.44736842105263
+   "Forecast LP, Holt-Winters tuned (ours)": 91.44736842105263,
+   "Lifetime Dijkstra, Holt-Winters (load)": 76.31578947368422,
+   "Lifetime Dijkstra, Holt-Winters (tau)": 77.63157894736842
   },
   "22": {
    "oracle": 141,
@@ -1081,7 +1245,9 @@
    "Forecast LP, seasonal-naive": 66.66666666666666,
    "Forecast LP, perfect forecast (diagnostic)": 84.39716312056737,
    "Forecast LP, Holt-Winters (a priori)": 83.68794326241135,
-   "Forecast LP, Holt-Winters tuned (ours)": 87.94326241134752
+   "Forecast LP, Holt-Winters tuned (ours)": 87.94326241134752,
+   "Lifetime Dijkstra, Holt-Winters (load)": 80.85106382978722,
+   "Lifetime Dijkstra, Holt-Winters (tau)": 80.85106382978722
   },
   "23": {
    "oracle": 165,
@@ -1094,7 +1260,9 @@
    "Forecast LP, seasonal-naive": 91.51515151515152,
    "Forecast LP, perfect forecast (diagnostic)": 89.0909090909091,
    "Forecast LP, Holt-Winters (a priori)": 84.24242424242424,
-   "Forecast LP, Holt-Winters tuned (ours)": 91.51515151515152
+   "Forecast LP, Holt-Winters tuned (ours)": 91.51515151515152,
+   "Lifetime Dijkstra, Holt-Winters (load)": 84.24242424242424,
+   "Lifetime Dijkstra, Holt-Winters (tau)": 83.63636363636363
   },
   "24": {
    "oracle": 205,
@@ -1107,7 +1275,9 @@
    "Forecast LP, seasonal-naive": 89.26829268292683,
    "Forecast LP, perfect forecast (diagnostic)": 92.19512195121952,
    "Forecast LP, Holt-Winters (a priori)": 88.78048780487805,
-   "Forecast LP, Holt-Winters tuned (ours)": 89.26829268292683
+   "Forecast LP, Holt-Winters tuned (ours)": 89.26829268292683,
+   "Lifetime Dijkstra, Holt-Winters (load)": 89.75609756097562,
+   "Lifetime Dijkstra, Holt-Winters (tau)": 89.26829268292683
   },
   "26": {
    "oracle": 147,
@@ -1120,7 +1290,9 @@
    "Forecast LP, seasonal-naive": 91.83673469387756,
    "Forecast LP, perfect forecast (diagnostic)": 91.83673469387756,
    "Forecast LP, Holt-Winters (a priori)": 80.27210884353741,
-   "Forecast LP, Holt-Winters tuned (ours)": 91.83673469387756
+   "Forecast LP, Holt-Winters tuned (ours)": 91.83673469387756,
+   "Lifetime Dijkstra, Holt-Winters (load)": 79.59183673469387,
+   "Lifetime Dijkstra, Holt-Winters (tau)": 79.59183673469387
   },
   "25": {
    "oracle": 163,
@@ -1133,7 +1305,9 @@
    "Forecast LP, seasonal-naive": 87.11656441717791,
    "Forecast LP, perfect forecast (diagnostic)": 92.63803680981594,
    "Forecast LP, Holt-Winters (a priori)": 84.04907975460122,
-   "Forecast LP, Holt-Winters tuned (ours)": 89.57055214723927
+   "Forecast LP, Holt-Winters tuned (ours)": 89.57055214723927,
+   "Lifetime Dijkstra, Holt-Winters (load)": 85.2760736196319,
+   "Lifetime Dijkstra, Holt-Winters (tau)": 84.04907975460122
   },
   "27": {
    "oracle": 143,
@@ -1146,7 +1320,9 @@
    "Forecast LP, seasonal-naive": 88.11188811188812,
    "Forecast LP, perfect forecast (diagnostic)": 81.11888111888112,
    "Forecast LP, Holt-Winters (a priori)": 71.32867132867133,
-   "Forecast LP, Holt-Winters tuned (ours)": 94.4055944055944
+   "Forecast LP, Holt-Winters tuned (ours)": 94.4055944055944,
+   "Lifetime Dijkstra, Holt-Winters (load)": 79.02097902097903,
+   "Lifetime Dijkstra, Holt-Winters (tau)": 81.11888111888112
   },
   "28": {
    "oracle": 118,
@@ -1159,7 +1335,9 @@
    "Forecast LP, seasonal-naive": 77.11864406779661,
    "Forecast LP, perfect forecast (diagnostic)": 76.27118644067797,
    "Forecast LP, Holt-Winters (a priori)": 77.11864406779661,
-   "Forecast LP, Holt-Winters tuned (ours)": 74.57627118644068
+   "Forecast LP, Holt-Winters tuned (ours)": 74.57627118644068,
+   "Lifetime Dijkstra, Holt-Winters (load)": 77.11864406779661,
+   "Lifetime Dijkstra, Holt-Winters (tau)": 76.27118644067797
   },
   "29": {
    "oracle": 190,
@@ -1172,7 +1350,9 @@
    "Forecast LP, seasonal-naive": 94.21052631578948,
    "Forecast LP, perfect forecast (diagnostic)": 94.21052631578948,
    "Forecast LP, Holt-Winters (a priori)": 85.26315789473684,
-   "Forecast LP, Holt-Winters tuned (ours)": 96.3157894736842
+   "Forecast LP, Holt-Winters tuned (ours)": 96.3157894736842,
+   "Lifetime Dijkstra, Holt-Winters (load)": 88.94736842105263,
+   "Lifetime Dijkstra, Holt-Winters (tau)": 86.31578947368422
   }
  }
 }

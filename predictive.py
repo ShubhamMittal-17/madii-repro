@@ -116,3 +116,39 @@ class ForecastLP(ReactiveLP):
     def _rates(self, w):
         self.obs.catch_up(w)
         return self.obs.f.forecast(self.H)[0].mean(0)
+
+
+class LifetimeDijkstra:
+    """Predicted-lifetime Dijkstra: battery-weighted Dijkstra whose node weight is the
+    forecast time to death instead of the battery alone. Each round (knowing traffic up to
+    t-1), Holt-Winters forecasts every node's own rate F_i averaged over the next H rounds.
+
+      mode "load": weight_i = (E0 / E_i) * (F_i / mean F)^k
+                   a node forecast to be busy over the coming day stays expensive before,
+                   during and after its surge; with equal forecasts this is exactly battery
+                   Dijkstra.
+      mode "tau":  weight_i = (E0 / E_i) * (median tau / tau_i)^k, tau_i = E_i / drain_i the
+                   forecast rounds node i has left, where drain_i is
+                   the energy per round node i would spend sending its own forecast load
+                   plus everything forecast to flow through it on the tree it is
+                   actually using, smoothed over rounds (rate rho) so the tree settles
+                   rather than flipping onto whichever nodes looked idle last round.
+    """
+    def __init__(self, w, history, H=24, mode="load", k=1.0, rho=0.1, forecaster="holt-winters", **fkw):
+        self.obs = _Observer(w.n, history, forecaster, **fkw)
+        self.H, self.mode, self.k, self.rho = H, mode, k, rho
+        self.p, self.drain = None, None
+
+    def __call__(self, w):
+        self.obs.catch_up(w)
+        F = np.clip(self.obs.f.forecast(self.H)[0].mean(0), 1e-3, None)
+        base = D.battery_mult(w)
+        if self.mode == "load":
+            return D.dijkstra_tree(w, base * (F / F[w.alive].mean()) ** self.k)
+        p0 = w._sanitize(self.p if self.p is not None else D.dijkstra_tree(w, base))
+        through = subtree_sum(w, p0, F) * w.L
+        drain = through * w.etx_bit[np.arange(w.n), p0] + E.erx(through - F * w.L)
+        self.drain = drain if self.drain is None else (1 - self.rho) * self.drain + self.rho * drain
+        tau = np.maximum(w.E, 1e-12) / np.maximum(self.drain, 1e-18)       # forecast rounds left
+        self.p = D.dijkstra_tree(w, base * (np.median(tau[w.alive]) / tau) ** self.k)
+        return self.p

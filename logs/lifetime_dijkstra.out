@@ -1,0 +1,136 @@
+R 1 {'oracle': 149, 'Lifetime Dijkstra, Holt-Winters (load)': 77.9, 'Lifetime Dijkstra, Holt-Winters (tau)': 77.2}
+R 0 {'oracle': 137, 'Lifetime Dijkstra, Holt-Winters (load)': 82.5, 'Lifetime Dijkstra, Holt-Winters (tau)': 83.9}
+R 2 {'oracle': 166, 'Lifetime Dijkstra, Holt-Winters (load)': 84.3, 'Lifetime Dijkstra, Holt-Winters (tau)': 84.3}
+R 3 {'oracle': 169, 'Lifetime Dijkstra, Holt-Winters (load)': 82.8, 'Lifetime Dijkstra, Holt-Winters (tau)': 82.2}
+R 6 {'oracle': 131, 'Lifetime Dijkstra, Holt-Winters (load)': 80.2, 'Lifetime Dijkstra, Holt-Winters (tau)': 86.3}
+R 4 {'oracle': 154, 'Lifetime Dijkstra, Holt-Winters (load)': 80.5, 'Lifetime Dijkstra, Holt-Winters (tau)': 83.8}
+R 5 {'oracle': 174, 'Lifetime Dijkstra, Holt-Winters (load)': 79.3, 'Lifetime Dijkstra, Holt-Winters (tau)': 79.9}
+R 7 {'oracle': 139, 'Lifetime Dijkstra, Holt-Winters (load)': 82.0, 'Lifetime Dijkstra, Holt-Winters (tau)': 82.0}
+R 8 {'oracle': 167, 'Lifetime Dijkstra, Holt-Winters (load)': 84.4, 'Lifetime Dijkstra, Holt-Winters (tau)': 83.2}
+R 10 {'oracle': 161, 'Lifetime Dijkstra, Holt-Winters (load)': 80.1, 'Lifetime Dijkstra, Holt-Winters (tau)': 84.5}
+R 9 {'oracle': 185, 'Lifetime Dijkstra, Holt-Winters (load)': 74.6, 'Lifetime Dijkstra, Holt-Winters (tau)': 76.8}
+R 11 {'oracle': 145, 'Lifetime Dijkstra, Holt-Winters (load)': 86.9, 'Lifetime Dijkstra, Holt-Winters (tau)': 84.1}
+R 12 {'oracle': 117, 'Lifetime Dijkstra, Holt-Winters (load)': 76.1, 'Lifetime Dijkstra, Holt-Winters (tau)': 76.1}
+R 13 {'oracle': 182, 'Lifetime Dijkstra, Holt-Winters (load)': 88.5, 'Lifetime Dijkstra, Holt-Winters (tau)': 88.5}
+R 14 {'oracle': 157, 'Lifetime Dijkstra, Holt-Winters (load)': 87.9, 'Lifetime Dijkstra, Holt-Winters (tau)': 82.8}
+R 15 {'oracle': 176, 'Lifetime Dijkstra, Holt-Winters (load)': 82.4, 'Lifetime Dijkstra, Holt-Winters (tau)': 88.6}
+R 16 {'oracle': 166, 'Lifetime Dijkstra, Holt-Winters (load)': 83.1, 'Lifetime Dijkstra, Holt-Winters (tau)': 82.5}
+R 18 {'oracle': 167, 'Lifetime Dijkstra, Holt-Winters (load)': 84.4, 'Lifetime Dijkstra, Holt-Winters (tau)': 85.6}
+R 19 {'oracle': 139, 'Lifetime Dijkstra, Holt-Winters (load)': 82.0, 'Lifetime Dijkstra, Holt-Winters (tau)': 81.3}
+R 17 {'oracle': 200, 'Lifetime Dijkstra, Holt-Winters (load)': 85.0, 'Lifetime Dijkstra, Holt-Winters (tau)': 90.0}
+R 20 {'oracle': 167, 'Lifetime Dijkstra, Holt-Winters (load)': 85.0, 'Lifetime Dijkstra, Holt-Winters (tau)': 83.8}
+R 22 {'oracle': 141, 'Lifetime Dijkstra, Holt-Winters (load)': 80.1, 'Lifetime Dijkstra, Holt-Winters (tau)': 80.9}
+R 23 {'oracle': 165, 'Lifetime Dijkstra, Holt-Winters (load)': 83.6, 'Lifetime Dijkstra, Holt-Winters (tau)': 83.6}
+R 21 {'oracle': 152, 'Lifetime Dijkstra, Holt-Winters (load)': 75.7, 'Lifetime Dijkstra, Holt-Winters (tau)': 80.3}
+R 24 {'oracle': 207, 'Lifetime Dijkstra, Holt-Winters (load)': 89.9, 'Lifetime Dijkstra, Holt-Winters (tau)': 88.9}
+R 25 {'oracle': 164, 'Lifetime Dijkstra, Holt-Winters (load)': 84.8, 'Lifetime Dijkstra, Holt-Winters (tau)': 83.5}
+R 27 {'oracle': 145, 'Lifetime Dijkstra, Holt-Winters (load)': 78.6, 'Lifetime Dijkstra, Holt-Winters (tau)': 78.6}
+R 26 {'oracle': 147, 'Lifetime Dijkstra, Holt-Winters (load)': 78.9, 'Lifetime Dijkstra, Holt-Winters (tau)': 85.0}
+R 28 {'oracle': 120, 'Lifetime Dijkstra, Holt-Winters (load)': 76.7, 'Lifetime Dijkstra, Holt-Winters (tau)': 75.8}
+N 0 {'oracle': 143, 'Lifetime Dijkstra, Holt-Winters (load)': 88.1, 'Lifetime Dijkstra, Holt-Winters (tau)': 83.2}
+R 29 {'oracle': 193, 'Lifetime Dijkstra, Holt-Winters (load)': 91.2, 'Lifetime Dijkstra, Holt-Winters (tau)': 87.0}
+N 1 {'oracle': 157, 'Lifetime Dijkstra, Holt-Winters (load)': 89.2, 'Lifetime Dijkstra, Holt-Winters (tau)': 87.3}
+N 2 {'oracle': 176, 'Lifetime Dijkstra, Holt-Winters (load)': 87.5, 'Lifetime Dijkstra, Holt-Winters (tau)': 88.6}
+N 3 {'oracle': 181, 'Lifetime Dijkstra, Holt-Winters (load)': 91.2, 'Lifetime Dijkstra, Holt-Winters (tau)': 91.2}
+N 4 {'oracle': 163, 'Lifetime Dijkstra, Holt-Winters (load)': 87.1, 'Lifetime Dijkstra, Holt-Winters (tau)': 87.1}
+N 5 {'oracle': 187, 'Lifetime Dijkstra, Holt-Winters (load)': 90.9, 'Lifetime Dijkstra, Holt-Winters (tau)': 88.8}
+N 6 {'oracle': 139, 'Lifetime Dijkstra, Holt-Winters (load)': 87.1, 'Lifetime Dijkstra, Holt-Winters (tau)': 84.9}
+N 7 {'oracle': 148, 'Lifetime Dijkstra, Holt-Winters (load)': 89.2, 'Lifetime Dijkstra, Holt-Winters (tau)': 87.8}
+N 8 {'oracle': 178, 'Lifetime Dijkstra, Holt-Winters (load)': 89.9, 'Lifetime Dijkstra, Holt-Winters (tau)': 88.8}
+N 9 {'oracle': 196, 'Lifetime Dijkstra, Holt-Winters (load)': 91.3, 'Lifetime Dijkstra, Holt-Winters (tau)': 91.3}
+N 10 {'oracle': 167, 'Lifetime Dijkstra, Holt-Winters (load)': 86.2, 'Lifetime Dijkstra, Holt-Winters (tau)': 85.0}
+N 11 {'oracle': 153, 'Lifetime Dijkstra, Holt-Winters (load)': 88.9, 'Lifetime Dijkstra, Holt-Winters (tau)': 81.7}
+N 12 {'oracle': 127, 'Lifetime Dijkstra, Holt-Winters (load)': 81.1, 'Lifetime Dijkstra, Holt-Winters (tau)': 76.4}
+N 13 {'oracle': 192, 'Lifetime Dijkstra, Holt-Winters (load)': 92.2, 'Lifetime Dijkstra, Holt-Winters (tau)': 88.5}
+N 15 {'oracle': 186, 'Lifetime Dijkstra, Holt-Winters (load)': 90.9, 'Lifetime Dijkstra, Holt-Winters (tau)': 87.6}
+N 14 {'oracle': 163, 'Lifetime Dijkstra, Holt-Winters (load)': 89.0, 'Lifetime Dijkstra, Holt-Winters (tau)': 84.7}
+N 16 {'oracle': 179, 'Lifetime Dijkstra, Holt-Winters (load)': 87.2, 'Lifetime Dijkstra, Holt-Winters (tau)': 84.9}
+N 17 {'oracle': 211, 'Lifetime Dijkstra, Holt-Winters (load)': 91.0, 'Lifetime Dijkstra, Holt-Winters (tau)': 91.5}
+N 19 {'oracle': 146, 'Lifetime Dijkstra, Holt-Winters (load)': 84.9, 'Lifetime Dijkstra, Holt-Winters (tau)': 85.6}
+N 20 {'oracle': 176, 'Lifetime Dijkstra, Holt-Winters (load)': 90.3, 'Lifetime Dijkstra, Holt-Winters (tau)': 90.9}
+N 18 {'oracle': 177, 'Lifetime Dijkstra, Holt-Winters (load)': 88.7, 'Lifetime Dijkstra, Holt-Winters (tau)': 87.0}
+N 21 {'oracle': 165, 'Lifetime Dijkstra, Holt-Winters (load)': 84.2, 'Lifetime Dijkstra, Holt-Winters (tau)': 84.8}
+N 22 {'oracle': 155, 'Lifetime Dijkstra, Holt-Winters (load)': 89.7, 'Lifetime Dijkstra, Holt-Winters (tau)': 83.2}
+N 23 {'oracle': 175, 'Lifetime Dijkstra, Holt-Winters (load)': 90.9, 'Lifetime Dijkstra, Holt-Winters (tau)': 89.7}
+N 24 {'oracle': 219, 'Lifetime Dijkstra, Holt-Winters (load)': 92.7, 'Lifetime Dijkstra, Holt-Winters (tau)': 91.8}
+N 25 {'oracle': 173, 'Lifetime Dijkstra, Holt-Winters (load)': 89.0, 'Lifetime Dijkstra, Holt-Winters (tau)': 90.2}
+N 26 {'oracle': 157, 'Lifetime Dijkstra, Holt-Winters (load)': 89.2, 'Lifetime Dijkstra, Holt-Winters (tau)': 85.4}
+N 27 {'oracle': 157, 'Lifetime Dijkstra, Holt-Winters (load)': 87.9, 'Lifetime Dijkstra, Holt-Winters (tau)': 85.4}
+N 28 {'oracle': 127, 'Lifetime Dijkstra, Holt-Winters (load)': 81.9, 'Lifetime Dijkstra, Holt-Winters (tau)': 81.9}
+N 29 {'oracle': 204, 'Lifetime Dijkstra, Holt-Winters (load)': 90.7, 'Lifetime Dijkstra, Holt-Winters (tau)': 88.7}
+B 0 {'oracle': 137, 'Lifetime Dijkstra, Holt-Winters (load)': 82.5, 'Lifetime Dijkstra, Holt-Winters (tau)': 85.4}
+B 1 {'oracle': 147, 'Lifetime Dijkstra, Holt-Winters (load)': 78.9, 'Lifetime Dijkstra, Holt-Winters (tau)': 89.8}
+B 2 {'oracle': 166, 'Lifetime Dijkstra, Holt-Winters (load)': 84.9, 'Lifetime Dijkstra, Holt-Winters (tau)': 85.5}
+B 3 {'oracle': 166, 'Lifetime Dijkstra, Holt-Winters (load)': 85.5, 'Lifetime Dijkstra, Holt-Winters (tau)': 83.7}
+B 4 {'oracle': 153, 'Lifetime Dijkstra, Holt-Winters (load)': 76.5, 'Lifetime Dijkstra, Holt-Winters (tau)': 82.4}
+B 6 {'oracle': 129, 'Lifetime Dijkstra, Holt-Winters (load)': 72.9, 'Lifetime Dijkstra, Holt-Winters (tau)': 82.2}
+B 5 {'oracle': 172, 'Lifetime Dijkstra, Holt-Winters (load)': 68.6, 'Lifetime Dijkstra, Holt-Winters (tau)': 82.0}
+B 8 {'oracle': 166, 'Lifetime Dijkstra, Holt-Winters (load)': 83.7, 'Lifetime Dijkstra, Holt-Winters (tau)': 83.7}
+B 7 {'oracle': 138, 'Lifetime Dijkstra, Holt-Winters (load)': 81.9, 'Lifetime Dijkstra, Holt-Winters (tau)': 81.9}
+B 9 {'oracle': 183, 'Lifetime Dijkstra, Holt-Winters (load)': 77.6, 'Lifetime Dijkstra, Holt-Winters (tau)': 88.0}
+B 11 {'oracle': 145, 'Lifetime Dijkstra, Holt-Winters (load)': 78.6, 'Lifetime Dijkstra, Holt-Winters (tau)': 79.3}
+B 12 {'oracle': 117, 'Lifetime Dijkstra, Holt-Winters (load)': 76.1, 'Lifetime Dijkstra, Holt-Winters (tau)': 76.9}
+B 10 {'oracle': 160, 'Lifetime Dijkstra, Holt-Winters (load)': 85.6, 'Lifetime Dijkstra, Holt-Winters (tau)': 82.5}
+B 13 {'oracle': 179, 'Lifetime Dijkstra, Holt-Winters (load)': 78.8, 'Lifetime Dijkstra, Holt-Winters (tau)': 85.5}
+B 16 {'oracle': 165, 'Lifetime Dijkstra, Holt-Winters (load)': 84.2, 'Lifetime Dijkstra, Holt-Winters (tau)': 84.8}
+B 15 {'oracle': 173, 'Lifetime Dijkstra, Holt-Winters (load)': 85.0, 'Lifetime Dijkstra, Holt-Winters (tau)': 84.4}
+B 14 {'oracle': 157, 'Lifetime Dijkstra, Holt-Winters (load)': 83.4, 'Lifetime Dijkstra, Holt-Winters (tau)': 82.8}
+B 17 {'oracle': 198, 'Lifetime Dijkstra, Holt-Winters (load)': 87.9, 'Lifetime Dijkstra, Holt-Winters (tau)': 90.9}
+B 20 {'oracle': 165, 'Lifetime Dijkstra, Holt-Winters (load)': 83.0, 'Lifetime Dijkstra, Holt-Winters (tau)': 83.0}
+B 19 {'oracle': 139, 'Lifetime Dijkstra, Holt-Winters (load)': 74.1, 'Lifetime Dijkstra, Holt-Winters (tau)': 81.3}
+B 18 {'oracle': 167, 'Lifetime Dijkstra, Holt-Winters (load)': 86.2, 'Lifetime Dijkstra, Holt-Winters (tau)': 88.0}
+B 21 {'oracle': 152, 'Lifetime Dijkstra, Holt-Winters (load)': 76.3, 'Lifetime Dijkstra, Holt-Winters (tau)': 77.6}
+B 23 {'oracle': 165, 'Lifetime Dijkstra, Holt-Winters (load)': 84.2, 'Lifetime Dijkstra, Holt-Winters (tau)': 83.6}
+B 22 {'oracle': 141, 'Lifetime Dijkstra, Holt-Winters (load)': 80.9, 'Lifetime Dijkstra, Holt-Winters (tau)': 80.9}
+B 24 {'oracle': 205, 'Lifetime Dijkstra, Holt-Winters (load)': 89.8, 'Lifetime Dijkstra, Holt-Winters (tau)': 89.3}
+B 25 {'oracle': 163, 'Lifetime Dijkstra, Holt-Winters (load)': 85.3, 'Lifetime Dijkstra, Holt-Winters (tau)': 84.0}
+B 27 {'oracle': 143, 'Lifetime Dijkstra, Holt-Winters (load)': 79.0, 'Lifetime Dijkstra, Holt-Winters (tau)': 81.1}
+B 26 {'oracle': 147, 'Lifetime Dijkstra, Holt-Winters (load)': 79.6, 'Lifetime Dijkstra, Holt-Winters (tau)': 79.6}
+B 28 {'oracle': 118, 'Lifetime Dijkstra, Holt-Winters (load)': 77.1, 'Lifetime Dijkstra, Holt-Winters (tau)': 76.3}
+B 29 {'oracle': 190, 'Lifetime Dijkstra, Holt-Winters (load)': 88.9, 'Lifetime Dijkstra, Holt-Winters (tau)': 86.3}
+
+30 held-out deployments per scenario; L = lifetime to first node death, % of the oracle LP.
+
+| Method | Forecast right (daily surge) | Not needed (constant) | Sudden burst | Mean S (equal weights) | Worst % |
+|---|---|---|---|---|---|
+| Static LP (solved once) | 60.7 | 87.8 | 57.8 | 68.7 | 37.3 |
+| Reactive LP coordinator | 52.5 | 97.4 | 50.4 | 66.8 | 22.2 |
+| Battery Dijkstra (reactive) | 83.2 | 88.6 | 83.1 | 85.0 | 74.3 |
+| MADII (not retrained) | 13.0 | 15.5 | 15.6 | 14.7 | 2.9 |
+| Predictive Dijkstra, Holt-Winters | 81.4 | 88.6 | 82.3 | 84.1 | 63.4 |
+| Lifetime Dijkstra, Holt-Winters (load) | 82.3 | 88.6 | 81.2 | 84.0 | 68.6 |
+| Lifetime Dijkstra, Holt-Winters (tau) | 83.0 | 86.8 | 83.4 | 84.4 | 75.8 |
+| Forecast LP, persistence | 13.4 | 97.4 | 12.7 | 41.2 | 0.8 |
+| Forecast LP, seasonal-naive | 89.8 | 97.4 | 86.5 | 91.2 | 66.7 |
+| Forecast LP, Holt-Winters (a priori) | 82.3 | 97.4 | 81.0 | 86.9 | 62.8 |
+| Forecast LP, Holt-Winters tuned (ours) | 89.8 | 97.4 | 88.3 | 91.8 | 74.6 |
+| Forecast LP, perfect forecast (diagnostic) | 89.0 | 97.4 | 89.2 | 91.8 | 76.3 |
+
+Paired vs Battery Dijkstra (reactive) (wins/ties/losses, Wilcoxon p):
+
+- Static LP (solved once): R: 0/1/29, p=2.6e-06; N: 16/0/14, p=0.82; B: 0/0/30, p=1.9e-09
+- Reactive LP coordinator: R: 0/0/30, p=1.9e-09; N: 30/0/0, p=1.9e-09; B: 1/1/28, p=3.5e-06
+- MADII (not retrained): R: 0/0/30, p=1.9e-09; N: 0/0/30, p=1.9e-09; B: 0/0/30, p=1.9e-09
+- Predictive Dijkstra, Holt-Winters: R: 8/5/17, p=0.046; N: 0/30/0, p=1; B: 7/10/13, p=0.12
+- Lifetime Dijkstra, Holt-Winters (load): R: 9/5/16, p=0.09; N: 0/30/0, p=1; B: 9/6/15, p=0.054
+- Lifetime Dijkstra, Holt-Winters (tau): R: 7/11/12, p=0.52; N: 6/4/20, p=0.00015; B: 14/7/9, p=0.78
+- Forecast LP, persistence: R: 0/0/30, p=1.9e-09; N: 30/0/0, p=1.9e-09; B: 0/0/30, p=1.9e-09
+- Forecast LP, seasonal-naive: R: 28/1/1, p=3.2e-06; N: 30/0/0, p=1.9e-09; B: 22/0/8, p=0.0024
+- Forecast LP, Holt-Winters (a priori): R: 16/1/13, p=0.87; N: 30/0/0, p=1.9e-09; B: 13/4/13, p=0.38
+- Forecast LP, Holt-Winters tuned (ours): R: 28/1/1, p=4.8e-06; N: 30/0/0, p=1.9e-09; B: 24/1/5, p=0.00011
+- Forecast LP, perfect forecast (diagnostic): R: 26/2/2, p=1.4e-05; N: 30/0/0, p=1.9e-09; B: 24/3/3, p=2.9e-05
+
+Break-even forecast accuracy (G = gain when the forecast is right; C = loss when not needed / burst):
+
+- Predictive Dijkstra, Holt-Winters vs Battery Dijkstra (reactive): G = -1.8, C(N) = +0.0, C(B) = +0.8 -> no gain when the forecast is right, so prediction does not pay off as a forecast
+- Predictive Dijkstra, Holt-Winters vs Reactive LP coordinator: G = +28.9, C(N) = +8.8, C(B) = -31.9 -> p* = 0 on equal weights: it loses in one scenario, but its gains elsewhere outweigh that loss
+- Forecast LP, persistence vs Battery Dijkstra (reactive): G = -69.9, C(N) = -8.8, C(B) = +70.4 -> no gain when the forecast is right, so prediction does not pay off as a forecast
+- Forecast LP, persistence vs Reactive LP coordinator: G = -39.2, C(N) = +0.0, C(B) = +37.7 -> no gain when the forecast is right, so prediction does not pay off as a forecast
+- Forecast LP, seasonal-naive vs Battery Dijkstra (reactive): G = +6.5, C(N) = -8.8, C(B) = -3.4 -> p* = 0: it wins in every scenario, so it pays at any forecast accuracy
+- Forecast LP, seasonal-naive vs Reactive LP coordinator: G = +37.2, C(N) = +0.0, C(B) = -36.1 -> p* = 0: it wins in every scenario, so it pays at any forecast accuracy
+- Forecast LP, Holt-Winters (a priori) vs Battery Dijkstra (reactive): G = -1.0, C(N) = -8.8, C(B) = +2.2 -> no gain when the forecast is right, so prediction does not pay off as a forecast
+- Forecast LP, Holt-Winters (a priori) vs Reactive LP coordinator: G = +29.7, C(N) = +0.0, C(B) = -30.6 -> p* = 0: it wins in every scenario, so it pays at any forecast accuracy
+- Forecast LP, Holt-Winters tuned (ours) vs Battery Dijkstra (reactive): G = +6.5, C(N) = -8.8, C(B) = -5.2 -> p* = 0: it wins in every scenario, so it pays at any forecast accuracy
+- Forecast LP, Holt-Winters tuned (ours) vs Reactive LP coordinator: G = +37.2, C(N) = +0.0, C(B) = -38.0 -> p* = 0: it wins in every scenario, so it pays at any forecast accuracy
+- Forecast LP, perfect forecast (diagnostic) vs Battery Dijkstra (reactive): G = +5.7, C(N) = -8.8, C(B) = -6.1 -> p* = 0: it wins in every scenario, so it pays at any forecast accuracy
+- Forecast LP, perfect forecast (diagnostic) vs Reactive LP coordinator: G = +36.5, C(N) = +0.0, C(B) = -38.8 -> p* = 0: it wins in every scenario, so it pays at any forecast accuracy
