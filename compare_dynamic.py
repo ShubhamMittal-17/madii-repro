@@ -43,7 +43,8 @@ METHODS = ["Static LP (solved once)", "Reactive LP coordinator", "Battery Dijkst
            "Forecast LP, persistence", "Forecast LP, seasonal-naive",
            "Forecast LP, Holt-Winters (a priori)", "Forecast LP, Holt-Winters tuned (ours)", "Forecast LP, perfect forecast (diagnostic)",
            "Forecast LP v2, Holt-Winters (ours)", "Forecast LP v2, history mean (no forecast)", "Forecast LP v2, perfect forecast (diagnostic)",
-           "Battery Dijkstra, receiver-weighted", "Price-guided Dijkstra (daily LP prices)", "Load-aware Dijkstra (ours, no LP)"]
+           "Battery Dijkstra, receiver-weighted", "Price-guided Dijkstra (daily LP prices)", "Load-aware Dijkstra (ours, no LP)",
+           "Load table only (ablation, no battery)"]
 HW_TUNED = dict(alpha=0.05, beta=0.0, gamma=0.1)   # fitted on validation deployments 500-505, R and B
 V2 = dict(resolve_every=1, mu=1e-3)                # planner fixes chosen on validation 500-511
 _net = None
@@ -75,6 +76,7 @@ def build(name, w, h, tr):
             "Forecast LP, perfect forecast (diagnostic)": lambda: ForecastLP(w, h, forecaster="perfect", future=tr),
             "Battery Dijkstra, receiver-weighted": lambda: PriceDijkstra(w, h, c=0, rx="receiver", **HW_TUNED),
             "Load-aware Dijkstra (ours, no LP)": lambda: LoadAwareDijkstra(w, h, kappa=1.0, order="near"),
+            "Load table only (ablation, no battery)": lambda: LoadAwareDijkstra(w, h, kappa=1.0, order="near", energy=False),
             "Price-guided Dijkstra (daily LP prices)": lambda: PriceDijkstra(w, h, c=0.3, every=24, rx="receiver", **HW_TUNED),
             "Forecast LP v2, Holt-Winters (ours)": lambda: ForecastLP(w, h, **HW_TUNED, **V2),
             "Forecast LP v2, history mean (no forecast)": lambda: ForecastLP(w, h, forecaster="history-mean", **V2),

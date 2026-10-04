@@ -304,10 +304,11 @@ class LoadAwareDijkstra:
     A_j is the traffic (packets per round) already routed through j this round. A node whose
     next hop is already fixed (it lies on an earlier node's path) keeps it, so the result is a
     tree. Rates are each node's mean observed traffic over the last `window` rounds, so no
-    forecast is involved. kappa = 0 is battery Dijkstra.
+    forecast is involved. kappa = 0 is battery Dijkstra. energy=False drops the battery factor
+    (load table only), the ablation of the shared energy table.
     """
-    def __init__(self, w, history, kappa=0.3, window=24, order="far"):
-        self.kappa, self.window, self.order = kappa, window, order
+    def __init__(self, w, history, kappa=0.3, window=24, order="far", energy=True):
+        self.kappa, self.window, self.order, self.energy = kappa, window, order, energy
         self.recent = [np.asarray(x, float) for x in history[-window:]]
 
     def _rate(self, w):
@@ -317,7 +318,7 @@ class LoadAwareDijkstra:
 
     def __call__(self, w):
         rate = self._rate(w)
-        base = D.battery_mult(w)
+        base = D.battery_mult(w) if self.energy else np.ones(w.n)   # energy table on / off
         if self.kappa == 0:
             return D.dijkstra_tree(w, base)
         n = w.n

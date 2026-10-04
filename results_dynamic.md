@@ -21,6 +21,7 @@ S = equal-weight mean over the three scored scenarios; Pattern shift (robustness
 | Battery Dijkstra, receiver-weighted | 83.7 | 88.3 | 83.0 | 85.0 | 76.1 | 84.5 |
 | Price-guided Dijkstra (daily LP prices) | 84.6 | 89.2 | 84.3 | 86.0 | 76.3 | 84.0 |
 | Load-aware Dijkstra (ours, no LP) | 90.2 | 93.0 | 89.2 | 90.8 | 76.8 | 90.9 |
+| Load table only (ablation, no battery) | 46.1 | 42.5 | 46.5 | 45.1 | 28.7 | 46.3 |
 
 Paired vs Battery Dijkstra (reactive) (wins/ties/losses, Wilcoxon p):
 
@@ -41,6 +42,7 @@ Paired vs Battery Dijkstra (reactive) (wins/ties/losses, Wilcoxon p):
 - Battery Dijkstra, receiver-weighted: R: 15/7/8, p=0.094; N: 10/4/16, p=0.73; B: 8/11/11, p=0.84; D: 16/6/8, p=0.063
 - Price-guided Dijkstra (daily LP prices): R: 17/7/6, p=0.039; N: 17/4/9, p=0.041; B: 15/3/12, p=0.12; D: 17/8/5, p=0.067
 - Load-aware Dijkstra (ours, no LP): R: 29/1/0, p=2.6e-06; N: 30/0/0, p=1.7e-06; B: 29/1/0, p=2.6e-06; D: 28/1/1, p=2.8e-06
+- Load table only (ablation, no battery): R: 0/0/30, p=1.9e-09; N: 0/0/30, p=1.9e-09; B: 0/0/30, p=1.9e-09; D: 0/0/30, p=1.9e-09
 
 Ablations (first vs second, wins/ties/losses, Wilcoxon p):
 

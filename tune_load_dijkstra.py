@@ -34,9 +34,11 @@ def main():
     ap.add_argument("--workers", type=int, default=4)
     ap.add_argument("--kappa", default="0.03,0.1,0.3,1")
     ap.add_argument("--order", default="far,near")
+    ap.add_argument("--energy", default="1", help="1 = energy and load tables, 0 = load table only")
     a = ap.parse_args()
     orc = json.load(open(ORACLE))
-    cfgs = [None] + [dict(kappa=float(k), order=o) for k, o in itertools.product(a.kappa.split(","), a.order.split(","))]
+    cfgs = [None] + [dict(kappa=float(k), order=o, energy=bool(int(e))) for k, o, e in
+                     itertools.product(a.kappa.split(","), a.order.split(","), a.energy.split(","))]
     jobs = [(cfg, sc, s, orc[f"{sc}{s}"]) for cfg in cfgs for sc in "RNB" for s in VAL]
     res = {}
     with Pool(a.workers) as p:
@@ -45,10 +47,10 @@ def main():
     print(f"{'config':24s} {'R':>6s} {'N':>6s} {'B':>6s} {'mean':>6s} {'worst':>6s}")
     for cfg in cfgs:
         v = {sc: np.array(res[json.dumps(cfg)][sc]) for sc in "RNB"}
-        name = "battery Dijkstra" if cfg is None else f"kappa={cfg['kappa']:g} {cfg['order']}"
+        name = "battery Dijkstra" if cfg is None else f"kappa={cfg['kappa']:g} {cfg['order']}{'' if cfg['energy'] else ' load-only'}"
         print(f"{name:24s} {v['R'].mean():6.1f} {v['N'].mean():6.1f} {v['B'].mean():6.1f} "
               f"{np.mean([x.mean() for x in v.values()]):6.1f} {min(x.min() for x in v.values()):6.1f}")
-    json.dump(res, open("logs/tune_load_dijkstra.json", "w"), indent=1)
+    json.dump(res, open(f"logs/tune_load_dijkstra_e{a.energy.replace(',', '_')}.json", "w"), indent=1)
 
 
 if __name__ == "__main__":
