@@ -319,6 +319,9 @@ class LoadAwareDijkstra:
     def __call__(self, w):
         rate = self._rate(w)
         base = D.battery_mult(w) if self.energy else np.ones(w.n)   # energy table on / off
+        return self._tree(w, base, rate)
+
+    def _tree(self, w, base, rate):
         if self.kappa == 0:
             return D.dijkstra_tree(w, base)
         n = w.n
@@ -355,3 +358,76 @@ class LoadAwareDijkstra:
                     break
         parent[parent < 0] = n
         return parent
+
+
+LEST_BOUNDS = (0.75, 0.40, 0.15)                 # the original LEST tiers: High / Medium / Low / Critical
+
+
+class _TierTable:
+    """One LEST column: each node's value in [0, 1] is reported as a tier, not a float.
+
+    rule "original": the tier changes only if a boundary is crossed AND the value moved more
+        than `band` since the PREVIOUS report (lest_coordination.Coordinator.report).
+    rule "schmitt": the tier changes only if a boundary is crossed AND the value moved more
+        than `band` since the last TIER CHANGE (a standard hysteresis trigger).
+    """
+    def __init__(self, n, bounds, band, rule):
+        self.edges = np.array(sorted(bounds))             # ascending inner boundaries
+        self.mid = np.diff(np.concatenate([[0.0], self.edges, [1.0]])) / 2 + np.concatenate([[0.0], self.edges])
+        self.band, self.rule = band, rule
+        self.tier = None; self.ref = None; self.prev = None; self.changes = 0
+
+    def update(self, x):
+        x = np.clip(x, 0.0, 1.0)
+        new = np.searchsorted(self.edges, x, side="right")
+        if self.tier is None:
+            self.tier, self.ref, self.prev = new, x.copy(), x.copy()
+            return self.mid[self.tier]
+        moved = np.abs(x - (self.prev if self.rule == "original" else self.ref)) > self.band
+        flip = (new != self.tier) & moved
+        self.changes += int(flip.sum())
+        self.tier = np.where(flip, new, self.tier)
+        self.ref = np.where(flip, x, self.ref)
+        self.prev = x.copy()
+        return self.mid[self.tier]
+
+
+class LESTDijkstra(LoadAwareDijkstra):
+    """Load-aware Dijkstra driven by a LEST snapshot instead of exact values: every node knows
+    every node's ENERGY tier and LOAD tier (traffic per node), so every node can compute the
+    same tree itself, like LEST's zero-message election.
+
+    levels: "lest" = the original 4 tiers (0.75 / 0.40 / 0.15) for energy; otherwise an
+    integer number of equal-width levels. Load is normalised by `load_budget` x the largest
+    rate in the deployment history. The snapshot is charged as control traffic: every alive
+    node receives n * (bits for both tiers) per round instead of the 100-bit route broadcast,
+    and the 2-byte piggybacked report is added to every data packet.
+    exact_energy=True: energy stays exact (as battery Dijkstra uses it) and LEST carries only
+    the LOAD table: the route broadcast grows by n * load bits and each report is 1 byte.
+    """
+    def __init__(self, w, history, kappa=1.0, order="near", levels="lest", load_levels=None,
+                 band=0.05, rule="schmitt", load_budget=2.0, charge=True, window=24, exact_energy=False):
+        super().__init__(w, history, kappa=kappa, window=window, order=order)
+        def bounds(lv):
+            return LEST_BOUNDS if lv == "lest" else tuple(np.arange(1, int(lv)) / int(lv))
+        self.E_tab = _TierTable(w.n, bounds(levels), band, rule)
+        lv_load = levels if load_levels is None else load_levels
+        self.L_tab = _TierTable(w.n, bounds(lv_load), band, rule)
+        self.budget = load_budget * max(np.asarray(history, float).mean(0).max(), 1e-9) if len(history) else load_budget
+        self.exact_energy = exact_energy
+        if charge:
+            nbits = lambda lv: 2 if lv == "lest" else int(np.ceil(np.log2(int(lv))))
+            if exact_energy:      # energy as in battery Dijkstra; LEST carries the load table only
+                w.LC = w.LC + w.n * nbits(lv_load)
+                w.L = w.L + 8
+            else:
+                w.LC = w.n * (nbits(levels) + nbits(lv_load))
+                w.L = w.L + 16
+
+    def __call__(self, w):
+        rate = self._rate(w)
+        e_hat = w.E / w.e0 if self.exact_energy else self.E_tab.update(w.E / w.e0)
+        load_free = self.L_tab.update(1.0 - rate / self.budget)       # higher load -> lower value
+        r_hat = (1.0 - load_free) * self.budget
+        base = 1.0 / np.maximum(e_hat, 1e-3)
+        return self._tree(w, base, r_hat)

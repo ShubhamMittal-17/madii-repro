@@ -22,6 +22,7 @@ S = equal-weight mean over the three scored scenarios; Pattern shift (robustness
 | Price-guided Dijkstra (daily LP prices) | 84.6 | 89.2 | 84.3 | 86.0 | 76.3 | 84.0 |
 | Load-aware Dijkstra (ours, no LP) | 90.2 | 93.0 | 89.2 | 90.8 | 76.8 | 90.9 |
 | Load table only (ablation, no battery) | 46.1 | 42.5 | 46.5 | 45.1 | 28.7 | 46.3 |
+| Load-aware Dijkstra, LEST load table (4 tiers) | 89.5 | 92.6 | 89.3 | 90.5 | 76.8 | 90.0 |
 
 Paired vs Battery Dijkstra (reactive) (wins/ties/losses, Wilcoxon p):
 
@@ -43,6 +44,7 @@ Paired vs Battery Dijkstra (reactive) (wins/ties/losses, Wilcoxon p):
 - Price-guided Dijkstra (daily LP prices): R: 17/7/6, p=0.039; N: 17/4/9, p=0.041; B: 15/3/12, p=0.12; D: 17/8/5, p=0.067
 - Load-aware Dijkstra (ours, no LP): R: 29/1/0, p=2.6e-06; N: 30/0/0, p=1.7e-06; B: 29/1/0, p=2.6e-06; D: 28/1/1, p=2.8e-06
 - Load table only (ablation, no battery): R: 0/0/30, p=1.9e-09; N: 0/0/30, p=1.9e-09; B: 0/0/30, p=1.9e-09; D: 0/0/30, p=1.9e-09
+- Load-aware Dijkstra, LEST load table (4 tiers): R: 29/1/0, p=2.6e-06; N: 30/0/0, p=1.9e-09; B: 30/0/0, p=1.7e-06; D: 29/0/1, p=5.6e-09
 
 Ablations (first vs second, wins/ties/losses, Wilcoxon p):
 
