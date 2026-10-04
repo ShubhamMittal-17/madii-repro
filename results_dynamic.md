@@ -18,6 +18,8 @@ S = equal-weight mean over the three scored scenarios; Pattern shift (robustness
 | Forecast LP v2, Holt-Winters (ours) | 96.4 | 98.5 | 96.2 | 97.0 | 92.1 | 95.6 |
 | Forecast LP v2, history mean (no forecast) | 95.7 | 98.5 | 95.2 | 96.5 | 84.8 | 95.1 |
 | Forecast LP v2, perfect forecast (diagnostic) | 96.1 | 98.5 | 96.2 | 96.9 | 91.4 | 96.1 |
+| Battery Dijkstra, receiver-weighted | 83.7 | 88.3 | 83.0 | 85.0 | 76.1 | 84.5 |
+| Price-guided Dijkstra (daily LP prices) | 84.6 | 89.2 | 84.3 | 86.0 | 76.3 | 84.0 |
 
 Paired vs Battery Dijkstra (reactive) (wins/ties/losses, Wilcoxon p):
 
@@ -35,6 +37,8 @@ Paired vs Battery Dijkstra (reactive) (wins/ties/losses, Wilcoxon p):
 - Forecast LP v2, Holt-Winters (ours): R: 30/0/0, p=1.9e-09; N: 30/0/0, p=1.9e-09; B: 30/0/0, p=1.7e-06; D: 30/0/0, p=1.9e-09
 - Forecast LP v2, history mean (no forecast): R: 30/0/0, p=1.9e-09; N: 30/0/0, p=1.9e-09; B: 30/0/0, p=1.9e-09; D: 30/0/0, p=1.9e-09
 - Forecast LP v2, perfect forecast (diagnostic): R: 30/0/0, p=1.7e-06; N: 30/0/0, p=1.9e-09; B: 30/0/0, p=1.9e-09; D: 30/0/0, p=1.9e-09
+- Battery Dijkstra, receiver-weighted: R: 15/7/8, p=0.094; N: 10/4/16, p=0.73; B: 8/11/11, p=0.84; D: 16/6/8, p=0.063
+- Price-guided Dijkstra (daily LP prices): R: 17/7/6, p=0.039; N: 17/4/9, p=0.041; B: 15/3/12, p=0.12; D: 17/8/5, p=0.067
 
 Ablations (first vs second, wins/ties/losses, Wilcoxon p):
 
@@ -66,3 +70,5 @@ Break-even forecast accuracy (G = gain when the forecast is right; C = loss when
 - Forecast LP v2, history mean (no forecast) vs Reactive LP coordinator: G = +43.2, C(N) = -1.1, C(B) = -44.8 -> p* = 0: it wins in every scenario, so it pays at any forecast accuracy
 - Forecast LP v2, perfect forecast (diagnostic) vs Battery Dijkstra (reactive): G = +12.9, C(N) = -9.9, C(B) = -13.0 -> p* = 0: it wins in every scenario, so it pays at any forecast accuracy
 - Forecast LP v2, perfect forecast (diagnostic) vs Reactive LP coordinator: G = +43.6, C(N) = -1.1, C(B) = -45.8 -> p* = 0: it wins in every scenario, so it pays at any forecast accuracy
+- Price-guided Dijkstra (daily LP prices) vs Battery Dijkstra (reactive): G = +1.3, C(N) = -0.6, C(B) = -1.1 -> p* = 0: it wins in every scenario, so it pays at any forecast accuracy
+- Price-guided Dijkstra (daily LP prices) vs Reactive LP coordinator: G = +32.1, C(N) = +8.2, C(B) = -33.9 -> p* = 0 on equal weights: it loses in one scenario, but its gains elsewhere outweigh that loss

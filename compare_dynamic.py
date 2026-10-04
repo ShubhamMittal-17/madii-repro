@@ -34,7 +34,7 @@ import env as E
 import dijkstra_rl as D
 import traffic as TR
 from lp_oracle import oracle_T
-from predictive import ForecastLP, LifetimeDijkstra, PredictiveDijkstra, ReactiveLP, StaticLP
+from predictive import ForecastLP, LifetimeDijkstra, PredictiveDijkstra, PriceDijkstra, ReactiveLP, StaticLP
 
 SCEN = {"R": "Forecast right (daily surge)", "N": "Not needed (constant)", "B": "Sudden burst"}
 EXTRA_SCEN = {"D": "Pattern shift (robustness)"}
@@ -42,7 +42,8 @@ METHODS = ["Static LP (solved once)", "Reactive LP coordinator", "Battery Dijkst
            "Predictive Dijkstra, Holt-Winters", "Lifetime Dijkstra, Holt-Winters (load)", "Lifetime Dijkstra, Holt-Winters (tau)",
            "Forecast LP, persistence", "Forecast LP, seasonal-naive",
            "Forecast LP, Holt-Winters (a priori)", "Forecast LP, Holt-Winters tuned (ours)", "Forecast LP, perfect forecast (diagnostic)",
-           "Forecast LP v2, Holt-Winters (ours)", "Forecast LP v2, history mean (no forecast)", "Forecast LP v2, perfect forecast (diagnostic)"]
+           "Forecast LP v2, Holt-Winters (ours)", "Forecast LP v2, history mean (no forecast)", "Forecast LP v2, perfect forecast (diagnostic)",
+           "Battery Dijkstra, receiver-weighted", "Price-guided Dijkstra (daily LP prices)"]
 HW_TUNED = dict(alpha=0.05, beta=0.0, gamma=0.1)   # fitted on validation deployments 500-505, R and B
 V2 = dict(resolve_every=1, mu=1e-3)                # planner fixes chosen on validation 500-511
 _net = None
@@ -72,6 +73,8 @@ def build(name, w, h, tr):
             "Forecast LP, Holt-Winters (a priori)": lambda: ForecastLP(w, h),
             "Forecast LP, Holt-Winters tuned (ours)": lambda: ForecastLP(w, h, **HW_TUNED),
             "Forecast LP, perfect forecast (diagnostic)": lambda: ForecastLP(w, h, forecaster="perfect", future=tr),
+            "Battery Dijkstra, receiver-weighted": lambda: PriceDijkstra(w, h, c=0, rx="receiver", **HW_TUNED),
+            "Price-guided Dijkstra (daily LP prices)": lambda: PriceDijkstra(w, h, c=0.3, every=24, rx="receiver", **HW_TUNED),
             "Forecast LP v2, Holt-Winters (ours)": lambda: ForecastLP(w, h, **HW_TUNED, **V2),
             "Forecast LP v2, history mean (no forecast)": lambda: ForecastLP(w, h, forecaster="history-mean", **V2),
             "Forecast LP v2, perfect forecast (diagnostic)": lambda: ForecastLP(w, h, forecaster="perfect", future=tr, **V2)}[name]()
@@ -176,7 +179,7 @@ def summarize(res, seeds):
                      for sc in allsc if sc in L[a_] and sc in L[b_]]
             lines.append(f"- {a_} vs {b_} ({why}): " + "; ".join(cells))
     lines += ["", "Break-even forecast accuracy (G = gain when the forecast is right; C = loss when not needed / burst):", ""]
-    for m in [m for m in methods if m.startswith("Forecast LP") or m.startswith(("Predictive", "Lifetime"))]:
+    for m in [m for m in methods if m.startswith("Forecast LP") or m.startswith(("Predictive", "Lifetime", "Price"))]:
         for base in (ref, "Reactive LP coordinator"):
             G = L[m]["R"].mean() - L[base]["R"].mean()
             CN = L[base]["N"].mean() - L[m]["N"].mean()

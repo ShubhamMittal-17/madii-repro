@@ -58,6 +58,22 @@ def dijkstra_tree(w, node_mult):
     return p
 
 
+def dijkstra_tree_rx(w, tx_mult, rx_mult):
+    """As dijkstra_tree, but each link's receive energy is weighted by the RECEIVER's
+    multiplier, as the max-lifetime LP charges it, instead of the sender's."""
+    n = w.n
+    G = np.zeros((n + 1, n + 1))
+    G[:n] = w.etx_bit[:n] * tx_mult[:, None]
+    G[:n, :n] += 50e-9 * rx_mult[None, :]
+    np.fill_diagonal(G, 0.0)
+    dead = np.flatnonzero(~w.alive)
+    G[dead, :] = 0.0; G[:, dead] = 0.0
+    _, pred = dijkstra(G.T, directed=True, indices=n, return_predecessors=True)
+    p = pred[:n].astype(int)
+    p[p < 0] = n
+    return p
+
+
 def battery_mult(w, alpha=1.0):
     return (w.e0 / np.maximum(w.E, 1e-12)) ** alpha
 

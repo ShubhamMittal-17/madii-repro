@@ -241,3 +241,55 @@ class LifetimeDijkstra:
         tau = np.maximum(w.E, 1e-12) / np.maximum(self.drain, 1e-18)       # forecast rounds left
         self.p = D.dijkstra_tree(w, base * (np.median(tau[w.alive]) / tau) ** self.k)
         return self.p
+
+
+class PriceDijkstra:
+    """Price-guided Dijkstra: battery-weighted Dijkstra every round, steered by the
+    max-lifetime LP's energy prices, re-solved only every `every` rounds (default once a day).
+
+    LP duality: price[i] (the dual of node i's energy budget) is how many rounds of network
+    lifetime one more joule at node i would buy, so it is high for the bottleneck nodes near
+    the sink and zero for nodes with energy to spare. Each round:
+        weight_i = (E0 / E_i) * (1 + c * price_i / mean positive price)
+    The battery factor keeps Dijkstra's round-by-round balancing; the price factor adds the
+    whole-network view the greedy tree lacks. rx="receiver" weights each link's receive energy
+    by the receiver's weight, as the LP does (battery Dijkstra charges it to the sender).
+    eta > 0 switches to dual ascent: weight_i = price_i * (E0/E_i)^c, with the LP price
+    re-synced every `every` rounds and, in between, multiplied each round by
+    exp(eta * (spent_i / share_i - 1)), share_i = E_i / (planned rounds left).
+    Rates for the LP come from the forecaster
+    (Holt-Winters by default) over the next H rounds. c = 0 is exactly battery Dijkstra.
+    """
+    def __init__(self, w, history, c=1.0, every=24, H=24, rx="sender", eta=0.0, forecaster="holt-winters", **fkw):
+        self.obs = _Observer(w.n, history, forecaster, **fkw)
+        self.c, self.every, self.H, self.k, self.rx, self.eta = c, every, H, 0, rx, eta
+        self.n_solves = 0
+        self.price = np.zeros(w.n)
+        self.E_prev, self.T_end = None, None
+
+    def _solve(self, w):
+        self.obs.catch_up(w)
+        gen = np.maximum(self.obs.f.forecast(self.H)[0].mean(0), 0.05) * w.L
+        T, lam = max_lifetime_T(w, gen=gen, return_price=True)
+        pos = lam[lam > 0]
+        self.price = lam / pos.mean() if pos.size else lam
+        self.T_end = w.round + T
+        self.n_solves += 1
+
+    def __call__(self, w):
+        if (self.c or self.eta) and self.k % self.every == 0:
+            self._solve(w)
+        elif self.eta and self.E_prev is not None:
+            # dual ascent between solves: a node that spent more than its share of the
+            # remaining planned lifetime last round gets dearer, one that spent less cheaper
+            spent = np.maximum(self.E_prev - w.E, 0.0)
+            share = w.E / max(self.T_end - w.round, 1.0)
+            ratio = np.where(w.alive & (share > 0), spent / np.maximum(share, 1e-15), 1.0)
+            self.price = self.price * np.exp(self.eta * np.clip(ratio - 1.0, -1.0, 3.0))
+        self.E_prev = w.E.copy()
+        self.k += 1
+        if self.eta:                                   # pure price routing, battery inside the price
+            m = np.maximum(self.price, 1e-6) * D.battery_mult(w) ** self.c
+        else:
+            m = D.battery_mult(w) * (1.0 + self.c * self.price)
+        return D.dijkstra_tree(w, m) if self.rx == "sender" else D.dijkstra_tree_rx(w, m, m)

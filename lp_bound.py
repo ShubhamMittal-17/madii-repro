@@ -14,13 +14,15 @@ from scipy.optimize import linprog
 from env import WSN, erx
 
 
-def max_lifetime_T(env, alive=None, energy=None, return_flow=False, gen=None, mu=0.0):
+def max_lifetime_T(env, alive=None, energy=None, return_flow=False, gen=None, mu=0.0, return_price=False):
     """T* in rounds. return_flow=True also gives {i: [(next hop, share), ...]} over the
     alive nodes (shares sum to 1), the optimal split used by lp_flow.py.
     gen = bits each node generates per round (default: env.L for every node).
     mu > 0 adds a small total-energy cost (in units of E0) to the objective, so among flows
     with (almost) the same T it picks the one that spends least: max T alone leaves the
-    flows of non-bottleneck nodes arbitrary."""
+    flows of non-bottleneck nodes arbitrary.
+    return_price=True returns (T*, price): price[i] = rounds of lifetime gained per extra joule
+    at node i (the LP dual of its energy budget); zero for nodes that are not bottlenecks."""
     n = env.n
     alive = np.flatnonzero(env.alive if alive is None else alive)
     E = (env.E if energy is None else energy)[alive]
@@ -45,6 +47,10 @@ def max_lifetime_T(env, alive=None, energy=None, return_flow=False, gen=None, mu
                 bounds=[(0, None)] * nv, method="highs")
     if r.status != 0:
         raise RuntimeError(r.message)
+    if return_price:                                # dual value of each node's energy budget
+        price = np.zeros(env.n)
+        price[alive] = np.maximum(-np.asarray(r.ineqlin.marginals), 0.0)
+        return float(r.x[-1]), price
     if not return_flow:
         return float(r.x[-1])
     flow = {}
