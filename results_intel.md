@@ -7,6 +7,7 @@
 | Battery Dijkstra | 93.3 | 69.7 | 99.7 | – |
 | Predictive Dijkstra, Holt-Winters | 89.3 | 55.3 | 99.7 | 4/14/9, p=0.033 |
 | Load-aware Dijkstra (ours, no LP) | 94.7 | 76.3 | 99.7 | 11/14/2, p=0.033 |
+| Load-aware Dijkstra, LEST load table (4 tiers) | 94.2 | 69.3 | 99.7 | 10/16/1, p=0.0044 |
 | Static LP (solved once) | 62.8 | 16.7 | 99.6 | 0/5/22, p=4e-05 |
 | Reactive LP coordinator | 94.2 | 48.3 | 99.7 | 11/14/2, p=0.028 |
 | Forecast LP v1, Holt-Winters | 96.7 | 79.5 | 99.7 | 13/14/0, p=0.0015 |
@@ -14,7 +15,7 @@
 | Forecast LP v2, history mean (no forecast) | 98.3 | 86.7 | 99.7 | 14/13/0, p=0.00098 |
 | Forecast LP v2, seasonal-naive | 98.3 | 86.7 | 99.7 | 14/13/0, p=0.00098 |
 | Forecast LP v2, perfect forecast (diagnostic) | 98.3 | 87.7 | 99.7 | 14/13/0, p=0.00098 |
-| MADII (not retrained) | 17.1 | 6.4 | 51.0 | 0/0/27, p=1.5e-08 |
+| MADII (not retrained) | 17.2 | 7.1 | 52.0 | 0/0/27, p=1.5e-08 |
 
 Ablations:
 
@@ -24,4 +25,4 @@ Ablations:
 
 Forecast error, next-24-hour mean rate per mote (packets/hour, mean absolute error over test starts): holt-winters 0.52, history-mean 1.03, seasonal-naive 0.54, persistence 1.76
 
-Deployments still alive at the end of the data (censored, scored at the data end): Battery Dijkstra 13, Predictive Dijkstra, Holt-Winters 13, Load-aware Dijkstra (ours, no LP) 14, Static LP (solved once) 5, Reactive LP coordinator 14, Forecast LP v1, Holt-Winters 15, Forecast LP v2, Holt-Winters (ours) 15, Forecast LP v2, history mean (no forecast) 15, Forecast LP v2, seasonal-naive 14, Forecast LP v2, perfect forecast (diagnostic) 15
+Deployments still alive at the end of the data (censored, scored at the data end): Battery Dijkstra 13, Predictive Dijkstra, Holt-Winters 13, Load-aware Dijkstra (ours, no LP) 14, Load-aware Dijkstra, LEST load table (4 tiers) 13, Static LP (solved once) 5, Reactive LP coordinator 14, Forecast LP v1, Holt-Winters 15, Forecast LP v2, Holt-Winters (ours) 15, Forecast LP v2, history mean (no forecast) 15, Forecast LP v2, seasonal-naive 14, Forecast LP v2, perfect forecast (diagnostic) 15
