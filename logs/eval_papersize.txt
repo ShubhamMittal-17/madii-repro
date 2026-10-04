@@ -1,0 +1,17 @@
+
+30 deployments, 100 nodes, 500x500 m, MADII Table I parameters
+LP ceiling (first node death): mean 169.7 rounds
+
+policy                                FND  % ceiling  worst%    HND   EE@FND   DDV@HND
+--------------------------------------------------------------------------------------
+direct                                8.3        4.4     2.9   61.5      317     18081
+FCM k=10                              5.4        2.6     0.0   80.3      284     25018
+min-energy Dijkstra                  42.5       24.3    14.2  159.1     2448     55735
+battery Dijkstra a=1                151.4       88.4    80.8  162.9     1618     63843
+madii_papersize_best (informer, IL)   15.4        8.4     1.4   51.0      531     17620
+--------------------------------------------------------------------------------------
+MADII (printed)                        19       10.6       -     89      817     25708
+MADTI (printed)                        12        6.5       -     67      352     19692
+FCM (printed)                          19       10.6       -     57      555     18704
+
+wrote results_eval.json
