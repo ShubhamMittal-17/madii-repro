@@ -74,3 +74,32 @@ Reproduce: `.venv/bin/python tune_forecast_lp.py` (configs in the script and log
 
 **Chosen (Forecast LP v2):** re-solve every round, min-energy tie-break (mu = 1e-3).
 Holt-Winters alpha 0.05, beta 0, gamma 0.1, one-day horizon, round split.
+
+## Test result (30 held-out deployments per scenario, run once after the choice above)
+
+| Method | Surge | Constant | Burst | Mean S | Worst | Pattern shift (not tuned on) |
+|---|---|---|---|---|---|---|
+| **Forecast LP v2, Holt-Winters (ours)** | **96.4** | **98.5** | **96.2** | **97.0** | **92.1** | 95.6 |
+| Forecast LP v2, perfect forecast | 96.1 | 98.5 | 96.2 | 96.9 | 91.4 | 96.1 |
+| Forecast LP v2, historical mean (no forecast) | 95.7 | 98.5 | 95.2 | 96.5 | 84.8 | 95.1 |
+| Forecast LP v1, Holt-Winters (published) | 89.8 | 97.4 | 88.3 | 91.8 | 74.6 | 87.9 |
+| Battery Dijkstra | 83.2 | 88.6 | 83.1 | 85.0 | 74.3 | 83.0 |
+| MADII | 13.0 | 15.5 | 15.6 | 14.7 | 2.9 | 13.6 |
+
+- **v2 vs battery Dijkstra:** v2 wins all 120 test deployments (30 in each of the 4 scenarios),
+  p < 2e-6 in every scenario. G = +13.2, so p* = 0.
+- **What the planner adds (v2 vs v1):** +6.6 on surge, +1.1 on constant, +7.8 on bursts and
+  +7.7 on the pattern shift. v2 wins 30/30 in every scenario except constant traffic (24/2/4).
+- **What the forecast adds (Holt-Winters vs historical mean, same planner):**
+  - surge: +0.7 (17/6/7, p = 0.047)
+  - constant: 0
+  - bursts: +1.0 (p = 0.13)
+  - pattern shift: +0.5 (p = 0.22)
+  - worst deployment: 92.1 vs 84.8
+
+  The forecast is a small refinement that mainly protects the worst case. The gain over
+  Dijkstra comes from planning and re-planning.
+- **Room for a better forecast (perfect vs Holt-Winters):** -0.3 to +0.5, none significant.
+  Holt-Winters is as good as knowing the future for this traffic.
+- **Pattern shift:** re-solving every round from the current batteries absorbs most of a wrong
+  rate. A fixed historical rate loses only 0.5 points when the hotspot moves.
