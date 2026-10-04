@@ -10,3 +10,4 @@ checkpoints/snapshots/
 # Keep the trained models themselves: checkpoints/*.pt are tracked
 checkpoints/smoke*.pt
 data/intel_lab/data.txt.gz
+data/intel_lab/readings.npz
