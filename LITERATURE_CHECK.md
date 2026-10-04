@@ -50,7 +50,11 @@ reading each paper before the report cites them).
 ## To do before submission
 
 - Read EBR-DA, Liang et al. and DECOR in full and confirm the differences above.
-- Implement EBR-DA's link cost as an extra baseline. It is the closest competitor, and beating
-  it on the same bench would make the method claim much stronger.
+- ~~Implement EBR-DA's link cost as an extra baseline.~~ Done, as a reconstruction from the
+  published description (predictive.EBRDA, tuned on validation, tune_ebrda.py). Held-out mean
+  50.3% of the optimum, against 85.0% for battery Dijkstra and 90.5% for LEST load-table
+  Dijkstra (loses all 120 deployments to battery Dijkstra). Its linear energy term
+  (1 - E/E0) barely reacts as a node nears empty, whereas E0/E rises sharply. Re-check against
+  the full paper: if its cost differs, rerun.
 - Search IEEE Xplore and Scopus directly (not reachable from this environment) for
   "load-balanced tree" + "maximum lifetime" + "sequential" or "greedy".

@@ -21,7 +21,8 @@
    "Price-guided Dijkstra (daily LP prices)": 83.94160583941606,
    "Load-aware Dijkstra (ours, no LP)": 91.97080291970804,
    "Load table only (ablation, no battery)": 48.175182481751825,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 86.86131386861314
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 86.86131386861314,
+   "EBR-DA-style (energy + load cost, reconstructed)": 49.63503649635037
   },
   "1": {
    "oracle": 149,
@@ -44,7 +45,8 @@
    "Price-guided Dijkstra (daily LP prices)": 90.60402684563759,
    "Load-aware Dijkstra (ours, no LP)": 91.94630872483222,
    "Load table only (ablation, no battery)": 44.966442953020135,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 90.60402684563759
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 90.60402684563759,
+   "EBR-DA-style (energy + load cost, reconstructed)": 54.36241610738255
   },
   "3": {
    "oracle": 169,
@@ -67,7 +69,8 @@
    "Price-guided Dijkstra (daily LP prices)": 82.84023668639054,
    "Load-aware Dijkstra (ours, no LP)": 93.49112426035504,
    "Load table only (ablation, no battery)": 47.337278106508876,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 94.67455621301775
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 94.67455621301775,
+   "EBR-DA-style (energy + load cost, reconstructed)": 49.112426035502956
   },
   "2": {
    "oracle": 166,
@@ -90,7 +93,8 @@
    "Price-guided Dijkstra (daily LP prices)": 84.33734939759037,
    "Load-aware Dijkstra (ours, no LP)": 84.33734939759037,
    "Load table only (ablation, no battery)": 50.602409638554214,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 84.93975903614458
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 84.93975903614458,
+   "EBR-DA-style (energy + load cost, reconstructed)": 46.3855421686747
   },
   "6": {
    "oracle": 131,
@@ -113,7 +117,8 @@
    "Price-guided Dijkstra (daily LP prices)": 82.44274809160305,
    "Load-aware Dijkstra (ours, no LP)": 92.36641221374046,
    "Load table only (ablation, no battery)": 51.14503816793893,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 92.36641221374046
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 92.36641221374046,
+   "EBR-DA-style (energy + load cost, reconstructed)": 51.908396946564885
   },
   "7": {
    "oracle": 139,
@@ -136,7 +141,8 @@
    "Price-guided Dijkstra (daily LP prices)": 82.01438848920863,
    "Load-aware Dijkstra (ours, no LP)": 83.45323741007195,
    "Load table only (ablation, no battery)": 48.201438848920866,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 83.45323741007195
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 83.45323741007195,
+   "EBR-DA-style (energy + load cost, reconstructed)": 49.64028776978417
   },
   "4": {
    "oracle": 154,
@@ -159,7 +165,8 @@
    "Price-guided Dijkstra (daily LP prices)": 82.46753246753246,
    "Load-aware Dijkstra (ours, no LP)": 89.6103896103896,
    "Load table only (ablation, no battery)": 31.16883116883117,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 88.96103896103897
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 88.96103896103897,
+   "EBR-DA-style (energy + load cost, reconstructed)": 42.2077922077922
   },
   "5": {
    "oracle": 174,
@@ -182,7 +189,8 @@
    "Price-guided Dijkstra (daily LP prices)": 79.88505747126436,
    "Load-aware Dijkstra (ours, no LP)": 92.52873563218391,
    "Load table only (ablation, no battery)": 54.02298850574713,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 91.95402298850574
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 91.95402298850574,
+   "EBR-DA-style (energy + load cost, reconstructed)": 64.9425287356322
   },
   "11": {
    "oracle": 145,
@@ -205,7 +213,8 @@
    "Price-guided Dijkstra (daily LP prices)": 91.0344827586207,
    "Load-aware Dijkstra (ours, no LP)": 92.41379310344827,
    "Load table only (ablation, no battery)": 46.206896551724135,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 93.10344827586206
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 93.10344827586206,
+   "EBR-DA-style (energy + load cost, reconstructed)": 54.48275862068965
   },
   "9": {
    "oracle": 185,
@@ -228,7 +237,8 @@
    "Price-guided Dijkstra (daily LP prices)": 87.02702702702703,
    "Load-aware Dijkstra (ours, no LP)": 76.75675675675676,
    "Load table only (ablation, no battery)": 52.43243243243243,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 76.75675675675676
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 76.75675675675676,
+   "EBR-DA-style (energy + load cost, reconstructed)": 45.40540540540541
   },
   "8": {
    "oracle": 167,
@@ -251,7 +261,8 @@
    "Price-guided Dijkstra (daily LP prices)": 85.02994011976048,
    "Load-aware Dijkstra (ours, no LP)": 92.21556886227546,
    "Load table only (ablation, no battery)": 48.50299401197605,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 93.41317365269461
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 93.41317365269461,
+   "EBR-DA-style (energy + load cost, reconstructed)": 45.50898203592814
   },
   "10": {
    "oracle": 161,
@@ -274,7 +285,8 @@
    "Price-guided Dijkstra (daily LP prices)": 86.33540372670807,
    "Load-aware Dijkstra (ours, no LP)": 87.5776397515528,
    "Load table only (ablation, no battery)": 44.72049689440994,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 87.5776397515528
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 87.5776397515528,
+   "EBR-DA-style (energy + load cost, reconstructed)": 47.20496894409938
   },
   "12": {
    "oracle": 117,
@@ -297,7 +309,8 @@
    "Price-guided Dijkstra (daily LP prices)": 76.92307692307693,
    "Load-aware Dijkstra (ours, no LP)": 80.34188034188034,
    "Load table only (ablation, no battery)": 37.60683760683761,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 80.34188034188034
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 80.34188034188034,
+   "EBR-DA-style (energy + load cost, reconstructed)": 41.88034188034188
   },
   "14": {
    "oracle": 157,
@@ -320,7 +333,8 @@
    "Price-guided Dijkstra (daily LP prices)": 88.53503184713377,
    "Load-aware Dijkstra (ours, no LP)": 91.71974522292994,
    "Load table only (ablation, no battery)": 43.31210191082803,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 89.80891719745223
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 89.80891719745223,
+   "EBR-DA-style (energy + load cost, reconstructed)": 57.961783439490446
   },
   "13": {
    "oracle": 182,
@@ -343,7 +357,8 @@
    "Price-guided Dijkstra (daily LP prices)": 87.36263736263736,
    "Load-aware Dijkstra (ours, no LP)": 91.20879120879121,
    "Load table only (ablation, no battery)": 54.94505494505495,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 90.10989010989012
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 90.10989010989012,
+   "EBR-DA-style (energy + load cost, reconstructed)": 62.08791208791209
   },
   "15": {
    "oracle": 176,
@@ -366,7 +381,8 @@
    "Price-guided Dijkstra (daily LP prices)": 88.06818181818183,
    "Load-aware Dijkstra (ours, no LP)": 92.04545454545455,
    "Load table only (ablation, no battery)": 31.818181818181817,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 89.77272727272727
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 89.77272727272727,
+   "EBR-DA-style (energy + load cost, reconstructed)": 38.06818181818182
   },
   "16": {
    "oracle": 166,
@@ -389,7 +405,8 @@
    "Price-guided Dijkstra (daily LP prices)": 84.33734939759037,
    "Load-aware Dijkstra (ours, no LP)": 85.54216867469879,
    "Load table only (ablation, no battery)": 54.81927710843374,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 85.54216867469879
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 85.54216867469879,
+   "EBR-DA-style (energy + load cost, reconstructed)": 53.6144578313253
   },
   "18": {
    "oracle": 167,
@@ -412,7 +429,8 @@
    "Price-guided Dijkstra (daily LP prices)": 86.82634730538922,
    "Load-aware Dijkstra (ours, no LP)": 91.01796407185628,
    "Load table only (ablation, no battery)": 43.11377245508982,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 91.01796407185628
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 91.01796407185628,
+   "EBR-DA-style (energy + load cost, reconstructed)": 52.09580838323353
   },
   "17": {
    "oracle": 200,
@@ -435,7 +453,8 @@
    "Price-guided Dijkstra (daily LP prices)": 91.0,
    "Load-aware Dijkstra (ours, no LP)": 88.5,
    "Load table only (ablation, no battery)": 39.0,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 87.5
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 87.5,
+   "EBR-DA-style (energy + load cost, reconstructed)": 43.0
   },
   "19": {
    "oracle": 139,
@@ -458,7 +477,8 @@
    "Price-guided Dijkstra (daily LP prices)": 82.01438848920863,
    "Load-aware Dijkstra (ours, no LP)": 82.73381294964028,
    "Load table only (ablation, no battery)": 42.44604316546763,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 88.48920863309353
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 88.48920863309353,
+   "EBR-DA-style (energy + load cost, reconstructed)": 41.007194244604314
   },
   "20": {
    "oracle": 167,
@@ -481,7 +501,8 @@
    "Price-guided Dijkstra (daily LP prices)": 86.22754491017965,
    "Load-aware Dijkstra (ours, no LP)": 95.20958083832335,
    "Load table only (ablation, no battery)": 44.31137724550898,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 93.41317365269461
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 93.41317365269461,
+   "EBR-DA-style (energy + load cost, reconstructed)": 52.69461077844312
   },
   "22": {
    "oracle": 141,
@@ -504,7 +525,8 @@
    "Price-guided Dijkstra (daily LP prices)": 80.1418439716312,
    "Load-aware Dijkstra (ours, no LP)": 93.61702127659575,
    "Load table only (ablation, no battery)": 41.13475177304964,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 92.19858156028369
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 92.19858156028369,
+   "EBR-DA-style (energy + load cost, reconstructed)": 43.262411347517734
   },
   "21": {
    "oracle": 152,
@@ -527,7 +549,8 @@
    "Price-guided Dijkstra (daily LP prices)": 82.23684210526315,
    "Load-aware Dijkstra (ours, no LP)": 90.13157894736842,
    "Load table only (ablation, no battery)": 36.18421052631579,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 88.1578947368421
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 88.1578947368421,
+   "EBR-DA-style (energy + load cost, reconstructed)": 55.92105263157895
   },
   "23": {
    "oracle": 165,
@@ -550,7 +573,8 @@
    "Price-guided Dijkstra (daily LP prices)": 85.45454545454545,
    "Load-aware Dijkstra (ours, no LP)": 95.15151515151516,
    "Load table only (ablation, no battery)": 55.15151515151515,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 93.93939393939394
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 93.93939393939394,
+   "EBR-DA-style (energy + load cost, reconstructed)": 58.78787878787879
   },
   "27": {
    "oracle": 145,
@@ -573,7 +597,8 @@
    "Price-guided Dijkstra (daily LP prices)": 79.3103448275862,
    "Load-aware Dijkstra (ours, no LP)": 93.79310344827586,
    "Load table only (ablation, no battery)": 40.0,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 88.27586206896552
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 88.27586206896552,
+   "EBR-DA-style (energy + load cost, reconstructed)": 46.206896551724135
   },
   "25": {
    "oracle": 164,
@@ -596,7 +621,8 @@
    "Price-guided Dijkstra (daily LP prices)": 84.7560975609756,
    "Load-aware Dijkstra (ours, no LP)": 92.6829268292683,
    "Load table only (ablation, no battery)": 46.34146341463415,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 92.07317073170732
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 92.07317073170732,
+   "EBR-DA-style (energy + load cost, reconstructed)": 48.78048780487805
   },
   "26": {
    "oracle": 147,
@@ -619,7 +645,8 @@
    "Price-guided Dijkstra (daily LP prices)": 78.91156462585033,
    "Load-aware Dijkstra (ours, no LP)": 92.51700680272108,
    "Load table only (ablation, no battery)": 40.136054421768705,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 93.19727891156462
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 93.19727891156462,
+   "EBR-DA-style (energy + load cost, reconstructed)": 53.06122448979592
   },
   "24": {
    "oracle": 207,
@@ -642,7 +669,8 @@
    "Price-guided Dijkstra (daily LP prices)": 90.33816425120773,
    "Load-aware Dijkstra (ours, no LP)": 94.20289855072464,
    "Load table only (ablation, no battery)": 57.971014492753625,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 90.82125603864735
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 90.82125603864735,
+   "EBR-DA-style (energy + load cost, reconstructed)": 58.454106280193244
   },
   "28": {
    "oracle": 120,
@@ -665,7 +693,8 @@
    "Price-guided Dijkstra (daily LP prices)": 76.66666666666667,
    "Load-aware Dijkstra (ours, no LP)": 94.16666666666667,
    "Load table only (ablation, no battery)": 55.833333333333336,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 94.16666666666667
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 94.16666666666667,
+   "EBR-DA-style (energy + load cost, reconstructed)": 55.833333333333336
   },
   "29": {
    "oracle": 193,
@@ -688,7 +717,8 @@
    "Price-guided Dijkstra (daily LP prices)": 90.67357512953367,
    "Load-aware Dijkstra (ours, no LP)": 93.78238341968913,
    "Load table only (ablation, no battery)": 52.84974093264248,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 92.74611398963731
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 92.74611398963731,
+   "EBR-DA-style (energy + load cost, reconstructed)": 53.8860103626943
   }
  },
  "N": {
@@ -713,7 +743,8 @@
    "Price-guided Dijkstra (daily LP prices)": 88.11188811188812,
    "Load-aware Dijkstra (ours, no LP)": 93.7062937062937,
    "Load table only (ablation, no battery)": 41.25874125874126,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 92.3076923076923
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 92.3076923076923,
+   "EBR-DA-style (energy + load cost, reconstructed)": 50.349650349650354
   },
   "1": {
    "oracle": 157,
@@ -736,7 +767,8 @@
    "Price-guided Dijkstra (daily LP prices)": 91.0828025477707,
    "Load-aware Dijkstra (ours, no LP)": 92.99363057324841,
    "Load table only (ablation, no battery)": 36.30573248407643,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 92.35668789808918
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 92.35668789808918,
+   "EBR-DA-style (energy + load cost, reconstructed)": 52.86624203821656
   },
   "2": {
    "oracle": 176,
@@ -759,7 +791,8 @@
    "Price-guided Dijkstra (daily LP prices)": 86.36363636363636,
    "Load-aware Dijkstra (ours, no LP)": 90.9090909090909,
    "Load table only (ablation, no battery)": 46.02272727272727,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 90.3409090909091
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 90.3409090909091,
+   "EBR-DA-style (energy + load cost, reconstructed)": 47.159090909090914
   },
   "4": {
    "oracle": 163,
@@ -782,7 +815,8 @@
    "Price-guided Dijkstra (daily LP prices)": 86.50306748466258,
    "Load-aware Dijkstra (ours, no LP)": 92.02453987730061,
    "Load table only (ablation, no battery)": 33.12883435582822,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 90.79754601226993
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 90.79754601226993,
+   "EBR-DA-style (energy + load cost, reconstructed)": 40.49079754601227
   },
   "3": {
    "oracle": 181,
@@ -805,7 +839,8 @@
    "Price-guided Dijkstra (daily LP prices)": 93.92265193370166,
    "Load-aware Dijkstra (ours, no LP)": 94.47513812154696,
    "Load table only (ablation, no battery)": 48.06629834254144,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 93.92265193370166
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 93.92265193370166,
+   "EBR-DA-style (energy + load cost, reconstructed)": 48.06629834254144
   },
   "5": {
    "oracle": 187,
@@ -828,7 +863,8 @@
    "Price-guided Dijkstra (daily LP prices)": 89.3048128342246,
    "Load-aware Dijkstra (ours, no LP)": 94.6524064171123,
    "Load table only (ablation, no battery)": 49.19786096256685,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 94.11764705882352
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 94.11764705882352,
+   "EBR-DA-style (energy + load cost, reconstructed)": 64.1711229946524
   },
   "6": {
    "oracle": 139,
@@ -851,7 +887,8 @@
    "Price-guided Dijkstra (daily LP prices)": 86.33093525179856,
    "Load-aware Dijkstra (ours, no LP)": 92.08633093525181,
    "Load table only (ablation, no battery)": 49.64028776978417,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 92.08633093525181
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 92.08633093525181,
+   "EBR-DA-style (energy + load cost, reconstructed)": 53.956834532374096
   },
   "7": {
    "oracle": 148,
@@ -874,7 +911,8 @@
    "Price-guided Dijkstra (daily LP prices)": 88.51351351351352,
    "Load-aware Dijkstra (ours, no LP)": 94.5945945945946,
    "Load table only (ablation, no battery)": 47.97297297297297,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 93.91891891891892
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 93.91891891891892,
+   "EBR-DA-style (energy + load cost, reconstructed)": 45.94594594594595
   },
   "8": {
    "oracle": 178,
@@ -897,7 +935,8 @@
    "Price-guided Dijkstra (daily LP prices)": 91.01123595505618,
    "Load-aware Dijkstra (ours, no LP)": 92.69662921348315,
    "Load table only (ablation, no battery)": 42.69662921348314,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 92.13483146067416
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 92.13483146067416,
+   "EBR-DA-style (energy + load cost, reconstructed)": 42.13483146067416
   },
   "10": {
    "oracle": 167,
@@ -920,7 +959,8 @@
    "Price-guided Dijkstra (daily LP prices)": 86.22754491017965,
    "Load-aware Dijkstra (ours, no LP)": 92.21556886227546,
    "Load table only (ablation, no battery)": 28.74251497005988,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 92.21556886227546
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 92.21556886227546,
+   "EBR-DA-style (energy + load cost, reconstructed)": 44.91017964071856
   },
   "9": {
    "oracle": 196,
@@ -943,7 +983,8 @@
    "Price-guided Dijkstra (daily LP prices)": 92.85714285714286,
    "Load-aware Dijkstra (ours, no LP)": 92.3469387755102,
    "Load table only (ablation, no battery)": 44.38775510204081,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 91.83673469387756
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 91.83673469387756,
+   "EBR-DA-style (energy + load cost, reconstructed)": 48.97959183673469
   },
   "11": {
    "oracle": 153,
@@ -966,7 +1007,8 @@
    "Price-guided Dijkstra (daily LP prices)": 87.58169934640523,
    "Load-aware Dijkstra (ours, no LP)": 91.50326797385621,
    "Load table only (ablation, no battery)": 43.790849673202615,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 92.81045751633987
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 92.81045751633987,
+   "EBR-DA-style (energy + load cost, reconstructed)": 52.94117647058824
   },
   "12": {
    "oracle": 127,
@@ -989,7 +1031,8 @@
    "Price-guided Dijkstra (daily LP prices)": 80.31496062992126,
    "Load-aware Dijkstra (ours, no LP)": 89.76377952755905,
    "Load table only (ablation, no battery)": 38.582677165354326,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 90.5511811023622
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 90.5511811023622,
+   "EBR-DA-style (energy + load cost, reconstructed)": 44.881889763779526
   },
   "14": {
    "oracle": 163,
@@ -1012,7 +1055,8 @@
    "Price-guided Dijkstra (daily LP prices)": 90.1840490797546,
    "Load-aware Dijkstra (ours, no LP)": 95.0920245398773,
    "Load table only (ablation, no battery)": 41.104294478527606,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 93.86503067484662
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 93.86503067484662,
+   "EBR-DA-style (energy + load cost, reconstructed)": 56.44171779141104
   },
   "13": {
    "oracle": 192,
@@ -1035,7 +1079,8 @@
    "Price-guided Dijkstra (daily LP prices)": 92.1875,
    "Load-aware Dijkstra (ours, no LP)": 95.3125,
    "Load table only (ablation, no battery)": 40.10416666666667,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 94.27083333333334
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 94.27083333333334,
+   "EBR-DA-style (energy + load cost, reconstructed)": 58.854166666666664
   },
   "16": {
    "oracle": 179,
@@ -1058,7 +1103,8 @@
    "Price-guided Dijkstra (daily LP prices)": 89.94413407821229,
    "Load-aware Dijkstra (ours, no LP)": 93.85474860335195,
    "Load table only (ablation, no battery)": 51.39664804469274,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 93.29608938547486
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 93.29608938547486,
+   "EBR-DA-style (energy + load cost, reconstructed)": 53.63128491620112
   },
   "15": {
    "oracle": 186,
@@ -1081,7 +1127,8 @@
    "Price-guided Dijkstra (daily LP prices)": 90.32258064516128,
    "Load-aware Dijkstra (ours, no LP)": 91.39784946236558,
    "Load table only (ablation, no battery)": 30.107526881720432,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 92.47311827956989
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 92.47311827956989,
+   "EBR-DA-style (energy + load cost, reconstructed)": 37.096774193548384
   },
   "17": {
    "oracle": 211,
@@ -1104,7 +1151,8 @@
    "Price-guided Dijkstra (daily LP prices)": 91.4691943127962,
    "Load-aware Dijkstra (ours, no LP)": 91.4691943127962,
    "Load table only (ablation, no battery)": 34.59715639810427,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 91.4691943127962
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 91.4691943127962,
+   "EBR-DA-style (energy + load cost, reconstructed)": 39.81042654028436
   },
   "19": {
    "oracle": 146,
@@ -1127,7 +1175,8 @@
    "Price-guided Dijkstra (daily LP prices)": 86.98630136986301,
    "Load-aware Dijkstra (ours, no LP)": 91.78082191780823,
    "Load table only (ablation, no battery)": 41.0958904109589,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 90.41095890410958
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 90.41095890410958,
+   "EBR-DA-style (energy + load cost, reconstructed)": 41.0958904109589
   },
   "20": {
    "oracle": 176,
@@ -1150,7 +1199,8 @@
    "Price-guided Dijkstra (daily LP prices)": 92.04545454545455,
    "Load-aware Dijkstra (ours, no LP)": 93.75,
    "Load table only (ablation, no battery)": 42.04545454545455,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 93.75
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 93.75,
+   "EBR-DA-style (energy + load cost, reconstructed)": 50.56818181818182
   },
   "18": {
    "oracle": 177,
@@ -1173,7 +1223,8 @@
    "Price-guided Dijkstra (daily LP prices)": 88.70056497175142,
    "Load-aware Dijkstra (ours, no LP)": 91.52542372881356,
    "Load table only (ablation, no battery)": 40.67796610169492,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 91.52542372881356
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 91.52542372881356,
+   "EBR-DA-style (energy + load cost, reconstructed)": 52.54237288135594
   },
   "22": {
    "oracle": 155,
@@ -1196,7 +1247,8 @@
    "Price-guided Dijkstra (daily LP prices)": 87.74193548387098,
    "Load-aware Dijkstra (ours, no LP)": 93.54838709677419,
    "Load table only (ablation, no battery)": 47.096774193548384,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 90.96774193548387
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 90.96774193548387,
+   "EBR-DA-style (energy + load cost, reconstructed)": 45.806451612903224
   },
   "21": {
    "oracle": 165,
@@ -1219,7 +1271,8 @@
    "Price-guided Dijkstra (daily LP prices)": 84.84848484848484,
    "Load-aware Dijkstra (ours, no LP)": 92.12121212121212,
    "Load table only (ablation, no battery)": 41.21212121212121,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 91.51515151515152
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 91.51515151515152,
+   "EBR-DA-style (energy + load cost, reconstructed)": 55.15151515151515
   },
   "23": {
    "oracle": 175,
@@ -1242,7 +1295,8 @@
    "Price-guided Dijkstra (daily LP prices)": 91.42857142857143,
    "Load-aware Dijkstra (ours, no LP)": 96.0,
    "Load table only (ablation, no battery)": 51.42857142857142,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 95.42857142857143
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 95.42857142857143,
+   "EBR-DA-style (energy + load cost, reconstructed)": 57.14285714285714
   },
   "24": {
    "oracle": 219,
@@ -1265,7 +1319,8 @@
    "Price-guided Dijkstra (daily LP prices)": 93.60730593607306,
    "Load-aware Dijkstra (ours, no LP)": 94.97716894977168,
    "Load table only (ablation, no battery)": 50.68493150684932,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 95.4337899543379
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 95.4337899543379,
+   "EBR-DA-style (energy + load cost, reconstructed)": 55.70776255707762
   },
   "26": {
    "oracle": 157,
@@ -1288,7 +1343,8 @@
    "Price-guided Dijkstra (daily LP prices)": 90.44585987261146,
    "Load-aware Dijkstra (ours, no LP)": 93.63057324840764,
    "Load table only (ablation, no battery)": 46.496815286624205,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 92.99363057324841
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 92.99363057324841,
+   "EBR-DA-style (energy + load cost, reconstructed)": 54.14012738853503
   },
   "25": {
    "oracle": 173,
@@ -1311,7 +1367,8 @@
    "Price-guided Dijkstra (daily LP prices)": 90.17341040462428,
    "Load-aware Dijkstra (ours, no LP)": 93.64161849710982,
    "Load table only (ablation, no battery)": 47.398843930635834,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 93.0635838150289
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 93.0635838150289,
+   "EBR-DA-style (energy + load cost, reconstructed)": 46.24277456647399
   },
   "27": {
    "oracle": 157,
@@ -1334,7 +1391,8 @@
    "Price-guided Dijkstra (daily LP prices)": 90.44585987261146,
    "Load-aware Dijkstra (ours, no LP)": 92.35668789808918,
    "Load table only (ablation, no battery)": 33.75796178343949,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 92.35668789808918
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 92.35668789808918,
+   "EBR-DA-style (energy + load cost, reconstructed)": 47.13375796178344
   },
   "28": {
    "oracle": 127,
@@ -1357,7 +1415,8 @@
    "Price-guided Dijkstra (daily LP prices)": 85.8267716535433,
    "Load-aware Dijkstra (ours, no LP)": 92.1259842519685,
    "Load table only (ablation, no battery)": 37.00787401574803,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 92.91338582677166
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 92.91338582677166,
+   "EBR-DA-style (energy + load cost, reconstructed)": 52.75590551181102
   },
   "29": {
    "oracle": 204,
@@ -1380,7 +1439,8 @@
    "Price-guided Dijkstra (daily LP prices)": 91.66666666666666,
    "Load-aware Dijkstra (ours, no LP)": 93.62745098039215,
    "Load table only (ablation, no battery)": 48.03921568627451,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 93.13725490196079
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 93.13725490196079,
+   "EBR-DA-style (energy + load cost, reconstructed)": 51.470588235294116
   }
  },
  "B": {
@@ -1405,7 +1465,8 @@
    "Price-guided Dijkstra (daily LP prices)": 83.21167883211679,
    "Load-aware Dijkstra (ours, no LP)": 90.51094890510949,
    "Load table only (ablation, no battery)": 45.98540145985402,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 87.59124087591242
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 87.59124087591242,
+   "EBR-DA-style (energy + load cost, reconstructed)": 49.63503649635037
   },
   "1": {
    "oracle": 147,
@@ -1428,7 +1489,8 @@
    "Price-guided Dijkstra (daily LP prices)": 91.15646258503402,
    "Load-aware Dijkstra (ours, no LP)": 91.15646258503402,
    "Load table only (ablation, no battery)": 42.857142857142854,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 92.51700680272108
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 92.51700680272108,
+   "EBR-DA-style (energy + load cost, reconstructed)": 55.78231292517006
   },
   "2": {
    "oracle": 166,
@@ -1451,7 +1513,8 @@
    "Price-guided Dijkstra (daily LP prices)": 83.73493975903614,
    "Load-aware Dijkstra (ours, no LP)": 85.54216867469879,
    "Load table only (ablation, no battery)": 48.19277108433735,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 85.54216867469879
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 85.54216867469879,
+   "EBR-DA-style (energy + load cost, reconstructed)": 46.98795180722892
   },
   "3": {
    "oracle": 166,
@@ -1474,7 +1537,8 @@
    "Price-guided Dijkstra (daily LP prices)": 83.73493975903614,
    "Load-aware Dijkstra (ours, no LP)": 85.54216867469879,
    "Load table only (ablation, no battery)": 49.39759036144578,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 85.54216867469879
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 85.54216867469879,
+   "EBR-DA-style (energy + load cost, reconstructed)": 50.602409638554214
   },
   "4": {
    "oracle": 153,
@@ -1497,7 +1561,8 @@
    "Price-guided Dijkstra (daily LP prices)": 87.58169934640523,
    "Load-aware Dijkstra (ours, no LP)": 90.19607843137256,
    "Load table only (ablation, no battery)": 32.6797385620915,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 90.84967320261438
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 90.84967320261438,
+   "EBR-DA-style (energy + load cost, reconstructed)": 43.13725490196079
   },
   "5": {
    "oracle": 172,
@@ -1520,7 +1585,8 @@
    "Price-guided Dijkstra (daily LP prices)": 80.81395348837209,
    "Load-aware Dijkstra (ours, no LP)": 93.6046511627907,
    "Load table only (ablation, no battery)": 56.97674418604651,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 92.44186046511628
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 92.44186046511628,
+   "EBR-DA-style (energy + load cost, reconstructed)": 62.2093023255814
   },
   "6": {
    "oracle": 129,
@@ -1543,7 +1609,8 @@
    "Price-guided Dijkstra (daily LP prices)": 87.59689922480621,
    "Load-aware Dijkstra (ours, no LP)": 89.92248062015504,
    "Load table only (ablation, no battery)": 50.3875968992248,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 89.92248062015504
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 89.92248062015504,
+   "EBR-DA-style (energy + load cost, reconstructed)": 52.71317829457365
   },
   "7": {
    "oracle": 138,
@@ -1566,7 +1633,8 @@
    "Price-guided Dijkstra (daily LP prices)": 82.6086956521739,
    "Load-aware Dijkstra (ours, no LP)": 84.78260869565217,
    "Load table only (ablation, no battery)": 49.275362318840585,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 84.05797101449275
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 84.05797101449275,
+   "EBR-DA-style (energy + load cost, reconstructed)": 49.275362318840585
   },
   "8": {
    "oracle": 166,
@@ -1589,7 +1657,8 @@
    "Price-guided Dijkstra (daily LP prices)": 85.54216867469879,
    "Load-aware Dijkstra (ours, no LP)": 90.36144578313254,
    "Load table only (ablation, no battery)": 48.795180722891565,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 88.55421686746988
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 88.55421686746988,
+   "EBR-DA-style (energy + load cost, reconstructed)": 45.78313253012048
   },
   "9": {
    "oracle": 183,
@@ -1612,7 +1681,8 @@
    "Price-guided Dijkstra (daily LP prices)": 88.52459016393442,
    "Load-aware Dijkstra (ours, no LP)": 80.32786885245902,
    "Load table only (ablation, no battery)": 53.00546448087432,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 80.32786885245902
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 80.32786885245902,
+   "EBR-DA-style (energy + load cost, reconstructed)": 44.26229508196721
   },
   "11": {
    "oracle": 145,
@@ -1635,7 +1705,8 @@
    "Price-guided Dijkstra (daily LP prices)": 80.0,
    "Load-aware Dijkstra (ours, no LP)": 93.10344827586206,
    "Load table only (ablation, no battery)": 44.827586206896555,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 90.3448275862069
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 90.3448275862069,
+   "EBR-DA-style (energy + load cost, reconstructed)": 53.79310344827586
   },
   "10": {
    "oracle": 160,
@@ -1658,7 +1729,8 @@
    "Price-guided Dijkstra (daily LP prices)": 86.875,
    "Load-aware Dijkstra (ours, no LP)": 88.125,
    "Load table only (ablation, no battery)": 46.25,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 89.375
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 89.375,
+   "EBR-DA-style (energy + load cost, reconstructed)": 46.875
   },
   "12": {
    "oracle": 117,
@@ -1681,7 +1753,8 @@
    "Price-guided Dijkstra (daily LP prices)": 77.77777777777779,
    "Load-aware Dijkstra (ours, no LP)": 82.05128205128204,
    "Load table only (ablation, no battery)": 37.60683760683761,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 84.61538461538461
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 84.61538461538461,
+   "EBR-DA-style (energy + load cost, reconstructed)": 44.44444444444444
   },
   "14": {
    "oracle": 157,
@@ -1704,7 +1777,8 @@
    "Price-guided Dijkstra (daily LP prices)": 86.62420382165605,
    "Load-aware Dijkstra (ours, no LP)": 91.71974522292994,
    "Load table only (ablation, no battery)": 47.77070063694268,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 89.80891719745223
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 89.80891719745223,
+   "EBR-DA-style (energy + load cost, reconstructed)": 58.59872611464968
   },
   "13": {
    "oracle": 179,
@@ -1727,7 +1801,8 @@
    "Price-guided Dijkstra (daily LP prices)": 87.70949720670392,
    "Load-aware Dijkstra (ours, no LP)": 90.5027932960894,
    "Load table only (ablation, no battery)": 53.072625698324025,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 91.06145251396647
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 91.06145251396647,
+   "EBR-DA-style (energy + load cost, reconstructed)": 61.452513966480446
   },
   "15": {
    "oracle": 173,
@@ -1750,7 +1825,8 @@
    "Price-guided Dijkstra (daily LP prices)": 88.4393063583815,
    "Load-aware Dijkstra (ours, no LP)": 82.08092485549133,
    "Load table only (ablation, no battery)": 35.83815028901734,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 90.17341040462428
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 90.17341040462428,
+   "EBR-DA-style (energy + load cost, reconstructed)": 38.15028901734104
   },
   "16": {
    "oracle": 165,
@@ -1773,7 +1849,8 @@
    "Price-guided Dijkstra (daily LP prices)": 84.84848484848484,
    "Load-aware Dijkstra (ours, no LP)": 89.6969696969697,
    "Load table only (ablation, no battery)": 54.54545454545454,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 84.84848484848484
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 84.84848484848484,
+   "EBR-DA-style (energy + load cost, reconstructed)": 52.72727272727272
   },
   "18": {
    "oracle": 167,
@@ -1796,7 +1873,8 @@
    "Price-guided Dijkstra (daily LP prices)": 90.41916167664671,
    "Load-aware Dijkstra (ours, no LP)": 86.82634730538922,
    "Load table only (ablation, no battery)": 43.712574850299404,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 89.82035928143712
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 89.82035928143712,
+   "EBR-DA-style (energy + load cost, reconstructed)": 53.89221556886228
   },
   "17": {
    "oracle": 198,
@@ -1819,7 +1897,8 @@
    "Price-guided Dijkstra (daily LP prices)": 83.33333333333334,
    "Load-aware Dijkstra (ours, no LP)": 91.91919191919192,
    "Load table only (ablation, no battery)": 44.94949494949495,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 92.92929292929293
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 92.92929292929293,
+   "EBR-DA-style (energy + load cost, reconstructed)": 43.43434343434344
   },
   "19": {
    "oracle": 139,
@@ -1842,7 +1921,8 @@
    "Price-guided Dijkstra (daily LP prices)": 81.29496402877699,
    "Load-aware Dijkstra (ours, no LP)": 84.89208633093526,
    "Load table only (ablation, no battery)": 43.16546762589928,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 84.89208633093526
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 84.89208633093526,
+   "EBR-DA-style (energy + load cost, reconstructed)": 41.726618705035975
   },
   "20": {
    "oracle": 165,
@@ -1865,7 +1945,8 @@
    "Price-guided Dijkstra (daily LP prices)": 86.06060606060606,
    "Load-aware Dijkstra (ours, no LP)": 93.33333333333333,
    "Load table only (ablation, no battery)": 44.84848484848485,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 93.93939393939394
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 93.93939393939394,
+   "EBR-DA-style (energy + load cost, reconstructed)": 50.90909090909091
   },
   "21": {
    "oracle": 152,
@@ -1888,7 +1969,8 @@
    "Price-guided Dijkstra (daily LP prices)": 76.97368421052632,
    "Load-aware Dijkstra (ours, no LP)": 90.13157894736842,
    "Load table only (ablation, no battery)": 33.55263157894737,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 90.13157894736842
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 90.13157894736842,
+   "EBR-DA-style (energy + load cost, reconstructed)": 56.57894736842105
   },
   "22": {
    "oracle": 141,
@@ -1911,7 +1993,8 @@
    "Price-guided Dijkstra (daily LP prices)": 80.1418439716312,
    "Load-aware Dijkstra (ours, no LP)": 83.68794326241135,
    "Load table only (ablation, no battery)": 43.262411347517734,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 83.68794326241135
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 83.68794326241135,
+   "EBR-DA-style (energy + load cost, reconstructed)": 43.97163120567376
   },
   "23": {
    "oracle": 165,
@@ -1934,7 +2017,8 @@
    "Price-guided Dijkstra (daily LP prices)": 84.24242424242424,
    "Load-aware Dijkstra (ours, no LP)": 93.33333333333333,
    "Load table only (ablation, no battery)": 52.121212121212125,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 93.93939393939394
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 93.93939393939394,
+   "EBR-DA-style (energy + load cost, reconstructed)": 58.78787878787879
   },
   "24": {
    "oracle": 205,
@@ -1957,7 +2041,8 @@
    "Price-guided Dijkstra (daily LP prices)": 90.73170731707317,
    "Load-aware Dijkstra (ours, no LP)": 92.6829268292683,
    "Load table only (ablation, no battery)": 56.09756097560976,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 91.21951219512195
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 91.21951219512195,
+   "EBR-DA-style (energy + load cost, reconstructed)": 57.073170731707314
   },
   "26": {
    "oracle": 147,
@@ -1980,7 +2065,8 @@
    "Price-guided Dijkstra (daily LP prices)": 79.59183673469387,
    "Load-aware Dijkstra (ours, no LP)": 91.83673469387756,
    "Load table only (ablation, no battery)": 41.49659863945578,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 93.19727891156462
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 93.19727891156462,
+   "EBR-DA-style (energy + load cost, reconstructed)": 51.02040816326531
   },
   "25": {
    "oracle": 163,
@@ -2003,7 +2089,8 @@
    "Price-guided Dijkstra (daily LP prices)": 85.2760736196319,
    "Load-aware Dijkstra (ours, no LP)": 92.02453987730061,
    "Load table only (ablation, no battery)": 45.39877300613497,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 90.79754601226993
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 90.79754601226993,
+   "EBR-DA-style (energy + load cost, reconstructed)": 45.39877300613497
   },
   "27": {
    "oracle": 143,
@@ -2026,7 +2113,8 @@
    "Price-guided Dijkstra (daily LP prices)": 79.02097902097903,
    "Load-aware Dijkstra (ours, no LP)": 91.6083916083916,
    "Load table only (ablation, no battery)": 39.86013986013986,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 91.6083916083916
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 91.6083916083916,
+   "EBR-DA-style (energy + load cost, reconstructed)": 47.55244755244755
   },
   "28": {
    "oracle": 118,
@@ -2049,7 +2137,8 @@
    "Price-guided Dijkstra (daily LP prices)": 76.27118644067797,
    "Load-aware Dijkstra (ours, no LP)": 92.37288135593221,
    "Load table only (ablation, no battery)": 54.23728813559322,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 92.37288135593221
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 92.37288135593221,
+   "EBR-DA-style (energy + load cost, reconstructed)": 56.779661016949156
   },
   "29": {
    "oracle": 190,
@@ -2072,7 +2161,8 @@
    "Price-guided Dijkstra (daily LP prices)": 87.36842105263159,
    "Load-aware Dijkstra (ours, no LP)": 93.15789473684211,
    "Load table only (ablation, no battery)": 56.315789473684205,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 93.6842105263158
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 93.6842105263158,
+   "EBR-DA-style (energy + load cost, reconstructed)": 55.78947368421052
   }
  },
  "D": {
@@ -2097,7 +2187,8 @@
    "Price-guided Dijkstra (daily LP prices)": 82.48175182481752,
    "Load-aware Dijkstra (ours, no LP)": 87.59124087591242,
    "Load table only (ablation, no battery)": 47.44525547445255,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 83.94160583941606
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 83.94160583941606,
+   "EBR-DA-style (energy + load cost, reconstructed)": 50.36496350364964
   },
   "1": {
    "oracle": 147,
@@ -2120,7 +2211,8 @@
    "Price-guided Dijkstra (daily LP prices)": 77.55102040816327,
    "Load-aware Dijkstra (ours, no LP)": 93.19727891156462,
    "Load table only (ablation, no battery)": 46.25850340136054,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 91.15646258503402
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 91.15646258503402,
+   "EBR-DA-style (energy + load cost, reconstructed)": 55.10204081632652
   },
   "2": {
    "oracle": 170,
@@ -2143,7 +2235,8 @@
    "Price-guided Dijkstra (daily LP prices)": 87.05882352941177,
    "Load-aware Dijkstra (ours, no LP)": 89.41176470588236,
    "Load table only (ablation, no battery)": 50.588235294117645,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 89.41176470588236
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 89.41176470588236,
+   "EBR-DA-style (energy + load cost, reconstructed)": 45.88235294117647
   },
   "3": {
    "oracle": 169,
@@ -2166,7 +2259,8 @@
    "Price-guided Dijkstra (daily LP prices)": 92.89940828402366,
    "Load-aware Dijkstra (ours, no LP)": 92.89940828402366,
    "Load table only (ablation, no battery)": 46.15384615384615,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 93.49112426035504
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 93.49112426035504,
+   "EBR-DA-style (energy + load cost, reconstructed)": 48.5207100591716
   },
   "4": {
    "oracle": 154,
@@ -2189,7 +2283,8 @@
    "Price-guided Dijkstra (daily LP prices)": 75.32467532467533,
    "Load-aware Dijkstra (ours, no LP)": 88.96103896103897,
    "Load table only (ablation, no battery)": 31.16883116883117,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 89.6103896103896
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 89.6103896103896,
+   "EBR-DA-style (energy + load cost, reconstructed)": 43.506493506493506
   },
   "6": {
    "oracle": 130,
@@ -2212,7 +2307,8 @@
    "Price-guided Dijkstra (daily LP prices)": 71.53846153846153,
    "Load-aware Dijkstra (ours, no LP)": 87.6923076923077,
    "Load table only (ablation, no battery)": 50.0,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 87.6923076923077
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 87.6923076923077,
+   "EBR-DA-style (energy + load cost, reconstructed)": 53.84615384615385
   },
   "7": {
    "oracle": 140,
@@ -2235,7 +2331,8 @@
    "Price-guided Dijkstra (daily LP prices)": 81.42857142857143,
    "Load-aware Dijkstra (ours, no LP)": 92.14285714285714,
    "Load table only (ablation, no battery)": 49.28571428571429,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 92.85714285714286
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 92.85714285714286,
+   "EBR-DA-style (energy + load cost, reconstructed)": 47.85714285714286
   },
   "5": {
    "oracle": 178,
@@ -2258,7 +2355,8 @@
    "Price-guided Dijkstra (daily LP prices)": 91.01123595505618,
    "Load-aware Dijkstra (ours, no LP)": 92.13483146067416,
    "Load table only (ablation, no battery)": 53.93258426966292,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 91.57303370786516
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 91.57303370786516,
+   "EBR-DA-style (energy + load cost, reconstructed)": 63.48314606741573
   },
   "11": {
    "oracle": 144,
@@ -2281,7 +2379,8 @@
    "Price-guided Dijkstra (daily LP prices)": 81.94444444444444,
    "Load-aware Dijkstra (ours, no LP)": 94.44444444444444,
    "Load table only (ablation, no battery)": 43.75,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 93.05555555555556
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 93.05555555555556,
+   "EBR-DA-style (energy + load cost, reconstructed)": 54.861111111111114
   },
   "8": {
    "oracle": 167,
@@ -2304,7 +2403,8 @@
    "Price-guided Dijkstra (daily LP prices)": 85.02994011976048,
    "Load-aware Dijkstra (ours, no LP)": 93.41317365269461,
    "Load table only (ablation, no battery)": 44.91017964071856,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 92.21556886227546
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 92.21556886227546,
+   "EBR-DA-style (energy + load cost, reconstructed)": 41.91616766467065
   },
   "9": {
    "oracle": 188,
@@ -2327,7 +2427,8 @@
    "Price-guided Dijkstra (daily LP prices)": 88.29787234042553,
    "Load-aware Dijkstra (ours, no LP)": 91.48936170212765,
    "Load table only (ablation, no battery)": 55.319148936170215,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 88.29787234042553
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 88.29787234042553,
+   "EBR-DA-style (energy + load cost, reconstructed)": 45.21276595744681
   },
   "10": {
    "oracle": 161,
@@ -2350,7 +2451,8 @@
    "Price-guided Dijkstra (daily LP prices)": 86.33540372670807,
    "Load-aware Dijkstra (ours, no LP)": 88.81987577639751,
    "Load table only (ablation, no battery)": 42.2360248447205,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 86.95652173913044
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 86.95652173913044,
+   "EBR-DA-style (energy + load cost, reconstructed)": 47.20496894409938
   },
   "12": {
    "oracle": 117,
@@ -2373,7 +2475,8 @@
    "Price-guided Dijkstra (daily LP prices)": 76.92307692307693,
    "Load-aware Dijkstra (ours, no LP)": 86.32478632478633,
    "Load table only (ablation, no battery)": 37.60683760683761,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 83.76068376068376
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 83.76068376068376,
+   "EBR-DA-style (energy + load cost, reconstructed)": 41.88034188034188
   },
   "14": {
    "oracle": 157,
@@ -2396,7 +2499,8 @@
    "Price-guided Dijkstra (daily LP prices)": 88.53503184713377,
    "Load-aware Dijkstra (ours, no LP)": 89.80891719745223,
    "Load table only (ablation, no battery)": 43.31210191082803,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 89.80891719745223
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 89.80891719745223,
+   "EBR-DA-style (energy + load cost, reconstructed)": 58.59872611464968
   },
   "13": {
    "oracle": 182,
@@ -2419,7 +2523,8 @@
    "Price-guided Dijkstra (daily LP prices)": 88.46153846153845,
    "Load-aware Dijkstra (ours, no LP)": 91.20879120879121,
    "Load table only (ablation, no battery)": 56.043956043956044,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 89.56043956043956
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 89.56043956043956,
+   "EBR-DA-style (energy + load cost, reconstructed)": 62.08791208791209
   },
   "15": {
    "oracle": 176,
@@ -2442,7 +2547,8 @@
    "Price-guided Dijkstra (daily LP prices)": 88.63636363636364,
    "Load-aware Dijkstra (ours, no LP)": 88.63636363636364,
    "Load table only (ablation, no battery)": 31.818181818181817,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 92.04545454545455
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 92.04545454545455,
+   "EBR-DA-style (energy + load cost, reconstructed)": 38.06818181818182
   },
   "16": {
    "oracle": 166,
@@ -2465,7 +2571,8 @@
    "Price-guided Dijkstra (daily LP prices)": 84.33734939759037,
    "Load-aware Dijkstra (ours, no LP)": 92.16867469879519,
    "Load table only (ablation, no battery)": 57.22891566265061,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 91.56626506024097
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 91.56626506024097,
+   "EBR-DA-style (energy + load cost, reconstructed)": 54.21686746987952
   },
   "18": {
    "oracle": 165,
@@ -2488,7 +2595,8 @@
    "Price-guided Dijkstra (daily LP prices)": 83.63636363636363,
    "Load-aware Dijkstra (ours, no LP)": 93.93939393939394,
    "Load table only (ablation, no battery)": 46.06060606060606,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 92.72727272727272
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 92.72727272727272,
+   "EBR-DA-style (energy + load cost, reconstructed)": 53.939393939393945
   },
   "19": {
    "oracle": 139,
@@ -2511,7 +2619,8 @@
    "Price-guided Dijkstra (daily LP prices)": 81.29496402877699,
    "Load-aware Dijkstra (ours, no LP)": 83.45323741007195,
    "Load table only (ablation, no battery)": 44.60431654676259,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 83.45323741007195
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 83.45323741007195,
+   "EBR-DA-style (energy + load cost, reconstructed)": 43.16546762589928
   },
   "17": {
    "oracle": 193,
@@ -2534,7 +2643,8 @@
    "Price-guided Dijkstra (daily LP prices)": 90.15544041450777,
    "Load-aware Dijkstra (ours, no LP)": 83.93782383419689,
    "Load table only (ablation, no battery)": 44.559585492227974,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 83.93782383419689
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 83.93782383419689,
+   "EBR-DA-style (energy + load cost, reconstructed)": 44.04145077720207
   },
   "20": {
    "oracle": 166,
@@ -2557,7 +2667,8 @@
    "Price-guided Dijkstra (daily LP prices)": 84.33734939759037,
    "Load-aware Dijkstra (ours, no LP)": 94.57831325301204,
    "Load table only (ablation, no battery)": 41.566265060240966,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 92.7710843373494
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 92.7710843373494,
+   "EBR-DA-style (energy + load cost, reconstructed)": 52.40963855421686
   },
   "21": {
    "oracle": 156,
@@ -2580,7 +2691,8 @@
    "Price-guided Dijkstra (daily LP prices)": 84.61538461538461,
    "Load-aware Dijkstra (ours, no LP)": 90.38461538461539,
    "Load table only (ablation, no battery)": 34.61538461538461,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 88.46153846153845
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 88.46153846153845,
+   "EBR-DA-style (energy + load cost, reconstructed)": 55.12820512820513
   },
   "23": {
    "oracle": 166,
@@ -2603,7 +2715,8 @@
    "Price-guided Dijkstra (daily LP prices)": 84.93975903614458,
    "Load-aware Dijkstra (ours, no LP)": 96.3855421686747,
    "Load table only (ablation, no battery)": 55.42168674698795,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 93.97590361445783
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 93.97590361445783,
+   "EBR-DA-style (energy + load cost, reconstructed)": 58.43373493975904
   },
   "22": {
    "oracle": 144,
@@ -2626,7 +2739,8 @@
    "Price-guided Dijkstra (daily LP prices)": 85.41666666666666,
    "Load-aware Dijkstra (ours, no LP)": 90.27777777777779,
    "Load table only (ablation, no battery)": 40.97222222222222,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 92.36111111111111
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 92.36111111111111,
+   "EBR-DA-style (energy + load cost, reconstructed)": 39.58333333333333
   },
   "24": {
    "oracle": 207,
@@ -2649,7 +2763,8 @@
    "Price-guided Dijkstra (daily LP prices)": 89.85507246376811,
    "Load-aware Dijkstra (ours, no LP)": 89.85507246376811,
    "Load table only (ablation, no battery)": 56.038647342995176,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 90.82125603864735
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 90.82125603864735,
+   "EBR-DA-style (energy + load cost, reconstructed)": 57.971014492753625
   },
   "25": {
    "oracle": 163,
@@ -2672,7 +2787,8 @@
    "Price-guided Dijkstra (daily LP prices)": 84.66257668711657,
    "Load-aware Dijkstra (ours, no LP)": 92.02453987730061,
    "Load table only (ablation, no battery)": 47.239263803680984,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 87.11656441717791
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 87.11656441717791,
+   "EBR-DA-style (energy + load cost, reconstructed)": 47.239263803680984
   },
   "27": {
    "oracle": 146,
@@ -2695,7 +2811,8 @@
    "Price-guided Dijkstra (daily LP prices)": 80.13698630136986,
    "Load-aware Dijkstra (ours, no LP)": 91.0958904109589,
    "Load table only (ablation, no battery)": 38.35616438356164,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 91.78082191780823
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 91.78082191780823,
+   "EBR-DA-style (energy + load cost, reconstructed)": 45.89041095890411
   },
   "26": {
    "oracle": 148,
@@ -2718,7 +2835,8 @@
    "Price-guided Dijkstra (daily LP prices)": 79.05405405405406,
    "Load-aware Dijkstra (ours, no LP)": 92.56756756756756,
    "Load table only (ablation, no battery)": 41.21621621621622,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 92.56756756756756
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 92.56756756756756,
+   "EBR-DA-style (energy + load cost, reconstructed)": 50.0
   },
   "28": {
    "oracle": 120,
@@ -2741,7 +2859,8 @@
    "Price-guided Dijkstra (daily LP prices)": 78.33333333333333,
    "Load-aware Dijkstra (ours, no LP)": 94.16666666666667,
    "Load table only (ablation, no battery)": 57.49999999999999,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 92.5
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 92.5,
+   "EBR-DA-style (energy + load cost, reconstructed)": 55.833333333333336
   },
   "29": {
    "oracle": 191,
@@ -2764,7 +2883,8 @@
    "Price-guided Dijkstra (daily LP prices)": 85.86387434554975,
    "Load-aware Dijkstra (ours, no LP)": 92.67015706806284,
    "Load table only (ablation, no battery)": 54.973821989528794,
-   "Load-aware Dijkstra, LEST load table (4 tiers)": 91.62303664921467
+   "Load-aware Dijkstra, LEST load table (4 tiers)": 91.62303664921467,
+   "EBR-DA-style (energy + load cost, reconstructed)": 55.497382198952884
   }
  }
 }

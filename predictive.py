@@ -431,3 +431,25 @@ class LESTDijkstra(LoadAwareDijkstra):
         r_hat = (1.0 - load_free) * self.budget
         base = 1.0 / np.maximum(e_hat, 1e-3)
         return self._tree(w, base, r_hat)
+
+
+class EBRDA:
+    """EBR-DA-style baseline (Mahdi et al., IJEECS 12(3), 2018), reconstructed from the paper's
+    published description, not its code: a modified Dijkstra over a link cost whose node weight
+    combines residual energy and load, rebuilt every round.
+
+        node weight  W_j = a * (1 - E_j / E0) + (1 - a) * (load_j / max load)
+        link cost    energy(i -> j) * (1 + c * W_i)        (the relaying node's weight)
+    load_j = packets node j transmitted last round (its own plus relayed), as the network
+    observes it. a and c are tuned on the validation deployments, like every other method.
+    """
+    def __init__(self, w, history, a=0.5, c=3.0):
+        self.a, self.c, self.prev, self.load = a, c, None, np.zeros(w.n)
+
+    def __call__(self, w):
+        if self.prev is not None and w.round > 0:
+            own = np.where(w.alive, w.traffic[w.round - 1], 0).astype(float) if w.traffic is not None else w.alive.astype(float)
+            self.load = subtree_sum(w, self.prev, own)
+        W = self.a * (1.0 - w.E / w.e0) + (1.0 - self.a) * self.load / max(self.load.max(), 1e-9)
+        self.prev = w._sanitize(D.dijkstra_tree(w, 1.0 + self.c * W))
+        return self.prev
