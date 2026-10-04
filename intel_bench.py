@@ -100,7 +100,12 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--phase", choices=["tune", "test"], required=True)
     ap.add_argument("--workers", type=int, default=4)
+    ap.add_argument("--e0", type=float, default=None, help="sensitivity check: another battery size (J)")
     a = ap.parse_args()
+    global E0
+    suffix = ""
+    if a.e0 is not None:
+        E0, suffix = a.e0, f"_e{a.e0:g}"
     traffic()
     if a.phase == "tune":
         with Pool(a.workers) as p:
@@ -128,7 +133,7 @@ def main():
     cens = {n: sum(r[3] for r in res if r[0] == n) for n in names}
     fe = forecast_error(TEST_STARTS, hw)
     json.dump({"hw": hw, "E0": E0, "oracle": orc, "L": {n: L[n].tolist() for n in names}, "censored": cens,
-               "forecast_mae": fe}, open("results_intel.json", "w"), indent=1)
+               "forecast_mae": fe}, open(f"results_intel{suffix}.json", "w"), indent=1)
     ref = "Battery Dijkstra"
     lines = [f"# Real traffic: Intel Berkeley Lab ({len(TEST_STARTS)} test deployments, {TEST_STARTS[0] // 24 + 1}-{(TEST_STARTS[-1] + 24) // 24 + 1} days after 28 Feb 2004)", "",
              f"54 real motes (layout scaled x{I.SCALE:g} to a 500 m field), send-on-delta traffic (dT {DT} C, dL {DL:g} lux, "
@@ -149,7 +154,7 @@ def main():
               "", "Deployments still alive at the end of the data (censored, scored at the data end): " +
               (", ".join(f"{n} {c}" for n, c in cens.items() if c) or "none")]
     md = "\n".join(lines)
-    open("results_intel.md", "w").write(md + "\n")
+    open(f"results_intel{suffix}.md", "w").write(md + "\n")
     print(md)
 
 
