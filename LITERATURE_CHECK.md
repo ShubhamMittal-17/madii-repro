@@ -130,3 +130,26 @@ outside the aggregation setting it was designed for.
 - "When Simple Model Just Works: Is Network Traffic Classification in Crisis?", arXiv:2506.08655
   (2025). In traffic classification, a 1-NN baseline matches or beats state-of-the-art deep
   models. The same pattern as our finding, in a neighbouring networking problem.
+
+## Update: two more papers found by the authors (docs/papers/)
+
+- **M. U. Younus et al., "Optimizing the Lifetime of Software Defined Wireless Sensor Network via
+  Reinforcement Learning", IEEE Access 9, 2021 (published Dec. 2020), doi:10.1109/ACCESS.2020.3046693.**
+  - RL runs in an SDN controller that has the *global* network view and computes the routing
+    tables, on a **real testbed**.
+  - Four reward functions; loop-free candidate paths come from spanning-tree protocol.
+  - **Compared only with an RL-based WSN routing scheme**: +23-30% lifetime. Dijkstra appears
+    only in related work (a cited Q-learning paper beat Dijkstra on congestion), not as a baseline.
+  - No optimum bound.
+  - **Relevance:** the same architecture as our sink-computed routers (a central controller with
+    global state that pushes routes). It shows the deployment model is realistic, and it is
+    another learned method with no strong classical baseline.
+- **"Energy Efficient Data Transmission in WSN for Network Lifetime Enhancement", Proc. 7th
+  ICMCSI-2026, IEEE (pp. 183-189).**
+  - A comparison paper. It tabulates published results of about ten methods (DBN routing,
+    ELPSO-PSO-BPNN, TIOCHR, SAE-PNN, model-free DRL, ...) on two datasets: a 10-node
+    network-feature dataset and a patient health-monitoring dataset.
+  - Values are in mixed units (energy from 0.35 J to 99 J; lifetime as a %). There is no common
+    simulator, no shortest-path baseline and no optimum.
+  - **Relevance:** current (2026) evidence that WSN lifetime methods are compared without a
+    common benchmark or bound. It motivates our oracle-normalised bench; not a method competitor.
