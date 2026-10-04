@@ -93,3 +93,40 @@ Why EBR-DA scores so low here:
 
 Without aggregation, that ring drains quickly. State this caveat when citing: EBR-DA is shown
 outside the aggregation setting it was designed for.
+
+## Update: full texts read (docs/papers/)
+
+- **MADII**: J. Yang, W. Li, C. Li, L. Zhang, L. Liu, "An Energy-Efficient and Transmission-
+  Efficient Adaptive Routing Algorithm Using Deep Reinforcement Learning for Wireless Sensor
+  Networks", IEEE Internet of Things Journal 12(23):50414-50426, Dec. 2025,
+  doi:10.1109/JIOT.2025.3609624.
+  - Corresponding author: Cuiran Li, licr@mail.lzjtu.cn (Lanzhou Jiaotong University).
+  - **No code link** in the paper.
+  - **Baselines (Sec. IV-A):** FCM, GWO-WOA, HBA, POA, SCSO, MADTI, MADIE. These are clustering,
+    metaheuristic and learned methods. There is **no shortest-path / Dijkstra baseline and no
+    optimum bound**, confirmed from the full text.
+  - Setup: 100 nodes, 500 x 500 m, no data compression, FND and HND, one RTX 4070 Ti GPU.
+- **Shan, Liang, Luo, Shen**, "Network lifetime maximization for time-sensitive data gathering in
+  wireless sensor networks", Computer Networks 57 (2013) 1063-1077,
+  doi:10.1016/j.comnet.2012.12.005.
+  - A load-balanced **shortest-path** spanning tree: every sensor reaches the sink in its minimum
+    hop count.
+  - Non-aggregated relaying; a node's energy is proportional to its number of descendants.
+  - Top-down network-flow construction plus distributed balance refinement.
+  - Lifetime is at least **85% of the upper bound**.
+  - Differences from ours: one tree under a min-hop constraint, against our tree rebuilt every
+    round from batteries and the load booked that round.
+- **Chang & Tassiulas**, "Maximum lifetime routing in wireless sensor networks", IEEE/ACM
+  Transactions on Networking 12(4), 2004 (pdf in docs/papers). The source of our oracle LP.
+
+## Recent work (2023-2025) to cite alongside the classics
+
+- Learned routing keeps being proposed and compared with weak baselines:
+  - multi-agent DRL WSN routing, US patent 12,381,811;
+  - DRL-OLSR / SOM-OLSR for mobile WSNs (IET Networks, 2024);
+  - energy-efficient DQN routing for wireless IoT (IJEECS, 2024).
+- "Learning for routing: A guided review of recent developments and future directions",
+  arXiv:2507.00218 (2025). A recent survey to anchor the related-work section.
+- "When Simple Model Just Works: Is Network Traffic Classification in Crisis?", arXiv:2506.08655
+  (2025). In traffic classification, a 1-NN baseline matches or beats state-of-the-art deep
+  models. The same pattern as our finding, in a neighbouring networking problem.
