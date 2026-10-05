@@ -42,3 +42,5 @@ madii_papersize_best (informer, IL)   15.4        8.4     1.4   51.0      531   
 | Battery-weighted Dijkstra (no learning) | 0 | 151.4 | 88.4 |
 
 A model 90x larger gives the same ~8-11% as the small one; neither moves toward Dijkstra's 88%.
+
+The two Run B checkpoints (checkpoints/madii_papersize*.pt, 109 MB each) exceed GitHub's 100 MB file limit and are kept out of the repository; rerun run_exact.sh (Run B) to regenerate them.

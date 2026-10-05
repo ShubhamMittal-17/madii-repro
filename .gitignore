@@ -11,3 +11,5 @@ checkpoints/snapshots/
 checkpoints/smoke*.pt
 data/intel_lab/data.txt.gz
 data/intel_lab/readings.npz
+checkpoints/madii_papersize.pt
+checkpoints/madii_papersize_best.pt
