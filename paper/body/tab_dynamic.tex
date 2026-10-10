@@ -1,0 +1,20 @@
+\multicolumn{8}{@{}l}{\emph{Proposed}}\\
+\textbf{LEST load-table Dijkstra} & 89.5 & 92.6 & 89.3 & 90.5 & 76.8 & 90.0 & 118/1/1\\
+Load-aware Dijkstra, exact load (no LEST) & 90.2 & 93.0 & 89.2 & 90.8 & 76.8 & 90.9 & 116/3/1\\
+\multicolumn{8}{@{}l}{\emph{Upper reference (LP solver every round)}}\\
+LP planner v2, Holt-Winters & 96.4 & 98.5 & 96.2 & 97.0 & 92.1 & 95.6 & 120/0/0\\
+LP planner v2, historical mean (no forecast) & 95.7 & 98.5 & 95.2 & 96.5 & 84.8 & 95.1 & 120/0/0\\
+LP planner v2, perfect forecast (diagnostic) & 96.1 & 98.5 & 96.2 & 96.9 & 91.4 & 96.1 & 120/0/0\\
+LP planner v1 (every 4 rounds), Holt-Winters & 89.8 & 97.4 & 88.3 & 91.8 & 74.6 & 87.9 & 105/4/11\\
+\multicolumn{8}{@{}l}{\emph{Classical and published}}\\
+Battery-weighted Dijkstra & 83.2 & 88.6 & 83.1 & 85.0 & 74.3 & 83.0 & --\\
+Price-guided Dijkstra (daily LP prices) & 84.6 & 89.2 & 84.3 & 86.0 & 76.3 & 84.0 & 66/22/32\\
+Receiver-weighted Dijkstra & 83.7 & 88.3 & 83.0 & 85.0 & 76.1 & 84.5 & 49/28/43\\
+Predictive Dijkstra (Holt-Winters reserve) & 81.4 & 88.6 & 82.3 & 84.1 & 63.4 & 82.6 & 24/47/49\\
+Lifetime Dijkstra (forecast load) & 82.3 & 88.6 & 81.2 & 84.0 & 68.6 & 82.4 & 27/48/45\\
+Static LP (solved once) & 60.7 & 87.8 & 57.8 & 68.7 & 37.3 & 59.7 & 16/1/103\\
+Reactive LP (last 4 rounds' traffic) & 52.5 & 97.4 & 50.4 & 66.8 & 22.2 & 52.5 & 32/1/87\\
+EBR-DA~\cite{mahdi2018ebrda}, as specified & 14.0 & 13.5 & 14.1 & 13.9 & 0.5 & 14.0 & 0/0/120\\
+EBR-DA~\cite{mahdi2018ebrda}, isolated nodes bridged & 15.2 & 14.9 & 15.3 & 15.1 & 0.5 & 15.2 & 0/0/120\\
+\multicolumn{8}{@{}l}{\emph{Learned}}\\
+MADII~\cite{yang2025madii} (trained on constant traffic) & 13.0 & 15.5 & 15.6 & 14.7 & 2.9 & 13.6 & 0/0/120\\

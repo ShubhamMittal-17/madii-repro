@@ -1,0 +1,72 @@
+\section{Related work and literature survey}\label{sec:related}
+
+\subsection{Energy models and clustering}
+Heinzelman et al.~\cite{heinzelman2000leach} introduced the first-order radio model that most WSN routing studies use, including ours (Section~\ref{sec:radio}). In it, transmitting costs electronics energy plus an amplifier term that grows with the square or the fourth power of distance, and receiving costs electronics energy only. Their LEACH protocol popularised clustering with rotating cluster heads. Later schemes select cluster heads with fuzzy c-means (FCM) or with population metaheuristics such as grey-wolf/whale hybrids, the honey badger algorithm (HBA) and the pelican optimisation algorithm (POA). These are the baselines against which MADII is evaluated~\cite{yang2025madii}.
+
+\subsection{Lifetime-optimal and energy-aware shortest-path routing}
+Dijkstra's algorithm~\cite{dijkstra1959note} finds least-cost paths for given link costs. With radio energy as the cost it gives minimum-total-energy (MTE) routing, which is optimal for one round but exhausts the same relays first. Chang and Tassiulas~\cite{chang2004maximum} formulated maximum-lifetime routing as an LP over link flows. Because the LP allows fractional, time-shared routing, its optimum is an upper bound on the lifetime of any routing scheme, and we use it as the ceiling. They also proposed flow augmentation: shortest paths over link costs that combine energy per bit with the residual energy at both ends, recomputed as flow is added. They reported lifetimes close to the LP optimum and compared against MTE routing. The battery-weighted Dijkstra baseline in this paper is the single-tree, per-round member of that family. Recent theoretical progress on single-source shortest paths~\cite{duan2025sorting} computes the same paths asymptotically faster. It cannot change routing quality, and at WSN sizes the cost of Dijkstra itself is negligible (Section~\ref{sec:computation}).
+
+\subsection{Load-balanced routing trees}
+Traffic funnels towards the sink, so the nodes next to it relay the most and die first. Dai and Han~\cite{dai2003nodecentric} proposed a node-centric algorithm that grows a tree from the sink, repeatedly grafting the heaviest unassigned border node onto the lightest branch. As described in~\cite{shan2013lifetime}, it balances load but ignores distance and energy. Shan et al.~\cite{shan2013lifetime} construct a load-balanced \emph{shortest-path} spanning tree, in which every sensor reaches the sink in its minimum hop count. Their top-down network-flow construction is followed by distributed balance refinement, and they report lifetimes of about 85\% of an upper bound. Both build one tree under uniform initial energy; neither rebuilds it from residual batteries. EBR-DA~\cite{mahdi2018ebrda} combines residual energy and buffer occupancy in a node weight over a hop tree, and each node forwards to its lightest neighbour one hop nearer the sink. It is evaluated in MATLAB against DRINA and InFRA, two aggregation-oriented protocols, with no optimum bound. Combining energy and load in a routing cost, and building load-balanced trees, are therefore not new. What we add is the per-round rebuild with exact battery weighting, the within-round booking order, the LEST sharing with charged overhead, and the measurement against the optimum. Our ablations (Section~\ref{sec:ablation}) show that the load term alone, close in spirit to load-only trees, reaches only 45\% of the oracle.
+
+\subsection{Learning-based routing and energy control}
+Tang et al.~\cite{tang2025twotier} propose a two-tier system for low-power mesh networks: a central reinforcement-learning coordinator plus small neural networks on each node that adjust transmit power. MADII~\cite{yang2025madii} is a multi-agent deep Q-network~\cite{mnih2015dqn} with an Informer encoder~\cite{zhou2021informer}, which picks the next hop of every sensor under centralised training and centralised execution. It is trained first from clustering algorithms through imitation and then by exploration, and reports gains over FCM, GWO-WOA, HBA, POA and learned ablations. The full text contains no shortest-path baseline and no optimum bound. Younus et al.~\cite{younus2021sdwsn} train an RL agent inside a software-defined WSN controller that has the global network view. Their testbed evaluation compares the agent with an RL-based WSN routing scheme and reports a 23--30\% longer lifetime. A recent review of learning for routing~\cite{learning4routing2025} surveys the broader trend. In each case the learned method is compared with heuristics or other learners, not with battery-weighted shortest paths or the optimum.
+
+\subsection{Forecasting and algorithms with predictions}
+Holt-Winters exponential smoothing~\cite{holt2004forecasting,winters1960forecasting} forecasts series with level, trend and seasonal components, and it remains a strong baseline for periodic data such as daily sensor traffic. Work on algorithms with predictions~\cite{lykouris2018caching} studies classical algorithms that take a forecast as advice. It asks how much they gain when the forecast is right and how much they lose when it is wrong. We follow this framing when we test forecasts inside Dijkstra and inside an LP planner (Section~\ref{sec:prediction}).
+
+\subsection{Literature survey and research gap}
+Table~\ref{tab:survey} summarises the closest studies. Table~\ref{tab:ticks} compares their characteristics with this work: what each router uses to decide, and how each study is evaluated. A recent comparison paper~\cite{icmcsi2026} illustrates the evaluation gap. It tabulates the published results of about ten methods on two different datasets, in units ranging from joules to percentages, with no common simulator, no shortest-path baseline and no optimum. The gap that this paper fills is first one of measurement: learned and heuristic WSN routers are published without reference to the simplest strong classical router or to the achievable lifetime. It is second one of method: no solver-free router that we know of combines exact battery weighting with load booked within the round and a shared tiered load table, re-plans every round, and charges its own overhead.
+
+\begin{widetab}
+\centering
+\caption{Literature survey of the closest work.}\label{tab:survey}
+\scriptsize\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{2.3cm}>{\raggedright\arraybackslash}p{1.7cm}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}p{2.1cm}>{\raggedright\arraybackslash}X@{}}
+\toprule
+Work (year) & Category & Approach & Compared with & Gap relative to this work\\
+\midrule
+Heinzelman et al.~\cite{heinzelman2000leach} (2000) & Clustering & LEACH; first-order radio model & Direct, MTE & No optimum; clustering rather than multi-hop routing to a sink\\
+Dai and Han~\cite{dai2003nodecentric} (2003) & Load-balanced tree & Node-centric grafting of heavy nodes onto light branches & -- (as described in~\cite{shan2013lifetime}) & Load only; no energy or distance; one tree\\
+Chang and Tassiulas~\cite{chang2004maximum} (2004) & Lifetime-optimal routing & Max-lifetime LP; flow augmentation over energy-and-residual link costs & LP optimum, MTE & No real data, overhead or statistical tests; table-driven\\
+Shan et al.~\cite{shan2013lifetime} (2013) & Load-balanced tree & Load-balanced shortest-path tree by network flow plus refinement & Node-centric~\cite{dai2003nodecentric}, upper bound & One static tree; uniform energy; min-hop constraint\\
+Mahdi et al., EBR-DA~\cite{mahdi2018ebrda} (2018) & Energy + load routing & Hop tree; node weight $0.6(1-E/E_0)^2+0.4\,\mathrm{buffer}^2$ & DRINA, InFRA & No optimum or shortest-path baseline; designed for aggregation\\
+Younus et al.~\cite{younus2021sdwsn} (2021) & Learned (SDWSN) & RL in a controller with a global view; four rewards & RL-based WSN routing & No classical baseline or optimum; testbed only\\
+Tang et al.~\cite{tang2025twotier} (2025) & Learned power control & Central RL coordinator plus per-node networks & -- & Power control rather than routing; no optimum\\
+Yang et al., MADII~\cite{yang2025madii} (2025) & Learned routing & Multi-agent DQN with Informer; imitation then exploration & FCM, GWO-WOA, HBA, POA, ablations & No shortest-path baseline or optimum; constant traffic\\
+ICMCSI study~\cite{icmcsi2026} (2026) & Comparison & Tabulates ten published methods on two datasets & Published numbers & Mixed units; no common simulator or bound\\
+Duan et al.~\cite{duan2025sorting} (2025) & Shortest-path theory & SSSP faster than sorting-bound Dijkstra & Theory & Same paths, so no change to lifetime\\
+\midrule
+This work & Benchmark + coordinated routing & Oracle-normalised bench; LEST load-table Dijkstra; LP planner & Optimum, battery Dijkstra, MADII, EBR-DA & --\\
+\bottomrule
+\end{tabularx}
+\end{widetab}
+
+\begin{widetab}
+\centering
+\caption{Characteristics of the closest work and of this work. \cmark: provided; \pmark: partly; \xmark: not provided or not reported. Method columns describe what the router uses to decide; evaluation columns describe the study.}\label{tab:ticks}
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{tabularx}{\textwidth}{@{}X cccccc cccccc@{}}
+\toprule
+& \multicolumn{6}{c}{Method} & \multicolumn{6}{c}{Evaluation}\\
+\cmidrule(lr){2-7}\cmidrule(l){8-13}
+Work & M1 & M2 & M3 & M4 & M5 & M6 & E1 & E2 & E3 & E4 & E5 & E6\\
+\midrule
+Chang and Tassiulas~\cite{chang2004maximum} & \cmark & \pmark & \pmark & \cmark & \cmark & \cmark & \cmark & \xmark & \cmark & \cmark & \xmark & \xmark\\
+Shan et al.~\cite{shan2013lifetime} & \xmark & \cmark & \cmark & \xmark & \cmark & \pmark & \xmark & \pmark & \pmark & \cmark & \xmark & \xmark\\
+EBR-DA~\cite{mahdi2018ebrda} & \cmark & \cmark & \xmark & \cmark & \cmark & \cmark & \pmark & \xmark & \xmark & \xmark & \xmark & \xmark\\
+Younus et al.~\cite{younus2021sdwsn} & \cmark & \cmark & \pmark & \cmark & \xmark & \cmark & \xmark & \pmark & \xmark & \xmark & \cmark & \xmark\\
+MADII~\cite{yang2025madii} & \cmark & \cmark & \pmark & \cmark & \xmark & \cmark & \xmark & \pmark & \xmark & \xmark & \xmark & \xmark\\
+\midrule
+Battery-weighted Dijkstra (baseline, this work) & \cmark & \xmark & \xmark & \cmark & \cmark & \cmark & \cmark & \cmark & \cmark & \cmark & \cmark & \cmark\\
+LP planner (upper reference, this work) & \cmark & \cmark & \cmark & \cmark & \cmark & \xmark & \cmark & \cmark & \cmark & \cmark & \cmark & \cmark\\
+\textbf{LEST load-table Dijkstra (proposed)} & \cmark & \cmark & \cmark & \cmark & \cmark & \cmark & \cmark & \cmark & \cmark & \cmark & \cmark & \cmark\\
+\bottomrule
+\end{tabularx}
+
+\smallskip
+\raggedright\footnotesize
+M1 residual energy in the route decision; M2 relay load in the route decision; M3 within-round coordination (a node's choice accounts for the choices of others in the same round); M4 re-planned from the current state every round; M5 no offline training; M6 no optimisation solver at run time.\\
+E1 time-varying traffic evaluated; E2 control overhead charged in the energy model; E3 compared with a shortest-path baseline; E4 compared with a provable optimum; E5 real data or testbed (for this work, real Intel Lab traffic traces); E6 statistical significance tests.
+\end{widetab}

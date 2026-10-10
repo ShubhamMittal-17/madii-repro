@@ -1,0 +1,11 @@
+\section{Conclusion}\label{sec:conclusion}
+
+Measured against a provable optimum, energy-efficient WSN routing falls into clear levels. A recent multi-agent DRL router and a published energy-and-load router reach about 15\% of the ceiling. Battery-weighted Dijkstra reaches about 85\% with no training. LEST load-table Dijkstra reaches about 90\% with no solver. An LP planner re-solved every round reaches 97\%. LEST load-table Dijkstra builds each round's tree node by node, books every source's traffic on its path, and shares load through a 4-tier table whose overhead it pays for. It wins 118 of 120 time-varying deployments against battery Dijkstra, and the ranking holds on real Intel Lab traffic. Prediction adds half a point to the planner and nothing to Dijkstra, and learning adds no measurable gain. For lifetime routing in this setting, coordination and planning are what matter.
+
+Future work will cover four directions:
+\begin{itemize}[leftmargin=*]
+  \item a distributed LEST Dijkstra, in which every node computes the same tree from a shared snapshot of energy and load;
+  \item a packet-level evaluation with lossy links taken from the Intel connectivity data, collisions and retransmissions, together with networks of 200--500 nodes;
+  \item further published learned baselines, including MADII retrained on time-varying traffic or the authors' code if it is released;
+  \item traffic with stronger drift or weekly cycles, where prediction may matter more.
+\end{itemize}

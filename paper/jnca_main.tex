@@ -1,0 +1,53 @@
+%% Manuscript for the Journal of Network and Computer Applications (Elsevier), elsarticle class.
+%% Build: latexmk -pdf jnca_main.tex   (from the paper/ directory)
+\documentclass[preprint,12pt]{elsarticle}
+\input{preamble}
+\newenvironment{widetab}{\begin{table}[tp]}{\end{table}}   % single column: wide tables are ordinary tables
+\journal{Journal of Network and Computer Applications}
+
+\begin{document}
+\begin{frontmatter}
+
+\title{Does energy-efficient WSN routing need learning? A benchmark against the provable optimum and a coordinated Dijkstra over a shared load table}
+
+%% AUTHORS: replace the placeholders. Mark the corresponding author with \corref{cor1}.
+\author[inst1]{[Author 1]\corref{cor1}}
+\ead{[email]}
+\author[inst1]{[Author 2]}
+\author[inst1]{[Supervisor]}
+\cortext[cor1]{Corresponding author.}
+\affiliation[inst1]{organization={[Department], Netaji Subhas University of Technology},
+            city={New Delhi}, postcode={110078}, country={India}}
+
+\begin{abstract}
+\input{body/abstract}
+\end{abstract}
+
+\begin{highlights}
+\item Learned and heuristic WSN routers are scored against a provable lifetime optimum.
+\item A recent deep RL router reaches 11\% of the optimum; battery Dijkstra reaches 88\%.
+\item LEST load-table Dijkstra books load within each round and needs no solver.
+\item It wins 118 of 120 time-varying deployments and holds on real Intel Lab traffic.
+\item Forecasts add 0.5 points to an LP planner and nothing to Dijkstra.
+\end{highlights}
+
+\begin{keyword}
+Wireless sensor networks \sep Network lifetime \sep Energy-efficient routing \sep Load balancing \sep Maximum-lifetime linear program \sep Deep reinforcement learning \sep Benchmarking
+\end{keyword}
+
+\end{frontmatter}
+
+\input{body/intro}
+\input{body/related}
+\input{body/model}
+\input{body/methods}
+\input{body/setup}
+\input{body/results}
+\input{body/discussion}
+\input{body/conclusion}
+\input{body/declarations}
+
+\bibliographystyle{elsarticle-num}
+\bibliography{refs}
+
+\end{document}

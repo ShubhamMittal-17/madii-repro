@@ -1,0 +1,120 @@
+\section{Methods}\label{sec:methods}
+
+All routers compute the round's tree at the sink from the information listed in A8--A11 and broadcast it in the advertisement. Nothing new runs on the sensors.
+
+\subsection{Battery-weighted Dijkstra}
+Each round, Dijkstra~\cite{dijkstra1959note} finds the least-cost path from every node to the sink over the link cost
+\begin{equation}
+w(i,j) = \bigl[e_{\mathrm{tx}}(i,j)+e_{\mathrm{rx}}\bigr]\cdot \frac{E_0}{E_i},\label{eq:battery}
+\end{equation}
+where $E_i$ is the sender's residual energy. The ratio $E_0/E_i$ rises sharply as a node nears empty, so its children move elsewhere. Dropping the factor gives min-energy (MTE) Dijkstra. A sweep of the exponent $(E_0/E_i)^\alpha$ on validation deployments peaks at $\alpha=1$ (Section~\ref{sec:prediction}).
+
+\subsection{Proposed: LEST load-table Dijkstra}\label{sec:lest}
+In battery-weighted Dijkstra every node's path is computed independently, so in one round many nodes can choose the same relay. LEST load-table Dijkstra coordinates them with two components: a sequential tree construction with within-round load booking, and a shared, tiered load table that supplies the rates.
+
+\paragraph{Sequential construction with within-round booking} The sink processes nodes in increasing distance from the sink. For each node $i$ that does not yet have a route, it runs Dijkstra from $i$ to the sink over the cost
+\begin{equation}
+w(j,k) = \bigl[e_{\mathrm{tx}}(j,k)+e_{\mathrm{rx}}\bigr]\cdot\frac{E_0}{E_j}\cdot\Bigl(1+\kappa\,\frac{A_j}{\bar r}\Bigr),\label{eq:lest}
+\end{equation}
+where $A_j$ is the traffic already booked through node $j$ in this round's construction, $\bar r$ the mean node rate and $\kappa$ the load weight. The whole path is then fixed. Every node on it that had no route takes its next hop from the path, and node $i$'s rate is added to $A_j$ for every node $j$ on the path. A node whose route is already fixed keeps its single next hop, so later paths that reach it follow its existing route and the result is always a tree. Later nodes therefore see busy relays as more expensive. The extra cost is proportional to the booked traffic, so a heavily used relay is avoided whenever a nearly equivalent alternative exists, while a relay with no good alternative is still used. With $\kappa=0$ the construction is exactly battery-weighted Dijkstra; a unit test checks this. Algorithm~\ref{alg:lest} gives the procedure and Fig.~\ref{fig:booking} an example.
+
+\paragraph{The LEST load table} The rates come from a Lightweight State Table (LEST), a coordination pattern from our earlier work on fuzzy Q-learning, reused here without its learning layer and with load in place of energy. Node $i$ measures its own rate $r_i$ as its mean packets per round over the last 24 rounds and normalises it, $x_i = 1 - r_i/(2\,r_{\max})$, where $r_{\max}$ is the largest per-node rate in the pre-deployment history. It maps $x_i$ to one of four tiers $q_i\in\{\text{Critical},\text{Low},\text{Medium},\text{High}\}$ with boundaries 0.15, 0.40 and 0.75. The tier changes only when a boundary is crossed \emph{and} $x_i$ has moved by more than a hysteresis band of 0.05 since the previous report, so a node sitting on a boundary does not flap. The tier travels in one byte on data packets the node already sends, and the sink broadcasts all tiers, 2 bits per node, in the round's advertisement. Both costs are charged (Section~\ref{sec:packet}). The sink decodes each tier to its interval midpoint, $\tilde r_i = 2\,r_{\max}(1-\mathrm{mid}(q_i))$, and uses $\tilde r_i$ for booking. Energy is \emph{not} tiered: Eq.~\eqref{eq:lest} uses the exact battery, as battery-weighted Dijkstra does. Section~\ref{sec:ablation} shows why: with the original LEST trigger a slowly draining battery never moves by more than the band between two reports, so its tier never changes.
+
+\begin{algorithm}[t]
+\caption{LEST load-table Dijkstra: one round at the sink}\label{alg:lest}
+\small
+\begin{algorithmic}[1]
+\Require alive nodes $V$, batteries $E_j$, decoded LEST rates $\tilde r_j$, link energies $e_{\mathrm{tx}}(j,k)$, $e_{\mathrm{rx}}$, load weight $\kappa$
+\Ensure parent function $p$ (the round's routing tree)
+\State $A_j\gets 0$ and $p(j)\gets\bot$ for all $j\in V$; \quad $\bar r\gets$ mean of $\tilde r_j$ over $V$
+\For{$i\in V$ in increasing distance to the sink}
+  \If{$p(i)\neq\bot$} \textbf{continue} \Comment{already on an earlier path}
+  \EndIf
+  \State $m_j\gets (E_0/E_j)\,(1+\kappa A_j/\bar r)$ for all $j$
+  \State build the graph with arc weights $[e_{\mathrm{tx}}(j,k)+e_{\mathrm{rx}}]\,m_j$; for every $j$ with $p(j)\ne\bot$ keep only the arc $j\to p(j)$
+  \State $P\gets$ Dijkstra least-cost path from $i$ to the sink
+  \For{each node $u$ on $P$, excluding the sink}
+    \If{$p(u)=\bot$} $p(u)\gets$ successor of $u$ on $P$ \EndIf
+    \State $A_u\gets A_u+\tilde r_i$ \Comment{book $i$'s traffic on its path}
+  \EndFor
+\EndFor
+\State \Return $p$
+\end{algorithmic}
+\end{algorithm}
+
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}[>=Stealth, node distance=1.2cm,
+  nd/.style={circle, draw=black!70, fill=white, inner sep=1.4pt, minimum size=5.5mm, font=\scriptsize},
+  sk/.style={rectangle, draw=black!80, fill=black!10, minimum size=6mm, font=\scriptsize}]
+\begin{scope}
+  \node[sk] (s) at (0,0) {sink};
+  \node[nd] (a) at (1.6,0.55) {$a$};
+  \node[nd] (b) at (1.6,-0.65) {$b$};
+  \node[nd] (x) at (3.2,0.9) {$x$};
+  \node[nd] (y) at (3.2,-0.2) {$y$};
+  \draw[->, very thick, black!80] (x) -- (a);
+  \draw[->, very thick, black!80] (a) -- (s);
+  \node[font=\scriptsize, align=center] at (1.7,-1.55) {(a) $x$ routes via $a$;\\ book $A_a \mathrel{+}= \tilde r_x$};
+  \node[font=\scriptsize, fill=black!8, rounded corners=1pt, inner sep=1.5pt] at (1.6,1.15) {$A_a=\tilde r_x$};
+\end{scope}
+\begin{scope}[xshift=4.4cm]
+  \node[sk] (s2) at (0,0) {sink};
+  \node[nd] (a2) at (1.6,0.55) {$a$};
+  \node[nd] (b2) at (1.6,-0.65) {$b$};
+  \node[nd] (x2) at (3.2,0.9) {$x$};
+  \node[nd] (y2) at (3.2,-0.2) {$y$};
+  \draw[->, very thick, black!80] (x2) -- (a2);
+  \draw[->, very thick, black!80] (a2) -- (s2);
+  \draw[->, densely dashed, black!45] (y2) -- (a2);
+  \draw[->, very thick, black!80] (y2) -- (b2);
+  \draw[->, very thick, black!80] (b2) -- (s2);
+  \node[font=\scriptsize, align=center] at (1.7,-1.55) {(b) $a$ now costs more for $y$;\\ $y$ takes $b$ if nearly as cheap};
+\end{scope}
+\end{tikzpicture}
+\caption{Within-round booking. Node $x$ is routed first and its traffic is booked on relay $a$. When $y$ is routed, $a$'s cost in Eq.~\eqref{eq:lest} has risen by the factor $1+\kappa A_a/\bar r$, so $y$ takes relay $b$ when its path is nearly as cheap. Battery-weighted Dijkstra would send both through $a$.}\label{fig:booking}
+\end{figure}
+
+\paragraph{Complexity} Each Dijkstra run on the dense graph costs $O(n^2)$, and at most one run is made per node that lacks a route when it is reached, so a round costs $O(n^3)$ in the worst case. In practice many nodes are fixed by earlier paths. The measured time is about 25~ms per round at $n=100$ on one CPU core, against under 1~ms for battery-weighted Dijkstra and about 0.2~s for one LP solve. Faster shortest-path algorithms~\cite{duan2025sorting} would change only this time, not the tree.
+
+\subsection{Upper reference: the LP planner}\label{sec:lp-planner}
+To measure what full flow optimisation adds, the sink re-solves the LP~\eqref{eq:lp-flow}--\eqref{eq:lp-energy} every round. The current batteries $E_i$ replace $E_0$, and each node generates $L\hat r_i$ bits per round, where $\hat r_i$ is its expected rate over the next 24 rounds. A small total-energy term breaks ties among equally long-lived plans:
+\begin{equation}
+\max\; T - \mu\textstyle\sum_{ij} f_{ij}\,\bigl(e_{\mathrm{tx}}(i,j)+e_{\mathrm{rx}}\bigr)/E_0, \qquad \mu=10^{-3}.\label{eq:tiebreak}
+\end{equation}
+The solution gives the fraction of each node's traffic to send to each next hop. In each round every node sends to one next hop, rotating among its LP next hops in proportion to those fractions (weighted round-robin), so each round is still a single tree. We call this configuration v2. Version v1 re-solves every 4 rounds without the tie-break. The rate $\hat r_i$ comes from additive Holt-Winters~\cite{holt2004forecasting,winters1960forecasting} with season length 24 ($\alpha=0.05$, $\beta=0$, $\gamma=0.1$; on Intel data $\gamma=0.3$), updated with the traffic the sink has just received. The ablation replaces it with a fixed historical mean. The LP is solved with HiGHS~\cite{huangfu2018highs}.
+
+\subsection{Other reference methods}\label{sec:baselines}
+\paragraph{MADII rebuild} No code was released, so the network, the reward, the metrics and the two-stage training of~\cite{yang2025madii} were rebuilt in PyTorch: an Informer encoder ($d_{\mathrm{model}}=128$, 2 layers, 4 heads), 1{,}000 episodes (300 imitation episodes from FCM, HBA and POA in rotation, then 700 $\varepsilon$-greedy), Adam with learning rate $10^{-4}$, and Double DQN~\cite{vanhasselt2016double} over 101 candidate next hops. The paper does not say how per-sensor Q-values form one training target. Averaging them before the loss let the network collapse to direct transmission, so each sensor's chosen value is regressed on the shared round return instead. Because all 100 sensors explore at once, the paper's $\varepsilon$ schedule ($1.0\to0.1$) randomises the whole network, so its shape is kept and scaled to $0.1\to0.01$. To check that these two choices do not explain the result, we also ran the paper's schedule and the paper's full model size (27.3~M parameters). Both landed in the same 8--11\% band (Section~\ref{sec:static}). MADII was trained on constant traffic and is not retrained for the time-varying scenarios.
+\paragraph{EBR-DA, as specified} The node weight is $0.6(1-E/E_0)^2+0.4\,b^2$, with $b$ the buffer occupancy, over a hop tree with an 80~m radius~\cite{mahdi2018ebrda}, and each node forwards to its lightest neighbour one hop nearer the sink. Our model has no buffers, so occupancy is a node's traffic relative to the busiest node's. A node with no neighbour in range forwards to its nearest node nearer the sink (bridging); without bridging, isolated nodes die within a few rounds.
+\paragraph{Dijkstra variants (negative results)} We also test the following variants:
+\begin{itemize}[leftmargin=*]
+  \item \emph{Predictive Dijkstra.} Each battery is reduced by a reserve for the extra load that Holt-Winters expects, $E_{\mathrm{eff},i}=\max(E_i-\lambda R_i,\,0.05E_i)$.
+  \item \emph{Lifetime Dijkstra.} The cost is weighted by forecast load or by forecast rounds left.
+  \item \emph{Receiver-weighted Dijkstra.} The receive cost is weighted by the receiver's battery.
+  \item \emph{Price-guided Dijkstra.} The cost is scaled by the LP's dual energy prices, refreshed daily.
+  \item \emph{RL warm-started from Dijkstra.} A 145-parameter network multiplies Eq.~\eqref{eq:battery} by $\exp(m_\theta(\phi_i))$ and is trained by PGPE~\cite{sehnke2010pgpe}. Its zero initial output makes the untrained policy exactly battery Dijkstra.
+\end{itemize}
+Each variant's settings were tuned on validation deployments (Section~\ref{sec:setup}).
+
+\subsection{Characteristics of the evaluated algorithms}
+Table~\ref{tab:characteristics} summarises what each evaluated router needs.
+
+\begin{widetab}
+\centering
+\caption{Characteristics of the evaluated algorithms ($n=100$; times on one CPU core).}\label{tab:characteristics}
+\footnotesize
+\scriptsize\setlength{\tabcolsep}{3pt}\begin{tabularx}{\textwidth}{@{}L{0.17\textwidth}L{0.1\textwidth}XL{0.15\textwidth}L{0.1\textwidth}L{0.14\textwidth}L{0.09\textwidth}@{}}
+\toprule
+Algorithm & Decided by & Information used & Work per round & Training & Extra control bits & Time per round\\
+\midrule
+Min-energy Dijkstra & sink & positions & one Dijkstra & none & 0 & $<1$~ms\\
+Battery-weighted Dijkstra & sink & + exact batteries & one Dijkstra & none & 0 & $<1$~ms\\
+\textbf{LEST load-table Dijkstra} & sink & + 4-tier load per node & $\le n$ Dijkstra runs & none & 8/data packet + $2n$/round & $\approx25$~ms\\
+LP planner v2 (reference) & sink & batteries + forecast rates & one LP (HiGHS) & HW fit & 0 & $\approx0.2$~s\\
+Predictive / price-guided Dijkstra & sink & + forecast or LP prices & one Dijkstra (+ daily LP) & HW fit & 0 & $<1$~ms\\
+EBR-DA~\cite{mahdi2018ebrda} & sink, per node rule & energy, buffer of neighbours & hop tree + local choice & none & 0 (not charged) & $<1$~ms\\
+MADII~\cite{yang2025madii} & sink (centralised execution) & node states & Informer over $100\times101$ hops & 1{,}000 episodes & 0 & GPU in~\cite{yang2025madii}\\
+\bottomrule
+\end{tabularx}
+\end{widetab}

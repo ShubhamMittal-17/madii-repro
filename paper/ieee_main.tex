@@ -1,0 +1,39 @@
+%% Manuscript for the IEEE Internet of Things Journal, IEEEtran class (two columns).
+%% Build: latexmk -pdf ieee_main.tex   (from the paper/ directory)
+\documentclass[journal]{IEEEtran}
+\input{preamble}
+\newenvironment{widetab}{\begin{table*}[tp]}{\end{table*}}   % two columns: wide tables span both
+\begin{document}
+
+\title{Does Energy-Efficient WSN Routing Need Learning? A Benchmark Against the Provable Optimum and a Coordinated Dijkstra Over a Shared Load Table}
+
+%% AUTHORS: replace the placeholders.
+\author{[Author 1], [Author 2], and [Supervisor]%
+\thanks{The authors are with the [Department], Netaji Subhas University of Technology, New Delhi 110078, India (e-mail: [email]).}}
+
+\maketitle
+
+\begin{abstract}
+\input{body/abstract}
+\end{abstract}
+
+\begin{IEEEkeywords}
+Wireless sensor networks, network lifetime, energy-efficient routing, load balancing, maximum-lifetime linear program, deep reinforcement learning, Internet of Things.
+\end{IEEEkeywords}
+
+\input{body/intro}
+\input{body/related}
+\input{body/model}
+\input{body/methods}
+\input{body/setup}
+\input{body/results}
+\input{body/discussion}
+\input{body/conclusion}
+
+\section*{Data Availability}
+The simulator, every router, the result files and the scripts that regenerate every table and figure are available at [repository URL]. The Intel Berkeley Lab data are publicly available~\cite{intellab2004}.
+
+\bibliographystyle{IEEEtran}
+\bibliography{refs}
+
+\end{document}

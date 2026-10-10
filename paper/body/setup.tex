@@ -1,0 +1,14 @@
+\section{Evaluation protocol}\label{sec:setup}
+
+\paragraph{Deployments and data splits} The held-out test set has 30 deployments (seeds 0--29) per scenario. All tuning uses separate validation deployments (seeds 500--511; for the RL warm start, 500--519), and RL training uses seeds of 1{,}000 and above. On the Intel Lab bench, batteries, Holt-Winters and the send-on-delta thresholds were set on the first 14 days. The test then ran once on 27 deployments starting every 8 hours in the later days. Every method sees the same deployments and traffic (A14).
+
+\paragraph{Tuning} Each method's free settings were chosen on validation deployments, and only the best setting was run on the test set. For LEST Dijkstra, $\kappa\in\{0.03,\dots,10\}$ and two build orders were tried; nearest-first with $\kappa=1$ was best. The LEST tiers, band and trigger were taken unchanged from the original LEST design, not tuned. For the LP planner, re-solving every 8, 4, 2 and 1 rounds gave 86.9\%, 91.5\%, 94.1\% and 96.8\% of the oracle on validation, and the tie-break added up to 0.7 points. Two candidate changes were rejected on validation:
+\begin{itemize}[leftmargin=*]
+  \item Carrying round-robin credits across re-solves scored 81.1\%, because each re-solve already corrects past deviations.
+  \item A burst-triggered re-solve fired on Poisson noise in 70--75\% of rounds.
+\end{itemize}
+The Dijkstra variants and EBR-DA's reconstructed cost were tuned the same way (32 settings for EBR-DA).
+
+\paragraph{Metrics} The primary metric is FND as a percentage of the deployment's ceiling. We report its mean, its worst case over deployments, and wins/ties/losses (W/T/L) against battery-weighted Dijkstra, deployment by deployment. For the time-varying scenarios, the mean $S$ weights R, N and B equally. D is reported beside it.
+
+\paragraph{Statistical testing} All comparisons are paired by deployment, so we use the two-sided Wilcoxon signed-rank test~\cite{wilcoxon1945}, as recommended for comparing algorithms over multiple problem instances~\cite{demsar2006}. The test makes no normality assumption, and lifetime ratios are bounded and skewed. Zero differences, where a method produces exactly the same lifetime, are counted as ties and dropped, following Wilcoxon. Within each family of comparisons the $p$-values are adjusted with the Holm procedure~\cite{holm1979}. As an effect size we report the matched-pairs rank-biserial correlation $r$~\cite{kerby2014}, which equals $+1$ when a method is better on every deployment. We use a significance level of 0.05 after adjustment.

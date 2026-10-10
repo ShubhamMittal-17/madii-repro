@@ -1,0 +1,88 @@
+\section{System model and assumptions}\label{sec:model}
+
+\subsection{Network model}
+The network has $n$ static sensor nodes $V=\{1,\dots,n\}$ and one sink $s$. In the main setting, which is MADII's published setting~\cite{yang2025madii}, $n=100$ nodes are placed uniformly at random in a $500\times500$~m field with the sink at the centre. Every node starts with energy $E_0$. Time is divided into rounds. In round $t$ node $i$ generates $k_i(t)$ packets of $L$ bits, and every packet is forwarded to the sink along the round's routing tree, described by a parent function $p_t:V\to V\cup\{s\}$. Relays forward everything they receive, with no aggregation. The network lifetime $T$ is the number of rounds until the first node exhausts its battery (FND). We also report the rounds until 10\%, 25\% and 50\% of the nodes are dead, the data delivered, energy efficiency (kbit delivered per joule) and hops per packet.
+
+\subsection{Radio energy model}\label{sec:radio}
+Transmitting $k$ bits over distance $d$ and receiving $k$ bits cost
+\begin{align}
+E_{\mathrm{TX}}(k,d) &= \begin{cases} k E_{\mathrm{elec}} + k\,\varepsilon_{\mathrm{fs}} d^2, & d<d_0,\\ k E_{\mathrm{elec}} + k\,\varepsilon_{\mathrm{amp}} d^4, & d\ge d_0,\end{cases}\label{eq:tx}\\
+E_{\mathrm{RX}}(k) &= k E_{\mathrm{elec}}, \qquad d_0=\sqrt{\varepsilon_{\mathrm{fs}}/\varepsilon_{\mathrm{amp}}}\approx 87.7~\mathrm{m}.\label{eq:rx}
+\end{align}
+We write $e_{\mathrm{tx}}(i,j)=E_{\mathrm{TX}}(1,d_{ij})$ and $e_{\mathrm{rx}}=E_{\mathrm{elec}}$ for the per-bit costs. Table~\ref{tab:params} lists the parameters.
+
+\begin{table}[t]
+\centering
+\caption{Network, radio and packet parameters (MADII's Table~I~\cite{yang2025madii}).}\label{tab:params}
+\footnotesize
+\begin{tabularx}{\linewidth}{@{}L{0.4\linewidth}X@{}}
+\toprule
+Parameter & Value\\
+\midrule
+Sensors, field, sink & 100, uniform in $500\times500$~m, centre\\
+Initial energy $E_0$ & 0.5~J (Intel Lab bench: 1.0 and 1.5~J)\\
+Data packet $L$ & 4{,}000 bits\\
+Route advertisement $L_c$ & 100 bits per round, to every node\\
+$E_{\mathrm{elec}}$ & 50~nJ/bit\\
+$\varepsilon_{\mathrm{fs}}$ / $\varepsilon_{\mathrm{amp}}$ & 10~pJ/bit/m$^2$ / 0.0013~pJ/bit/m$^4$\\
+Crossover distance $d_0$ & 87.7~m\\
+Aggregation at relays & None (full forwarding)\\
+LEST load report & +8 bits on each data packet\\
+LEST snapshot & +2 bits per node in the advertisement\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Packet-layer model}\label{sec:packet}
+The study is round-based rather than slot-based, but every bit a router adds is charged at the packet layer, so the routers pay for their own coordination. Three packet types exist:
+\begin{enumerate}[label=(\roman*), leftmargin=*]
+  \item \textbf{Data packets} of $L=4{,}000$ bits. Each packet is sent hop by hop to the sink. At every hop the sender pays $E_{\mathrm{TX}}(L,d)$ and the receiver $E_{\mathrm{RX}}(L)$.
+  \item \textbf{The route advertisement}, a broadcast of $L_c=100$ bits that the sink sends once per round. Every alive node pays $E_{\mathrm{RX}}(L_c)$ to receive its next hop. This is the control cost MADII's setting already charges, and it is identical for every method.
+  \item \textbf{LEST traffic}, charged only to the LEST router. Each data packet carries an extra byte holding the sender's load report, so $L$ becomes $4{,}008$ bits for every hop of every packet. The advertisement carries the snapshot of all load tiers, 2 bits per node, so $L_c$ becomes $100+2n=300$ bits at $n=100$.
+\end{enumerate}
+A relay that cannot afford a transmission dies within the round, and the packets routed through it in that round are lost. A source whose path fails retries directly to the sink if its battery allows. The delivery ratio is reported with the results (Table~\ref{tab:traffic}). No acknowledgements, retransmissions or MAC frames are modelled, and the MAC is assumed to schedule transmissions without collisions; see assumption A5 below. This is MADII's idealisation, and we keep it so that the comparison is made on MADII's own terms.
+
+\subsection{Traffic models}\label{sec:traffic}
+\paragraph{Static traffic} Every node sends one packet per round, $k_i(t)=1$, as in MADII.
+\paragraph{Time-varying traffic} One day is 24 rounds, and every method gets 3 days of pre-deployment history. There are four scenarios:
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Daily surge (R).} The 20\% of nodes nearest a random point form a hotspot. They send Poisson traffic with mean 4 packets per round during a 6-round evening and 0.5 otherwise; all other nodes have mean 1.
+  \item \textbf{Constant (N).} $k_i(t)=1$ for every node and round.
+  \item \textbf{Bursts (B).} R plus random bursts: each round, with probability 0.05, a random node sends five times its rate for 4 rounds.
+  \item \textbf{Pattern shift (D).} R with the hotspot moved to 20 different nodes after two days. D is reported as a robustness test, and nothing is tuned on it.
+\end{itemize}
+\paragraph{Real traffic (Intel Berkeley Lab)} The Intel Lab dataset~\cite{intellab2004} holds about 2.3 million readings from 54 motes. Traffic is derived by send-on-delta reporting with one-hour rounds. Each mote sends one heartbeat per hour, plus one packet whenever its temperature or light has moved by more than 0.5~$^\circ$C or 100~lux since its last report. This gives about 3.4 packets per mote-hour, and the busiest hour carries 6.6 times the traffic of the quietest. Readings from motes below 2.4~V or with temperatures outside 0--50~$^\circ$C are dropped. The 31 days before most motes died are used. The real mote layout ($40\times31$~m) is scaled by 12 to MADII's field, because at lab scale the direct link to the sink is almost always cheapest.
+
+\subsection{Assumptions}\label{sec:assumptions}
+All results hold under the following assumptions. A1--A8 are those of MADII's setting~\cite{yang2025madii}, which we keep so that the comparison is fair. A9--A15 make explicit what that setting leaves implicit.
+\begin{enumerate}[label=\textbf{A\arabic*}, leftmargin=*]
+  \item \textbf{Static, homogeneous nodes.} Nodes do not move. All start with the same energy $E_0$; there is no energy harvesting and no battery replacement.
+  \item \textbf{One static sink with unlimited resources.} The sink is mains-powered. Its computation (Dijkstra, LP solves) is not charged to any sensor.
+  \item \textbf{Free-space terrain, no barriers.} There are no obstacles, walls or terrain effects. Link cost depends only on Euclidean distance through Eqs.~\eqref{eq:tx}--\eqref{eq:rx}.
+  \item \textbf{Full reachability with power control.} Any node can reach any other node and the sink by adjusting its transmit power, paying the distance-dependent cost. The exception is EBR-DA, which is restricted to the 80~m range its paper specifies.
+  \item \textbf{Ideal channel and MAC.} There is no packet loss from fading, noise, interference or collisions, and no retransmissions or acknowledgements. Links are symmetric.
+  \item \textbf{Radio-only energy.} Only transmission and reception of bits consume energy. Sensing, processing, idle listening and sleep are not modelled.
+  \item \textbf{No aggregation or compression.} Relays forward every bit they receive.
+  \item \textbf{Round-based operation.} Routes are fixed within a round. The sink computes the round's routing before the round and broadcasts it in the 100-bit advertisement, which every alive node receives. Rounds are synchronised.
+  \item \textbf{Known positions.} The sink knows every node's position, and hence every link cost.
+  \item \textbf{Known residual energy.} Every method that uses energy sees each node's exact residual battery at the start of each round. This is assumed free and identical for all methods, so it adds no bias between them.
+  \item \textbf{Observed traffic only.} The sink learns each node's packet count for round $t$ when those packets arrive, after the round. No method sees future traffic except the oracle ceiling and the explicitly labelled perfect-forecast diagnostic.
+  \item \textbf{Failure only by depletion.} Nodes fail only by running out of energy. There are no hardware faults, no mobility and no security attacks.
+  \item \textbf{Failure mechanics.} A relay that cannot afford its transmission dies within the round, and the traffic through it is lost; affected sources retry directly to the sink if they can.
+  \item \textbf{Shared randomness.} Deployments are drawn from fixed seeds, and every method sees the same deployments and traffic, so all comparisons are paired.
+  \item \textbf{Scaled real layout.} On the Intel Lab bench the layout is scaled to the $500$~m field and traffic is derived from sensor readings. Measured radio traffic and the dataset's connectivity are not used.
+\end{enumerate}
+The idealised channel (A3--A5) is the main limitation, and Section~\ref{sec:threats} discusses its consequences.
+
+\subsection{Problem statement and lifetime ceiling}\label{sec:problem}
+A routing policy chooses $p_t$ every round from the information available before the round (A8--A11). The goal is to maximise $T$. Let $f_{ij}\ge0$ be the total bits sent on link $i\to j$ over the whole lifetime. For static traffic the maximum lifetime $T^*$ solves the LP~\cite{chang2004maximum}
+\begin{align}
+&\max_{T,\,f\ge0}\; T \quad\text{subject to, for every } i\in V,\nonumber\\
+&\textstyle\sum_j f_{ij}-\sum_k f_{ki} = L\,T,\label{eq:lp-flow}\\
+&\textstyle\sum_j f_{ij}\,e_{\mathrm{tx}}(i,j)+\sum_k f_{ki}\,e_{\mathrm{rx}} + T\,E_{\mathrm{RX}}(L_c) \le E_0.\label{eq:lp-energy}
+\end{align}
+Because the LP allows fractional, time-shared routing, any sequence of trees that keeps every node alive for $T$ rounds gives a feasible point, so $T\le T^*$. For time-varying traffic the ceiling is an oracle that knows all future traffic. It is the largest $T$ for which a flow carries every node's first-$T$-rounds traffic within its battery:
+\begin{equation}
+\textstyle\sum_j f_{ij}-\sum_k f_{ki} = L\sum_{t<T} k_i(t),\label{eq:oracle}
+\end{equation}
+with the energy constraint~\eqref{eq:lp-energy} unchanged, found by bisection on $T$. Every method is scored as $100\,T/T^*$, the percentage of its deployment's ceiling it reaches. The ceiling was verified in two ways. On small networks, exhaustive enumeration of every acyclic routing tree never exceeds it. On every 100-node deployment, no policy exceeded it.
