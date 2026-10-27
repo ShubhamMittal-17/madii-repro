@@ -23,13 +23,16 @@ from predictive import ForecastLP, LESTDijkstra, LoadAwareDijkstra
 
 BETAS = (0.01, 0.10, 0.50)
 _net = None
+CHECKPOINT = "checkpoints/madii_correct_reward_seed0_best.pt"
 
 
 def _madii():
     global _net
     if _net is None:
+        import torch
+        torch.set_num_threads(1)
         from evaluate import load
-        _net = load("checkpoints/madii_v3_best.pt")[0]
+        _net = load(CHECKPOINT)[0]
     from train import greedy_action
     return lambda w: greedy_action(_net, w)
 
@@ -43,7 +46,7 @@ def routers(w, ones):
             "Load-aware Dijkstra, LEST load table (4 tiers)": lambda: LESTDijkstra(w, hist, levels="lest", rule="original", band=0.05, exact_energy=True),
             "Planner v1 (LP every 4 rounds)": lambda: ForecastLP(w, hist, forecaster="history-mean"),
             "Planner v2 (LP every round, ours)": lambda: ForecastLP(w, hist, forecaster="history-mean", resolve_every=1, mu=1e-3),
-            "MADII (v3 rebuild)": _madii}
+            "MADII (corrected reconstruction, seed 0)": _madii}
 
 
 def job(s):
@@ -51,17 +54,27 @@ def job(s):
     out = {}
     for name in ("Battery Dijkstra", "Min-energy Dijkstra", "Load-aware Dijkstra (ours, no LP)",
                  "Load-aware Dijkstra, LEST load table (4 tiers)", "Planner v1 (LP every 4 rounds)",
-                 "Planner v2 (LP every round, ours)", "MADII (v3 rebuild)"):
+                 "Planner v2 (LP every round, ours)", "MADII (corrected reconstruction, seed 0)"):
         w = E.WSN(seed=s, traffic=ones[72:])
         pol = routers(w, ones)[name]()
+        if name.startswith("MADII"):
+            import torch
+            torch.manual_seed(1000000 + s)
         n0 = w.n * w.e0
-        ddv = gen = retry = 0.0; hops = []; rec = {}
+        ddv = gen = retry = hop_total = packet_total = 0.0; rec = {}
         while w.round < 400:
             p = w._sanitize(pol(w))
-            hops.append(float(np.mean(w._depth(p)[w.alive] + 1)))
+            # _depth already includes the source-to-sink link. Weight by generated
+            # packets, rather than giving a sparse late round the same weight.
+            counts = w.own_bits() / w.L
+            hop_total += float(np.sum(w._depth(p)[w.alive] * counts[w.alive]))
+            packet_total += float(counts[w.alive].sum())
             info = w.step(p)
-            ddv += info["b_succ"].sum(); retry += info["b_retry"].sum()
-            gen += info["b_succ"].sum() + info["b_fail"].sum()
+            # LEST's 8-bit header consumes radio energy, but is not application data.
+            payload_fraction = 4000.0 / w.L
+            ddv += info["b_succ"].sum() * payload_fraction
+            retry += info["b_retry"].sum() * payload_fraction
+            gen += (info["b_succ"].sum() + info["b_fail"].sum()) * payload_fraction
             for b in BETAS:
                 if b not in rec and info["n_dead"] >= np.ceil(b * w.n):
                     rec[b] = {"rounds": info["round"], "DDV": float(ddv), "EE": float(ddv / max(n0 - w.E.sum(), 1e-12))}
@@ -69,7 +82,7 @@ def job(s):
                 break
         out[name] = {"at": {str(b): rec.get(b, {"rounds": w.round, "DDV": float(ddv), "EE": float(ddv / max(n0 - w.E.sum(), 1e-12))})
                             for b in BETAS},
-                     "delivery": float(ddv / max(gen, 1e-12)), "hops": float(np.mean(hops)), "retry": float(retry / max(ddv, 1e-12))}
+                     "delivery": float(ddv / max(gen, 1e-12)), "hops": float(hop_total / max(packet_total, 1e-12)), "retry": float(retry / max(ddv, 1e-12))}
     return s, out
 
 

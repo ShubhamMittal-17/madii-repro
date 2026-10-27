@@ -332,7 +332,14 @@ class LoadAwareDijkstra:
         C = w.etx_bit[:n].copy(); C[:, :n] += 50e-9
         keys = -w.d2s if self.order == "far" else w.d2s
         for i in np.argsort(keys):
+            if not w.alive[i]:
+                continue
             if parent[i] >= 0:
+                # Its route was fixed as a relay, but its own traffic is still unbooked.
+                u = i
+                while u != n:
+                    A[u] += rate[i]
+                    u = parent[u]
                 continue
             m = base * (1.0 + self.kappa * A / ref)
             G = np.zeros((n + 1, n + 1))
@@ -357,6 +364,7 @@ class LoadAwareDijkstra:
                 if u < 0:
                     break
         parent[parent < 0] = n
+        self.booked_load = A.copy()
         return parent
 
 

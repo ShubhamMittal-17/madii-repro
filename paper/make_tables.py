@@ -104,7 +104,7 @@ def static():
     c["MADII"] = {"pct_ceiling": madii["pct"], "FND": madii["0.01"]["SR"]}
     c["Direct"] = {"pct_ceiling": e["direct"]["pct"], "FND": e["direct"]["0.01"]["SR"]}
     wil = {x["name"]: x for x in J("results_wilcoxon.json")["static_vs_battery"]}
-    rows = [("LP-flow adaptive (LP every 4 rounds)", "LP-flow adaptive (classical)", "LP-flow adaptive"),
+    rows = [("LP-flow adaptive (LP every 8 rounds)", "LP-flow adaptive (classical)", "LP-flow adaptive"),
             ("RL warm-started from Dijkstra", "RL-Dijkstra warm-start [dijkstra_rl_v2]", "RL warm-started from Dijkstra"),
             ("Battery-weighted Dijkstra", "battery Dijkstra (classical)", None),
             ("LP-flow static (solved once)", "LP-flow static (classical)", "LP-flow static"),
@@ -126,7 +126,7 @@ def static():
 def wilcoxon():
     w = J("results_wilcoxon.json")
     pick = lambda tab, name: next(x for x in w[tab] if x["name"] == name)
-    rows = [("Time-varying traffic, R+N+B+D (120 deployments)", None),
+    rows = [("Time-varying traffic, R/N/B means per topology ($n=30$)", None),
             ("LEST Dijkstra vs battery Dijkstra", pick("dynamic_vs_battery", "LEST load-table Dijkstra")),
             ("LEST Dijkstra vs load-aware Dijkstra, exact load", None, ),
             ("LP planner v2 vs LEST Dijkstra", pick("dynamic_vs_lest", "LP planner v2")),
@@ -136,13 +136,6 @@ def wilcoxon():
             ("Load table only vs LEST Dijkstra", pick("dynamic_vs_lest", "Load table only (no battery)")),
             ("EBR-DA vs LEST Dijkstra", pick("dynamic_vs_lest", "EBR-DA")),
             ("MADII vs LEST Dijkstra", pick("dynamic_vs_lest", "MADII")),
-            ("Intel Lab traffic, $E_0=1.0$~J (27 deployments)", None),
-            ("LEST Dijkstra vs battery Dijkstra", pick("intel_vs_battery", "LEST load-table Dijkstra")),
-            ("LP planner v2 vs LEST Dijkstra", pick("intel_vs_lest", "LP planner v2")),
-            ("LP planner v2 vs battery Dijkstra", pick("intel_vs_battery", "LP planner v2")),
-            ("Predictive vs battery Dijkstra", pick("intel_vs_battery", "Predictive Dijkstra")),
-            ("EBR-DA vs LEST Dijkstra", pick("intel_vs_lest", "EBR-DA")),
-            ("MADII vs LEST Dijkstra", pick("intel_vs_lest", "MADII")),
             ("Static traffic, MADII's setting (30 deployments)", None),
             ("RL warm-started vs battery Dijkstra", pick("static_vs_battery", "RL warm-started from Dijkstra")),
             ("LP-flow adaptive vs battery Dijkstra", pick("static_vs_battery", "LP-flow adaptive")),

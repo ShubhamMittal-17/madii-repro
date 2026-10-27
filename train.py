@@ -132,13 +132,17 @@ def target_value(net, tgt, s2, mask2, alive2):
     return (q * w).sum(1) / w.sum(1).clamp(min=1)
 
 
-def evaluate(net, seeds, betas=(0.01, 0.10, 0.25, 0.50), max_rounds=400, n=100):
+def evaluate(net, seeds, betas=(0.01, 0.10, 0.25, 0.50), max_rounds=400, n=100,
+             inference_seed=1000000):
+    was_training = net.training
     net.eval()
     rows = []
     for s in seeds:
         w = E.WSN(n=n, seed=s)
-        rows.append(E.run_episode(w, lambda ww: greedy_action(net, ww), betas, max_rounds))
-    net.train()
+        with torch.random.fork_rng(devices=[]):
+            torch.manual_seed(inference_seed + int(s))
+            rows.append(E.run_episode(w, lambda ww: greedy_action(net, ww), betas, max_rounds))
+    net.train(was_training)
     return {b: {k: float(np.mean([r[b][k] for r in rows])) for k in ("SR", "RS", "EE", "DDV")}
             for b in betas}
 
@@ -168,12 +172,14 @@ def main():
     ap.add_argument("--max-rounds", type=int, default=250)
     ap.add_argument("--eval-every", type=int, default=100)
     ap.add_argument("--eval-seeds", type=int, default=5)
+    ap.add_argument("--validation-start", type=int, default=500)
+    ap.add_argument("--seed", type=int, default=0)
     ap.add_argument("--threads", type=int, default=8)
     args = ap.parse_args()
 
     torch.set_num_threads(args.threads)
-    torch.manual_seed(0)
-    rng = np.random.default_rng(0)
+    torch.manual_seed(args.seed)
+    rng = np.random.default_rng(args.seed)
     Path("checkpoints").mkdir(exist_ok=True); Path("logs").mkdir(exist_ok=True)
     log = open(f"logs/{args.tag}.jsonl", "a")
 
@@ -234,7 +240,7 @@ def main():
                    "mins": round((time.time() - t0) / 60, 1)}
             print(json.dumps(rec), flush=True); log.write(json.dumps(rec) + "\n"); log.flush()
         if (ep + 1) % args.eval_every == 0 or ep + 1 == args.episodes:
-            ev = evaluate(net, range(args.eval_seeds), n=args.nodes)
+            ev = evaluate(net, range(args.validation_start, args.validation_start + args.eval_seeds), n=args.nodes)
             rec = {"ep": ep + 1, "eval": {str(b): {k: round(v, 1) for k, v in d.items()}
                                           for b, d in ev.items()}}
             print(json.dumps(rec), flush=True); log.write(json.dumps(rec) + "\n"); log.flush()

@@ -81,21 +81,40 @@ def table(title, rows, ref):
 def main():
     dyn = json.load(open("results_dynamic.json"))
     seeds = sorted(dyn["R"], key=int)
+    corrected_mad = "MADII-inspired, corrected (3 training seeds)"
+    if corrected_mad in dyn["R"][seeds[0]]:
+        topology = lambda m: [float(np.mean([dyn[s][k][m] for s in "RNB"])) for k in seeds]
+        pairs = [(LEST, BATT), (LP2, LEST), ("Load-aware Dijkstra (ours, no LP)", LEST),
+                 (LEST, "Load table only (ablation, no battery)"), (corrected_mad, BATT)]
+        rows = holm([dict(name=f"{SHORT.get(a,a)} vs {SHORT.get(b,b)}", method_a=a, method_b=b,
+                          **test(topology(a), topology(b))) for a,b in pairs])
+        result = {"unit": "R/N/B means within topology, n=30", "family": rows,
+                  "intel": "descriptive only: overlapping windows and right censoring"}
+        json.dump(result, open("results_wilcoxon.json", "w"), indent=2)
+        lines = table("Corrected synthetic evidence (30 topology averages)", rows, "the second named method")
+        lines += ["Holm adjustment covers exactly the five listed comparisons.",
+                  "The 120 topology/scenario cases are descriptive, not independent replicates.",
+                  "Intel windows overlap and are censored; no confirmatory window-level tests are reported."]
+        open("results_wilcoxon.md", "w").write("\n".join(lines)+"\n")
+        print("\n".join(lines))
+        return
     pooled = lambda m, scen: [dyn[s][k][m] for s in scen for k in seeds]
     out, js = ["# Wilcoxon signed-rank tests", ""], {}
 
-    # 1) time-varying traffic, pooled R+N+B+D (120 paired deployments)
+    # 1) average R/N/B within each topology; D remains an external scenario.
+    # The four scenarios reuse topologies and are not 120 independent samples.
     scen = ["R", "N", "B", "D"]
+    topology = lambda m: [float(np.mean([dyn[s][k][m] for s in "RNB"])) for k in seeds]
     others = [LP2, "Forecast LP v2, history mean (no forecast)", "Load-aware Dijkstra (ours, no LP)", BATT,
               "Price-guided Dijkstra (daily LP prices)", "Predictive Dijkstra, Holt-Winters",
               "Load table only (ablation, no battery)", "Static LP (solved once)", "Reactive LP coordinator",
               "EBR-DA (Mahdi et al. 2018, isolated nodes bridged)", "MADII (not retrained)"]
     for ref, tag in [(LEST, "lest"), (BATT, "battery")]:
-        rows = [dict(name=SHORT[m], **test(pooled(m, scen), pooled(ref, scen))) for m in others if m != ref]
+        rows = [dict(name=SHORT[m], **test(topology(m), topology(ref))) for m in others if m != ref]
         if ref == BATT:
-            rows.insert(1, dict(name=SHORT[LEST], **test(pooled(LEST, scen), pooled(BATT, scen))))
+            rows.insert(1, dict(name=SHORT[LEST], **test(topology(LEST), topology(BATT))))
         js[f"dynamic_vs_{tag}"] = holm(rows)
-        out += table(f"Time-varying traffic, R+N+B+D pooled (120 deployments), against {SHORT[ref]}", rows, SHORT[ref])
+        out += table(f"Time-varying traffic, R/N/B means per topology (n=30), against {SHORT[ref]}", rows, SHORT[ref])
 
     # 2) per scenario: the three headline comparisons
     rows = []
@@ -111,8 +130,11 @@ def main():
     for ref, tag in [("Load-aware Dijkstra, LEST load table (4 tiers)", "lest"), ("Battery Dijkstra", "battery")]:
         rows = [dict(name=SHORT.get(m, m), **test(it[m], it[ref])) for m in it if m != ref
                 and m not in ("Forecast LP v2, seasonal-naive",)]
+        # Overlapping trace windows are descriptive cases, not independent replicates.
         js[f"intel_vs_{tag}"] = holm(rows)
-        out += table(f"Intel Lab traffic, E0 = 1.0 J (27 deployments), against {SHORT.get(ref, ref)}", rows, SHORT.get(ref, ref))
+        for row in rows:
+            row['inferential_status'] = 'exploratory only: overlapping trace windows and right censoring'
+        out += table(f"Intel Lab traffic, E0 = 1.0 J (27 overlapping windows; exploratory tests only), against {SHORT.get(ref, ref)}", rows, SHORT.get(ref, ref))
 
     # 4) static traffic, MADII's setting
     st = json.load(open("results_compare.json"))

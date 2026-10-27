@@ -49,6 +49,23 @@ def test_relay_costs_more_for_relay_node():
     assert (before - w.E)[1] > float(E.etx(w.L, w.d2s[1])) + float(E.erx(w.LC))
 
 
+def test_reward_energy_is_per_round():
+    w = E.WSN(n=3, side=10.0, seed=2)
+    for _ in range(3):
+        before = w.E.copy()
+        info = w.step(P.direct(w))
+        assert approx(info["energy_consumed"], float((before - w.E).sum()), tol=1e-12)
+
+
+def test_reward_energy_includes_death_round():
+    w = E.WSN(n=3, side=10.0, seed=2)
+    w.E[0] = 1e-8
+    before = w.E.copy()
+    info = w.step(P.direct(w))
+    assert info["n_dead"] >= 1
+    assert approx(info["energy_consumed"], float((before - w.E).sum()), tol=1e-12)
+
+
 def test_fast_dijkstra_matches_reference():
     w = E.WSN(seed=4)
     for _ in range(60):

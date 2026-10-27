@@ -81,7 +81,7 @@ def paired():
 
 
 def static_bars():
-    rows = [("LP-flow adaptive (LP every 4 rounds)", "LP-flow adaptive (classical)", S1),
+    rows = [("LP-flow adaptive (LP every 8 rounds)", "LP-flow adaptive (classical)", S1),
             ("RL warm-started from Dijkstra", "RL-Dijkstra warm-start [dijkstra_rl_v2]", S2),
             ("Battery-weighted Dijkstra", "battery Dijkstra (classical)", S1),
             ("LP-flow static (solved once)", "LP-flow static (classical)", S1),

@@ -118,6 +118,7 @@ class WSN:
         own = self.own_bits()
         p = self._sanitize(parent)
         start_alive = self.alive.copy()
+        start_energy = self.E.copy()
         n_start = int(start_alive.sum())
 
         load = self._loads(p)
@@ -165,7 +166,7 @@ class WSN:
         self.alive &= ~died
         self.round += 1
 
-        consumed = float(self.e0 * n_start - self.E[start_alive].sum())
+        consumed = float((start_energy[start_alive] - self.E[start_alive]).sum())
         e_stand = float(etx(own[start_alive], self.d2s[start_alive]).sum())
         return {"round": self.round, "b_succ": b_succ, "b_retry": b_retry,
                 "b_fail": b_fail, "energy_consumed": consumed, "e_stand": e_stand,
