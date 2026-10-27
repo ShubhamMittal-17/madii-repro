@@ -1,0 +1,110 @@
+{"ep": 10, "stage": "IL", "eps": 0.1, "fnd_mean_last10": 7.7, "ep_reward": 14.98, "steps": 0, "mins": 0.0}
+{"ep": 20, "stage": "IL", "eps": 0.1, "fnd_mean_last10": 8.8, "ep_reward": 1.77, "steps": 0, "mins": 0.0}
+{"ep": 30, "stage": "IL", "eps": 0.1, "fnd_mean_last10": 7.7, "ep_reward": 6.42, "steps": 0, "mins": 0.1}
+{"ep": 40, "stage": "IL", "eps": 0.1, "fnd_mean_last10": 7.3, "ep_reward": 26.66, "steps": 0, "mins": 0.1}
+{"ep": 50, "stage": "IL", "eps": 0.1, "fnd_mean_last10": 7.0, "ep_reward": 60.31, "steps": 0, "mins": 0.1}
+{"ep": 60, "stage": "IL", "eps": 0.1, "fnd_mean_last10": 8.5, "ep_reward": 111.02, "steps": 0, "mins": 0.1}
+{"ep": 70, "stage": "IL", "eps": 0.1, "fnd_mean_last10": 10.7, "ep_reward": 30.51, "steps": 78, "mins": 0.8}
+{"ep": 80, "stage": "IL", "eps": 0.1, "fnd_mean_last10": 6.5, "ep_reward": 51.59, "steps": 143, "mins": 1.4}
+{"ep": 90, "stage": "IL", "eps": 0.1, "fnd_mean_last10": 11.4, "ep_reward": 100.74, "steps": 257, "mins": 2.5}
+{"ep": 100, "stage": "IL", "eps": 0.1, "fnd_mean_last10": 8.4, "ep_reward": 50.55, "steps": 341, "mins": 3.3}
+{"ep": 100, "eval": {"0.01": {"SR": 7.4, "RS": 29319.6, "EE": 316.5, "DDV": 2955.2}, "0.1": {"SR": 17.4, "RS": 64098.8, "EE": 320.1, "DDV": 6740.0}, "0.25": {"SR": 24.8, "RS": 83036.5, "EE": 331.6, "DDV": 9131.2}, "0.5": {"SR": 49.0, "RS": 131582.1, "EE": 411.7, "DDV": 14897.6}}}
+{"ep": 110, "stage": "IL", "eps": 0.1, "fnd_mean_last10": 11.1, "ep_reward": 49.04, "steps": 452, "mins": 4.4}
+{"ep": 120, "stage": "IL", "eps": 0.1, "fnd_mean_last10": 9.6, "ep_reward": 2.27, "steps": 548, "mins": 5.3}
+{"ep": 130, "stage": "IL", "eps": 0.1, "fnd_mean_last10": 8.1, "ep_reward": 46.53, "steps": 629, "mins": 6.2}
+{"ep": 140, "stage": "IL", "eps": 0.1, "fnd_mean_last10": 12.1, "ep_reward": 33.81, "steps": 750, "mins": 7.4}
+{"ep": 150, "stage": "IL", "eps": 0.1, "fnd_mean_last10": 12.3, "ep_reward": 83.93, "steps": 873, "mins": 8.5}
+{"ep": 160, "stage": "IL", "eps": 0.1, "fnd_mean_last10": 8.4, "ep_reward": 16.94, "steps": 957, "mins": 9.3}
+{"ep": 170, "stage": "IL", "eps": 0.1, "fnd_mean_last10": 7.2, "ep_reward": 28.49, "steps": 1029, "mins": 9.9}
+{"ep": 180, "stage": "IL", "eps": 0.1, "fnd_mean_last10": 5.5, "ep_reward": 40.88, "steps": 1084, "mins": 10.5}
+{"ep": 190, "stage": "IL", "eps": 0.1, "fnd_mean_last10": 8.7, "ep_reward": 38.87, "steps": 1171, "mins": 11.3}
+{"ep": 200, "stage": "IL", "eps": 0.1, "fnd_mean_last10": 10.3, "ep_reward": 28.9, "steps": 1274, "mins": 12.2}
+{"ep": 200, "eval": {"0.01": {"SR": 7.4, "RS": 28611.8, "EE": 301.7, "DDV": 2954.4}, "0.1": {"SR": 15.6, "RS": 56736.5, "EE": 300.9, "DDV": 6061.6}, "0.25": {"SR": 21.0, "RS": 67880.3, "EE": 286.5, "DDV": 7813.6}, "0.5": {"SR": 34.8, "RS": 86742.1, "EE": 300.0, "DDV": 11096.8}}}
+{"ep": 210, "stage": "IL", "eps": 0.1, "fnd_mean_last10": 8.2, "ep_reward": 90.49, "steps": 1356, "mins": 13.0}
+{"ep": 220, "stage": "IL", "eps": 0.1, "fnd_mean_last10": 9.0, "ep_reward": 76.07, "steps": 1446, "mins": 13.8}
+{"ep": 230, "stage": "IL", "eps": 0.1, "fnd_mean_last10": 9.0, "ep_reward": 21.15, "steps": 1536, "mins": 14.7}
+{"ep": 240, "stage": "IL", "eps": 0.1, "fnd_mean_last10": 9.5, "ep_reward": 73.42, "steps": 1631, "mins": 15.6}
+{"ep": 250, "stage": "IL", "eps": 0.1, "fnd_mean_last10": 7.5, "ep_reward": 9.37, "steps": 1706, "mins": 16.3}
+{"ep": 260, "stage": "IL", "eps": 0.1, "fnd_mean_last10": 15.5, "ep_reward": 276.7, "steps": 1861, "mins": 17.8}
+{"ep": 270, "stage": "IL", "eps": 0.1, "fnd_mean_last10": 10.8, "ep_reward": 2.51, "steps": 1969, "mins": 18.7}
+{"ep": 280, "stage": "IL", "eps": 0.1, "fnd_mean_last10": 7.6, "ep_reward": 2.03, "steps": 2045, "mins": 19.5}
+{"ep": 290, "stage": "IL", "eps": 0.1, "fnd_mean_last10": 7.6, "ep_reward": 6.57, "steps": 2121, "mins": 20.2}
+{"ep": 300, "stage": "IL", "eps": 0.1, "fnd_mean_last10": 9.6, "ep_reward": 60.7, "steps": 2217, "mins": 21.2}
+{"ep": 300, "eval": {"0.01": {"SR": 4.6, "RS": 10260.2, "EE": 175.8, "DDV": 1832.8}, "0.1": {"SR": 10.2, "RS": 21394.2, "EE": 176.1, "DDV": 3929.6}, "0.25": {"SR": 13.8, "RS": 25856.2, "EE": 176.2, "DDV": 5064.0}, "0.5": {"SR": 28.2, "RS": 47863.7, "EE": 225.2, "DDV": 8370.4}}}
+{"ep": 310, "stage": "eps", "eps": 0.097, "fnd_mean_last10": 1.9, "ep_reward": 0.55, "steps": 2236, "mins": 21.3}
+{"ep": 320, "stage": "eps", "eps": 0.094, "fnd_mean_last10": 3.1, "ep_reward": 4.34, "steps": 2267, "mins": 21.6}
+{"ep": 330, "stage": "eps", "eps": 0.091, "fnd_mean_last10": 2.2, "ep_reward": 0.05, "steps": 2289, "mins": 21.8}
+{"ep": 340, "stage": "eps", "eps": 0.088, "fnd_mean_last10": 2.1, "ep_reward": -0.12, "steps": 2310, "mins": 22.0}
+{"ep": 350, "stage": "eps", "eps": 0.085, "fnd_mean_last10": 2.8, "ep_reward": 2.99, "steps": 2338, "mins": 22.3}
+{"ep": 360, "stage": "eps", "eps": 0.082, "fnd_mean_last10": 2.6, "ep_reward": 8.35, "steps": 2364, "mins": 22.5}
+{"ep": 370, "stage": "eps", "eps": 0.08, "fnd_mean_last10": 2.4, "ep_reward": 4.72, "steps": 2388, "mins": 22.7}
+{"ep": 380, "stage": "eps", "eps": 0.077, "fnd_mean_last10": 2.2, "ep_reward": 1.25, "steps": 2410, "mins": 22.9}
+{"ep": 390, "stage": "eps", "eps": 0.075, "fnd_mean_last10": 1.9, "ep_reward": -0.02, "steps": 2429, "mins": 23.1}
+{"ep": 400, "stage": "eps", "eps": 0.072, "fnd_mean_last10": 1.9, "ep_reward": 0.15, "steps": 2448, "mins": 23.3}
+{"ep": 400, "eval": {"0.01": {"SR": 8.0, "RS": 32073.9, "EE": 323.3, "DDV": 3193.6}, "0.1": {"SR": 13.8, "RS": 45675.2, "EE": 244.3, "DDV": 5380.8}, "0.25": {"SR": 17.8, "RS": 51658.4, "EE": 236.4, "DDV": 6640.0}, "0.5": {"SR": 28.6, "RS": 64655.6, "EE": 254.1, "DDV": 9203.2}}}
+{"ep": 410, "stage": "eps", "eps": 0.07, "fnd_mean_last10": 2.6, "ep_reward": -0.13, "steps": 2474, "mins": 23.6}
+{"ep": 420, "stage": "eps", "eps": 0.068, "fnd_mean_last10": 1.5, "ep_reward": 8.37, "steps": 2489, "mins": 23.7}
+{"ep": 430, "stage": "eps", "eps": 0.065, "fnd_mean_last10": 1.9, "ep_reward": 8.43, "steps": 2508, "mins": 23.9}
+{"ep": 440, "stage": "eps", "eps": 0.063, "fnd_mean_last10": 2.2, "ep_reward": 1.96, "steps": 2530, "mins": 24.1}
+{"ep": 450, "stage": "eps", "eps": 0.061, "fnd_mean_last10": 2.1, "ep_reward": 0.13, "steps": 2551, "mins": 24.3}
+{"ep": 460, "stage": "eps", "eps": 0.059, "fnd_mean_last10": 2.1, "ep_reward": 2.28, "steps": 2572, "mins": 24.5}
+{"ep": 470, "stage": "eps", "eps": 0.057, "fnd_mean_last10": 1.7, "ep_reward": 4.16, "steps": 2589, "mins": 24.7}
+{"ep": 480, "stage": "eps", "eps": 0.055, "fnd_mean_last10": 1.9, "ep_reward": -0.05, "steps": 2608, "mins": 24.8}
+{"ep": 490, "stage": "eps", "eps": 0.054, "fnd_mean_last10": 2.9, "ep_reward": 4.4, "steps": 2637, "mins": 25.1}
+{"ep": 500, "stage": "eps", "eps": 0.052, "fnd_mean_last10": 2.3, "ep_reward": -0.19, "steps": 2660, "mins": 25.3}
+{"ep": 500, "eval": {"0.01": {"SR": 8.0, "RS": 32073.9, "EE": 323.3, "DDV": 3193.6}, "0.1": {"SR": 15.0, "RS": 51809.3, "EE": 269.8, "DDV": 5836.8}, "0.25": {"SR": 19.2, "RS": 57935.7, "EE": 260.3, "DDV": 7160.8}, "0.5": {"SR": 36.2, "RS": 85566.0, "EE": 309.5, "DDV": 11225.6}}}
+{"ep": 510, "stage": "eps", "eps": 0.05, "fnd_mean_last10": 2.4, "ep_reward": 5.59, "steps": 2684, "mins": 25.5}
+{"ep": 520, "stage": "eps", "eps": 0.049, "fnd_mean_last10": 1.7, "ep_reward": -0.12, "steps": 2701, "mins": 25.7}
+{"ep": 530, "stage": "eps", "eps": 0.047, "fnd_mean_last10": 2.3, "ep_reward": 6.46, "steps": 2724, "mins": 25.9}
+{"ep": 540, "stage": "eps", "eps": 0.046, "fnd_mean_last10": 1.8, "ep_reward": 4.05, "steps": 2742, "mins": 26.1}
+{"ep": 550, "stage": "eps", "eps": 0.044, "fnd_mean_last10": 1.7, "ep_reward": -0.14, "steps": 2759, "mins": 26.2}
+{"ep": 560, "stage": "eps", "eps": 0.043, "fnd_mean_last10": 1.8, "ep_reward": 8.59, "steps": 2777, "mins": 26.4}
+{"ep": 570, "stage": "eps", "eps": 0.041, "fnd_mean_last10": 2.2, "ep_reward": -0.15, "steps": 2799, "mins": 26.6}
+{"ep": 580, "stage": "eps", "eps": 0.04, "fnd_mean_last10": 1.5, "ep_reward": -0.12, "steps": 2814, "mins": 26.7}
+{"ep": 590, "stage": "eps", "eps": 0.039, "fnd_mean_last10": 2.1, "ep_reward": -0.01, "steps": 2835, "mins": 26.9}
+{"ep": 600, "stage": "eps", "eps": 0.037, "fnd_mean_last10": 2.0, "ep_reward": 3.03, "steps": 2855, "mins": 27.1}
+{"ep": 600, "eval": {"0.01": {"SR": 8.0, "RS": 32073.9, "EE": 323.3, "DDV": 3193.6}, "0.1": {"SR": 14.4, "RS": 49569.2, "EE": 258.5, "DDV": 5600.0}, "0.25": {"SR": 19.8, "RS": 59941.7, "EE": 260.5, "DDV": 7300.0}, "0.5": {"SR": 34.2, "RS": 80925.4, "EE": 295.3, "DDV": 10752.8}}}
+{"ep": 610, "stage": "eps", "eps": 0.036, "fnd_mean_last10": 1.6, "ep_reward": 4.15, "steps": 2871, "mins": 27.2}
+{"ep": 620, "stage": "eps", "eps": 0.035, "fnd_mean_last10": 1.9, "ep_reward": 0.11, "steps": 2890, "mins": 27.4}
+{"ep": 630, "stage": "eps", "eps": 0.034, "fnd_mean_last10": 1.6, "ep_reward": 0.09, "steps": 2906, "mins": 27.6}
+{"ep": 640, "stage": "eps", "eps": 0.033, "fnd_mean_last10": 1.8, "ep_reward": 0.0, "steps": 2924, "mins": 27.7}
+{"ep": 650, "stage": "eps", "eps": 0.032, "fnd_mean_last10": 1.9, "ep_reward": 2.23, "steps": 2943, "mins": 27.9}
+{"ep": 660, "stage": "eps", "eps": 0.031, "fnd_mean_last10": 2.4, "ep_reward": 9.65, "steps": 2967, "mins": 28.1}
+{"ep": 670, "stage": "eps", "eps": 0.03, "fnd_mean_last10": 2.0, "ep_reward": -0.08, "steps": 2987, "mins": 28.3}
+{"ep": 680, "stage": "eps", "eps": 0.029, "fnd_mean_last10": 1.5, "ep_reward": -0.03, "steps": 3002, "mins": 28.4}
+{"ep": 690, "stage": "eps", "eps": 0.028, "fnd_mean_last10": 1.8, "ep_reward": 0.0, "steps": 3020, "mins": 28.5}
+{"ep": 700, "stage": "eps", "eps": 0.027, "fnd_mean_last10": 1.9, "ep_reward": 3.94, "steps": 3039, "mins": 28.7}
+{"ep": 700, "eval": {"0.01": {"SR": 8.0, "RS": 32073.9, "EE": 323.3, "DDV": 3193.6}, "0.1": {"SR": 14.4, "RS": 49899.0, "EE": 259.7, "DDV": 5617.6}, "0.25": {"SR": 18.2, "RS": 55220.5, "EE": 245.8, "DDV": 6813.6}, "0.5": {"SR": 31.4, "RS": 71099.0, "EE": 265.1, "DDV": 9882.4}}}
+{"ep": 710, "stage": "eps", "eps": 0.026, "fnd_mean_last10": 1.7, "ep_reward": 2.43, "steps": 3056, "mins": 28.9}
+{"ep": 720, "stage": "eps", "eps": 0.025, "fnd_mean_last10": 2.1, "ep_reward": 0.12, "steps": 3077, "mins": 29.1}
+{"ep": 730, "stage": "eps", "eps": 0.024, "fnd_mean_last10": 1.9, "ep_reward": 1.41, "steps": 3096, "mins": 29.2}
+{"ep": 740, "stage": "eps", "eps": 0.024, "fnd_mean_last10": 2.0, "ep_reward": -0.07, "steps": 3116, "mins": 29.4}
+{"ep": 750, "stage": "eps", "eps": 0.023, "fnd_mean_last10": 2.2, "ep_reward": 0.37, "steps": 3138, "mins": 29.6}
+{"ep": 760, "stage": "eps", "eps": 0.022, "fnd_mean_last10": 2.0, "ep_reward": 5.57, "steps": 3158, "mins": 29.8}
+{"ep": 770, "stage": "eps", "eps": 0.021, "fnd_mean_last10": 1.6, "ep_reward": -0.1, "steps": 3174, "mins": 29.9}
+{"ep": 780, "stage": "eps", "eps": 0.021, "fnd_mean_last10": 2.4, "ep_reward": -0.15, "steps": 3198, "mins": 30.1}
+{"ep": 790, "stage": "eps", "eps": 0.02, "fnd_mean_last10": 1.6, "ep_reward": 3.62, "steps": 3214, "mins": 30.3}
+{"ep": 800, "stage": "eps", "eps": 0.019, "fnd_mean_last10": 1.9, "ep_reward": 2.33, "steps": 3233, "mins": 30.5}
+{"ep": 800, "eval": {"0.01": {"SR": 8.0, "RS": 31192.2, "EE": 309.3, "DDV": 3193.6}, "0.1": {"SR": 13.2, "RS": 41887.4, "EE": 250.7, "DDV": 5152.0}, "0.25": {"SR": 19.2, "RS": 52557.6, "EE": 252.2, "DDV": 7057.6}, "0.5": {"SR": 33.2, "RS": 71889.3, "EE": 281.0, "DDV": 10320.8}}}
+{"ep": 810, "stage": "eps", "eps": 0.019, "fnd_mean_last10": 1.8, "ep_reward": -0.07, "steps": 3251, "mins": 30.6}
+{"ep": 820, "stage": "eps", "eps": 0.018, "fnd_mean_last10": 1.9, "ep_reward": -0.11, "steps": 3270, "mins": 30.8}
+{"ep": 830, "stage": "eps", "eps": 0.018, "fnd_mean_last10": 1.6, "ep_reward": 1.22, "steps": 3286, "mins": 31.0}
+{"ep": 840, "stage": "eps", "eps": 0.017, "fnd_mean_last10": 1.9, "ep_reward": 3.45, "steps": 3305, "mins": 31.1}
+{"ep": 850, "stage": "eps", "eps": 0.016, "fnd_mean_last10": 1.9, "ep_reward": 2.8, "steps": 3324, "mins": 31.3}
+{"ep": 860, "stage": "eps", "eps": 0.016, "fnd_mean_last10": 2.4, "ep_reward": -0.08, "steps": 3348, "mins": 31.5}
+{"ep": 870, "stage": "eps", "eps": 0.015, "fnd_mean_last10": 2.3, "ep_reward": 3.46, "steps": 3371, "mins": 31.8}
+{"ep": 880, "stage": "eps", "eps": 0.015, "fnd_mean_last10": 2.1, "ep_reward": -0.05, "steps": 3392, "mins": 32.0}
+{"ep": 890, "stage": "eps", "eps": 0.014, "fnd_mean_last10": 2.1, "ep_reward": 4.63, "steps": 3413, "mins": 32.2}
+{"ep": 900, "stage": "eps", "eps": 0.014, "fnd_mean_last10": 2.3, "ep_reward": 3.4, "steps": 3436, "mins": 32.4}
+{"ep": 900, "eval": {"0.01": {"SR": 8.0, "RS": 31542.2, "EE": 313.0, "DDV": 3194.4}, "0.1": {"SR": 13.0, "RS": 44131.5, "EE": 255.7, "DDV": 5085.6}, "0.25": {"SR": 17.6, "RS": 48933.9, "EE": 231.9, "DDV": 6547.2}, "0.5": {"SR": 24.6, "RS": 53124.1, "EE": 224.7, "DDV": 8100.0}}}
+{"ep": 910, "stage": "eps", "eps": 0.013, "fnd_mean_last10": 2.0, "ep_reward": 12.9, "steps": 3456, "mins": 32.6}
+{"ep": 920, "stage": "eps", "eps": 0.013, "fnd_mean_last10": 2.1, "ep_reward": 0.0, "steps": 3477, "mins": 32.8}
+{"ep": 930, "stage": "eps", "eps": 0.013, "fnd_mean_last10": 2.4, "ep_reward": 1.55, "steps": 3501, "mins": 33.0}
+{"ep": 940, "stage": "eps", "eps": 0.012, "fnd_mean_last10": 2.2, "ep_reward": -0.1, "steps": 3523, "mins": 33.2}
+{"ep": 950, "stage": "eps", "eps": 0.012, "fnd_mean_last10": 2.7, "ep_reward": 4.02, "steps": 3550, "mins": 33.4}
+{"ep": 960, "stage": "eps", "eps": 0.011, "fnd_mean_last10": 2.2, "ep_reward": 1.19, "steps": 3572, "mins": 33.6}
+{"ep": 970, "stage": "eps", "eps": 0.011, "fnd_mean_last10": 2.3, "ep_reward": 0.09, "steps": 3595, "mins": 33.8}
+{"ep": 980, "stage": "eps", "eps": 0.011, "fnd_mean_last10": 2.9, "ep_reward": 11.34, "steps": 3624, "mins": 34.1}
+{"ep": 990, "stage": "eps", "eps": 0.01, "fnd_mean_last10": 1.9, "ep_reward": 2.4, "steps": 3643, "mins": 34.3}
+{"ep": 1000, "stage": "eps", "eps": 0.01, "fnd_mean_last10": 2.4, "ep_reward": 13.41, "steps": 3667, "mins": 34.5}
+{"ep": 1000, "eval": {"0.01": {"SR": 8.0, "RS": 32073.9, "EE": 323.3, "DDV": 3193.6}, "0.1": {"SR": 14.2, "RS": 46683.9, "EE": 269.3, "DDV": 5525.6}, "0.25": {"SR": 18.0, "RS": 50876.9, "EE": 228.4, "DDV": 6704.8}, "0.5": {"SR": 27.6, "RS": 61299.6, "EE": 244.8, "DDV": 8867.2}}}

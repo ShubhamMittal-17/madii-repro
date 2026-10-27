@@ -1,0 +1,23 @@
+{
+  "generated_by": "paper/rebuild_publication.py",
+  "training_seeds": [
+    0,
+    1,
+    2
+  ],
+  "inference_repeats": 3,
+  "lp_fresh_cases": 174,
+  "synthetic_topologies": 30,
+  "synthetic_cases": 120,
+  "Intel_windows_per_battery": 27,
+  "author_metadata": "pending confirmation",
+  "inputs_sha256": {
+    "runs/publication_revision/madii_static.json": "15759799bf9c1ca7dd441b22b72ade6a6b8e4e97be8f74196dbee8207bec48e7",
+    "runs/publication_revision/madii_dynamic.json": "5202ad0a7c6a51e758a27b16db666aa4f0b1e55727315adf38b5f190ff0f1537",
+    "runs/publication_revision/lp_fresh.jsonl": "f78d776b52dfbe6c803e3f7b391ce98040fec53d9ca00fa10e7c7b950357c003",
+    "results_traffic.json": "dfa393d6d7e3850e3c0da78f82c53890e9b848b2b2b94e527ca7cfcb56c83d3d",
+    "results_compare.json": "61cca4376468cae8f5415baf43f1d4ab79c0b3d602a46b2177359e8dcf5b0420",
+    "runs/correct_load_booking/synthetic_raw.json": "e7d950ea211ffa90636a2447f2a5dc2edfe0ed5546e10ebfd4b7e8031a9d8e57",
+    "runs/correct_load_booking/intel_raw.json": "a4fd818d561cd1a6b97fded4c093c8ae26ae8c82aa315e3fe58bc1b85841ee56"
+  }
+}
