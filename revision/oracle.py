@@ -46,12 +46,22 @@ def _feasible(env, A, Aeq, gen_total, T):
 
 
 def oracle_T(env, traffic, hi=None):
+    """Largest feasible integer T. Galloping search (1, 2, 4, ...) brackets T* from below before
+    bisecting, so the solver never faces an LP far beyond T*; such strongly infeasible LPs can
+    stall HiGHS on extreme layouts. Feasibility is monotone in T, so the result is the same."""
     A, Aeq, _ = _matrices(env)
     cum = np.cumsum(np.asarray(traffic, float), axis=0) * env.L
-    lo, hi = 0, hi or len(traffic)
+    cap = hi or len(traffic)
+    feas = lambda T: _feasible(env, A, Aeq, cum[T - 1], T)
+    lo, step = 0, 1
+    while step <= cap and feas(step):
+        lo, step = step, step * 2
+    hi = min(step, cap + 1) - 1          # step is infeasible (or beyond the horizon)
+    if lo == hi:
+        return lo
     while lo < hi:
         mid = (lo + hi + 1) // 2
-        if _feasible(env, A, Aeq, cum[mid - 1], mid):
+        if feas(mid):
             lo = mid
         else:
             hi = mid - 1

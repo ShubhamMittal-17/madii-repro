@@ -4,27 +4,30 @@ One text, two journal formats:
 
 | File | Target | Class |
 |---|---|---|
-| `jnca_main.tex` / `jnca_main.pdf` | Journal of Network and Computer Applications (Elsevier) | elsarticle, preprint |
 | `ieee_main.tex` / `ieee_main.pdf` | IEEE Internet of Things Journal | IEEEtran, two columns |
+| `jnca_main.tex` / `jnca_main.pdf` | Journal of Network and Computer Applications (Elsevier) | elsarticle, preprint |
 
-The sections live in `body/` and are shared by both versions. `preamble.tex` holds the common
-packages and macros, and `refs.bib` the references.
+Sections live in `body/` and are shared by both versions. `body/rev_*.tex` (tables and the
+data-driven sentences of the results section) and `figs/rev_*.pdf` are generated from the raw
+results in `results/revision/`; do not edit them by hand.
 
-## Rebuilding
+## Rebuilding everything (from the repository root)
 
 ```sh
-.venv/bin/python wilcoxon_tables.py        # results_wilcoxon.{md,json}  (from the repo root)
-.venv/bin/python paper/make_tables.py      # paper/body/tab_*.tex
-.venv/bin/python paper/make_figures.py     # paper/figs/*.pdf
-cd paper && latexmk -pdf jnca_main.tex && latexmk -pdf ieee_main.tex
+.venv/bin/python test_revision.py                          # model, oracle, routers, lossy model
+sh results/revision/run_all.sh                             # test-phase experiments (hours, 4 cores)
+.venv/bin/python -m revision.madii_diag                    # learned-router reward diagnosis
+.venv/bin/python -m revision.analyze                       # statistics, tables, figures
+cd paper && latexmk -pdf ieee_main.tex && latexmk -pdf jnca_main.tex
 ```
 
-Every number in the generated tables comes from the saved result files; no simulation is rerun.
+Validation tuning (already done; settings fixed in `revision/routers.py` TUNED):
+`.venv/bin/python -m revision.run --exp tune` and `--exp tune2`.
+
+`RESPONSE_TO_REVIEWERS.md` maps every review comment to the change that addresses it.
+`rebuild_publication.py` belongs to the previous revision round and is superseded by `revision/`.
 
 ## Before submission
 
-- Fill the author, affiliation and e-mail placeholders, the CRediT statement, the repository URL
-  and the acknowledgements (`body/declarations.tex`).
-- Complete the generative-AI declaration truthfully (Elsevier requires it whenever such tools were used).
-- Complete the bibliography entries marked `AUTHORS:` in `refs.bib` (Tang et al., ICMCSI-2026, the two arXiv papers).
-- JNCA: upload the highlights (also in `jnca_main.tex`) as a separate file.
+- Corresponding-author e-mail, CRediT roles, funding statement.
+- Confirm the AI-assistance statements name every tool that was used.

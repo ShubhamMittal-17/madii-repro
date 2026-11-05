@@ -1,0 +1,16 @@
+\appendices
+\section{Corrections relative to earlier versions}\label{app:corrections}
+Reviewing the code before this revision found the following errors. All results in this paper come from the corrected code, and the released repository records each fix with a regression test.
+\begin{enumerate}[label=(\alph*), leftmargin=*]
+  \item \textbf{Booking omission.} In the sequential construction, a node that had already received its route as a relay on an earlier path never booked its own traffic. Its own rate is now booked along its fixed path (Algorithm~\ref{alg:bld}, lines 3--5). A test checks that booked loads equal the subtree sums of the final tree. With this fix the earlier ``90.5\%, 118 of 120 wins'' became the smaller gain reported here.
+  \item \textbf{Cumulative energy in the learned router's reward.} The energy term of MADII's reward (its Eq.~15 defines $E_{\mathrm{start}}$ at the start of the round) was computed since deployment. It is now per round.
+  \item \textbf{Checkpoint selection on test topologies.} The learned router's checkpoints were selected on topologies 0--4, which belong to the test set. Selection now uses topologies 500--504.
+  \item \textbf{Control accounting.} The route advertisement was charged 100 bits, which cannot encode $n$ next-hop identifiers. Residual-battery reports were assumed free, while load reports were charged. Both are now charged as in Section~\ref{sec:packet}, identically for every router.
+  \item \textbf{Metrics.} The hop count included one extra hop, and the tiered-load header was counted as delivered data. Both are fixed.
+  \item \textbf{Statistical unit.} Earlier tests treated 120 topology--scenario cases as independent. They now use 30 topology means.
+\end{enumerate}
+
+\section{Learned-router reconstruction: a reproducibility failure}\label{app:madii}
+No code for MADII~\cite{yang2025madii} is available. Our reconstruction uses an Informer-style encoder ($d_{\mathrm{model}}=128$, two layers, four heads) with a dot-product next-hop head, not the full published encoder--decoder. It is trained for 1{,}000 episodes: 300 with replay transitions from FCM, HBA and POA experts, then 700 with $\varepsilon$ decaying from 0.1 to 0.01. It uses Adam ($10^{-4}$), batch 64, replay 10{,}000, discount 0.99, Double DQN~\cite{vanhasselt2016double}, and checkpoint selection on validation topologies only. Three training seeds were run. \inputtab{body/rev_madii.tex}
+
+This outcome characterises our reconstruction, not MADII: the published paper reports 19 rounds to first death in its own experiments. We therefore do not include the reconstruction in the main comparison.

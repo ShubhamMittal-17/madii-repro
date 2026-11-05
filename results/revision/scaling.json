@@ -1,0 +1,42 @@
+[
+ {
+  "n": 50,
+  "side": 353.5533905932738,
+  "Battery-weighted Dijkstra": 0.00046136800006024714,
+  "Booked-load Dijkstra": 0.016845014000182346,
+  "Flow augmentation (Chang-Tassiulas)": 0.01118968700006917,
+  "LP solve (sparse HiGHS)": 0.026959983000097054
+ },
+ {
+  "n": 100,
+  "side": 500.0,
+  "Battery-weighted Dijkstra": 0.00066431699997338,
+  "Booked-load Dijkstra": 0.05591041200000291,
+  "Flow augmentation (Chang-Tassiulas)": 0.01975431600021693,
+  "LP solve (sparse HiGHS)": 0.21647164499995597
+ },
+ {
+  "n": 200,
+  "side": 707.1067811865476,
+  "Battery-weighted Dijkstra": 0.0021897189999435795,
+  "Booked-load Dijkstra": 0.27512071899991497,
+  "Flow augmentation (Chang-Tassiulas)": 0.049643337999896175,
+  "LP solve (sparse HiGHS)": 1.3825772310001412
+ },
+ {
+  "n": 400,
+  "side": 1000.0,
+  "Battery-weighted Dijkstra": 0.005995476999942184,
+  "Booked-load Dijkstra": 1.6988955070000884,
+  "Flow augmentation (Chang-Tassiulas)": 0.16492232299992793,
+  "LP solve (sparse HiGHS)": 29.03606227099999
+ },
+ {
+  "n": 800,
+  "side": 1414.213562373095,
+  "Battery-weighted Dijkstra": 0.022458336999989115,
+  "Booked-load Dijkstra": 11.012281165999866,
+  "Flow augmentation (Chang-Tassiulas)": 0.6212243259999468,
+  "LP solve (sparse HiGHS)": 218.54906848300016
+ }
+]

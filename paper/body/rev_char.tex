@@ -1,0 +1,7 @@
+Min-energy Dijkstra & positions & one Dijkstra & 0 & 0.8\\
+Battery-weighted Dijkstra & + batteries & one Dijkstra & 0 & 0.8\\
+Load-balanced SPT~\cite{shan2013lifetime} & positions, range $R$ & rebuild on a death (max-flow) & 0 & 0.5\\
+Flow augmentation~\cite{chang2004maximum} & + batteries, observed rates & $K=30$ Dijkstra runs & 0 & 17.2\\
+Booked-load Dijkstra & + batteries, observed rates & $\le n$ Dijkstra runs & 0 & 43.6\\
+Booked-load, LEST 4-tier load & + batteries, tiered load & $\le n$ Dijkstra runs & 8/packet, $2n$/round & 43.4\\
+LP planner (LP every round) & + batteries, observed rates & one LP (HiGHS) & 0 & 155.4\\

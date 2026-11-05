@@ -8,31 +8,28 @@
 \begin{document}
 \begin{frontmatter}
 
-\title{Does energy-efficient WSN routing need learning? A benchmark against the provable optimum and a coordinated Dijkstra over a shared load table}
+\title{How close do WSN routers come to the lifetime bound? A reproducible benchmark of shortest-path, coordinated and learned multi-hop routing}
 
-%% AUTHORS: replace the placeholders. Mark the corresponding author with \corref{cor1}.
-\author[inst1]{[Author 1]\corref{cor1}}
-\ead{[email]}
-\author[inst1]{[Author 2]}
-\author[inst1]{[Supervisor]}
+\author[inst1]{Shubham Mittal}
+\author[inst1]{Aditya Periwal\corref{cor1}}
+\ead{[corresponding author e-mail]}
 \cortext[cor1]{Corresponding author.}
-\affiliation[inst1]{organization={[Department], Netaji Subhas University of Technology},
-            city={New Delhi}, postcode={110078}, country={India}}
+\affiliation[inst1]{organization={Netaji Subhas University of Technology}, city={New Delhi}, postcode={110078}, country={India}}
 
 \begin{abstract}
 \input{body/abstract}
 \end{abstract}
 
 \begin{highlights}
-\item Learned and heuristic WSN routers are scored against a provable lifetime optimum.
-\item A recent deep RL router reaches 11\% of the optimum; battery Dijkstra reaches 88\%.
-\item LEST load-table Dijkstra books load within each round and needs no solver.
-\item It wins 118 of 120 time-varying deployments and holds on real Intel Lab traffic.
-\item Forecasts add 0.5 points to an LP planner and nothing to Dijkstra.
+\item Multi-hop WSN routers are scored against a fractional-flow lifetime bound.
+\item Battery-weighted Dijkstra reaches 85\% of the bound with no training.
+\item Within-round coordination adds about 4.5 points; two mechanisms tie.
+\item An LP planner reaches 97\%, certifying the bound is nearly tight.
+\item A corrected learned-router reconstruction collapses; we diagnose why.
 \end{highlights}
 
 \begin{keyword}
-Wireless sensor networks \sep Network lifetime \sep Energy-efficient routing \sep Load balancing \sep Maximum-lifetime linear program \sep Deep reinforcement learning \sep Benchmarking
+Wireless sensor networks \sep Network lifetime \sep Energy-efficient routing \sep Benchmarking \sep Maximum-lifetime linear program \sep Flow augmentation \sep Reproducibility
 \end{keyword}
 
 \end{frontmatter}
@@ -45,6 +42,8 @@ Wireless sensor networks \sep Network lifetime \sep Energy-efficient routing \se
 \input{body/results}
 \input{body/discussion}
 \input{body/conclusion}
+\providecommand{\appendices}{\appendix}
+\input{body/appendix}
 \input{body/declarations}
 
 \bibliographystyle{elsarticle-num}

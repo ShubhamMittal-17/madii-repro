@@ -282,27 +282,32 @@ def texts(S):
         write("rev_kappa_text.tex", [sent])
     if S.get("grid"):
         g = S["grid"]
-        bb = [v["bld_minus_batt"] for v in g.values()]; bf = {c: v["bld_minus_fa"] for c, v in g.items()}
-        pos = sum(x["lo"] > 0 for x in bb)
         lab = {"n50": "$n=50$", "n200": "$n=200$", "sink-corner": "the corner sink", "clustered": "clustered layouts", "clustered-corner": "clustered layouts with a corner sink"}
-        fa_better = [lab[c] for c, x in bf.items() if x["hi"] < 0]
-        bld_better = [lab[c] for c, x in bf.items() if x["lo"] > 0]
-        sent = (f"Booked-load Dijkstra improves on battery Dijkstra in every condition, by {min(x['mean'] for x in bb):.1f} to {max(x['mean'] for x in bb):.1f} points, "
-                f"with the 95\\% interval above zero in {pos} of {len(bb)} conditions. ")
-        if fa_better or bld_better:
-            sent += "Against flow augmentation the picture depends on the condition: "
-            parts = []
-            if fa_better:
-                parts.append("flow augmentation is ahead for " + ", ".join(fa_better))
-            if bld_better:
-                parts.append("booked-load Dijkstra is ahead for " + ", ".join(bld_better))
-            rest = [lab[c] for c, x in bf.items() if not _excl(x)]
-            if rest:
-                parts.append("and the two are indistinguishable for " + ", ".join(rest))
-            sent += "; ".join(parts) + ". "
-        else:
-            sent += "Booked-load Dijkstra and flow augmentation remain indistinguishable in every condition. "
-        sent += "The ranking of the router families (MTE and Shan's tree far below, battery Dijkstra, then the two coordinated routers, then the LP planner where it was run) does not change."
+        bb = {c: v["bld_minus_batt"] for c, v in g.items()}; bf = {c: v["bld_minus_fa"] for c, v in g.items()}
+        pos = [lab[c] for c, x in bb.items() if x["lo"] > 0]
+        nz = [lab[c] for c, x in bb.items() if not _excl(x)]
+        sent = (f"Booked-load Dijkstra is ahead of battery Dijkstra by {min(x['mean'] for x in bb.values()):.1f} to {max(x['mean'] for x in bb.values()):.1f} points; "
+                f"the 95\\% interval is above zero in {len(pos)} of {len(bb)} conditions" + (f" but includes zero for {', '.join(nz)}" if nz else "") + ". ")
+        fa_better = [f"{lab[c]} (${x['mean']:+.1f}$)" for c, x in bf.items() if x["hi"] < 0]
+        bld_better = [f"{lab[c]} (${x['mean']:+.1f}$)" for c, x in bf.items() if x["lo"] > 0]
+        rest = [lab[c] for c, x in bf.items() if not _excl(x)]
+        sent += ("The two coordination mechanisms are not interchangeable once the operating point changes. "
+                 + ("Flow augmentation is ahead for " + " and ".join(fa_better) + "; " if fa_better else "")
+                 + ("booked-load Dijkstra is ahead for " + ", ".join(bld_better) if bld_better else "")
+                 + (f"; they are indistinguishable for {', '.join(rest)}" if rest else "") + ". "
+                 "Booked load gains most where traffic funnels hardest towards the sink, while flow augmentation does better in small or clustered networks. ")
+        # LP planner versus the coordinated routers, per condition
+        rows = load("grid")
+        worse = []
+        for c in g:
+            t = table(rows, c)
+            if LP in t:
+                lp = topo(t, LP, "RN")[1].mean(); bl = topo(t, BLD, "RN")[1].mean()
+                if bl > lp:
+                    worse.append((lab[c], bl, lp))
+        if worse:
+            sent += ("The LP planner is best wherever it was run except for " + "; ".join(f"{c}, where booked-load Dijkstra reaches {b:.1f}\\% against {l:.1f}\\%" for c, b, l in worse)
+                     + ". A plausible cause is that, with very long links, rounding the fractional flow to one next hop per node per round loses more than the planner gains. Absolute scores are also low there for every router (the best reaches about 60\\%), so the bound itself may be loose in that condition.")
         write("rev_grid_text.tex", [sent])
     if S.get("lossy"):
         L = S["lossy"]
@@ -336,7 +341,8 @@ def texts(S):
         n_hi = max(n for n in sc if sc[n].get("LP solve (sparse HiGHS)") is not None)
         write("rev_scaling_text.tex", [
             f"One LP solve takes {sc[100]['LP solve (sparse HiGHS)']:.2f}~s at $n=100$ but {sc[n_hi]['LP solve (sparse HiGHS)']:.0f}~s at $n={n_hi}$, "
-            f"against {1000 * sc[n_hi][BLD]:.0f}~ms for booked-load Dijkstra and {1000 * sc[n_hi][FA]:.0f}~ms for flow augmentation. "
+            f"against {sc[n_hi][BLD]:.1f}~s for booked-load Dijkstra and {sc[n_hi][FA]:.2f}~s for flow augmentation. "
+            f"Booked-load Dijkstra grows fastest among the solver-free routers (up to $n$ Dijkstra runs per round, {sc[n_hi][BLD] / sc[n_hi][FA]:.0f} times the time of flow augmentation at $n={n_hi}$). "
             "With hour-long rounds a server-class sink can still afford the LP at these sizes, so in the modelled system avoiding the solver buys little. "
             "Solver-free coordination matters where the sink is an embedded gateway, the rounds are short, or the network is much larger, and in a distributed "
             "implementation, which this study does not evaluate."])

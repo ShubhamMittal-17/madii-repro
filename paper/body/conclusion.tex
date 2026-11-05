@@ -1,11 +1,11 @@
 \section{Conclusion}\label{sec:conclusion}
 
-Measured against a provable optimum, energy-efficient WSN routing falls into clear levels. A recent multi-agent DRL router and a published energy-and-load router reach about 15\% of the ceiling. Battery-weighted Dijkstra reaches about 85\% with no training. LEST load-table Dijkstra reaches about 90\% with no solver. An LP planner re-solved every round reaches 97\%. LEST load-table Dijkstra builds each round's tree node by node, books every source's traffic on its path, and shares load through a 4-tier table whose overhead it pays for. It wins 118 of 120 time-varying deployments against battery Dijkstra, and the ranking holds on real Intel Lab traffic. Prediction adds half a point to the planner and nothing to Dijkstra, and learning adds no measurable gain. For lifetime routing in this setting, coordination and planning are what matter.
-
-Future work will cover four directions:
+Measured against the fractional-flow bound, multi-hop tree routing without aggregation falls into three levels:
 \begin{itemize}[leftmargin=*]
-  \item a distributed LEST Dijkstra, in which every node computes the same tree from a shared snapshot of energy and load;
-  \item a packet-level evaluation with lossy links taken from the Intel connectivity data, collisions and retransmissions, together with networks of 200--500 nodes;
-  \item further published learned baselines, including MADII retrained on time-varying traffic or the authors' code if it is released;
-  \item traffic with stronger drift or weekly cycles, where prediction may matter more.
+  \item battery-weighted Dijkstra reaches about 85\%;
+  \item within-round coordination reaches about 90\%, through flow augmentation run in increments or through booked-load Dijkstra, which tie at the main operating point;
+  \item an LP planner re-solved every round reaches about 97\%.
 \end{itemize}
+At the main operating point the best realised router comes within a few percent of the bound, so there the bound is a meaningful yardstick. Removing the battery term destroys either coordinated router, and tiered load reporting is unnecessary at a centralised sink. On fresh topologies the two coordination mechanisms diverge: booked load is clearly better where traffic funnels towards a corner sink, flow augmentation in small or clustered networks. A reconstruction of a recent learned router failed to learn a non-trivial policy even though its own reward strongly prefers one. We report that as a limit of our reconstruction, together with the corrections made to earlier versions of this study.
+
+For practice, a sink that can afford an LP per round should usually use the planner; the one exception in our grid was a corner sink over a clustered field, where booked-load Dijkstra did better. A sink that cannot, because it is embedded or the network is large, should use within-round coordination: the 2004 flow augmentation by default, and booked-load Dijkstra when the sink sits at the edge of a large or clustered field. Future work should evaluate the authors' implementation of learned routers, distributed coordination with an explicit control protocol, and packet-level MAC simulation.
