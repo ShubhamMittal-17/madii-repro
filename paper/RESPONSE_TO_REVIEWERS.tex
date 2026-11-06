@@ -1,0 +1,79 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=2.3cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{mathptmx,microtype,enumitem}
+\usepackage[hidelinks]{hyperref}
+\setlength{\parindent}{0pt}\setlength{\parskip}{6pt}
+\title{Response to the reviewers\\[4pt]\large How Close Do WSN Routers Come to the Lifetime Bound?}
+\author{Shubham Mittal and Aditya Periwal\\Netaji Subhas University of Technology, New Delhi}
+\date{}
+\begin{document}
+\maketitle
+We thank the reviewer for a careful and constructive report. It led us to re-examine the contribution itself, not only the presentation. The revision changes the paper's framing, its accounting, its baselines and its experiments. Every number in the revised manuscript comes from code and raw results released in \texttt{revision/} and \texttt{results/revision/}. Below, each comment is followed by what we changed and where. Table and section numbers refer to the IEEE version.
+
+\section*{Major concerns}
+\medskip\noindent \textbf{M1. ``Solver-free'' has no value under the paper's own assumptions.}\\
+We agree, and we no longer argue otherwise. The paper is now framed as a benchmark (title, abstract, Section I). Solver-free coordination is presented as the best option \emph{when an LP solver is not available}, not as an advance over the LP planner. Section VII (``When does avoiding the solver matter?'') states that, within the modelled system, the LP planner is the rational choice, and we recommend it. To make the trade-off measurable rather than rhetorical, we added single-thread timings of each routing decision and of one sparse LP solve from n = 50 to n = 800 at constant density (Table X, \texttt{revision/scaling.py}). We do not claim a distributed implementation.
+
+\medskip\noindent \textbf{M2. The quantised LEST table is dominated by its own ablation; exact battery reports were free while load reports were charged; the sink can count rates for free.}\\
+All three points are correct and are fixed:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt]
+\item The proposed router now uses the rates the sink counts from received packets, which costs zero bits. The 4-tier table is kept only as an ablation (Section IV-E). It changes the score by $-$0.2 points (95\% CI [$-$0.8, 0.3]): not distinguishable from zero, and unnecessary at a centralised sink.
+\item Battery reports are now charged (16 bits on every data packet) for every router, the LP planner included (Section III-C). The asymmetry is gone.
+\item The method is renamed ``booked-load Dijkstra''. As the reviewer anticipated, it is a successive-shortest-path construction with incremental pricing. We therefore added Chang and Tassiulas's flow augmentation, run as a per-round planner in within-round increments, as a baseline, tuned on validation topologies. At the main operating point it ties with booked-load Dijkstra: $-$0.2 points, 95\% CI [$-$1.3, 0.8]. On fresh topologies the two diverge. Flow augmentation is ahead by about 4 points for n = 50 and for clustered layouts. Booked load is ahead where traffic funnels hardest: +6.3 points with the sink at a corner and +25.5 with a corner sink over a clustered field. The paper now credits within-round coordination to Chang and Tassiulas, presents the two as complementary forms of it, and recommends flow augmentation as the faster default (Section VII).
+\end{itemize}
+
+\medskip\noindent \textbf{M3. The comparator set is biased toward the proposed family (aggregation disabled; FCM and EBR-DA evaluated outside their setting).}\\
+We narrowed the scope instead of modelling aggregation. The paper now concerns multi-hop tree routing without aggregation, which is MADII's own setting (Section III-A, ``Scope''). FCM and EBR-DA are removed from all results tables and discussed only in related work. In their place we added two same-family baselines designed for non-aggregated relaying: Shan et al.'s load-balanced shortest-path tree and Chang--Tassiulas flow augmentation. Section VII explains why Shan's tree scores low under full power control, as a mismatch of assumptions rather than a defect.
+
+\medskip\noindent \textbf{M4. The collapsed neural reconstruction should not be in the main tables.}\\
+Done. It appears only in Appendix B, labelled a reproducibility failure of our reconstruction. We also diagnosed the identical results across seeds. All three selected checkpoints implement exactly direct-to-sink transmission (8.27 rounds, the same as the direct policy). Yet MADII's own corrected reward (Eq. 8) gives battery-weighted Dijkstra 8.1$\times$ more reward in the first round and 15.3$\times$ more discounted return than direct transmission (\texttt{revision/madii\_diag.py}). The collapse is therefore a learning failure, not what the reward prefers. We state that this says nothing definitive about the published method.
+
+\medskip\noindent \textbf{M5. The gain is small and the normaliser is loose; p-values of 1e-9 do no work.}\\
+
+\begin{itemize}[leftmargin=*,itemsep=2pt]
+\item \emph{Tightness.} Section VI-C adds a certificate. On every topology--scenario case the best realised router lower-bounds the achievable optimum. At the main operating point it reaches 96.4\% of the fractional bound on average (worst case 89.1\%), so the bound overstates the achievable lifetime by at most 3.6 points on average. We also report where the certificate is weak: under a corner sink with clustered nodes, the best router reaches only about 60\%.
+\item \emph{Effect sizes first.} Every comparison now leads with the paired difference and its 95\% bootstrap CI over topologies, plus rank-biserial r. Holm-adjusted p-values are given for completeness, with an explicit note that deterministic routers make them uninformative on their own (Section V).
+\item \emph{Shan et al.} We now measure their construction directly in this model, rather than citing their 85\% from a different model and bound.
+\end{itemize}
+
+\medskip\noindent \textbf{M6. One operating point only; archived sensitivity studies.}\\
+All sensitivity results are new and use fresh topologies (seeds 2000--2029) never used for tuning or testing:
+
+\begin{itemize}[leftmargin=*,itemsep=2pt]
+\item n $\in$ \{50, 200\}, the sink at a corner, clustered deployments, and clustered with a corner sink (Table VII, Fig. 2). Booked-load Dijkstra's gain over battery Dijkstra ranges from +0.4 (n = 50, not distinguishable from zero) to +16.5 (corner sink) and +44.3 points (clustered, corner sink). The LP planner is best everywhere except the last condition, which we report together with the weaker tightness certificate there;
+\item a $\kappa$ sweep from 0.25 to 4 (Table VI): a flat optimum for $\kappa$ $\in$ [0.25, 1]. $\kappa$ = 4 is worse than battery Dijkstra, which we report;
+\item measured wall-clock to n = 800 (Table X).
+\end{itemize}
+
+The archived ablations are no longer used.
+
+\medskip\noindent \textbf{M7. Radio and MAC realism.}\\
+The study deliberately uses MADII's analytical model. The published method we benchmark computes its results from the first-order radio equations per round, not from a packet-level simulation. Keeping the same model lets every router, our reconstruction of MADII included, be compared on MADII's own terms and against a bound expressed in the same equations. Section III-C now states this design choice explicitly. Within that analytical style we added a realism probe (Section VI-F, \texttt{revision/lossy.py}):
+
+\begin{itemize}[leftmargin=*,itemsep=2pt]
+\item distance-dependent lossy links with static shadowing and ARQ (up to four attempts, both ends paying per attempt);
+\item an ETX-style cost for the routers and the bound;
+\item optionally, receiver contention that grows with the traffic the routing places near each receiver, which no router knows about.
+\end{itemize}
+
+The lifetime gain of the coordinated routers survives (+4.5 and +3.5 points with losses; +4.6 and +3.4 with contention). It now costs delivery ratio: for example 98.3\% against 99.0\% for booked-load against battery Dijkstra, and 94.5\% for the LP planner. The paper reports this trade-off and payload delivered before the first death, rather than lifetime alone. A packet-level simulation with a real MAC (IEEE 802.15.4 CSMA/CA) is outside the analytical framework shared with MADII. It is listed as a threat to validity and as the next step.
+
+\section*{Minor concerns}
+\begin{itemize}[leftmargin=*,itemsep=2pt]
+\item \textbf{Self-scored tick table.} Replaced by Table I, which records only evaluation elements that each cited paper does or does not report, all checkable against its text. The method columns that scored our own routers are gone. The Intel data are no longer described as ``real data or testbed''.
+\item \textbf{RL warm-started Dijkstra listed as a negative result while beating battery Dijkstra.} The section is removed. Its difference was not significant, and the revised paper no longer includes the learned warm start.
+\item \textbf{Battery Dijkstra W/T/L 0/120/0.} Now marked ``reference''.
+\item \textbf{The 100-bit advertisement cannot encode 100 next hops.} Fixed: 100 + n$\lceil$log2(n+1)$\rceil$ bits (800 at n = 100), charged to every alive node every round. All results were rerun, and the bound recomputed, with this accounting.
+\item \textbf{The Intel section supports no claim.} It is reframed as a trace-driven traffic generator with a different autocorrelation structure, reported descriptively. Censoring is counted, and the per-window comparison is given without p-values (Section VI-G).
+\item \textbf{Hops caveat.} The hop metric is no longer reported in the main text.
+\item \textbf{Mangled equations in the PDF text layer.} Fixed with Unicode glyph mapping (\texttt{mmap}, \texttt{glyphtounicode}, T1 encoding).
+\item \textbf{F versus T.} Section III-F gives one worked example.
+\item \textbf{Front matter and artifact.} The author list and affiliation are complete. The code, raw results and corrected checkpoints are pushed to the public repository named in the Data Availability statement. The AI-assistance statement names every tool used.
+\end{itemize}
+
+\section*{Corrections we found ourselves}
+Appendix A lists the errors found in earlier versions and corrected here, each with a regression test: the booking omission, cumulative energy in the learned router's reward, checkpoint selection on test topologies, the control accounting, the hop metric, and the statistical unit.
+
+\end{document}
