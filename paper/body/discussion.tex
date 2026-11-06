@@ -12,7 +12,7 @@
 
 \subsection{Threats to validity}\label{sec:threats}
 \begin{itemize}[leftmargin=*]
-  \item \textbf{Radio and MAC.} The main bench assumes ideal links and collision-free scheduling. The lossy-link probe uses an expected-value ARQ model and a simple contention term, not a packet-level CSMA simulation. It shows that the lifetime gain survives but costs delivery; a packet-level MAC study could change the magnitudes.
+  \item \textbf{Analytical model.} Following MADII, the bench computes energy from radio equations per round and assumes ideal links and collision-free scheduling; it is not a packet-level simulation. The lossy-link probe stays within this analytical style (expected-value ARQ and a simple contention term). It shows that the lifetime gain survives but costs delivery. Validating the ranking in a packet-level simulator with a real MAC (e.g., IEEE 802.15.4 CSMA/CA) is the natural next step and could change the magnitudes.
   \item \textbf{Accounting.} Battery reports (16 bits) and the encoded advertisement are charged. Synchronisation, neighbour discovery and the reliability of the advertisement itself are not.
   \item \textbf{Traffic.} The synthetic generators are ours. The Intel-derived traffic is a trace-driven generator on a scaled layout, not measured radio traffic, and its overlapping, censored windows support no inferential claim.
   \item \textbf{Generality.} Fresh topologies cover $n\in\{50,100,200\}$, two sink positions and two layouts in one field size. Other densities, heterogeneous batteries and mobility are untested.

@@ -84,7 +84,12 @@ tuning or testing:
 The archived ablations are no longer used.
 
 **M7. Radio and MAC realism.**
-We added a realism probe (Section VI-F, `revision/lossy.py`):
+The study deliberately uses MADII's analytical model. The published method we benchmark computes
+its results from the first-order radio equations per round, not from a packet-level simulation.
+Keeping the same model lets every router, our reconstruction of MADII included, be compared on
+MADII's own terms and against a bound expressed in the same equations. Section III-C now states
+this design choice explicitly. Within that analytical style we added a realism probe
+(Section VI-F, `revision/lossy.py`):
 - distance-dependent lossy links with static shadowing and ARQ (up to four attempts, both ends
   paying per attempt);
 - an ETX-style cost for the routers and the bound;
@@ -95,7 +100,8 @@ The lifetime gain of the coordinated routers survives (+4.5 and +3.5 points with
 and +3.4 with contention). It now costs delivery ratio: for example 98.3% against 99.0% for
 booked-load against battery Dijkstra, and 94.5% for the LP planner. The paper reports this
 trade-off and payload delivered before the first death, rather than lifetime alone. A
-packet-level CSMA simulation remains future work and is listed as a threat to validity.
+packet-level simulation with a real MAC (IEEE 802.15.4 CSMA/CA) is outside the analytical
+framework shared with MADII. It is listed as a threat to validity and as the next step.
 
 ## Minor concerns
 
